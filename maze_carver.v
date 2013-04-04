@@ -1,7 +1,7 @@
 
 
 /*module maze_carver(
-  	input wire [1:0] x_dimension,
+		input wire [1:0] x_dimension,
 		input wire [1:0] y_dimension,
 		wire [2:0] maze_paths [2:0],
 //		output reg maze_solution,

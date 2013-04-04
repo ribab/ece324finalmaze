@@ -12,7 +12,7 @@
 
 module vga_sync
    (
-    input wire clk, reset,  							// clock and reset inputs
+    input wire clk, reset,								// clock and reset inputs
     output wire hsync, vsync, video_on, p_tick,	// outputs
     output wire [9:0] pixel_x, pixel_y				// pixel x and y outputs
    );

@@ -14,7 +14,7 @@
 
 
 module maxtick(
-input clk,  					// input clock
+input clk,						// input clock
 input [25:0] max_count,  	// input maximum count
 output reg tick = 0 			// output tick
 );

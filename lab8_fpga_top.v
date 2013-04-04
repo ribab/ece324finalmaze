@@ -1,5 +1,5 @@
 /***********************************************
-*  ECE324 Digital Systems Design:  Final Maze
+*  ECE324 Digital Systems Design:  Lab 8
 *  John Hofman, Candice Adsero, & Ricky Barella
 *  Lab8_fpga_top Module
 ************************************************/
@@ -12,7 +12,7 @@
 *********************************************************************/
  
 module Lab8_fpga_top(
-  input clk,							// clock input
+	input clk,							// clock input
 	input  [7:0] sw,					// switch inputs
 	input  [3:0] btn,					// button inputs
 	output [7:0] Led,					// LED inputs

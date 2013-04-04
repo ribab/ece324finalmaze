@@ -14,16 +14,15 @@
 
 module maze_renderer_test
    (
-    input wire clk, reset,  		// input clock and reset
-	 //input wire [2:0] maze_width, maze_height,
+    input wire clk, reset,			// input clock and reset
+	 input wire [2:0] path_array [2:0],
+	 input wire [2:0] maze_width, maze_height,
  //   input wire [7:0] sw,			// switch inputs
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
 
    //signal declaration
-	reg [2:0] path_array [0:2];
-
    reg [7:0] rgb_reg, rgb_next;
 	// colors are the colors of the rainbow roygbiv
 	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
@@ -56,9 +55,9 @@ module maze_renderer_test
 	reg [1:0] i_reg, j_reg;
 	wire [1:0] i_next, j_next;
 	
-	assign i_next = (i_reg >= 3-1) ? 0 :
+	assign i_next = (i_reg >= maze_width-1) ? 0 :
 						 i_reg + 1;
-	assign j_next = (j_reg >= 3-1) ? 0 :
+	assign j_next = (j_reg >= maze_height-1) ? 0 :
 						 j_reg + 1;
 	
 	initial begin
@@ -69,31 +68,17 @@ module maze_renderer_test
 	// xpos and ypos are current pixels
 	// path_array [y_pos] is path
    always @(negedge clk)begin
-		if (i_reg*640/3 <= x_pos &&
-			 i_reg*640/3 + 640/3 > x_pos &&
-			 j_reg*480/3 <= y_pos &&
-			 j_reg*480/3 + 480/3 > y_pos)
+		if (i_reg*640/maze_width <= x_pos &&
+			 i_reg*640/maze_width + 640/maze_width > x_pos &&
+			 j_reg*480/maze_height <= y_pos &&
+			 j_reg*480/maze_height + 480/maze_height > y_pos)
 			 if (path_array[i_reg][j_reg] == 1)
 				rgb_next = 8'b00000000;
 			 else
 				rgb_next = 8'b11111111;
-		i_reg = i_next;
-		if (i_reg >= 3-1)
-			j_reg = j_next;
-	end
+		end
 	
-//	 maze_paths
-//  000...0
-//  111...0
-//  000...0
-//  ...
-//  000...0
-
-	initial begin
-		path_array [0] = 3'b111;
-		path_array [1] = 3'b000;
-		path_array [2] = 3'b111;
-	end	
+	
 		
    // output
    assign rgb = (video_on) ? rgb_reg : 8'b0;
