@@ -27,13 +27,15 @@ module Lab8_fpga_top(
 );
 
    // signal declarations
-	wire [2:0] maze_paths [2:0];
-	wire [1:0] start_x, start_y, finish_x, finish_y;
-//	wire [2:0] x_dim, y_dim;
-   wire [9:0] pixel_x, pixel_y;
-   wire video_on, pixel_tick;
-   wire [7:0] rgb_next;
-   reg  [7:0] rgb_reg;
+	wire [8:0] maze_paths;
+	wire start, finish;
+	reg [2:0] x_dim = 4;
+	reg [2:0] y_dim = 4;
+	
+	initial begin
+		x_dim = 4;
+		y_dim = 4;
+	end
 
    wire reset; // driven by Startup primitive
    
@@ -41,51 +43,31 @@ module Lab8_fpga_top(
 	assign an = 4'b0000;
 	assign sseg = 7'b0000000;
 	assign dp = 1'b0;
-   
-   wire [9:0] y_pos;
 	
 // pass switch input on to Led outputs
 	assign Led = sw;
 
 // instantiate VGA tester
 	maze_renderer_test MRT (
+		.sw(sw),
 		.clk(clk), 
 		.reset(1'b0),
-//		.path_array(maze_paths),
-//	   .maze_width(3), 
-//		.maze_height(3),
-	//	.sw(sw),
+		.enable(1),
+		.path_data(maze_paths),
+	   .maze_width(x_dim), 
+		.maze_height(y_dim),
 	    .hsync(Hsync), 
 	    .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);
 	
-/*	maze_carver MC (
+	maze_carver MC (
+		.start(1),
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),
-		.maze_paths(maze_paths),			//  output
-//		.maze_solution,
-		.start_x(start_x),
-		.start_y(start_y),
-		.finish_x(finish_x),
-		.finish_y(finish_y)
-	);*/
-	
-	vga_sync VGAS(
-		.clk(clk), 
-		.reset(reset),		// clock and reset inputs
-		.hsync(Hsync), 
-		.vsync(Vsync), 
-		.video_on(video_on), 
-		.p_tick(pixel_tick),			// outputs
-		.pixel_x(pixel_x),
-		.pixel_y(pixel_y)			// pixel x and y outputs
-   );	
-
-   // rgb buffer
-   always @(posedge clk) if (pixel_tick) rgb_reg <= rgb_next;
-   // output
-   assign {vgaRed, vgaGreen, vgaBlue} = rgb_reg;
+		.maze_data(maze_paths),
+		.finish()
+	);
 
 
 	// STARTUP_SPARTAN3E: Startup primitive for GSR, GTS, startup sequence control

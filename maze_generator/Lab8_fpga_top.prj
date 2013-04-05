@@ -1,0 +1,4 @@
+verilog work "../vga_sync.v"
+verilog work "../maze_renderer_test.v"
+verilog work "../maze_carver.v"
+verilog work "../lab8_fpga_top.v"

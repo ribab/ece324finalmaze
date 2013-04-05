@@ -12,17 +12,23 @@
    Modified 07 March 2011 by JDL: Changed from 8 colors (3 bits) to 256 colors (8 bits)
 */   
 
-module maze_renderer_test
+module vga_test
    (
     input wire clk, reset,			// input clock and reset
-	 input wire [2:0] path_array [2:0],
+	 input wire [8:0] path_data,
 	 input wire [2:0] maze_width, maze_height,
  //   input wire [7:0] sw,			// switch inputs
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
 
-   //signal declaration
+   //Convert path data to array format
+	wire [2:0] path_array [2:0];
+	assign path_array[0] = {path_data[2:0]};
+	assign path_array[1] = {path_data[5:3]};
+	assign path_array[2] = {path_data[8:6]};
+	
+	// color declarations
    reg [7:0] rgb_reg, rgb_next;
 	// colors are the colors of the rainbow roygbiv
 	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
@@ -76,10 +82,10 @@ module maze_renderer_test
 				rgb_next = 8'b00000000;
 			 else
 				rgb_next = 8'b11111111;
-		end
+		i_reg = i_next;
+		j_reg = j_next;
+	end
 	
-	
-		
    // output
    assign rgb = (video_on) ? rgb_reg : 8'b0;
 

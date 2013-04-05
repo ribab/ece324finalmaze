@@ -14,88 +14,143 @@
 
 module maze_renderer_test
    (
-    input wire clk, reset,			// input clock and reset
-	 //input wire [2:0] maze_width, maze_height,
- //   input wire [7:0] sw,			// switch inputs
+	 input wire [7:0] sw,
+    input wire clk, reset, enable,			// input clock and reset
+	 input wire [8:0] path_data,
+	 input wire [2:0] maze_width, maze_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
 
    //signal declaration
-	reg [2:0] path_array [0:2];
+	wire [2:0] path_array [2:0];
+	assign path_array[0] = {path_data[2:0]};
+	assign path_array[1] = {path_data[5:3]};
+	assign path_array[2] = {path_data[8:6]};
+	
+	wire video_on;
 
-   reg [7:0] rgb_reg, rgb_next;
+   reg [7:0] rgb_reg;
+	wire [7:0] rgb_next;
 	// colors are the colors of the rainbow roygbiv
 	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
 				 c4 = 8'b00011100, c5 = 8'b00001111, c6 = 8'b00000001,
 				 c7 = 8'b10000011, c8 = 8'b11000110;
-	// arbitrary colors assigned to next colors
-	reg [7:0] c1_next = 8'b11000100, c2_next = 8'b11110000, c3_next = 8'b11111100,
-				 c4_next = 8'b00011100, c5_next = 8'b00001111, c6_next = 8'b00000001,
-				 c7_next = 8'b10000011, c8_next = 8'b11000110;
-   wire video_on;
+				 
 	// x and y position wire variables
 	wire [9:0] x_pos, y_pos;
 	//parameter wtime = 5_000_000;
 
-		
-/*	// assign next color to current color
-	always @(posedge clk) begin
+	always @(negedge clk) begin
 		rgb_reg <= rgb_next;
-		c1 <= c1_next;
-		c2 <= c2_next;
-		c3 <= c3_next;
-		c4 <= c4_next;
-		c5 <= c5_next;
-		c6 <= c6_next;
-		c7 <= c7_next;
-		c8 <= c8_next;
-		end
-*/
-   // rgb buffer
-	reg [1:0] i_reg, j_reg;
-	wire [1:0] i_next, j_next;
-	
-	assign i_next = (i_reg >= 3-1) ? 0 :
-						 i_reg + 1;
-	assign j_next = (j_reg >= 3-1) ? 0 :
-						 j_reg + 1;
-	
-	initial begin
-		i_reg = 0;
-		j_reg = 0;
 	end
-	
-	// xpos and ypos are current pixels
-	// path_array [y_pos] is path
-   always @(negedge clk)begin
-		if (i_reg*640/3 <= x_pos &&
-			 i_reg*640/3 + 640/3 > x_pos &&
-			 j_reg*480/3 <= y_pos &&
-			 j_reg*480/3 + 480/3 > y_pos)
-			 if (path_array[i_reg][j_reg] == 1)
-				rgb_next = 8'b00000000;
-			 else
-				rgb_next = 8'b11111111;
-		i_reg = i_next;
-		if (i_reg >= 3-1)
-			j_reg = j_next;
-	end
-	
-//	 maze_paths
-//  000...0
-//  111...0
-//  000...0
-//  ...
-//  000...0
 
-	initial begin
-		path_array [0] = 3'b111;
-		path_array [1] = 3'b000;
-		path_array [2] = 3'b111;
-	end	
-		
+	// Control rgb output
+	assign rgb_next = path_on(x_pos, y_pos, 0, 0) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 0, 1) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 0, 2) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 0, 3) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 1, 0) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 1, 1) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 1, 2) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 1, 3) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 2, 0) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 2, 1) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 2, 2) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 2, 3) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 3, 0) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 3, 1) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 3, 2) ? 8'b11111111 :
+							path_on(x_pos, y_pos, 3, 3) ? 8'b11111111 :
+							8'b00000000;
+	
    // output
    assign rgb = (video_on) ? rgb_reg : 8'b0;
+	
+	vga_sync VGAS(
+		.clk(clk), 
+		.reset(reset),		// clock and reset inputs
+		.hsync(hsync), 
+		.vsync(vsync), 
+		.video_on(video_on), 
+		.p_tick(),			// outputs
+		.pixel_x(x_pos),
+		.pixel_y(y_pos)			// pixel x and y outputs
+   );	
+	
+	function path_on;
+		input x;
+		input y;
+		input i;
+		input j;
+		begin
+			if (i*DIV_640(maze_width) <= x &&
+				 i*DIV_640(maze_width) + DIV_640(maze_width) > x &&
+				 j*DIV_480(maze_height) <= y &&
+				 j*DIV_480(maze_height) + DIV_480(maze_height) > y &&
+				 path_array[i][j] == 1)
+				path_on = 1;
+			else
+				path_on = 0;
+		end
+	endfunction
+	
+	function  DIV_640;
+		input a;
+		begin
+			case (a)
+				1: DIV_640 = 640;
+				2: DIV_640 = 320;
+				3: DIV_640 = 213;
+				4: DIV_640 = 160;
+				5: DIV_640 = 128;
+				6: DIV_640 = 106;
+				7: DIV_640 = 91;
+				8: DIV_640 = 80;
+				9: DIV_640 = 71;
+				10: DIV_640 = 64;
+				11: DIV_640 = 58;
+				12: DIV_640 = 53;
+				13: DIV_640 = 49;
+				14: DIV_640 = 45;
+				15: DIV_640 = 42;
+				16: DIV_640 = 40;
+				17: DIV_640 = 37;
+				18: DIV_640 = 35;
+				19: DIV_640 = 33;
+				20: DIV_640 = 32;
+				default: DIV_640 = 0;
+			endcase
+		end
+	endfunction
+	
+	function  DIV_480;
+		input a;
+		begin
+			case (a)
+				1: DIV_480 = 480;
+				2: DIV_480 = 240;
+				3: DIV_480 = 160;
+				4: DIV_480 = 120;
+				5: DIV_480 = 96;
+				6: DIV_480 = 80;
+				7: DIV_480 = 68;
+				8: DIV_480 = 60;
+				9: DIV_480 = 53;
+				10: DIV_480 = 48;
+				11: DIV_480 = 43;
+				12: DIV_480 = 40;
+				13: DIV_480 = 36; //36.923
+				14: DIV_480 = 34;
+				15: DIV_480 = 32;
+				16: DIV_480 = 30;
+				17: DIV_480 = 28;
+				18: DIV_480 = 26;
+				19: DIV_480 = 25;
+				20: DIV_480 = 24;
+				default: DIV_480 = 0;
+			endcase
+		end
+	endfunction
 
 endmodule
