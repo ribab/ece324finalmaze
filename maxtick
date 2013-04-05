@@ -1,0 +1,36 @@
+/***********************************************
+*  ECE324 Digital Systems Design:  Lab 8
+*  John Hofman, Candice Adsero, & Ricky Barella
+*  maxtick Module
+************************************************/
+
+
+/* A better ticker for WSU Vancouver ECE 324  08-Feb-2013 JDL
+   Generates a one-clock-cycle-wide ?tick? signal at a specified interval.
+  ?tick? can be used as a clock enable by other processes
+*/
+
+
+
+
+module maxtick(
+input clk,  					// input clock
+input [25:0] max_count,  	// input maximum count
+output reg tick = 0 			// output tick
+);
+//localparam max_count = 750_000_000; // 50MHz * 750,000,000 = 15 S
+// localparam max_count = 25; 
+// smaller max_count value for shorter simulation run time
+reg [25:0] counter = 0; 
+// 26 bits allows tick intervals up to 1.34 seconds
+  always @(posedge clk) begin
+  if (counter == max_count) begin
+    counter <= 0;
+    tick    <= 1;
+  end
+  else begin
+    counter <= counter + 1;
+    tick    <= 0;
+  end
+  end
+endmodule
