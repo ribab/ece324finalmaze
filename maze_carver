@@ -1,0 +1,34 @@
+
+
+/*module maze_carver(
+  	input wire [1:0] x_dimension,
+		input wire [1:0] y_dimension,
+		wire [2:0] maze_paths [2:0],
+//		output reg maze_solution,
+		output reg [1:0] start_x,
+		output reg [1:0] start_y,
+		output reg [1:0] finish_x,
+		output reg [1:0] finish_y
+//		done,
+		
+		
+    );
+
+	localparam X_MAX = 3;
+	localparam Y_MAX = 3;
+	
+//	 maze_paths
+//  000...0
+//  111...0
+//  000...0
+//  ...
+//  000...0
+
+	initial begin
+		maze_paths [0] = 3'b111;
+		maze_paths [1] = 3'b000;
+		maze_paths [2] = 3'b111;
+	end
+
+endmodule
+*/
