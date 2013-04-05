@@ -1,0 +1,103 @@
+/***********************************************
+*  ECE324 Digital Systems Design:  Lab 9 - Pong
+*  John Hofman, Candice Adsero, & Ricky Barella
+*  Lab7_fpga_top Module
+************************************************/
+
+/*********************************************************************
+  ECE 324 Lab 7 starter kit 
+  Dr. Lynch - 06 Mar 2012
+
+*********************************************************************/
+ 
+module Lab7_fpga_top(
+  // Inputs
+	input clk,
+	input  [7:0] sw,
+	input  [3:0] btn,
+	// LED outputs
+	output [7:0] Led,
+ 
+    // 7-segment display outputs
+    output [3:0] an,
+    output [6:0] sseg,
+    output dp,
+    
+	// VGA outputs
+    output Vsync, Hsync,
+    output [3:1] vgaRed, vgaGreen,
+    output [3:2] vgaBlue,
+
+    // PS2 bidirectional ports
+    inout wire ps2d, ps2c
+);
+
+	// signal declarations
+	wire [9:0] pixel_x, pixel_y;
+	wire [9:0] y_pos;
+	wire [7:0] rgb_next;
+	reg  [7:0] rgb_reg;
+	wire video_on, pixel_tick;
+	wire reset; // driven by Startup primitive
+   
+	// tie off unsed outputs
+	assign an = 4'b0000;
+	assign sseg = 7'b0000000;
+	assign dp = 1'b0;
+   
+   
+   
+   	// instantiate vga_sync module
+	vga_sync VS(
+   		.clk(clk), 
+   		.reset(reset), 
+   		.hsync(Hsync), 
+   		.vsync(Vsync),
+       	.video_on(video_on), 
+       	.p_tick(pixel_tick),
+       	.pixel_x(pixel_x), 
+       	.pixel_y(pixel_y)
+	);
+	
+	// instantiate pong module
+	pong PO(
+		.clk(clk), 
+		.reset(reset), 
+		.btn(btn[1:0]),
+       	.video_on(video_on), 
+       	.pix_x(pixel_x),
+       	.pix_y(pixel_y), 
+       	.graph_rgb(rgb_next),
+		.bar_y_t(y_pos)
+	);
+   
+   // instantiate mouse LED circuit
+	mouse_led ML(
+    	.clk(clk), 
+    	.reset(reset),
+   		.ps2d(ps2d), 
+   		.ps2c(ps2c),
+    	.led(Led),
+		.p_reg(y_pos)
+   );
+
+   
+   
+   // rgb buffer
+   always @(posedge clk) 
+		if (pixel_tick) rgb_reg <= rgb_next;
+   // output
+   assign {vgaRed, vgaGreen, vgaBlue} = rgb_reg;
+
+
+	// STARTUP_SPARTAN3E: Startup primitive for GSR, GTS, startup sequence control
+	// and Multi-Boot Configuration Trigger. Spartan-3E
+	// Xilinx HDL Libraries Guide, version 11.2
+	STARTUP_SPARTAN3E SU(
+		.CLK(clk), // Clock input for start-up sequence
+		.GSR(reset), // Global Set/Reset input (GSR can not be used as a port name)
+		.GTS(), // Global 3-state input (GTS can not be used as a port name)
+		.MBT() // Multi-Boot Trigger input
+	);
+	
+endmodule
