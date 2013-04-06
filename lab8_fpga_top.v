@@ -49,15 +49,12 @@ module Lab8_fpga_top(
 
 // instantiate VGA tester
 	maze_renderer_test MRT (
-		.sw(sw),
-		.clk(clk), 
-		.reset(1'b0),
-		.enable(1),
+		.clk(clk), .reset(1'b0), .enable(1),
 		.path_data(maze_paths),
-	   .maze_width(x_dim), 
-		.maze_height(y_dim),
-	    .hsync(Hsync), 
-	    .vsync(Vsync), 
+	   .maze_width(x_dim), .maze_height(y_dim),
+		.x_coord(0), .y_coord(0),
+		.tile_width(3), .tile_height(3),
+	    .hsync(Hsync), .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);
 	

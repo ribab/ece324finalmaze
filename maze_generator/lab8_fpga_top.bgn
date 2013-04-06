@@ -6,9 +6,9 @@ C:\Xilinx\14.4\ISE_DS\ISE\.
 -5
 Opened constraints file Lab8_fpga_top.pcf.
 
-Fri Apr 05 10:28:42 2013
+Sat Apr 06 10:33:16 2013
 
-C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No Lab8_fpga_top.ncd 
+C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No Lab8_fpga_top.ncd 
 
 WARNING:Bitgen:101 - There is a STARTUP component with a signal on the CLK pin
    but StartupClk is Cclk.
@@ -56,7 +56,7 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | DriveDone            | No**                 |
 +----------------------+----------------------+
-| DonePipe             | No**                 |
+| DonePipe             | Yes                  |
 +----------------------+----------------------+
 | Security             | None**               |
 +----------------------+----------------------+

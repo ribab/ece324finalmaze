@@ -14,10 +14,11 @@
 
 module maze_renderer_test
    (
-	 input wire [7:0] sw,
     input wire clk, reset, enable,			// input clock and reset
 	 input wire [8:0] path_data,
-	 input wire [2:0] maze_width, maze_height,
+	 input wire [4:0] maze_width, maze_height,
+	 input wire [9:0] x_coord, y_coord,
+	 input wire [7:0] tile_width, tile_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
@@ -31,7 +32,7 @@ module maze_renderer_test
 	wire video_on;
 
    reg [7:0] rgb_reg;
-	wire [7:0] rgb_next;
+	reg [7:0] rgb_next;
 	// colors are the colors of the rainbow roygbiv
 	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
 				 c4 = 8'b00011100, c5 = 8'b00001111, c6 = 8'b00000001,
@@ -44,7 +45,30 @@ module maze_renderer_test
 	always @(negedge clk) begin
 		rgb_reg <= rgb_next;
 	end
+		
+   // output
+   assign rgb = (video_on) ? rgb_reg : 8'b0;
 
+	always @(posedge clk) begin
+		if (path_array[(x_pos - x_coord) >> tile_width]
+						  [(y_pos - y_coord) >> tile_height] == 1)
+			rgb_next <= 8'b00000000;
+		else
+			rgb_next <= 8'b11111111;
+	end
+	
+	vga_sync VGAS(
+		.clk(clk), 
+		.reset(reset),		// clock and reset inputs
+		.hsync(hsync), 
+		.vsync(vsync), 
+		.video_on(video_on), 
+		.p_tick(),			// outputs
+		.pixel_x(x_pos),
+		.pixel_y(y_pos)			// pixel x and y outputs
+   );	
+
+/* stretched maze
 	// Control rgb output
 	assign rgb_next = path_on(x_pos, y_pos, 0, 0) ? 8'b11111111 :
 							path_on(x_pos, y_pos, 0, 1) ? 8'b11111111 :
@@ -64,25 +88,11 @@ module maze_renderer_test
 							path_on(x_pos, y_pos, 3, 3) ? 8'b11111111 :
 							8'b00000000;
 	
-   // output
-   assign rgb = (video_on) ? rgb_reg : 8'b0;
-	
-	vga_sync VGAS(
-		.clk(clk), 
-		.reset(reset),		// clock and reset inputs
-		.hsync(hsync), 
-		.vsync(vsync), 
-		.video_on(video_on), 
-		.p_tick(),			// outputs
-		.pixel_x(x_pos),
-		.pixel_y(y_pos)			// pixel x and y outputs
-   );	
-	
 	function path_on;
-		input x;
-		input y;
-		input i;
-		input j;
+		input [9:0] x;
+		input [9:0] y;
+		input [9:0] i;
+		input [9:0] j;
 		begin
 			if (i*DIV_640(maze_width) <= x &&
 				 i*DIV_640(maze_width) + DIV_640(maze_width) > x &&
@@ -95,8 +105,8 @@ module maze_renderer_test
 		end
 	endfunction
 	
-	function  DIV_640;
-		input a;
+	function [9:0] DIV_640;
+		input [4:0] a;
 		begin
 			case (a)
 				1: DIV_640 = 640;
@@ -124,8 +134,8 @@ module maze_renderer_test
 		end
 	endfunction
 	
-	function  DIV_480;
-		input a;
+	function [9:0] DIV_480;
+		input [4:0] a;
 		begin
 			case (a)
 				1: DIV_480 = 480;
@@ -152,5 +162,5 @@ module maze_renderer_test
 			endcase
 		end
 	endfunction
-
+*/
 endmodule
