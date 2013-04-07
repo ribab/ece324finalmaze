@@ -16,22 +16,12 @@ module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
 	 input [100*100-1:0] path_data,
-	 input wire [4:0] maze_width, maze_height,
-	 input wire [9:0] x_coord, y_coord,
+	 input wire [6:0] maze_width, maze_height,
+	 input wire [6:0] x_coord, y_coord,
 	 input wire [7:0] tile_width, tile_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
-
-   //signal declaration
-//	wire [100-1:0] path_array [100-1:0];
-//	assign path_array[0] = path_data[99:0];
-//	assign path_array[1] = path_data[199:100];
-//	assign path_array[2] = path_data[299:200];
-//	assign path_array[3] = path_data[399:300];
-//	assign path_array[4] = path_data[499:400];
-//	assign path_array[5] = path_data[599:500];
-//	assign path_array[6]
 	
 	wire video_on;
 
@@ -46,22 +36,20 @@ module maze_renderer_test
 	wire [9:0] x_pos, y_pos;
 	//parameter wtime = 5_000_000;
 
-	always @(negedge clk) begin
-		rgb_reg <= rgb_next;
-	end
-		
-   // output
-   assign rgb = (video_on) ? rgb_reg : 8'b0;
-
+   // Control the Display
 	always @(posedge clk) begin
-		if (path_data[    ((x_pos - x_coord) >> tile_width) +
-		              100*((y_pos - y_coord) >> tile_height)  ]
-						  == 1)
-/*		if (path_array[(x_pos - x_coord) >> tile_width]
-						  [(y_pos - y_coord) >> tile_height] == 1) */
-			rgb_next <= 8'b00000000;
+		if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480)
+			if (path_data[    ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
+							  100*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
+				rgb_next <= 8'b00000000;
+			else
+				rgb_next <= 8'b11111111;
 		else
-			rgb_next <= 8'b11111111;
+			if (path_data[    (x_coord + (x_pos >> tile_width)) +
+							  100*(y_coord + (y_pos >> tile_height))] == 1)
+				rgb_next <= 8'b00000000;
+			else
+				rgb_next <= 8'b11111111;
 	end
 	
 	vga_sync VGAS(
@@ -75,7 +63,13 @@ module maze_renderer_test
 		.pixel_y(y_pos)			// pixel x and y outputs
    );	
 
-/* stretched maze
+	always @(negedge clk) begin
+		rgb_reg <= rgb_next;
+	end
+		
+   assign rgb = (video_on) ? rgb_reg : 8'b0;
+
+/* stretched maze old code
 	// Control rgb output
 	assign rgb_next = path_on(x_pos, y_pos, 0, 0) ? 8'b11111111 :
 							path_on(x_pos, y_pos, 0, 1) ? 8'b11111111 :
