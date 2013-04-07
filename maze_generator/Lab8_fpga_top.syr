@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: Lab8_fpga_top.prj
 
@@ -146,7 +146,6 @@ WARNING:Xst:852 - "../lab8_fpga_top.v" line 61: Unconnected input port 'clk' of 
 Module <Lab8_fpga_top> is correct for synthesis.
  
 Analyzing module <maze_renderer_test> in library <work>.
-INFO:Xst:1433 - Contents of array <path_array> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Module <maze_renderer_test> is correct for synthesis.
  
 Analyzing module <vga_sync> in library <work>.
@@ -161,3 +160,368 @@ Analyzing module <vga_sync> in library <work>.
 Module <vga_sync> is correct for synthesis.
  
 Analyzing module <maze_carver> in library <work>.
+Module <maze_carver> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <maze_carver>.
+    Related source file is "../maze_carver.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <start> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <finish> is never assigned. Tied to value 0.
+WARNING:Xst:647 - Input <x_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <y_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1781 - Signal <maze_paths> is used but never assigned. Tied to default value.
+Unit <maze_carver> synthesized.
+
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "../vga_sync.v".
+    Found 10-bit up counter for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 95.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 95.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit up counter for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 98.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 98.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <video_on$cmp_lt0000> created at line 102.
+    Found 10-bit comparator less for signal <video_on$cmp_lt0001> created at line 102.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vga_sync> synthesized.
+
+
+Synthesizing Unit <maze_renderer_test>.
+    Related source file is "../maze_renderer_test.v".
+WARNING:Xst:647 - Input <maze_width> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <enable> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <maze_height> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <c8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c7> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c6> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c5> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32x8-bit multiplier for signal <COND_11$mult0000> created at line 57.
+    Found 32-bit shifter logical right for signal <COND_11$shift0001> created at line 57.
+    Found 8-bit register for signal <rgb_next>.
+    Found 8-bit register for signal <rgb_reg>.
+    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 57.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   1 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <maze_renderer_test> synthesized.
+
+
+Synthesizing Unit <Lab8_fpga_top>.
+    Related source file is "../lab8_fpga_top.v".
+WARNING:Xst:647 - Input <btn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <y_dim> is used but never assigned. This sourceless signal will be automatically connected to value 100.
+WARNING:Xst:653 - Signal <x_dim> is used but never assigned. This sourceless signal will be automatically connected to value 100.
+WARNING:Xst:1780 - Signal <start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <Lab8_fpga_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 1
+ 40-bit adder                                          : 1
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 5
+ 1-bit register                                        : 3
+ 8-bit register                                        : 2
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator less                                : 1
+# Multiplexers                                         : 1
+ 1-bit 10000-to-1 multiplexer                          : 1
+# Logic shifters                                       : 2
+ 32-bit shifter logical right                          : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <MRT> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_next_1> <rgb_next_2> <rgb_next_3> <rgb_next_4> <rgb_next_5> <rgb_next_6> <rgb_next_7> 
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 1
+ 14-bit adder                                          : 1
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 19
+ Flip-Flops                                            : 19
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator less                                : 1
+# Multiplexers                                         : 1
+ 1-bit 10000-to-1 multiplexer                          : 1
+# Logic shifters                                       : 2
+ 32-bit shifter logical right                          : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_next_1> <rgb_next_2> <rgb_next_3> <rgb_next_4> <rgb_next_5> <rgb_next_6> <rgb_next_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_reg_1> <rgb_reg_2> <rgb_reg_3> <rgb_reg_4> <rgb_reg_5> <rgb_reg_6> <rgb_reg_7> 
+WARNING:Xst:2677 - Node <Mmult_COND_11_mult00001> of sequential type is unconnected in block <maze_renderer_test>.
+
+Optimizing unit <Lab8_fpga_top> ...
+
+Optimizing unit <vga_sync> ...
+
+Optimizing unit <maze_renderer_test> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 9.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Lab8_fpga_top.ngr
+Top Level Output File Name         : Lab8_fpga_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 43
+
+Cell Usage :
+# BELS                             : 1003
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 24
+#      LUT2                        : 15
+#      LUT2_L                      : 4
+#      LUT3                        : 181
+#      LUT3_D                      : 10
+#      LUT3_L                      : 3
+#      LUT4                        : 420
+#      LUT4_D                      : 17
+#      LUT4_L                      : 12
+#      MUXCY                       : 31
+#      MUXF5                       : 207
+#      MUXF6                       : 40
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 34
+# FlipFlops/Latches                : 25
+#      FD_1                        : 1
+#      FDR                         : 4
+#      FDRE                        : 20
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 38
+#      IBUF                        : 8
+#      OBUF                        : 30
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+# Others                           : 1
+#      STARTUP_SPARTAN3E           : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      359  out of   4656     7%  
+ Number of Slice Flip Flops:             25  out of   9312     0%  
+ Number of 4 input LUTs:                688  out of   9312     7%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  39  out of    232    16%  
+ Number of MULT18X18SIOs:                 1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 25    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 18.076ns (Maximum Frequency: 55.323MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 7.748ns
+   Maximum combinational path delay: 4.632ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 18.076ns (frequency: 55.323MHz)
+  Total number of paths / destination ports: 167260 / 67
+-------------------------------------------------------------------------
+Delay:               18.076ns (Levels of Logic = 17)
+  Source:            MRT/VGAS/v_count_reg_8 (FF)
+  Destination:       MRT/rgb_next_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: MRT/VGAS/v_count_reg_8 to MRT/rgb_next_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.514   0.499  MRT/VGAS/v_count_reg_8 (MRT/VGAS/v_count_reg_8)
+     MULT18X18SIO:A6->P10    1   4.091   0.509  MRT/Mmult_COND_11_mult0000 (MRT/Mmult_COND_11_mult0000_P_to_Adder_A_10)
+     LUT1:I0->O            1   0.612   0.000  MRT/Madd__COND_11_Madd_cy<10>_rt (MRT/Madd__COND_11_Madd_cy<10>_rt)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd__COND_11_Madd_cy<10> (MRT/Madd__COND_11_Madd_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Madd__COND_11_Madd_cy<11> (MRT/Madd__COND_11_Madd_cy<11>)
+     XORCY:CI->O         252   0.699   1.135  MRT/Madd__COND_11_Madd_xor<12> (MRT/_COND_11<12>)
+     LUT4:I3->O            3   0.612   0.481  MRT/_COND_11<5>10621 (MRT/_COND_11<5>_mmx_out65)
+     LUT4:I2->O            1   0.612   0.387  MRT/_COND_11<6>1075_SW1 (N107)
+     LUT4:I2->O            1   0.612   0.000  MRT/_COND_11<6>_mmx_out531_inv1 (MRT/_COND_11<6>_mmx_out531_inv)
+     MUXF5:I0->O           1   0.278   0.000  MRT/Mmux__COND_12_22_f5_5 (MRT/Mmux__COND_12_22_f56)
+     MUXF6:I1->O           1   0.451   0.387  MRT/Mmux__COND_12_21_f6_2 (MRT/Mmux__COND_12_21_f63)
+     LUT3:I2->O            1   0.612   0.387  MRT/_COND_11<1>541 (MRT/_COND_11<1>53)
+     LUT3:I2->O            1   0.612   0.000  MRT/Mmux__COND_12_12_f5_0_F (N357)
+     MUXF5:I0->O           1   0.278   0.360  MRT/Mmux__COND_12_12_f5_0 (MRT/Mmux__COND_12_12_f51)
+     LUT4:I3->O            1   0.612   0.387  MRT/_COND_11<8>146 (MRT/_COND_11<8>2)
+     LUT3:I2->O            1   0.612   0.000  MRT/Mmux__COND_12_6 (MRT/Mmux__COND_12_6)
+     MUXF5:I0->O           1   0.278   0.000  MRT/Mmux__COND_12_4_f5 (MRT/Mmux__COND_12_4_f5)
+     MUXF6:I0->O           1   0.451   0.357  MRT/Mmux__COND_12_2_f6 (MRT/_COND_12)
+     FDR:R                     0.795          MRT/rgb_next_0
+    ----------------------------------------
+    Total                     18.076ns (13.187ns logic, 4.889ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 74 / 10
+-------------------------------------------------------------------------
+Offset:              7.748ns (Levels of Logic = 4)
+  Source:            MRT/VGAS/v_count_reg_6 (FF)
+  Destination:       vgaRed<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: MRT/VGAS/v_count_reg_6 to vgaRed<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.514   0.651  MRT/VGAS/v_count_reg_6 (MRT/VGAS/v_count_reg_6)
+     LUT4:I0->O            1   0.612   0.509  MRT/rgb<1>21 (MRT/rgb<1>21)
+     LUT3:I0->O            1   0.612   0.426  MRT/rgb<1>34_SW0 (N439)
+     LUT4:I1->O            8   0.612   0.643  MRT/rgb<1>34 (vgaBlue_2_OBUF)
+     OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
+    ----------------------------------------
+    Total                      7.748ns (5.519ns logic, 2.229ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Delay:               4.632ns (Levels of Logic = 2)
+  Source:            sw<7> (PAD)
+  Destination:       Led<7> (PAD)
+
+  Data Path: sw<7> to Led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  sw_7_IBUF (Led_7_OBUF)
+     OBUF:I->O                 3.169          Led_7_OBUF (Led<7>)
+    ----------------------------------------
+    Total                      4.632ns (4.275ns logic, 0.357ns route)
+                                       (92.3% logic, 7.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 163.00 secs
+Total CPU time to Xst completion: 163.19 secs
+ 
+--> 
+
+Total memory usage is 415016 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

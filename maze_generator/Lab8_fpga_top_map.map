@@ -9,10 +9,13 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sat Apr 06 10:32:35 2013
+Mapped Date    : Sun Apr 07 05:50:18 2013
 
 Mapping design into LUTs...
 Running directed packing...
+WARNING:Pack:266 - The function generator MRT/_COND_11<5>10621 failed to merge
+   with F5 multiplexer MRT/_COND_11<6>1075.  There is a conflict for the FXMUX. 
+   The design will exhibit suboptimal timing.
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
@@ -30,18 +33,18 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    4
+Number of warnings:    5
 Logic Utilization:
   Number of Slice Flip Flops:            25 out of   9,312    1%
-  Number of 4 input LUTs:                18 out of   9,312    1%
+  Number of 4 input LUTs:               667 out of   9,312    7%
 Logic Distribution:
-  Number of occupied Slices:             23 out of   4,656    1%
-    Number of Slices containing only related logic:      23 out of      23 100%
-    Number of Slices containing unrelated logic:          0 out of      23   0%
+  Number of occupied Slices:            413 out of   4,656    8%
+    Number of Slices containing only related logic:     413 out of     413 100%
+    Number of Slices containing unrelated logic:          0 out of     413   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          36 out of   9,312    1%
-    Number used as logic:                18
-    Number used as a route-thru:         18
+  Total Number of 4 input LUTs:         693 out of   9,312    7%
+    Number used as logic:               667
+    Number used as a route-thru:         26
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -49,13 +52,14 @@ Logic Distribution:
   Number of bonded IOBs:                 43 out of     232   18%
   Number of BUFGMUXs:                     1 out of      24    4%
   Number of STARTUPs:                     1 out of       1  100%
+  Number of MULT18X18SIOs:                1 out of      20    5%
   Number of STARTUP_SPARTAN3Es:           1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                2.44
+Average Fanout of Non-Clock Nets:                4.99
 
-Peak Memory Usage:  247 MB
-Total REAL time to MAP completion:  3 secs 
-Total CPU time to MAP completion:   3 secs 
+Peak Memory Usage:  251 MB
+Total REAL time to MAP completion:  2 secs 
+Total CPU time to MAP completion:   2 secs 
 
 NOTES:
 

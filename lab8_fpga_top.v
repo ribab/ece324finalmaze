@@ -27,7 +27,7 @@ module Lab8_fpga_top(
 );
 
    // signal declarations
-	wire [8:0] maze_paths;
+	wire [100*100-1:0] maze_paths;
 	wire start, finish;
 	reg [2:0] x_dim = 4;
 	reg [2:0] y_dim = 4;
@@ -53,7 +53,7 @@ module Lab8_fpga_top(
 		.path_data(maze_paths),
 	   .maze_width(x_dim), .maze_height(y_dim),
 		.x_coord(0), .y_coord(0),
-		.tile_width(3), .tile_height(3),
+		.tile_width(2), .tile_height(2),
 	    .hsync(Hsync), .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);

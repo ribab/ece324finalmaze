@@ -15,7 +15,7 @@
 module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
-	 input wire [8:0] path_data,
+	 input [100*100-1:0] path_data,
 	 input wire [4:0] maze_width, maze_height,
 	 input wire [9:0] x_coord, y_coord,
 	 input wire [7:0] tile_width, tile_height,
@@ -24,10 +24,14 @@ module maze_renderer_test
    );
 
    //signal declaration
-	wire [2:0] path_array [2:0];
-	assign path_array[0] = {path_data[2:0]};
-	assign path_array[1] = {path_data[5:3]};
-	assign path_array[2] = {path_data[8:6]};
+//	wire [100-1:0] path_array [100-1:0];
+//	assign path_array[0] = path_data[99:0];
+//	assign path_array[1] = path_data[199:100];
+//	assign path_array[2] = path_data[299:200];
+//	assign path_array[3] = path_data[399:300];
+//	assign path_array[4] = path_data[499:400];
+//	assign path_array[5] = path_data[599:500];
+//	assign path_array[6]
 	
 	wire video_on;
 
@@ -50,8 +54,11 @@ module maze_renderer_test
    assign rgb = (video_on) ? rgb_reg : 8'b0;
 
 	always @(posedge clk) begin
-		if (path_array[(x_pos - x_coord) >> tile_width]
-						  [(y_pos - y_coord) >> tile_height] == 1)
+		if (path_data[    ((x_pos - x_coord) >> tile_width) +
+		              100*((y_pos - y_coord) >> tile_height)  ]
+						  == 1)
+/*		if (path_array[(x_pos - x_coord) >> tile_width]
+						  [(y_pos - y_coord) >> tile_height] == 1) */
 			rgb_next <= 8'b00000000;
 		else
 			rgb_next <= 8'b11111111;
