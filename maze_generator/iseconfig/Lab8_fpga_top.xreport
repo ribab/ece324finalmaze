@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-04-07T09:22:48</DateModified>
+  <DateModified>2013-04-09T23:05:31</DateModified>
   <ModuleName>Lab8_fpga_top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2013-04-09T22:52:26</SummaryTimeStamp>
   <SavedFilePath>C:/Users/ribab/Documents/GitHub/ece324finalmaze/maze_generator/iseconfig/Lab8_fpga_top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/ribab/Documents/GitHub/ece324finalmaze/maze_generator\</ImplementationReportsDirectory>
   <DateInitialized>2013-04-05T06:07:42</DateInitialized>

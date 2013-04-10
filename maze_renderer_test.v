@@ -38,18 +38,25 @@ module maze_renderer_test
 
    // Control the Display
 	always @(posedge clk) begin
-		if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480)
-			if (path_data[    ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
-							  100*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
+		if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480) begin
+			if (x_pos > (tile_width*maze_width + ((640-tile_width*maze_width) >> 1)) ||
+				 x_pos < ((640-tile_width*maze_width) >> 1) ||
+				 y_pos > (tile_height*maze_height+((480-tile_height*maze_height) >> 1)) ||
+				 y_pos < ((480-tile_height*maze_height) >> 1))
 				rgb_next <= 8'b00000000;
-			else
+			else if (path_data[    ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
+							       100*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
 				rgb_next <= 8'b11111111;
-		else
+			else
+				rgb_next <= 8'b00000000;
+		end
+		else begin
 			if (path_data[    (x_coord + (x_pos >> tile_width)) +
 							  100*(y_coord + (y_pos >> tile_height))] == 1)
-				rgb_next <= 8'b00000000;
-			else
 				rgb_next <= 8'b11111111;
+			else
+				rgb_next <= 8'b00000000;
+		end
 	end
 	
 	vga_sync VGAS(

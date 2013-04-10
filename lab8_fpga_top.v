@@ -29,8 +29,8 @@ module Lab8_fpga_top(
    // signal declarations
 	wire [100*100-1:0] maze_paths;
 	wire start, finish;
-	reg [2:0] x_dim = 4;
-	reg [2:0] y_dim = 4;
+	reg [6:0] x_dim = 32;
+	reg [6:0] y_dim = 32;
 	
 	initial begin
 		x_dim = 4;

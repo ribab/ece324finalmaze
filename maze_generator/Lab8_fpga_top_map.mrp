@@ -9,23 +9,23 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sun Apr 07 05:50:18 2013
+Mapped Date    : Tue Apr 09 23:20:06 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    5
+Number of warnings:    4
 Logic Utilization:
   Number of Slice Flip Flops:            25 out of   9,312    1%
-  Number of 4 input LUTs:               667 out of   9,312    7%
+  Number of 4 input LUTs:                57 out of   9,312    1%
 Logic Distribution:
-  Number of occupied Slices:            413 out of   4,656    8%
-    Number of Slices containing only related logic:     413 out of     413 100%
-    Number of Slices containing unrelated logic:          0 out of     413   0%
+  Number of occupied Slices:             43 out of   4,656    1%
+    Number of Slices containing only related logic:      43 out of      43 100%
+    Number of Slices containing unrelated logic:          0 out of      43   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         693 out of   9,312    7%
-    Number used as logic:               667
-    Number used as a route-thru:         26
+  Total Number of 4 input LUTs:          75 out of   9,312    1%
+    Number used as logic:                57
+    Number used as a route-thru:         18
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -36,11 +36,11 @@ Logic Distribution:
   Number of MULT18X18SIOs:                1 out of      20    5%
   Number of STARTUP_SPARTAN3Es:           1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                4.99
+Average Fanout of Non-Clock Nets:                2.72
 
-Peak Memory Usage:  251 MB
-Total REAL time to MAP completion:  2 secs 
-Total CPU time to MAP completion:   2 secs 
+Peak Memory Usage:  247 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 
@@ -81,9 +81,6 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:Pack:266 - The function generator MRT/_COND_11<5>10621 failed to merge
-   with F5 multiplexer MRT/_COND_11<6>1075.  There is a conflict for the FXMUX. 
-   The design will exhibit suboptimal timing.
 WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
