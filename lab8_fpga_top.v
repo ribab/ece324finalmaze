@@ -27,14 +27,14 @@ module Lab8_fpga_top(
 );
 
    // signal declarations
-	wire [100*100-1:0] maze_paths;
+	wire [64*64-1:0] maze_data;
 	wire start, finish;
-	reg [6:0] x_dim = 32;
-	reg [6:0] y_dim = 32;
+	reg [6:0] x_dim;
+	reg [6:0] y_dim;
 	
 	initial begin
-		x_dim = 4;
-		y_dim = 4;
+		x_dim = 64;
+		y_dim = 64;
 	end
 
    wire reset; // driven by Startup primitive
@@ -50,7 +50,7 @@ module Lab8_fpga_top(
 // instantiate VGA tester
 	maze_renderer_test MRT (
 		.clk(clk), .reset(1'b0), .enable(1),
-		.path_data(maze_paths),
+		.path_data(maze_data),
 	   .maze_width(x_dim), .maze_height(y_dim),
 		.x_coord(0), .y_coord(0),
 		.tile_width(2), .tile_height(2),
@@ -62,7 +62,7 @@ module Lab8_fpga_top(
 		.start(1),
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),
-		.maze_data(maze_paths),
+		.maze_data(maze_data),
 		.finish()
 	);
 
