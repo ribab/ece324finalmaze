@@ -26,16 +26,30 @@ module Lab8_fpga_top(
     output [3:2] vgaBlue			// Blue output
 );
 
-   // signal declarations
+   // signal declarationse
 	wire [64*64-1:0] maze_data;
 	wire start, finish;
-	reg [6:0] x_dim;
-	reg [6:0] y_dim;
 	
-	initial begin
-		x_dim = 64;
-		y_dim = 64;
+	reg [6:0] x_dim = 64, y_dim = 64;
+	reg [6:0] tile_width = 2, tile_height = 2;
+	reg [6:0] x_coord = 0, x_coord = 0;
+	wire enable_display = 1;
+	always @(posedge clk) begin
+		if (btn[0]) begin
+			x_dim <= sw[6:0];
+			y_dim <= sw[6:0];
+		end
+		if (btn[1]) begin
+			tile_width <=  sw[6:0];
+			tile_height <= sw[6:0];
+		end
+		if (btn[2]) begin
+			x_coord <= sw[6:0];
+			y_coord <= sw[6:0];
+		end
 	end
+	
+	assign enable_display = sw[7];
 
    wire reset; // driven by Startup primitive
    
@@ -49,11 +63,11 @@ module Lab8_fpga_top(
 
 // instantiate VGA tester
 	maze_renderer_test MRT (
-		.clk(clk), .reset(1'b0), .enable(1),
+		.clk(clk), .reset(1'b0), .enable(enable_display),
 		.path_data(maze_data),
 	   .maze_width(x_dim), .maze_height(y_dim),
-		.x_coord(0), .y_coord(0),
-		.tile_width(2), .tile_height(2),
+		.x_coord(x_coord), .y_coord(x_coord),
+		.tile_width(tile_width), .tile_height(tile_height), // 2^x = width or height in pixels
 	    .hsync(Hsync), .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);

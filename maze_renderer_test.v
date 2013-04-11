@@ -18,7 +18,7 @@ module maze_renderer_test
 	 input [64*64-1:0] path_data,
 	 input wire [6:0] maze_width, maze_height,
 	 input wire [6:0] x_coord, y_coord,
-	 input wire [7:0] tile_width, tile_height,
+	 input wire [6:0] tile_width, tile_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
@@ -38,25 +38,26 @@ module maze_renderer_test
 
    // Control the Display
 	always @(posedge clk) begin
-		if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480) begin
-			if (x_pos >= (tile_width*maze_width + ((640-tile_width*maze_width) >> 1)) ||
-				 x_pos < ((640-tile_width*maze_width) >> 1) ||
-				 y_pos >= (tile_height*maze_height+((480-tile_height*maze_height) >> 1)) ||
-				 y_pos < ((480-tile_height*maze_height) >> 1))
-				rgb_next <= 8'b00000000;
-			else if (path_data[   ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
-							       64*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
-				rgb_next <= 8'b11111111;
+		if (enable)
+			if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480)
+				if (x_pos >= (tile_width*maze_width + ((640-tile_width*maze_width) >> 1)) ||
+					 x_pos < ((640-tile_width*maze_width) >> 1) ||
+					 y_pos >= (tile_height*maze_height+((480-tile_height*maze_height) >> 1)) ||
+					 y_pos < ((480-tile_height*maze_height) >> 1))
+					rgb_next <= 8'b00000000;
+				else if (path_data[   ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
+									   64*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
+					rgb_next <= 8'b11111111;
+				else
+					rgb_next <= 8'b00000000;
 			else
-				rgb_next <= 8'b00000000;
-		end
-		else begin
-			if (path_data[   (x_coord + (x_pos >> tile_width)) +
-							  64*(y_coord + (y_pos >> tile_height))] == 1)
-				rgb_next <= 8'b11111111;
-			else
-				rgb_next <= 8'b00000000;
-		end
+				if (path_data[   (x_coord + (x_pos >> tile_width)) +
+								  64*(y_coord + (y_pos >> tile_height))] == 1)
+					rgb_next <= 8'b11111111;
+				else
+					rgb_next <= 8'b00000000;
+		else
+			rgb_next <= 8'b00000000;
 	end
 	
 	vga_sync VGAS(
