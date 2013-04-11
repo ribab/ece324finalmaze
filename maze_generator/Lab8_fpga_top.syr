@@ -1,16 +1,16 @@
-Release 14.4 - xst P.49d (nt64)
+Release 14.3 - xst P.40xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Lab8_fpga_top.prj
 
@@ -140,7 +140,7 @@ Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <Lab8_fpga_top>.
-WARNING:Xst:852 - "../lab8_fpga_top.v" line 61: Unconnected input port 'clk' of instance 'MC' is tied to GND.
+WARNING:Xst:852 - "../lab8_fpga_top.v" line 81: Unconnected input port 'clk' of instance 'MC' is tied to GND.
 Module <Lab8_fpga_top> is correct for synthesis.
  
 Analyzing module <maze_renderer_test> in library <work>.
@@ -175,11 +175,11 @@ WARNING:Xst:1305 - Output <finish> is never assigned. Tied to value 0.
 WARNING:Xst:647 - Input <x_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <y_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1305 - Output <maze_data> is never assigned. Tied to value
-   0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-   0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-   0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010
-   1101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011010110110100101101011011010010110101101101001011
-   01011011010.
+   1010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101
+   0101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010
+   1011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101
+   1010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101010101010010101010101010110101010101010100101010101010101101010101010101001010
+   10101010101.
 Unit <maze_carver> synthesized.
 
 
@@ -205,7 +205,6 @@ Unit <vga_sync> synthesized.
 
 Synthesizing Unit <maze_renderer_test>.
     Related source file is "../maze_renderer_test.v".
-WARNING:Xst:647 - Input <enable> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1780 - Signal <c8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <c7> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <c6> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -214,39 +213,65 @@ WARNING:Xst:1780 - Signal <c4> is never used or assigned. This unconnected signa
 WARNING:Xst:1780 - Signal <c3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <c2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <c1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Found 32-bit adder for signal <$add0000> created at line 42.
-    Found 32-bit adder for signal <$add0001> created at line 42.
-    Found 17-bit adder for signal <$sub0000> created at line 42.
-    Found 17-bit adder for signal <$sub0001> created at line 42.
-    Found 32-bit shifter logical right for signal <add0002$shift0000> created at line 54.
-    Found 32-bit shifter logical right for signal <COND_15$shift0001> created at line 54.
+    Found 39-bit adder for signal <$add0000> created at line 47.
+    Found 39-bit adder for signal <$add0001> created at line 47.
+    Found 32-bit adder for signal <$add0002> created at line 58.
+    Found 32-bit adder for signal <$sub0000> created at line 47.
+    Found 32-bit adder for signal <$sub0001> created at line 47.
+    Found 32x7-bit multiplier for signal <add0000$mult0000> created at line 47.
+    Found 32-bit shifter logical left for signal <add0000$shift0001> created at line 47.
+    Found 32x7-bit multiplier for signal <add0001$mult0000> created at line 47.
+    Found 32-bit shifter logical left for signal <add0001$shift0001> created at line 47.
+    Found 32-bit shifter logical right for signal <add0002$shift0001> created at line 58.
+    Found 32-bit adder for signal <COND_10$addsub0000> created at line 58.
+    Found 32-bit shifter logical right for signal <COND_10$shift0001> created at line 58.
+    Found 32x7-bit multiplier for signal <mult0002$mult0000> created at line 43.
+    Found 7-bit adder carry out for signal <mult0003$addsub0001> created at line 43.
+    Found 32x8-bit multiplier for signal <mult0003$mult0000> created at line 43.
+    Found 32x7-bit multiplier for signal <mult0004$mult0000> created at line 43.
+    Found 7-bit adder carry out for signal <mult0005$addsub0001> created at line 43.
+    Found 32x8-bit multiplier for signal <mult0005$mult0000> created at line 43.
     Found 8-bit register for signal <rgb_next>.
-    Found 33-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 42.
-    Found 33-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 42.
-    Found 33-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 42.
-    Found 33-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 42.
+    Found 40-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 47.
+    Found 40-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 47.
+    Found 39-bit comparator greater for signal <rgb_next$cmp_gt0000> created at line 43.
+    Found 39-bit comparator greater for signal <rgb_next$cmp_gt0001> created at line 43.
+    Found 40-bit comparator lessequal for signal <rgb_next$cmp_le0000> created at line 43.
+    Found 40-bit comparator lessequal for signal <rgb_next$cmp_le0001> created at line 43.
+    Found 39-bit comparator lessequal for signal <rgb_next$cmp_le0002> created at line 46.
+    Found 39-bit comparator lessequal for signal <rgb_next$cmp_le0003> created at line 46.
+    Found 33-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 47.
+    Found 33-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 47.
     Found 8-bit register for signal <rgb_reg>.
-    Found 32-bit subtractor for signal <shift0000$addsub0000> created at line 47.
-    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 47.
-    Found 32-bit subtractor for signal <shift0001$addsub0000> created at line 47.
-    Found 32-bit shifter logical right for signal <shift0001$shift0000> created at line 47.
+    Found 32-bit subtractor for signal <shift0000$addsub0000> created at line 52.
+    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 52.
+    Found 32-bit subtractor for signal <shift0001$addsub0000> created at line 52.
+    Found 32-bit shifter logical right for signal <shift0001$shift0000> created at line 52.
     Summary:
 	inferred  16 D-type flip-flop(s).
-	inferred   8 Adder/Subtractor(s).
-	inferred   4 Comparator(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred   6 Multiplier(s).
+	inferred  10 Comparator(s).
 	inferred   2 Multiplexer(s).
-	inferred   4 Combinational logic shifter(s).
+	inferred   6 Combinational logic shifter(s).
 Unit <maze_renderer_test> synthesized.
 
 
 Synthesizing Unit <Lab8_fpga_top>.
     Related source file is "../lab8_fpga_top.v".
-WARNING:Xst:647 - Input <btn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <y_dim> is used but never assigned. This sourceless signal will be automatically connected to value 1000000.
-WARNING:Xst:653 - Signal <x_dim> is used but never assigned. This sourceless signal will be automatically connected to value 1000000.
 WARNING:Xst:1780 - Signal <start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:1780 - Signal <finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Register <tile_width> equivalent to <tile_height> has been removed
+    Register <y_coord> equivalent to <x_coord> has been removed
+    Register <y_dim> equivalent to <x_dim> has been removed
+    Found 7-bit register for signal <char_x>.
+    Found 7-bit register for signal <char_y>.
+    Found 7-bit register for signal <tile_height>.
+    Found 7-bit register for signal <x_coord>.
+    Found 7-bit register for signal <x_dim>.
+    Summary:
+	inferred  35 D-type flip-flop(s).
 Unit <Lab8_fpga_top> synthesized.
 
 
@@ -254,27 +279,35 @@ Unit <Lab8_fpga_top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 8
- 17-bit adder                                          : 2
- 32-bit adder                                          : 2
+# Multipliers                                          : 6
+ 32x7-bit multiplier                                   : 4
+ 32x8-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 12
+ 32-bit adder                                          : 4
  32-bit subtractor                                     : 2
- 39-bit adder                                          : 1
+ 39-bit adder                                          : 3
  40-bit adder                                          : 1
+ 7-bit adder carry out                                 : 2
 # Counters                                             : 2
  10-bit up counter                                     : 2
-# Registers                                            : 5
+# Registers                                            : 10
  1-bit register                                        : 3
+ 7-bit register                                        : 5
  8-bit register                                        : 2
-# Comparators                                          : 10
+# Comparators                                          : 16
  10-bit comparator greatequal                          : 2
  10-bit comparator less                                : 1
  10-bit comparator lessequal                           : 2
  11-bit comparator less                                : 1
- 33-bit comparator greatequal                          : 2
  33-bit comparator less                                : 2
-# Multiplexers                                         : 1
- 1-bit 4096-to-1 multiplexer                           : 1
-# Logic shifters                                       : 4
+ 39-bit comparator greater                             : 2
+ 39-bit comparator lessequal                           : 2
+ 40-bit comparator greatequal                          : 2
+ 40-bit comparator lessequal                           : 2
+# Multiplexers                                         : 2
+ 1-bit 4096-to-1 multiplexer                           : 2
+# Logic shifters                                       : 6
+ 32-bit shifter logical left                           : 2
  32-bit shifter logical right                          : 4
 
 =========================================================================
@@ -283,50 +316,89 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <MRT> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_next_1> <rgb_next_2> <rgb_next_3> <rgb_next_4> <rgb_next_5> <rgb_next_6> <rgb_next_7> 
+WARNING:Xst:1293 - FF/Latch <char_y_4> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_5> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_6> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_4> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_5> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_6> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <Lab8_fpga_top>.
+	Found pipelined multiplier on signal <MRT/mult0004_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <char_y>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <MRT/mult0002_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <char_x>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier MRT/Mmult_mult0004_mult0000 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier MRT/Mmult_mult0002_mult0000 by adding 2 register level(s).
+Unit <Lab8_fpga_top> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 7
- 12-bit adder                                          : 1
- 17-bit adder                                          : 2
+# Multipliers                                          : 6
+ 32x7-bit multiplier                                   : 2
+ 32x7-bit registered multiplier                        : 2
+ 32x8-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 12
+ 12-bit adder                                          : 3
  32-bit adder                                          : 2
  32-bit subtractor                                     : 2
+ 39-bit adder                                          : 2
+ 6-bit adder                                           : 1
+ 7-bit adder carry out                                 : 2
 # Counters                                             : 2
  10-bit up counter                                     : 2
-# Registers                                            : 19
- Flip-Flops                                            : 19
-# Comparators                                          : 10
+# Registers                                            : 54
+ Flip-Flops                                            : 54
+# Comparators                                          : 16
  10-bit comparator greatequal                          : 2
  10-bit comparator less                                : 1
  10-bit comparator lessequal                           : 2
  11-bit comparator less                                : 1
- 33-bit comparator greatequal                          : 2
  33-bit comparator less                                : 2
-# Multiplexers                                         : 1
- 1-bit 4096-to-1 multiplexer                           : 1
-# Logic shifters                                       : 2
- 32-bit shifter logical right                          : 2
+ 39-bit comparator greater                             : 2
+ 39-bit comparator lessequal                           : 2
+ 40-bit comparator greatequal                          : 2
+ 40-bit comparator lessequal                           : 2
+# Multiplexers                                         : 2
+ 1-bit 4096-to-1 multiplexer                           : 2
+# Logic shifters                                       : 6
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_next_1> <rgb_next_2> <rgb_next_3> <rgb_next_4> <rgb_next_5> <rgb_next_6> <rgb_next_7> 
-INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_reg_1> <rgb_reg_2> <rgb_reg_3> <rgb_reg_4> <rgb_reg_5> <rgb_reg_6> <rgb_reg_7> 
+WARNING:Xst:1293 - FF/Latch <char_x_4> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_5> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_6> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_4> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_5> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_6> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <MRT/rgb_next_0> in Unit <Lab8_fpga_top> is equivalent to the following 3 FFs/Latches, which will be removed : <MRT/rgb_next_2> <MRT/rgb_next_4> <MRT/rgb_next_6> 
+INFO:Xst:2261 - The FF/Latch <MRT/rgb_next_1> in Unit <Lab8_fpga_top> is equivalent to the following 3 FFs/Latches, which will be removed : <MRT/rgb_next_3> <MRT/rgb_next_5> <MRT/rgb_next_7> 
+INFO:Xst:2261 - The FF/Latch <MRT/rgb_reg_0> in Unit <Lab8_fpga_top> is equivalent to the following 3 FFs/Latches, which will be removed : <MRT/rgb_reg_2> <MRT/rgb_reg_4> <MRT/rgb_reg_6> 
+INFO:Xst:2261 - The FF/Latch <MRT/rgb_reg_1> in Unit <Lab8_fpga_top> is equivalent to the following 3 FFs/Latches, which will be removed : <MRT/rgb_reg_3> <MRT/rgb_reg_5> <MRT/rgb_reg_7> 
 
 Optimizing unit <Lab8_fpga_top> ...
 
 Optimizing unit <vga_sync> ...
 
-Optimizing unit <maze_renderer_test> ...
-
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 15.
+FlipFlop tile_height_0 has been replicated 1 time(s)
+FlipFlop tile_height_1 has been replicated 2 time(s)
+FlipFlop tile_height_2 has been replicated 1 time(s)
+FlipFlop tile_height_3 has been replicated 1 time(s)
+FlipFlop tile_height_4 has been replicated 1 time(s)
+FlipFlop tile_height_5 has been replicated 2 time(s)
+FlipFlop tile_height_6 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -334,8 +406,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 25
- Flip-Flops                                            : 25
+# Registers                                            : 66
+ Flip-Flops                                            : 66
 
 =========================================================================
 
@@ -364,29 +436,38 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 97
+# BELS                             : 2204
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 18
-#      LUT2                        : 2
-#      LUT2_D                      : 1
-#      LUT3                        : 4
-#      LUT3_L                      : 4
-#      LUT4                        : 16
-#      LUT4_L                      : 1
-#      MUXCY                       : 23
-#      MUXF5                       : 1
+#      INV                         : 110
+#      LUT1                        : 44
+#      LUT2                        : 331
+#      LUT2_D                      : 2
+#      LUT3                        : 243
+#      LUT3_D                      : 8
+#      LUT3_L                      : 2
+#      LUT4                        : 352
+#      LUT4_D                      : 29
+#      LUT4_L                      : 24
+#      MULT_AND                    : 5
+#      MUXCY                       : 529
+#      MUXF5                       : 127
+#      MUXF6                       : 10
+#      MUXF7                       : 4
 #      VCC                         : 1
-#      XORCY                       : 23
-# FlipFlops/Latches                : 25
-#      FD_1                        : 1
+#      XORCY                       : 382
+# FlipFlops/Latches                : 66
+#      FD_1                        : 2
+#      FDE                         : 39
 #      FDR                         : 4
 #      FDRE                        : 20
+#      FDRS                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 38
-#      IBUF                        : 8
+# IO Buffers                       : 42
+#      IBUF                        : 12
 #      OBUF                        : 30
+# MULTs                            : 12
+#      MULT18X18SIO                : 12
 # Others                           : 1
 #      STARTUP_SPARTAN3E           : 1
 =========================================================================
@@ -396,11 +477,12 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                       25  out of   4656     0%  
- Number of Slice Flip Flops:             25  out of   9312     0%  
- Number of 4 input LUTs:                 48  out of   9312     0%  
+ Number of Slices:                      588  out of   4656    12%  
+ Number of Slice Flip Flops:             66  out of   9312     0%  
+ Number of 4 input LUTs:               1145  out of   9312    12%  
  Number of IOs:                          43
- Number of bonded IOBs:                  39  out of    232    16%  
+ Number of bonded IOBs:                  43  out of    232    18%  
+ Number of MULT18X18SIOs:                12  out of     20    60%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -424,7 +506,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 25    |
+clk                                | BUFGP                  | 68    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -435,10 +517,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 6.130ns (Maximum Frequency: 163.140MHz)
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 7.851ns
-   Maximum combinational path delay: 4.632ns
+   Minimum period: 28.180ns (Maximum Frequency: 35.486MHz)
+   Minimum input arrival time before clock: 3.392ns
+   Maximum output required time after clock: 6.907ns
+   Maximum combinational path delay: 4.918ns
 
 Timing Detail:
 --------------
@@ -446,34 +528,88 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.130ns (frequency: 163.140MHz)
-  Total number of paths / destination ports: 657 / 67
+  Clock period: 28.180ns (frequency: 35.486MHz)
+  Total number of paths / destination ports: 2933257381 / 70
 -------------------------------------------------------------------------
-Delay:               6.130ns (Levels of Logic = 4)
-  Source:            MRT/VGAS/h_count_reg_9 (FF)
+Delay:               28.180ns (Levels of Logic = 38)
+  Source:            tile_height_4_1 (FF)
   Destination:       MRT/rgb_next_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MRT/VGAS/h_count_reg_9 to MRT/rgb_next_0
+  Data Path: tile_height_4_1 to MRT/rgb_next_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            10   0.514   0.902  MRT/VGAS/h_count_reg_9 (MRT/VGAS/h_count_reg_9)
-     LUT2:I0->O            1   0.612   0.357  MRT/Sh1041 (MRT/Sh104)
-     MUXCY:DI->O           1   0.773   0.000  MRT/Madd__COND_13_Madd_cy<8> (MRT/Madd__COND_13_Madd_cy<8>)
-     XORCY:CI->O           1   0.699   0.509  MRT/Madd__COND_13_Madd_xor<9> (MRT/_COND_13<9>)
-     LUT4:I0->O            1   0.612   0.357  MRT/rgb_next_or0000121 (MRT/rgb_next_or0000)
+     FDE:C->Q             16   0.514   1.031  tile_height_4_1 (tile_height_4_1)
+     LUT4_D:I0->O          1   0.612   0.360  MRT/add0000_shift0000<9>1_SW0 (N64)
+     LUT4:I3->O            6   0.612   0.569  MRT/add0000_shift0000<1>1 (MRT/add0000_shift0000<1>)
+     MULT18X18SIO:A1->P17    1   4.331   0.426  MRT/Mmult_add0000_mult0000 (MRT/Mmult_add0000_mult0000_P_to_Adder_A_17)
+     LUT2:I1->O            1   0.612   0.000  MRT/Mmult_add0000_mult00000_Madd_lut<17> (MRT/Mmult_add0000_mult00000_Madd_lut<17>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<17> (MRT/Mmult_add0000_mult00000_Madd_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<18> (MRT/Mmult_add0000_mult00000_Madd_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<19> (MRT/Mmult_add0000_mult00000_Madd_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<20> (MRT/Mmult_add0000_mult00000_Madd_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<21> (MRT/Mmult_add0000_mult00000_Madd_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<22> (MRT/Mmult_add0000_mult00000_Madd_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<23> (MRT/Mmult_add0000_mult00000_Madd_cy<23>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<24> (MRT/Mmult_add0000_mult00000_Madd_cy<24>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<25> (MRT/Mmult_add0000_mult00000_Madd_cy<25>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<26> (MRT/Mmult_add0000_mult00000_Madd_cy<26>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<27> (MRT/Mmult_add0000_mult00000_Madd_cy<27>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Mmult_add0000_mult00000_Madd_cy<28> (MRT/Mmult_add0000_mult00000_Madd_cy<28>)
+     XORCY:CI->O           3   0.699   0.451  MRT/Mmult_add0000_mult00000_Madd_xor<29> (MRT/add0000_mult0000<29>)
+     INV:I->O              1   0.612   0.000  MRT/Madd__not0000<29>1_INV_0 (MRT/Madd__not0000<29>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd__sub0000_cy<29> (MRT/Madd__sub0000_cy<29>)
+     XORCY:CI->O           3   0.699   0.451  MRT/Madd__sub0000_xor<30> (MRT/_sub0000<30>)
+     INV:I->O              1   0.612   0.000  MRT/Msub_shift0001_addsub0000_lut<29>_INV_0 (MRT/Msub_shift0001_addsub0000_lut<29>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub_shift0001_addsub0000_cy<29> (MRT/Msub_shift0001_addsub0000_cy<29>)
+     XORCY:CI->O           4   0.699   0.529  MRT/Msub_shift0001_addsub0000_xor<30> (MRT/shift0001_addsub0000<30>)
+     LUT3_L:I2->LO         1   0.612   0.103  Sh413_SW0 (N43)
+     LUT4:I3->O            3   0.612   0.481  Sh413 (Sh413)
+     LUT3:I2->O            1   0.612   0.000  MRT/_shift0001<1>29_G (N249)
+     MUXF5:I1->O           3   0.278   0.454  MRT/_shift0001<1>29 (MRT/_shift0001<1>29)
+     LUT4:I3->O            8   0.612   0.646  MRT/_shift0001<1>201_1 (MRT/_shift0001<1>201)
+     LUT4:I3->O           11   0.612   0.823  MRT/_shift0001<3>82 (MRT/_shift0001<3>_mmx_out5)
+     LUT3:I2->O            1   0.612   0.000  MRT/_shift0001<5>211_F (N264)
+     MUXF5:I0->O           2   0.278   0.449  MRT/_shift0001<5>211 (MRT/_shift0001<5>_mmx_out7)
+     LUT3:I1->O            2   0.612   0.410  MRT/_COND_8<6>31 (MRT/_COND_8<6>_mmx_out3)
+     LUT3:I2->O            1   0.612   0.000  MRT/Mmux__COND_9_11_f5_F (N302)
+     MUXF5:I0->O           1   0.278   0.360  MRT/Mmux__COND_9_11_f5 (MRT/Mmux__COND_9_11_f5)
+     LUT4:I3->O            1   0.612   0.360  MRT/_COND_8<9>46 (MRT/_COND_8<9>1)
+     LUT4:I3->O            1   0.612   0.000  MRT/rgb_next_mux0000<1>1140_G (N313)
+     MUXF5:I1->O           2   0.278   0.383  MRT/rgb_next_mux0000<1>1140 (MRT/rgb_next_mux0000<1>1140)
+     LUT4:I3->O            1   0.612   0.000  MRT/rgb_next_mux0000<1>1146 (N18)
+     FDRS:D                    0.268          MRT/rgb_next_1
+    ----------------------------------------
+    Total                     28.180ns (19.893ns logic, 8.287ns route)
+                                       (70.6% logic, 29.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 90 / 90
+-------------------------------------------------------------------------
+Offset:              3.392ns (Levels of Logic = 2)
+  Source:            sw<7> (PAD)
+  Destination:       MRT/rgb_next_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: sw<7> to MRT/rgb_next_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.106   0.499  sw_7_IBUF (Led_7_OBUF)
+     INV:I->O              2   0.612   0.380  Led<7>_inv1_INV_0 (Led<7>_inv)
      FDR:R                     0.795          MRT/rgb_next_0
     ----------------------------------------
-    Total                      6.130ns (4.005ns logic, 2.125ns route)
-                                       (65.3% logic, 34.7% route)
+    Total                      3.392ns (2.513ns logic, 0.879ns route)
+                                       (74.1% logic, 25.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 74 / 10
 -------------------------------------------------------------------------
-Offset:              7.851ns (Levels of Logic = 4)
+Offset:              6.907ns (Levels of Logic = 3)
   Source:            MRT/VGAS/v_count_reg_6 (FF)
   Destination:       vgaRed<3> (PAD)
   Source Clock:      clk rising
@@ -482,44 +618,43 @@ Offset:              7.851ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             7   0.514   0.754  MRT/VGAS/v_count_reg_6 (MRT/VGAS/v_count_reg_6)
-     LUT4:I0->O            1   0.612   0.509  MRT/rgb<1>21 (MRT/rgb<1>21)
-     LUT3:I0->O            1   0.612   0.426  MRT/rgb<1>34_SW0 (N16)
-     LUT4:I1->O            8   0.612   0.643  MRT/rgb<1>34 (vgaBlue_2_OBUF)
+     FDRE:C->Q            12   0.514   0.969  MRT/VGAS/v_count_reg_6 (MRT/VGAS/v_count_reg_6)
+     LUT4:I0->O            2   0.612   0.532  MRT/VGAS/video_on21 (MRT/VGAS/video_on21)
+     LUT4:I0->O            4   0.612   0.499  MRT/rgb<1>11 (vgaRed_3_OBUF)
      OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
     ----------------------------------------
-    Total                      7.851ns (5.519ns logic, 2.332ns route)
-                                       (70.3% logic, 29.7% route)
+    Total                      6.907ns (4.907ns logic, 2.000ns route)
+                                       (71.0% logic, 29.0% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
-Delay:               4.632ns (Levels of Logic = 2)
-  Source:            sw<7> (PAD)
-  Destination:       Led<7> (PAD)
+Delay:               4.918ns (Levels of Logic = 2)
+  Source:            sw<6> (PAD)
+  Destination:       Led<6> (PAD)
 
-  Data Path: sw<7> to Led<7>
+  Data Path: sw<6> to Led<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.106   0.357  sw_7_IBUF (Led_7_OBUF)
-     OBUF:I->O                 3.169          Led_7_OBUF (Led<7>)
+     IBUF:I->O             8   1.106   0.643  sw_6_IBUF (Led_6_OBUF)
+     OBUF:I->O                 3.169          Led_6_OBUF (Led<6>)
     ----------------------------------------
-    Total                      4.632ns (4.275ns logic, 0.357ns route)
-                                       (92.3% logic, 7.7% route)
+    Total                      4.918ns (4.275ns logic, 0.643ns route)
+                                       (86.9% logic, 13.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 65.00 secs
-Total CPU time to Xst completion: 65.80 secs
+Total REAL time to Xst completion: 39.00 secs
+Total CPU time to Xst completion: 38.85 secs
  
 --> 
 
-Total memory usage is 347880 kilobytes
+Total memory usage is 348172 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   30 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   33 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

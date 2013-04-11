@@ -15,7 +15,7 @@ module Lab8_fpga_top(
 	input clk,							// clock input
 	input  [7:0] sw,					// switch inputs
 	input  [3:0] btn,					// button inputs
-	output [7:0] Led,					// LED inputs
+	output [7:0] Led,					// LED outputs
 // 7-segment display outputs
     output [3:0] an,					// SSEG select output
     output [6:0] sseg,				// SSEG output
@@ -32,20 +32,25 @@ module Lab8_fpga_top(
 	
 	reg [6:0] x_dim = 64, y_dim = 64;
 	reg [6:0] tile_width = 2, tile_height = 2;
-	reg [6:0] x_coord = 0, x_coord = 0;
-	wire enable_display = 1;
+	reg [6:0] x_coord = 0, y_coord = 0;
+	wire enable_display;
+	reg [6:0] char_x = 0, char_y = 0;
 	always @(posedge clk) begin
-		if (btn[0]) begin
+		if (btn[0]) begin    // btn0 controls # tile for width/height of maze
 			x_dim <= sw[6:0];
 			y_dim <= sw[6:0];
 		end
-		if (btn[1]) begin
-			tile_width <=  sw[6:0];
+		if (btn[1]) begin // btn1 controls # pixels per tile
+			tile_width <=  sw[6:0]; 
 			tile_height <= sw[6:0];
 		end
-		if (btn[2]) begin
+		if (btn[2]) begin // btn2 controls top-left tile coordinate on maze 
 			x_coord <= sw[6:0];
 			y_coord <= sw[6:0];
+		end
+		if (btn[3]) begin
+			char_x <= sw[7:4];
+			char_y <= sw[3:0];
 		end
 	end
 	
@@ -64,9 +69,10 @@ module Lab8_fpga_top(
 // instantiate VGA tester
 	maze_renderer_test MRT (
 		.clk(clk), .reset(1'b0), .enable(enable_display),
+		.char_x(char_x), .char_y(char_y),
 		.path_data(maze_data),
 	   .maze_width(x_dim), .maze_height(y_dim),
-		.x_coord(x_coord), .y_coord(x_coord),
+		.x_coord(x_coord), .y_coord(y_coord),
 		.tile_width(tile_width), .tile_height(tile_height), // 2^x = width or height in pixels
 	    .hsync(Hsync), .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})

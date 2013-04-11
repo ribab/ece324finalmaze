@@ -15,10 +15,11 @@
 module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
-	 input [64*64-1:0] path_data,
-	 input wire [6:0] maze_width, maze_height,
-	 input wire [6:0] x_coord, y_coord,
-	 input wire [6:0] tile_width, tile_height,
+	input [6:0] char_x, char_y,
+	input [64*64-1:0] path_data,
+	input wire [6:0] maze_width, maze_height,
+	input wire [6:0] x_coord, y_coord,
+	input wire [6:0] tile_width, tile_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
@@ -39,21 +40,28 @@ module maze_renderer_test
    // Control the Display
 	always @(posedge clk) begin
 		if (enable)
-			if (tile_width*maze_width <= 640 && tile_height*maze_height <= 480)
-				if (x_pos >= (tile_width*maze_width + ((640-tile_width*maze_width) >> 1)) ||
-					 x_pos < ((640-tile_width*maze_width) >> 1) ||
-					 y_pos >= (tile_height*maze_height+((480-tile_height*maze_height) >> 1)) ||
-					 y_pos < ((480-tile_height*maze_height) >> 1))
+			if (x_pos > char_x*(1<<tile_width) && x_pos <= (char_x+1)*(1<<tile_width) && // todo: doesn't show character
+				 y_pos > char_y*(1<<tile_height) && y_pos <= (char_y+1)*(1<<tile_width))
+			   rgb_next <= 8'b10101010;
+			else if ((1 << tile_width)*maze_width <= 640 && (1 << tile_height)*maze_height <= 480)
+				if (x_pos >= ((1 << tile_width)*maze_width + ((640-(1 << tile_width)*maze_width) >> 1)) ||
+					 x_pos < ((640-(1 << tile_width)*maze_width) >> 1) ||
+					 y_pos >= ((1 << tile_height)*maze_height+((480-(1 << tile_height)*maze_height) >> 1)) ||
+					 y_pos < ((480-(1 << tile_height)*maze_height) >> 1))
 					rgb_next <= 8'b00000000;
-				else if (path_data[   ((x_pos - ((640-tile_width*maze_width) >> 1)) >> tile_width) +
-									   64*((y_pos - ((480-tile_height*maze_height) >> 1)) >> tile_height)] == 1)
-					rgb_next <= 8'b11111111;
+				else if (path_data[   ((x_pos - ((640-(1 << tile_width)*maze_width) >> 1)) >> tile_width) +
+									   64*((y_pos - ((480-(1 << tile_height)*maze_height) >> 1)) >> tile_height)] == 1)
+						rgb_next <= 8'b11111111;
 				else
 					rgb_next <= 8'b00000000;
 			else
 				if (path_data[   (x_coord + (x_pos >> tile_width)) +
 								  64*(y_coord + (y_pos >> tile_height))] == 1)
-					rgb_next <= 8'b11111111;
+	/*				if (x_coord + (x_pos >> tile_width)  == char_x && // todo: doesn't show character
+						 y_coord + (y_pos >> tile_height) == char_y)
+						rgb_next <= 8'b10101010;
+					else
+*/						rgb_next <= 8'b11111111;
 				else
 					rgb_next <= 8'b00000000;
 		else

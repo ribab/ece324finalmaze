@@ -1,17 +1,8 @@
-Release 14.4 Drc P.49d (nt64)
+Release 14.3 Drc P.40xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Tue Apr 09 23:53:03 2013
+Thu Apr 11 11:40:04 2013
 
 drc -z Lab8_fpga_top.ncd Lab8_fpga_top.pcf
 
-WARNING:PhysDesignRules:367 - The signal <btn<0>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<1>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<2>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <btn<3>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-DRC detected 0 errors and 4 warnings.  Please see the previously displayed
-individual error or warning messages for more details.
+DRC detected 0 errors and 0 warnings.
