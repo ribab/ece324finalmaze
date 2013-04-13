@@ -25,6 +25,9 @@ module maze_renderer_test
    );
 	
 	wire video_on;
+	
+	reg [7:0] char_color = 8'b000_111_00;
+	reg [15:0] char_array = 16'b0110_1111_1111_0110;
 
    reg [7:0] rgb_reg;
 	reg [7:0] rgb_next;
@@ -40,17 +43,26 @@ module maze_renderer_test
    // Control the Display
 	always @(posedge clk) begin
 		if (enable)
-			if (x_pos > char_x*(1<<tile_width) && x_pos <= (char_x+1)*(1<<tile_width) && // todo: doesn't show character
-				 y_pos > char_y*(1<<tile_height) && y_pos <= (char_y+1)*(1<<tile_width))
+			/*if (x_pos > char_x*(1<<tile_width) && x_pos <= (char_x+1)*(1<<tile_width) && // todo: doesn't show character
+				 y_pos > char_y*(1<<tile_height) && y_pos <= (char_y+1)*(1<<tile_height))
 			   rgb_next <= 8'b10101010;
-			else if ((1 << tile_width)*maze_width <= 640 && (1 << tile_height)*maze_height <= 480)
+			else */
+			if ((1 << tile_width)*maze_width <= 640 && (1 << tile_height)*maze_height <= 480)
 				if (x_pos >= ((1 << tile_width)*maze_width + ((640-(1 << tile_width)*maze_width) >> 1)) ||
 					 x_pos < ((640-(1 << tile_width)*maze_width) >> 1) ||
 					 y_pos >= ((1 << tile_height)*maze_height+((480-(1 << tile_height)*maze_height) >> 1)) ||
 					 y_pos < ((480-(1 << tile_height)*maze_height) >> 1))
 					rgb_next <= 8'b00000000;
-				else if (path_data[   ((x_pos - ((640-(1 << tile_width)*maze_width) >> 1)) >> tile_width) +
-									   64*((y_pos - ((480-(1 << tile_height)*maze_height) >> 1)) >> tile_height)] == 1)
+					
+				else if (char_x == ((x_pos - ((640-(1<<tile_width)*maze_width)>>1))>>tile_width) &&
+							char_y == ((y_pos - ((480-(1<<tile_height)*maze_height)>>1))>>tile_height) &&
+							
+							char_array[  ((x_pos - ((x_pos-((640-(1<<tile_width)*maze_width)>>1))>>tile_width)*(1<<tile_width)) >> (tile_width - 2)) +
+										  4*((y_pos - ((y_pos-((480-(1<<tile_height)*maze_height)>>1))>>tile_height)*(1<<tile_height)) >> (tile_height - 2))] == 1)
+										  
+					rgb_next <= char_color;
+				else if (path_data[   ((x_pos - ((640-(1<<tile_width)*maze_width)>>1))>>tile_width) +
+									   64*((y_pos - ((480-(1<<tile_height)*maze_height)>>1))>>tile_height)] == 1)
 						rgb_next <= 8'b11111111;
 				else
 					rgb_next <= 8'b00000000;

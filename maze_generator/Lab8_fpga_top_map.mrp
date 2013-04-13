@@ -1,4 +1,4 @@
-Release 14.3 Map P.40xd (nt64)
+Release 14.4 Map P.49d (nt64)
 Xilinx Mapping Report File for Design 'Lab8_fpga_top'
 
 Design Information
@@ -9,23 +9,23 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu Apr 11 11:37:58 2013
+Mapped Date    : Sat Apr 13 02:08:08 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    0
+Number of warnings:    2
 Logic Utilization:
-  Number of Slice Flip Flops:            66 out of   9,312    1%
-  Number of 4 input LUTs:             1,102 out of   9,312   11%
+  Number of Slice Flip Flops:            67 out of   9,312    1%
+  Number of 4 input LUTs:             1,359 out of   9,312   14%
 Logic Distribution:
-  Number of occupied Slices:            615 out of   4,656   13%
-    Number of Slices containing only related logic:     615 out of     615 100%
-    Number of Slices containing unrelated logic:          0 out of     615   0%
+  Number of occupied Slices:            756 out of   4,656   16%
+    Number of Slices containing only related logic:     756 out of     756 100%
+    Number of Slices containing unrelated logic:          0 out of     756   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,147 out of   9,312   12%
-    Number used as logic:             1,102
-    Number used as a route-thru:         45
+  Total Number of 4 input LUTs:       1,406 out of   9,312   15%
+    Number used as logic:             1,359
+    Number used as a route-thru:         47
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -33,12 +33,12 @@ Logic Distribution:
   Number of bonded IOBs:                 43 out of     232   18%
   Number of BUFGMUXs:                     1 out of      24    4%
   Number of STARTUPs:                     1 out of       1  100%
-  Number of MULT18X18SIOs:               12 out of      20   60%
+  Number of MULT18X18SIOs:               10 out of      20   50%
   Number of STARTUP_SPARTAN3Es:           1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                2.50
+Average Fanout of Non-Clock Nets:                2.88
 
-Peak Memory Usage:  253 MB
+Peak Memory Usage:  257 MB
 Total REAL time to MAP completion:  2 secs 
 Total CPU time to MAP completion:   2 secs 
 
@@ -81,6 +81,12 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Pack:266 - The function generator MRT/rgb_next_mux0000<0>_SW1 failed to
+   merge with F5 multiplexer MRT/rgb_next_and0001_SW2_SW3.  There is a conflict
+   for the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MRT/COND_11_shift0000<3>8 failed to
+   merge with F5 multiplexer MRT/COND_11_shift0000<3>32_f5.  There is a conflict
+   for the FXMUX.  The design will exhibit suboptimal timing.
 
 Section 3 - Informational
 -------------------------

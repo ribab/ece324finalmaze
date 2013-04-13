@@ -1,7 +1,7 @@
-Release 14.3 Drc P.40xd (nt64)
+Release 14.4 Drc P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Thu Apr 11 11:40:04 2013
+Sat Apr 13 02:08:51 2013
 
 drc -z Lab8_fpga_top.ncd Lab8_fpga_top.pcf
 
