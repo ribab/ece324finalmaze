@@ -3,13 +3,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: Lab8_fpga_top.prj
@@ -145,6 +145,7 @@ Module <Lab8_fpga_top> is correct for synthesis.
  
 Analyzing module <maze_renderer_test> in library <work>.
 INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
 Module <maze_renderer_test> is correct for synthesis.
  
 Analyzing module <vga_sync> in library <work>.
@@ -218,51 +219,64 @@ WARNING:Xst:1780 - Signal <c2> is never used or assigned. This unconnected signa
 WARNING:Xst:1780 - Signal <c1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:643 - "../maze_renderer_test.v" line 45: The result of a 10x7-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
 WARNING:Xst:643 - "../maze_renderer_test.v" line 46: The result of a 10x7-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 16x1-bit ROM for signal <$varindex0000> created at line 65.
-    Found 32-bit adder for signal <$add0000> created at line 76.
-    Found 10x10-bit multiplier for signal <$mult0000> created at line 65.
-    Found 10x10-bit multiplier for signal <$mult0001> created at line 65.
-    Found 12-bit subtractor for signal <$sub0000> created at line 65.
-    Found 22-bit subtractor for signal <$sub0001> created at line 65.
-    Found 12-bit subtractor for signal <$sub0002> created at line 65.
-    Found 22-bit subtractor for signal <$sub0003> created at line 65.
-    Found 32-bit shifter logical right for signal <add0000$shift0001> created at line 76.
-    Found 10-bit subtractor for signal <centered_tile_x$addsub0000> created at line 49.
+    Found 16x1-bit ROM for signal <$varindex0000> created at line 67.
+    Found 16x1-bit ROM for signal <$varindex0001> created at line 78.
+    Found 32-bit adder for signal <$add0000> created at line 83.
+    Found 10x10-bit multiplier for signal <$mult0000> created at line 67.
+    Found 10x10-bit multiplier for signal <$mult0001> created at line 67.
+    Found 10x10-bit multiplier for signal <$mult0002> created at line 78.
+    Found 10x10-bit multiplier for signal <$mult0003> created at line 78.
+    Found 12-bit subtractor for signal <$sub0000> created at line 67.
+    Found 22-bit subtractor for signal <$sub0001> created at line 67.
+    Found 12-bit subtractor for signal <$sub0002> created at line 67.
+    Found 22-bit subtractor for signal <$sub0003> created at line 67.
+    Found 10-bit subtractor for signal <$sub0004> created at line 78.
+    Found 10-bit subtractor for signal <$sub0005> created at line 78.
+    Found 22-bit subtractor for signal <$sub0006> created at line 78.
+    Found 22-bit subtractor for signal <$sub0007> created at line 78.
+    Found 32-bit shifter logical right for signal <add0000$shift0001> created at line 83.
+    Found 10-bit subtractor for signal <centered_tile_x$addsub0000> created at line 51.
     Found 10-bit shifter logical right for signal <centered_tile_x$shift0000>.
-    Found 10-bit subtractor for signal <centered_tile_y$addsub0000> created at line 50.
+    Found 10-bit subtractor for signal <centered_tile_y$addsub0000> created at line 52.
     Found 10-bit shifter logical right for signal <centered_tile_y$shift0000>.
-    Found 32-bit adder for signal <COND_11$addsub0000> created at line 76.
-    Found 32-bit shifter logical right for signal <COND_11$shift0001> created at line 76.
+    Found 32-bit adder for signal <COND_12$addsub0000> created at line 83.
+    Found 32-bit shifter logical right for signal <COND_12$shift0001> created at line 83.
     Found 12-bit adder for signal <maze_border_x$sub0000> created at line 47.
     Found 12-bit adder for signal <maze_border_y$sub0000> created at line 48.
     Found 10x7-bit multiplier for signal <maze_pixel_h$mult0001> created at line 46.
     Found 10x7-bit multiplier for signal <maze_pixel_w$mult0001> created at line 45.
     Found 8-bit register for signal <rgb_next>.
-    Found 10-bit adder for signal <rgb_next$addsub0000> created at line 60.
-    Found 10-bit adder for signal <rgb_next$addsub0001> created at line 60.
-    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0000> created at line 65.
-    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0001> created at line 65.
-    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 60.
-    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 60.
-    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0000> created at line 59.
-    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0001> created at line 59.
-    Found 10-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 60.
-    Found 10-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 60.
+    Found 10-bit adder for signal <rgb_next$addsub0000> created at line 62.
+    Found 10-bit adder for signal <rgb_next$addsub0001> created at line 62.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0000> created at line 78.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0001> created at line 78.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0002> created at line 67.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0003> created at line 67.
+    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 62.
+    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 62.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0000> created at line 61.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0001> created at line 61.
+    Found 10-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 62.
+    Found 10-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 62.
     Found 8-bit register for signal <rgb_reg>.
-    Found 8-bit subtractor for signal <shift0000$addsub0000> created at line 65.
-    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 65.
-    Found 8-bit subtractor for signal <shift0001$addsub0000> created at line 65.
-    Found 32-bit shifter logical right for signal <shift0001$shift0000> created at line 65.
+    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 67.
+    Found 8-bit subtractor for signal <shift0000$sub0000> created at line 67.
+    Found 32-bit shifter logical right for signal <shift0001$shift0000> created at line 67.
+    Found 8-bit subtractor for signal <shift0001$sub0000> created at line 67.
+    Found 32-bit shifter logical right for signal <shift0002$shift0000> created at line 78.
+    Found 32-bit shifter logical right for signal <shift0003$shift0000> created at line 78.
     Found 32-bit shifter logical left for signal <tile_pixel_h$shift0001> created at line 44.
     Found 32-bit shifter logical left for signal <tile_pixel_w$shift0001> created at line 43.
+    Found 10-bit shifter logical right for signal <tile_x$shift0000>.
+    Found 10-bit shifter logical right for signal <tile_y$shift0000>.
     Summary:
-	inferred   1 ROM(s).
+	inferred   2 ROM(s).
 	inferred  16 D-type flip-flop(s).
-	inferred  17 Adder/Subtractor(s).
-	inferred   4 Multiplier(s).
-	inferred   8 Comparator(s).
+	inferred  22 Adder/Subtractor(s).
+	inferred   6 Multiplier(s).
+	inferred  10 Comparator(s).
 	inferred   2 Multiplexer(s).
-	inferred   8 Combinational logic shifter(s).
+	inferred  12 Combinational logic shifter(s).
 Unit <maze_renderer_test> synthesized.
 
 
@@ -288,20 +302,20 @@ Unit <Lab8_fpga_top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x1-bit ROM                                          : 1
-# Multipliers                                          : 4
- 10x10-bit multiplier                                  : 2
+# ROMs                                                 : 2
+ 16x1-bit ROM                                          : 2
+# Multipliers                                          : 6
+ 10x10-bit multiplier                                  : 4
  10x7-bit multiplier                                   : 2
-# Adders/Subtractors                                   : 17
+# Adders/Subtractors                                   : 22
  10-bit adder                                          : 2
- 10-bit subtractor                                     : 2
+ 10-bit subtractor                                     : 4
  12-bit adder                                          : 2
  12-bit subtractor                                     : 2
  17-bit adder                                          : 1
- 22-bit subtractor                                     : 2
+ 22-bit subtractor                                     : 4
  32-bit adder                                          : 2
- 36-bit adder                                          : 1
+ 36-bit adder                                          : 2
  39-bit adder                                          : 1
  8-bit subtractor                                      : 2
 # Counters                                             : 2
@@ -310,18 +324,18 @@ Macro Statistics
  1-bit register                                        : 3
  7-bit register                                        : 5
  8-bit register                                        : 2
-# Comparators                                          : 14
- 10-bit comparator equal                               : 2
+# Comparators                                          : 16
+ 10-bit comparator equal                               : 4
  10-bit comparator greatequal                          : 4
  10-bit comparator less                                : 3
  10-bit comparator lessequal                           : 4
  11-bit comparator less                                : 1
 # Multiplexers                                         : 2
  1-bit 4096-to-1 multiplexer                           : 2
-# Logic shifters                                       : 8
- 10-bit shifter logical right                          : 2
+# Logic shifters                                       : 12
+ 10-bit shifter logical right                          : 4
  32-bit shifter logical left                           : 2
- 32-bit shifter logical right                          : 4
+ 32-bit shifter logical right                          : 6
 
 =========================================================================
 
@@ -340,37 +354,37 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_6> has a con
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x1-bit ROM                                          : 1
-# Multipliers                                          : 4
- 10x10-bit multiplier                                  : 2
+# ROMs                                                 : 2
+ 16x1-bit ROM                                          : 2
+# Multipliers                                          : 6
+ 10x10-bit multiplier                                  : 4
  10x7-bit multiplier                                   : 2
-# Adders/Subtractors                                   : 17
+# Adders/Subtractors                                   : 22
  10-bit adder                                          : 2
- 10-bit subtractor                                     : 2
+ 10-bit subtractor                                     : 4
  11-bit adder                                          : 2
  12-bit adder                                          : 3
  12-bit subtractor                                     : 2
- 22-bit subtractor                                     : 2
- 4-bit adder                                           : 1
+ 22-bit subtractor                                     : 4
+ 4-bit adder                                           : 2
  6-bit adder                                           : 1
  8-bit subtractor                                      : 2
 # Counters                                             : 2
  10-bit up counter                                     : 2
 # Registers                                            : 54
  Flip-Flops                                            : 54
-# Comparators                                          : 14
- 10-bit comparator equal                               : 2
+# Comparators                                          : 16
+ 10-bit comparator equal                               : 4
  10-bit comparator greatequal                          : 4
  10-bit comparator less                                : 3
  10-bit comparator lessequal                           : 4
  11-bit comparator less                                : 1
 # Multiplexers                                         : 2
  1-bit 4096-to-1 multiplexer                           : 2
-# Logic shifters                                       : 8
- 10-bit shifter logical right                          : 2
+# Logic shifters                                       : 12
+ 10-bit shifter logical right                          : 4
  32-bit shifter logical left                           : 2
- 32-bit shifter logical right                          : 4
+ 32-bit shifter logical right                          : 6
 
 =========================================================================
 
@@ -383,10 +397,12 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_x_6> has a con
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_4> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_5> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <char_y_6> has a constant value of 0 in block <Lab8_fpga_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_next_1> 
 INFO:Xst:2261 - The FF/Latch <rgb_next_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_3> <rgb_next_4> 
-INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following 4 FFs/Latches, which will be removed : <rgb_next_1> <rgb_next_5> <rgb_next_6> <rgb_next_7> 
-INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following 4 FFs/Latches, which will be removed : <rgb_reg_1> <rgb_reg_5> <rgb_reg_6> <rgb_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_next_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_6> <rgb_next_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_reg_1> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_3> <rgb_reg_4> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_6> <rgb_reg_7> 
 
 Optimizing unit <Lab8_fpga_top> ...
 
@@ -396,12 +412,7 @@ Optimizing unit <maze_renderer_test> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 8.
-FlipFlop tile_height_0 has been replicated 1 time(s)
-FlipFlop tile_height_1 has been replicated 2 time(s)
-FlipFlop tile_height_2 has been replicated 2 time(s)
-FlipFlop tile_height_3 has been replicated 1 time(s)
-FlipFlop tile_height_4 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 11.
 FlipFlop tile_height_5 has been replicated 1 time(s)
 FlipFlop tile_height_6 has been replicated 1 time(s)
 
@@ -411,8 +422,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 65
- Flip-Flops                                            : 65
+# Registers                                            : 60
+ Flip-Flops                                            : 60
 
 =========================================================================
 
@@ -441,38 +452,38 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 1221
+# BELS                             : 1565
 #      GND                         : 1
-#      INV                         : 20
+#      INV                         : 39
 #      LUT1                        : 26
-#      LUT2                        : 168
-#      LUT2_D                      : 2
-#      LUT2_L                      : 2
-#      LUT3                        : 183
-#      LUT3_D                      : 24
-#      LUT3_L                      : 6
-#      LUT4                        : 248
-#      LUT4_D                      : 26
-#      LUT4_L                      : 40
-#      MULT_AND                    : 4
-#      MUXCY                       : 209
-#      MUXF5                       : 71
+#      LUT2                        : 180
+#      LUT2_D                      : 3
+#      LUT3                        : 210
+#      LUT3_D                      : 11
+#      LUT3_L                      : 8
+#      LUT4                        : 370
+#      LUT4_D                      : 21
+#      LUT4_L                      : 30
+#      MULT_AND                    : 18
+#      MUXCY                       : 275
+#      MUXF5                       : 118
 #      MUXF6                       : 10
 #      MUXF7                       : 4
 #      VCC                         : 1
-#      XORCY                       : 176
-# FlipFlops/Latches                : 65
-#      FD_1                        : 2
-#      FDE                         : 38
+#      XORCY                       : 240
+# FlipFlops/Latches                : 60
+#      FD_1                        : 3
+#      FDE                         : 31
 #      FDR                         : 5
 #      FDRE                        : 20
+#      FDRS                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 42
 #      IBUF                        : 12
 #      OBUF                        : 30
-# MULTs                            : 4
-#      MULT18X18SIO                : 4
+# MULTs                            : 6
+#      MULT18X18SIO                : 6
 # Others                           : 1
 #      STARTUP_SPARTAN3E           : 1
 =========================================================================
@@ -482,12 +493,12 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                      389  out of   4656     8%  
- Number of Slice Flip Flops:             65  out of   9312     0%  
- Number of 4 input LUTs:                745  out of   9312     8%  
+ Number of Slices:                      469  out of   4656    10%  
+ Number of Slice Flip Flops:             60  out of   9312     0%  
+ Number of 4 input LUTs:                898  out of   9312     9%  
  Number of IOs:                          43
  Number of bonded IOBs:                  43  out of    232    18%  
- Number of MULT18X18SIOs:                 4  out of     20    20%  
+ Number of MULT18X18SIOs:                 6  out of     20    30%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -511,7 +522,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 65    |
+clk                                | BUFGP                  | 60    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -522,10 +533,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 27.988ns (Maximum Frequency: 35.730MHz)
-   Minimum input arrival time before clock: 3.344ns
-   Maximum output required time after clock: 6.857ns
-   Maximum combinational path delay: 4.877ns
+   Minimum period: 29.560ns (Maximum Frequency: 33.829MHz)
+   Minimum input arrival time before clock: 3.416ns
+   Maximum output required time after clock: 6.827ns
+   Maximum combinational path delay: 4.844ns
 
 Timing Detail:
 --------------
@@ -533,54 +544,57 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 27.988ns (frequency: 35.730MHz)
-  Total number of paths / destination ports: 231487065 / 69
+  Clock period: 29.560ns (frequency: 33.829MHz)
+  Total number of paths / destination ports: 339666621 / 72
 -------------------------------------------------------------------------
-Delay:               27.988ns (Levels of Logic = 24)
-  Source:            tile_height_2_1 (FF)
-  Destination:       MRT/rgb_next_2 (FF)
+Delay:               29.560ns (Levels of Logic = 27)
+  Source:            tile_height_2 (FF)
+  Destination:       MRT/rgb_next_5 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: tile_height_2_1 to MRT/rgb_next_2
+  Data Path: tile_height_2 to MRT/rgb_next_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              8   0.514   0.795  tile_height_2_1 (tile_height_2_1)
-     LUT4_D:I0->O          1   0.612   0.360  MRT/tile_pixel_h<0>1_SW0 (N133)
-     LUT4:I3->O            4   0.612   0.499  MRT/tile_pixel_h<8>1 (MRT/tile_pixel_h<8>)
-     MULT18X18SIO:A8->P8    3   3.953   0.603  MRT/Mmult_maze_pixel_h_mult0001 (MRT/maze_pixel_h<8>)
-     LUT1:I0->O            1   0.612   0.000  MRT/Madd_maze_border_y_sub0000_Madd_cy<8>_rt (MRT/Madd_maze_border_y_sub0000_Madd_cy<8>_rt)
-     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_y_sub0000_Madd_cy<8> (MRT/Madd_maze_border_y_sub0000_Madd_cy<8>)
-     XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_y_sub0000_Madd_xor<9> (MRT/maze_border_y<8>)
-     LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_y_addsub0000_lut<8> (MRT/Msub_centered_tile_y_addsub0000_lut<8>)
-     MUXCY:S->O            0   0.404   0.000  MRT/Msub_centered_tile_y_addsub0000_cy<8> (MRT/Msub_centered_tile_y_addsub0000_cy<8>)
-     XORCY:CI->O          11   0.699   0.823  MRT/Msub_centered_tile_y_addsub0000_xor<9> (MRT/centered_tile_y_addsub0000<9>)
-     LUT3:I2->O            1   0.612   0.360  MRT/Sh4158_SW0 (N163)
-     LUT4_D:I3->LO         1   0.612   0.103  MRT/Sh41567 (N338)
-     LUT4:I3->O            2   0.612   0.380  MRT/centered_tile_y<1>1 (MRT/centered_tile_y<1>)
-     MULT18X18SIO:A1->P10    1   4.091   0.426  MRT/Mmult__mult0001 (MRT/_mult0001<10>)
-     LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0003_lut<10> (MRT/Msub__sub0003_lut<10>)
-     MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0003_cy<10> (MRT/Msub__sub0003_cy<10>)
-     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0003_cy<11> (MRT/Msub__sub0003_cy<11>)
-     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0003_cy<12> (MRT/Msub__sub0003_cy<12>)
-     XORCY:CI->O           2   0.699   0.383  MRT/Msub__sub0003_xor<13> (MRT/_sub0003<13>)
-     LUT4:I3->O            1   0.612   0.387  MRT/Madd__COND_7_Madd_lut<2>201 (MRT/Madd__COND_7_Madd_lut<2>201)
-     LUT4:I2->O            1   0.612   0.360  MRT/Madd__COND_7_Madd_lut<2>219_SW0_SW0 (N173)
-     LUT4:I3->O            1   0.612   0.387  MRT/Madd__COND_7_Madd_lut<2>219 (MRT/Madd__COND_7_Madd_lut<2>219)
-     LUT4:I2->O            1   0.612   0.387  MRT/Madd__COND_7_Madd_lut<2>246 (MRT/Madd__COND_7_Madd_lut<2>246)
-     LUT3_D:I2->O          1   0.612   0.360  MRT/rgb_next_and000141_SW0 (N139)
-     LUT4:I3->O            1   0.612   0.000  MRT/rgb_next_mux0000<3> (MRT/rgb_next_mux0000<3>)
-     FDR:D                     0.268          MRT/rgb_next_2
+     FDE:C->Q             74   0.514   1.236  tile_height_2 (tile_height_2)
+     LUT4_D:I0->O          1   0.612   0.360  MRT/tile_pixel_h<0>1_SW0 (N124)
+     LUT4:I3->O            6   0.612   0.569  MRT/tile_pixel_h<8>1 (MRT/tile_pixel_h<8>)
+     MULT18X18SIO:A8->P8    3   3.953   0.451  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<8>)
+     INV:I->O              1   0.612   0.000  MRT/maze_border_x_not0000<8>1_INV_0 (MRT/maze_border_x_not0000<8>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<8> (MRT/Madd_maze_border_x_sub0000_Madd_cy<8>)
+     XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_x_sub0000_Madd_xor<9> (MRT/maze_border_x<8>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_x_addsub0000_lut<8> (MRT/Msub_centered_tile_x_addsub0000_lut<8>)
+     MUXCY:S->O            0   0.404   0.000  MRT/Msub_centered_tile_x_addsub0000_cy<8> (MRT/Msub_centered_tile_x_addsub0000_cy<8>)
+     XORCY:CI->O          11   0.699   0.823  MRT/Msub_centered_tile_x_addsub0000_xor<9> (MRT/centered_tile_x_addsub0000<9>)
+     LUT3:I2->O            1   0.612   0.360  MRT/centered_tile_x<1>8_SW0 (N156)
+     LUT4_L:I3->LO         1   0.612   0.103  MRT/centered_tile_x<1>67 (MRT/centered_tile_x<1>67)
+     LUT4:I3->O           32   0.612   1.073  MRT/centered_tile_x<1>113 (MRT/centered_tile_x<1>)
+     MULT18X18SIO:A1->P10    1   4.091   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<10>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0001_lut<10> (MRT/Msub__sub0001_lut<10>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0001_cy<10> (MRT/Msub__sub0001_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0001_cy<11> (MRT/Msub__sub0001_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0001_cy<12> (MRT/Msub__sub0001_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0001_cy<13> (MRT/Msub__sub0001_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0001_cy<14> (MRT/Msub__sub0001_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  MRT/Msub__sub0001_cy<15> (MRT/Msub__sub0001_cy<15>)
+     XORCY:CI->O           4   0.699   0.502  MRT/Msub__sub0001_xor<16> (MRT/_sub0001<16>)
+     LUT4:I3->O            1   0.612   0.387  MRT/_shift0001<1>206_SW0 (N85)
+     LUT3:I2->O            1   0.612   0.360  MRT/_shift0001<1>206 (MRT/_shift0001<1>206)
+     LUT4:I3->O            1   0.612   0.000  MRT/_shift0001<1>254_F (N209)
+     MUXF5:I0->O           2   0.278   0.383  MRT/_shift0001<1>254 (MRT/_shift0001<1>)
+     LUT4:I3->O            1   0.612   0.426  MRT/rgb_next_and000241_SW2 (N164)
+     LUT4:I1->O            2   0.612   0.380  MRT/rgb_next_mux0000<0>11 (MRT/N48)
+     FDRS:S                    0.795          MRT/rgb_next_5
     ----------------------------------------
-    Total                     27.988ns (20.806ns logic, 7.182ns route)
-                                       (74.3% logic, 25.7% route)
+    Total                     29.560ns (21.154ns logic, 8.407ns route)
+                                       (71.6% logic, 28.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 78 / 78
+  Total number of paths / destination ports: 65 / 65
 -------------------------------------------------------------------------
-Offset:              3.344ns (Levels of Logic = 2)
+Offset:              3.416ns (Levels of Logic = 2)
   Source:            sw<7> (PAD)
   Destination:       MRT/rgb_next_2 (FF)
   Destination Clock: clk rising
@@ -590,17 +604,17 @@ Offset:              3.344ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   1.106   0.451  sw_7_IBUF (Led_7_OBUF)
-     INV:I->O              2   0.612   0.380  MRT/enable_inv1_INV_0 (MRT/enable_inv)
+     INV:I->O              3   0.612   0.451  MRT/enable_inv1_INV_0 (MRT/enable_inv)
      FDR:R                     0.795          MRT/rgb_next_0
     ----------------------------------------
-    Total                      3.344ns (2.513ns logic, 0.831ns route)
-                                       (75.1% logic, 24.9% route)
+    Total                      3.416ns (2.513ns logic, 0.903ns route)
+                                       (73.6% logic, 26.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 74 / 10
 -------------------------------------------------------------------------
-Offset:              6.857ns (Levels of Logic = 3)
+Offset:              6.827ns (Levels of Logic = 3)
   Source:            MRT/VGAS/h_count_reg_9 (FF)
   Destination:       vgaRed<3> (PAD)
   Source Clock:      clk rising
@@ -609,43 +623,43 @@ Offset:              6.857ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            14   0.514   1.002  MRT/VGAS/h_count_reg_9 (MRT/VGAS/h_count_reg_9)
-     LUT3:I0->O            2   0.612   0.410  MRT/VGAS/video_on8 (MRT/VGAS/video_on8)
-     LUT4:I2->O            5   0.612   0.538  MRT/rgb<1>1 (vgaBlue_2_OBUF)
+     FDRE:C->Q            13   0.514   0.988  MRT/VGAS/h_count_reg_9 (MRT/VGAS/h_count_reg_9)
+     LUT3:I0->O            3   0.612   0.481  MRT/VGAS/video_on8 (MRT/VGAS/video_on8)
+     LUT4:I2->O            3   0.612   0.451  MRT/rgb<6>1 (vgaRed_1_OBUF)
      OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
     ----------------------------------------
-    Total                      6.857ns (4.907ns logic, 1.950ns route)
-                                       (71.6% logic, 28.4% route)
+    Total                      6.827ns (4.907ns logic, 1.920ns route)
+                                       (71.9% logic, 28.1% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
-Delay:               4.877ns (Levels of Logic = 2)
-  Source:            sw<2> (PAD)
-  Destination:       Led<2> (PAD)
+Delay:               4.844ns (Levels of Logic = 2)
+  Source:            sw<6> (PAD)
+  Destination:       Led<6> (PAD)
 
-  Data Path: sw<2> to Led<2>
+  Data Path: sw<6> to Led<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             7   1.106   0.602  sw_2_IBUF (Led_2_OBUF)
-     OBUF:I->O                 3.169          Led_2_OBUF (Led<2>)
+     IBUF:I->O             6   1.106   0.569  sw_6_IBUF (Led_6_OBUF)
+     OBUF:I->O                 3.169          Led_6_OBUF (Led<6>)
     ----------------------------------------
-    Total                      4.877ns (4.275ns logic, 0.602ns route)
-                                       (87.7% logic, 12.3% route)
+    Total                      4.844ns (4.275ns logic, 0.569ns route)
+                                       (88.3% logic, 11.7% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 72.00 secs
-Total CPU time to Xst completion: 72.57 secs
+Total REAL time to Xst completion: 77.00 secs
+Total CPU time to Xst completion: 77.11 secs
  
 --> 
 
-Total memory usage is 353000 kilobytes
+Total memory usage is 354984 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   37 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

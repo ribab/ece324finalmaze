@@ -19,7 +19,7 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
-<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">MRT/rgb_next_mux0000&lt;3&gt;_SW1</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MRT/rgb_next_and000131_SW0_SW3</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MRT/rgb_next_mux0000&lt;3&gt;_SW1</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MRT/rgb_next_and000231_SW0_SW3</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
 </messages>

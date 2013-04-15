@@ -46,6 +46,8 @@ module maze_renderer_test
 	wire [9:0] maze_pixel_h = tile_pixel_h*maze_height;
 	wire [9:0] maze_border_x = (640 - maze_pixel_w) >> 1;
 	wire [9:0] maze_border_y = (480 - maze_pixel_h) >> 1;
+	wire [9:0] tile_x = x_pos >> tile_width;
+	wire [9:0] tile_y = y_pos >> tile_height;
 	wire [9:0] centered_tile_x = (x_pos - maze_border_x) >> tile_width;
 	wire [9:0] centered_tile_y = (y_pos - maze_border_y) >> tile_height;
 	
@@ -73,9 +75,14 @@ module maze_renderer_test
 				else
 					rgb_next <= 8'b00000000;
 			else
-				if (path_data[   (x_coord + (x_pos >> tile_width)) +
+				if (char_x == tile_x - x_coord &&
+					char_y == tile_y - y_coord &&
+					char_array[  ((x_pos - tile_x*tile_pixel_w) >> (tile_width - 2)) +
+					           4*((y_pos - tile_y*tile_pixel_h) >> (tile_height - 2))] == 1)
+					rgb_next <= char_color;
+				else if (path_data[   (x_coord + (x_pos >> tile_width)) +
 								  64*(y_coord + (y_pos >> tile_height))] == 1)
-						rgb_next <= 8'b11111111;
+						rgb_next <= 8'b11100000;
 				else
 					rgb_next <= 8'b00000000;
 		else
