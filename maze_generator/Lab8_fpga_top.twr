@@ -45,18 +45,18 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-btn<0>      |    3.225(R)|   -1.273(R)|clk_BUFGP         |   0.000|
-btn<1>      |    4.127(R)|   -1.051(R)|clk_BUFGP         |   0.000|
-btn<2>      |    2.539(R)|    0.174(R)|clk_BUFGP         |   0.000|
-btn<3>      |    2.392(R)|   -0.046(R)|clk_BUFGP         |   0.000|
-sw<0>       |    3.304(R)|    0.388(R)|clk_BUFGP         |   0.000|
-sw<1>       |    2.818(R)|    0.745(R)|clk_BUFGP         |   0.000|
-sw<2>       |    2.893(R)|    0.699(R)|clk_BUFGP         |   0.000|
-sw<3>       |    1.675(R)|    0.750(R)|clk_BUFGP         |   0.000|
-sw<4>       |    1.956(R)|    0.392(R)|clk_BUFGP         |   0.000|
-sw<5>       |    2.239(R)|    0.180(R)|clk_BUFGP         |   0.000|
-sw<6>       |    2.276(R)|    0.388(R)|clk_BUFGP         |   0.000|
-sw<7>       |    3.773(R)|   -0.036(R)|clk_BUFGP         |   0.000|
+btn<0>      |    3.137(R)|   -0.276(R)|clk_BUFGP         |   0.000|
+btn<1>      |    2.688(R)|    0.147(R)|clk_BUFGP         |   0.000|
+btn<2>      |    1.451(R)|    1.181(R)|clk_BUFGP         |   0.000|
+btn<3>      |    2.030(R)|    0.635(R)|clk_BUFGP         |   0.000|
+sw<0>       |    2.891(R)|   -0.246(R)|clk_BUFGP         |   0.000|
+sw<1>       |    1.223(R)|    1.260(R)|clk_BUFGP         |   0.000|
+sw<2>       |    1.204(R)|    1.222(R)|clk_BUFGP         |   0.000|
+sw<3>       |    1.150(R)|    1.026(R)|clk_BUFGP         |   0.000|
+sw<4>       |    0.559(R)|    1.244(R)|clk_BUFGP         |   0.000|
+sw<5>       |    0.879(R)|    1.334(R)|clk_BUFGP         |   0.000|
+sw<6>       |    2.578(R)|    1.465(R)|clk_BUFGP         |   0.000|
+sw<7>       |    0.967(R)|    0.677(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -64,24 +64,24 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-Hsync       |    8.328(R)|clk_BUFGP         |   0.000|
-Vsync       |    8.905(R)|clk_BUFGP         |   0.000|
-vgaBlue<2>  |   12.855(R)|clk_BUFGP         |   0.000|
-            |   10.785(F)|clk_BUFGP         |   0.000|
-vgaBlue<3>  |   12.856(R)|clk_BUFGP         |   0.000|
-            |   10.786(F)|clk_BUFGP         |   0.000|
-vgaGreen<1> |   11.894(R)|clk_BUFGP         |   0.000|
-            |    9.247(F)|clk_BUFGP         |   0.000|
-vgaGreen<2> |   11.892(R)|clk_BUFGP         |   0.000|
-            |    9.245(F)|clk_BUFGP         |   0.000|
-vgaGreen<3> |   12.380(R)|clk_BUFGP         |   0.000|
-            |    9.733(F)|clk_BUFGP         |   0.000|
-vgaRed<1>   |   12.146(R)|clk_BUFGP         |   0.000|
-            |   10.076(F)|clk_BUFGP         |   0.000|
-vgaRed<2>   |   11.875(R)|clk_BUFGP         |   0.000|
-            |    9.805(F)|clk_BUFGP         |   0.000|
-vgaRed<3>   |   12.116(R)|clk_BUFGP         |   0.000|
-            |   10.046(F)|clk_BUFGP         |   0.000|
+Hsync       |    8.944(R)|clk_BUFGP         |   0.000|
+Vsync       |    8.923(R)|clk_BUFGP         |   0.000|
+vgaBlue<2>  |   12.324(R)|clk_BUFGP         |   0.000|
+            |   10.427(F)|clk_BUFGP         |   0.000|
+vgaBlue<3>  |   12.325(R)|clk_BUFGP         |   0.000|
+            |   10.428(F)|clk_BUFGP         |   0.000|
+vgaGreen<1> |   11.777(R)|clk_BUFGP         |   0.000|
+            |    9.560(F)|clk_BUFGP         |   0.000|
+vgaGreen<2> |   12.039(R)|clk_BUFGP         |   0.000|
+            |    9.822(F)|clk_BUFGP         |   0.000|
+vgaGreen<3> |   12.272(R)|clk_BUFGP         |   0.000|
+            |   10.055(F)|clk_BUFGP         |   0.000|
+vgaRed<1>   |   11.120(R)|clk_BUFGP         |   0.000|
+            |    9.223(F)|clk_BUFGP         |   0.000|
+vgaRed<2>   |   11.344(R)|clk_BUFGP         |   0.000|
+            |    9.447(F)|clk_BUFGP         |   0.000|
+vgaRed<3>   |   11.121(R)|clk_BUFGP         |   0.000|
+            |    9.224(F)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -89,7 +89,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   39.152|         |    1.996|         |
+clk            |   28.857|         |    2.136|         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -97,24 +97,24 @@ Pad to Pad
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
 sw<0>          |Led<0>         |    4.795|
-sw<1>          |Led<1>         |    4.264|
-sw<2>          |Led<2>         |    4.264|
-sw<3>          |Led<3>         |    4.742|
-sw<4>          |Led<4>         |    5.925|
-sw<5>          |Led<5>         |    4.849|
-sw<6>          |Led<6>         |    8.464|
-sw<7>          |Led<7>         |    6.477|
+sw<1>          |Led<1>         |    4.261|
+sw<2>          |Led<2>         |    4.261|
+sw<3>          |Led<3>         |    4.699|
+sw<4>          |Led<4>         |    5.944|
+sw<5>          |Led<5>         |    4.857|
+sw<6>          |Led<6>         |    7.931|
+sw<7>          |Led<7>         |    6.473|
 ---------------+---------------+---------+
 
 
-Analysis completed Sat Apr 13 02:08:47 2013 
+Analysis completed Sun Apr 14 23:31:54 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 188 MB
+Peak Memory Usage: 175 MB
 
 
 
