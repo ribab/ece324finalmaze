@@ -1,0 +1,33 @@
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/Lab8_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/Lab8_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ngd keyboard_test_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf 
+bitgen -intstyle ise -f keyboard_test_fpga_top.ut keyboard_test_fpga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ngd keyboard_test_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf 
+bitgen -intstyle ise -f keyboard_test_fpga_top.ut keyboard_test_fpga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ngd keyboard_test_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf 
+bitgen -intstyle ise -f keyboard_test_fpga_top.ut keyboard_test_fpga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ngd keyboard_test_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf 
+bitgen -intstyle ise -f keyboard_test_fpga_top.ut keyboard_test_fpga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test/keyboard_test_fpga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/ribab/Documents/GitHub/ece324finalmaze/keyboard_test_Nexys2.ucf -p xc3s500e-fg320-5 keyboard_test_fpga_top.ngc keyboard_test_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ngd keyboard_test_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 keyboard_test_fpga_top_map.ncd keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf 
+bitgen -intstyle ise -f keyboard_test_fpga_top.ut keyboard_test_fpga_top.ncd 

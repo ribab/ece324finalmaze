@@ -1,7 +1,7 @@
 Release 14.4 - par P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Mon Apr 15 03:16:32 2013
+Mon Apr 15 11:59:08 2013
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -260,7 +260,7 @@ Pinout by Pin Number:
 |P8        |vgaGreen<2>|IOB      |IO_L09P_2                |OUTPUT   |LVCMOS25*  |2             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
 |P9        |           |IOB      |IO                       |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
 |P10       |           |DIFFS    |IO_L15N_2/D1/GCLK3       |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
-|P11       |           |DIFFM    |IO_L18P_2                |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
+|P11       |ps2d       |IBUF     |IO_L18P_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |       |LOCATED   |NO         |NONE            |
 |P12       |           |         |NC                       |         |           |              |          |         |           |         |       |          |           |                |
 |P13       |           |DIFFM    |IO_L22P_2/A23            |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
 |P14       |           |         |VCCINT                   |         |           |              |          |         |           |         |1.2    |          |           |                |
@@ -279,7 +279,7 @@ Pinout by Pin Number:
 |R9        |vgaRed<1>  |IOB      |IO/D5                    |OUTPUT   |LVCMOS25*  |2             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
 |R10       |           |DIFFM    |IO_L15P_2/D2/GCLK2       |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
 |R11       |           |IOB      |IO                       |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
-|R12       |           |DIFFS    |IO_L20N_2                |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
+|R12       |ps2c       |IBUF     |IO_L20N_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |       |LOCATED   |NO         |NONE            |
 |R13       |           |DIFFS    |IO_L22N_2/A22            |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
 |R14       |           |DIFFS    |IO_L24N_2/A20            |UNUSED   |           |2             |          |         |           |         |       |          |           |                |
 |R15       |           |DIFFM    |IO_L03P_1                |UNUSED   |           |1             |          |         |           |         |       |          |           |                |

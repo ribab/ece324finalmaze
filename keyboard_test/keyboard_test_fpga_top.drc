@@ -1,0 +1,8 @@
+Release 14.4 Drc P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Mon Apr 15 11:15:55 2013
+
+drc -z keyboard_test_fpga_top.ncd keyboard_test_fpga_top.pcf
+
+DRC detected 0 errors and 0 warnings.

@@ -1,0 +1,39 @@
+//! **************************************************************************
+// Written by: Map P.49d on Mon Apr 15 11:15:36 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "Led<3>" LOCATE = SITE "K14" LEVEL 1;
+COMP "Led<4>" LOCATE = SITE "E17" LEVEL 1;
+COMP "Led<5>" LOCATE = SITE "P15" LEVEL 1;
+COMP "Led<6>" LOCATE = SITE "F4" LEVEL 1;
+COMP "Led<7>" LOCATE = SITE "R4" LEVEL 1;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "ps2c" LOCATE = SITE "R12" LEVEL 1;
+COMP "ps2d" LOCATE = SITE "P11" LEVEL 1;
+COMP "Led<0>" LOCATE = SITE "J14" LEVEL 1;
+COMP "Led<1>" LOCATE = SITE "J15" LEVEL 1;
+COMP "Led<2>" LOCATE = SITE "K15" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "KB/ps2_rx_unit/b_reg_10" BEL "KB/ps2_rx_unit/b_reg_9" BEL
+        "KB/ps2_rx_unit/b_reg_8" BEL "KB/ps2_rx_unit/b_reg_7" BEL
+        "KB/ps2_rx_unit/b_reg_6" BEL "KB/ps2_rx_unit/b_reg_5" BEL
+        "KB/ps2_rx_unit/b_reg_4" BEL "KB/ps2_rx_unit/b_reg_3" BEL
+        "KB/ps2_rx_unit/b_reg_2" BEL "KB/ps2_rx_unit/b_reg_1" BEL
+        "KB/ps2_rx_unit/n_reg_3" BEL "KB/ps2_rx_unit/n_reg_2" BEL
+        "KB/ps2_rx_unit/n_reg_1" BEL "KB/ps2_rx_unit/f_ps2c_reg" BEL
+        "KB/ps2_rx_unit/filter_reg_7" BEL "KB/ps2_rx_unit/filter_reg_6" BEL
+        "KB/ps2_rx_unit/filter_reg_5" BEL "KB/ps2_rx_unit/filter_reg_4" BEL
+        "KB/ps2_rx_unit/filter_reg_3" BEL "KB/ps2_rx_unit/filter_reg_2" BEL
+        "KB/ps2_rx_unit/filter_reg_1" BEL "KB/ps2_rx_unit/filter_reg_0" BEL
+        "KB/ps2_rx_unit/state_reg_1" BEL "KB/fifo_key_unit/ignore_next" BEL
+        "KB/fifo_key_unit/array_reg_7" BEL "KB/fifo_key_unit/array_reg_6" BEL
+        "KB/fifo_key_unit/array_reg_5" BEL "KB/fifo_key_unit/array_reg_4" BEL
+        "KB/fifo_key_unit/array_reg_3" BEL "KB/fifo_key_unit/array_reg_2" BEL
+        "KB/fifo_key_unit/array_reg_1" BEL "KB/fifo_key_unit/array_reg_0" BEL
+        "KB/ps2_rx_unit/state_reg_2" BEL "KB/ps2_rx_unit/n_reg_0" BEL
+        "KB/ps2_rx_unit/state_reg_0" BEL "clk_BUFGP/BUFG.GCLKMUX" BEL
+        "clk_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+SCHEMATIC END;
+

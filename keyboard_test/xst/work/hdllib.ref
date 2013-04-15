@@ -1,0 +1,4 @@
+MO keyboard_test_fpga_top NULL ../keyboard_test_fpga_top.v vlg1F/keyboard__test__fpga__top.bin 1366049720
+MO ps2_rx NULL ../keyboard_code/ps_2_code.v vlg56/ps2__rx.bin 1366049720
+MO kb_code NULL ../keyboard_code/kb_code.v vlg03/kb__code.bin 1366049720
+MO fifo NULL ../keyboard_code/fifo.v vlg7C/fifo.bin 1366049720

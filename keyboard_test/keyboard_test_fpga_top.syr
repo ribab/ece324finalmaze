@@ -1,0 +1,494 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: keyboard_test_fpga_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "keyboard_test_fpga_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "keyboard_test_fpga_top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : keyboard_test_fpga_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../keyboard_code/ps_2_code.v" in library work
+Compiling verilog file "../keyboard_code/fifo.v" in library work
+Module <ps2_rx> compiled
+Compiling verilog file "../keyboard_code/kb_code.v" in library work
+Module <fifo> compiled
+Compiling verilog file "../keyboard_test_fpga_top.v" in library work
+Module <kb_code> compiled
+Module <keyboard_test_fpga_top> compiled
+No errors in compilation
+Analysis of file <"keyboard_test_fpga_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <keyboard_test_fpga_top> in library <work>.
+
+Analyzing hierarchy for module <kb_code> in library <work> with parameters.
+	BRK = "11110000"
+	W_SIZE = "00000000000000000000000000000010"
+	get_code = "1"
+	wait_brk = "0"
+
+Analyzing hierarchy for module <ps2_rx> in library <work> with parameters.
+	dps = "01"
+	idle = "00"
+	load = "10"
+
+Analyzing hierarchy for module <fifo> in library <work> with parameters.
+	B = "00000000000000000000000000001000"
+	BRK = "11110000"
+	W = "00000000000000000000000000000010"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <keyboard_test_fpga_top>.
+Module <keyboard_test_fpga_top> is correct for synthesis.
+ 
+Analyzing module <kb_code> in library <work>.
+	BRK = 8'b11110000
+	W_SIZE = 32'sb00000000000000000000000000000010
+	get_code = 1'b1
+	wait_brk = 1'b0
+Module <kb_code> is correct for synthesis.
+ 
+Analyzing module <ps2_rx> in library <work>.
+	dps = 2'b01
+	idle = 2'b00
+	load = 2'b10
+Module <ps2_rx> is correct for synthesis.
+ 
+Analyzing module <fifo> in library <work>.
+	B = 32'sb00000000000000000000000000001000
+	BRK = 8'b11110000
+	W = 32'sb00000000000000000000000000000010
+Module <fifo> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ps2_rx>.
+    Related source file is "../keyboard_code/ps_2_code.v".
+    Using one-hot encoding for signal <state_reg>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state_reg> of Case statement line 72 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state_reg> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 11-bit register for signal <b_reg>.
+    Found 1-bit register for signal <f_ps2c_reg>.
+    Found 8-bit register for signal <filter_reg>.
+    Found 4-bit register for signal <n_reg>.
+    Found 4-bit subtractor for signal <n_reg$addsub0000> created at line 88.
+    Found 3-bit register for signal <state_reg>.
+    Summary:
+	inferred  27 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ps2_rx> synthesized.
+
+
+Synthesizing Unit <fifo>.
+    Related source file is "../keyboard_code/fifo.v".
+WARNING:Xst:646 - Signal <w_ptr_succ> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r_ptr_succ> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <array_reg>.
+    Found 1-bit register for signal <empty_reg>.
+    Found 2-bit comparator equal for signal <empty_reg$cmp_eq0000> created at line 83.
+    Found 1-bit 4-to-1 multiplexer for signal <empty_reg$mux0000> created at line 76.
+    Found 1-bit register for signal <full_reg>.
+    Found 2-bit comparator equal for signal <full_reg$cmp_eq0000> created at line 91.
+    Found 1-bit 4-to-1 multiplexer for signal <full_reg$mux0000> created at line 76.
+    Found 1-bit register for signal <ignore_next>.
+    Found 2-bit adder for signal <old_r_ptr_succ_5$add0000> created at line 70.
+    Found 2-bit adder for signal <old_w_ptr_succ_6$add0000> created at line 69.
+    Found 2-bit register for signal <r_ptr_reg>.
+    Found 2-bit register for signal <w_ptr_reg>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <fifo> synthesized.
+
+
+Synthesizing Unit <kb_code>.
+    Related source file is "../keyboard_code/kb_code.v".
+    Found 1-bit register for signal <state_reg>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <kb_code> synthesized.
+
+
+Synthesizing Unit <keyboard_test_fpga_top>.
+    Related source file is "../keyboard_test_fpga_top.v".
+Unit <keyboard_test_fpga_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 2-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 11
+ 1-bit register                                        : 4
+ 11-bit register                                       : 1
+ 2-bit register                                        : 2
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 2
+ 2-bit comparator equal                                : 2
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx_unit>.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 2-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 41
+ Flip-Flops                                            : 41
+# Comparators                                          : 2
+ 2-bit comparator equal                                : 2
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <r_ptr_reg_0> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_ptr_reg_1> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <keyboard_test_fpga_top> ...
+
+Optimizing unit <ps2_rx> ...
+
+Optimizing unit <fifo> ...
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block keyboard_test_fpga_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 35
+ Flip-Flops                                            : 35
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : keyboard_test_fpga_top.ngr
+Top Level Output File Name         : keyboard_test_fpga_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 11
+
+Cell Usage :
+# BELS                             : 62
+#      GND                         : 1
+#      LUT2                        : 5
+#      LUT2_D                      : 1
+#      LUT3                        : 4
+#      LUT4                        : 31
+#      LUT4_D                      : 5
+#      LUT4_L                      : 11
+#      MUXF5                       : 4
+# FlipFlops/Latches                : 35
+#      FD                          : 23
+#      FDE                         : 1
+#      FDR                         : 1
+#      FDRE                        : 8
+#      FDSE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 2
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                       35  out of   4656     0%  
+ Number of Slice Flip Flops:             35  out of   9312     0%  
+ Number of 4 input LUTs:                 57  out of   9312     0%  
+ Number of IOs:                          11
+ Number of bonded IOBs:                  11  out of    232     4%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 35    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.961ns (Maximum Frequency: 201.589MHz)
+   Minimum input arrival time before clock: 3.533ns
+   Maximum output required time after clock: 4.040ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.961ns (frequency: 201.589MHz)
+  Total number of paths / destination ports: 540 / 54
+-------------------------------------------------------------------------
+Delay:               4.961ns (Levels of Logic = 4)
+  Source:            KB/ps2_rx_unit/filter_reg_4 (FF)
+  Destination:       KB/ps2_rx_unit/n_reg_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: KB/ps2_rx_unit/filter_reg_4 to KB/ps2_rx_unit/n_reg_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.514   0.603  KB/ps2_rx_unit/filter_reg_4 (KB/ps2_rx_unit/filter_reg_4)
+     LUT4_D:I0->O         19   0.612   1.074  KB/ps2_rx_unit/f_ps2c_next9 (KB/ps2_rx_unit/f_ps2c_next9)
+     LUT4:I0->O            1   0.612   0.000  KB/ps2_rx_unit/n_reg_mux0000<2>13_F (N108)
+     MUXF5:I0->O           1   0.278   0.387  KB/ps2_rx_unit/n_reg_mux0000<2>13 (KB/ps2_rx_unit/n_reg_mux0000<2>13)
+     LUT4:I2->O            1   0.612   0.000  KB/ps2_rx_unit/n_reg_mux0000<2>27 (KB/ps2_rx_unit/n_reg_mux0000<2>)
+     FD:D                      0.268          KB/ps2_rx_unit/n_reg_1
+    ----------------------------------------
+    Total                      4.961ns (2.896ns logic, 2.065ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.533ns (Levels of Logic = 3)
+  Source:            ps2d (PAD)
+  Destination:       KB/ps2_rx_unit/b_reg_10 (FF)
+  Destination Clock: clk rising
+
+  Data Path: ps2d to KB/ps2_rx_unit/b_reg_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.509  ps2d_IBUF (ps2d_IBUF)
+     LUT4:I0->O            1   0.612   0.426  KB/ps2_rx_unit/b_reg_mux0000<10>1_SW0 (N12)
+     LUT4:I1->O            1   0.612   0.000  KB/ps2_rx_unit/b_reg_mux0000<10>1 (KB/ps2_rx_unit/b_reg_mux0000<10>)
+     FD:D                      0.268          KB/ps2_rx_unit/b_reg_10
+    ----------------------------------------
+    Total                      3.533ns (2.598ns logic, 0.935ns route)
+                                       (73.5% logic, 26.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 1)
+  Source:            KB/fifo_key_unit/array_reg_7 (FF)
+  Destination:       Led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: KB/fifo_key_unit/array_reg_7 to Led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.514   0.357  KB/fifo_key_unit/array_reg_7 (KB/fifo_key_unit/array_reg_7)
+     OBUF:I->O                 3.169          Led_7_OBUF (Led<7>)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.18 secs
+ 
+--> 
+
+Total memory usage is 255848 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   23 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

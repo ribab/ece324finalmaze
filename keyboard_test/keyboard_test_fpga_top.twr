@@ -1,0 +1,491 @@
+--------------------------------------------------------------------------------
+Release 14.4 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
+-n 3 -fastpaths -xml keyboard_test_fpga_top.twx keyboard_test_fpga_top.ncd -o
+keyboard_test_fpga_top.twr keyboard_test_fpga_top.pcf
+
+Design file:              keyboard_test_fpga_top.ncd
+Physical constraint file: keyboard_test_fpga_top.pcf
+Device,package,speed:     xc3s500e,fg320,-5 (PRODUCTION 1.27 2012-12-04)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 540 paths analyzed, 108 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.114ns.
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/b_reg_2 (SLICE_X49Y51.F1), 13 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.886ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_1 (FF)
+  Destination:          KB/ps2_rx_unit/b_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.099ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.020 - 0.035)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_1 to KB/ps2_rx_unit/b_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y52.XQ      Tcko                  0.515   KB/ps2_rx_unit/filter_reg<1>
+                                                       KB/ps2_rx_unit/filter_reg_1
+    SLICE_X42Y48.G2      net (fanout=4)        0.646   KB/ps2_rx_unit/filter_reg<1>
+    SLICE_X42Y48.Y       Tilo                  0.660   N94
+                                                       KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.G2      net (fanout=7)        0.640   KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.Y       Tilo                  0.660   KB/ps2_rx_unit/b_reg<10>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>1_SW1
+    SLICE_X49Y51.F1      net (fanout=10)       1.250   N74
+    SLICE_X49Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/b_reg<2>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<2>1
+                                                       KB/ps2_rx_unit/b_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.099ns (2.563ns logic, 2.536ns route)
+                                                       (50.3% logic, 49.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.906ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_0 (FF)
+  Destination:          KB/ps2_rx_unit/b_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.079ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.020 - 0.035)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_0 to KB/ps2_rx_unit/b_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y52.YQ      Tcko                  0.567   KB/ps2_rx_unit/filter_reg<1>
+                                                       KB/ps2_rx_unit/filter_reg_0
+    SLICE_X42Y48.G3      net (fanout=3)        0.574   KB/ps2_rx_unit/filter_reg<0>
+    SLICE_X42Y48.Y       Tilo                  0.660   N94
+                                                       KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.G2      net (fanout=7)        0.640   KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.Y       Tilo                  0.660   KB/ps2_rx_unit/b_reg<10>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>1_SW1
+    SLICE_X49Y51.F1      net (fanout=10)       1.250   N74
+    SLICE_X49Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/b_reg<2>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<2>1
+                                                       KB/ps2_rx_unit/b_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.079ns (2.615ns logic, 2.464ns route)
+                                                       (51.5% logic, 48.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.022ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_3 (FF)
+  Destination:          KB/ps2_rx_unit/b_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.960ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.018ns (0.020 - 0.038)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_3 to KB/ps2_rx_unit/b_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y47.XQ      Tcko                  0.514   KB/ps2_rx_unit/filter_reg<3>
+                                                       KB/ps2_rx_unit/filter_reg_3
+    SLICE_X42Y48.G4      net (fanout=5)        0.508   KB/ps2_rx_unit/filter_reg<3>
+    SLICE_X42Y48.Y       Tilo                  0.660   N94
+                                                       KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.G2      net (fanout=7)        0.640   KB/ps2_rx_unit/f_ps2c_next4
+    SLICE_X44Y47.Y       Tilo                  0.660   KB/ps2_rx_unit/b_reg<10>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>1_SW1
+    SLICE_X49Y51.F1      net (fanout=10)       1.250   N74
+    SLICE_X49Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/b_reg<2>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<2>1
+                                                       KB/ps2_rx_unit/b_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.960ns (2.562ns logic, 2.398ns route)
+                                                       (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/n_reg_0 (SLICE_X43Y49.CE), 17 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.895ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_7 (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.105ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_7 to KB/ps2_rx_unit/n_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y45.XQ      Tcko                  0.514   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_7
+    SLICE_X44Y46.G4      net (fanout=3)        0.809   KB/ps2_rx_unit/filter_reg<7>
+    SLICE_X44Y46.Y       Tilo                  0.660   KB/ps2_rx_unit/state_reg<2>
+                                                       KB/ps2_rx_unit/f_ps2c_next34
+    SLICE_X42Y49.F4      net (fanout=3)        0.328   KB/ps2_rx_unit/f_ps2c_next34
+    SLICE_X42Y49.X       Tilo                  0.660   KB/ps2_rx_unit/f_ps2c_next35
+                                                       KB/ps2_rx_unit/f_ps2c_next35
+    SLICE_X43Y48.F3      net (fanout=4)        0.055   KB/ps2_rx_unit/f_ps2c_next35
+    SLICE_X43Y48.X       Tilo                  0.612   KB/ps2_rx_unit/f_ps2c_reg
+                                                       KB/ps2_rx_unit/fall_edge1
+    SLICE_X43Y49.CE      net (fanout=2)        0.984   KB/ps2_rx_unit/fall_edge
+    SLICE_X43Y49.CLK     Tceck                 0.483   KB/ps2_rx_unit/n_reg<0>
+                                                       KB/ps2_rx_unit/n_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.105ns (2.929ns logic, 2.176ns route)
+                                                       (57.4% logic, 42.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.926ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_5 (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.074ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_5 to KB/ps2_rx_unit/n_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X44Y45.XQ      Tcko                  0.515   KB/ps2_rx_unit/filter_reg<5>
+                                                       KB/ps2_rx_unit/filter_reg_5
+    SLICE_X44Y46.G3      net (fanout=3)        0.777   KB/ps2_rx_unit/filter_reg<5>
+    SLICE_X44Y46.Y       Tilo                  0.660   KB/ps2_rx_unit/state_reg<2>
+                                                       KB/ps2_rx_unit/f_ps2c_next34
+    SLICE_X42Y49.F4      net (fanout=3)        0.328   KB/ps2_rx_unit/f_ps2c_next34
+    SLICE_X42Y49.X       Tilo                  0.660   KB/ps2_rx_unit/f_ps2c_next35
+                                                       KB/ps2_rx_unit/f_ps2c_next35
+    SLICE_X43Y48.F3      net (fanout=4)        0.055   KB/ps2_rx_unit/f_ps2c_next35
+    SLICE_X43Y48.X       Tilo                  0.612   KB/ps2_rx_unit/f_ps2c_reg
+                                                       KB/ps2_rx_unit/fall_edge1
+    SLICE_X43Y49.CE      net (fanout=2)        0.984   KB/ps2_rx_unit/fall_edge
+    SLICE_X43Y49.CLK     Tceck                 0.483   KB/ps2_rx_unit/n_reg<0>
+                                                       KB/ps2_rx_unit/n_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.074ns (2.930ns logic, 2.144ns route)
+                                                       (57.7% logic, 42.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.054ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_7 (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.946ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_7 to KB/ps2_rx_unit/n_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y45.XQ      Tcko                  0.514   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_7
+    SLICE_X45Y47.G1      net (fanout=3)        0.904   KB/ps2_rx_unit/filter_reg<7>
+    SLICE_X45Y47.Y       Tilo                  0.612   N106
+                                                       KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y48.F4      net (fanout=20)       0.837   KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y48.X       Tilo                  0.612   KB/ps2_rx_unit/f_ps2c_reg
+                                                       KB/ps2_rx_unit/fall_edge1
+    SLICE_X43Y49.CE      net (fanout=2)        0.984   KB/ps2_rx_unit/fall_edge
+    SLICE_X43Y49.CLK     Tceck                 0.483   KB/ps2_rx_unit/n_reg<0>
+                                                       KB/ps2_rx_unit/n_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.946ns (2.221ns logic, 2.725ns route)
+                                                       (44.9% logic, 55.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/n_reg_2 (SLICE_X43Y51.F1), 11 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.105ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_7 (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.895ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_7 to KB/ps2_rx_unit/n_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y45.XQ      Tcko                  0.514   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_7
+    SLICE_X45Y47.G1      net (fanout=3)        0.904   KB/ps2_rx_unit/filter_reg<7>
+    SLICE_X45Y47.Y       Tilo                  0.612   N106
+                                                       KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y53.G3      net (fanout=20)       1.119   KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y53.Y       Tilo                  0.612   KB/ps2_rx_unit/n_reg<1>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>21
+    SLICE_X43Y51.F1      net (fanout=2)        0.406   KB/ps2_rx_unit/N2
+    SLICE_X43Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/n_reg<2>
+                                                       KB/ps2_rx_unit/n_reg_mux0000<1>42
+                                                       KB/ps2_rx_unit/n_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.895ns (2.466ns logic, 2.429ns route)
+                                                       (50.4% logic, 49.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.184ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/filter_reg_5 (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.816ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/filter_reg_5 to KB/ps2_rx_unit/n_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X44Y45.XQ      Tcko                  0.515   KB/ps2_rx_unit/filter_reg<5>
+                                                       KB/ps2_rx_unit/filter_reg_5
+    SLICE_X45Y47.G2      net (fanout=3)        0.824   KB/ps2_rx_unit/filter_reg<5>
+    SLICE_X45Y47.Y       Tilo                  0.612   N106
+                                                       KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y53.G3      net (fanout=20)       1.119   KB/ps2_rx_unit/f_ps2c_next9
+    SLICE_X43Y53.Y       Tilo                  0.612   KB/ps2_rx_unit/n_reg<1>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>21
+    SLICE_X43Y51.F1      net (fanout=2)        0.406   KB/ps2_rx_unit/N2
+    SLICE_X43Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/n_reg<2>
+                                                       KB/ps2_rx_unit/n_reg_mux0000<1>42
+                                                       KB/ps2_rx_unit/n_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.816ns (2.467ns logic, 2.349ns route)
+                                                       (51.2% logic, 48.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.435ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               KB/ps2_rx_unit/f_ps2c_reg (FF)
+  Destination:          KB/ps2_rx_unit/n_reg_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.563ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.002ns (0.014 - 0.016)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: KB/ps2_rx_unit/f_ps2c_reg to KB/ps2_rx_unit/n_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y48.YQ      Tcko                  0.511   KB/ps2_rx_unit/f_ps2c_reg
+                                                       KB/ps2_rx_unit/f_ps2c_reg
+    SLICE_X42Y48.F1      net (fanout=10)       1.405   KB/ps2_rx_unit/f_ps2c_reg
+    SLICE_X42Y48.X       Tilo                  0.660   N94
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>21_SW0
+    SLICE_X43Y53.G4      net (fanout=1)        0.241   N94
+    SLICE_X43Y53.Y       Tilo                  0.612   KB/ps2_rx_unit/n_reg<1>
+                                                       KB/ps2_rx_unit/b_reg_mux0000<10>21
+    SLICE_X43Y51.F1      net (fanout=2)        0.406   KB/ps2_rx_unit/N2
+    SLICE_X43Y51.CLK     Tfck                  0.728   KB/ps2_rx_unit/n_reg<2>
+                                                       KB/ps2_rx_unit/n_reg_mux0000<1>42
+                                                       KB/ps2_rx_unit/n_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.563ns (2.511ns logic, 2.052ns route)
+                                                       (55.0% logic, 45.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/filter_reg_5 (SLICE_X44Y45.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.878ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               KB/ps2_rx_unit/filter_reg_6 (FF)
+  Destination:          KB/ps2_rx_unit/filter_reg_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.878ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: KB/ps2_rx_unit/filter_reg_6 to KB/ps2_rx_unit/filter_reg_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y45.YQ      Tcko                  0.409   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_6
+    SLICE_X44Y45.BX      net (fanout=3)        0.353   KB/ps2_rx_unit/filter_reg<6>
+    SLICE_X44Y45.CLK     Tckdi       (-Th)    -0.116   KB/ps2_rx_unit/filter_reg<5>
+                                                       KB/ps2_rx_unit/filter_reg_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.878ns (0.525ns logic, 0.353ns route)
+                                                       (59.8% logic, 40.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/filter_reg_2 (SLICE_X43Y47.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.894ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               KB/ps2_rx_unit/filter_reg_3 (FF)
+  Destination:          KB/ps2_rx_unit/filter_reg_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.894ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: KB/ps2_rx_unit/filter_reg_3 to KB/ps2_rx_unit/filter_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y47.XQ      Tcko                  0.411   KB/ps2_rx_unit/filter_reg<3>
+                                                       KB/ps2_rx_unit/filter_reg_3
+    SLICE_X43Y47.BY      net (fanout=5)        0.366   KB/ps2_rx_unit/filter_reg<3>
+    SLICE_X43Y47.CLK     Tckdi       (-Th)    -0.117   KB/ps2_rx_unit/filter_reg<3>
+                                                       KB/ps2_rx_unit/filter_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.894ns (0.528ns logic, 0.366ns route)
+                                                       (59.1% logic, 40.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point KB/ps2_rx_unit/filter_reg_6 (SLICE_X45Y45.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.903ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               KB/ps2_rx_unit/filter_reg_7 (FF)
+  Destination:          KB/ps2_rx_unit/filter_reg_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.903ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: KB/ps2_rx_unit/filter_reg_7 to KB/ps2_rx_unit/filter_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y45.XQ      Tcko                  0.411   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_7
+    SLICE_X45Y45.BY      net (fanout=3)        0.375   KB/ps2_rx_unit/filter_reg<7>
+    SLICE_X45Y45.CLK     Tckdi       (-Th)    -0.117   KB/ps2_rx_unit/filter_reg<7>
+                                                       KB/ps2_rx_unit/filter_reg_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.903ns (0.528ns logic, 0.375ns route)
+                                                       (58.5% logic, 41.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: KB/ps2_rx_unit/state_reg<2>/CLK
+  Logical resource: KB/ps2_rx_unit/state_reg_2/CK
+  Location pin: SLICE_X44Y46.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.562ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.719ns (Tch)
+  Physical resource: KB/ps2_rx_unit/state_reg<2>/CLK
+  Logical resource: KB/ps2_rx_unit/state_reg_2/CK
+  Location pin: SLICE_X44Y46.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: KB/ps2_rx_unit/b_reg<10>/CLK
+  Logical resource: KB/ps2_rx_unit/b_reg_10/CK
+  Location pin: SLICE_X44Y47.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.114|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 540 paths, 0 nets, and 271 connections
+
+Design statistics:
+   Minimum period:   5.114ns{1}   (Maximum frequency: 195.542MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Apr 15 11:15:52 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 164 MB
+
+
+
