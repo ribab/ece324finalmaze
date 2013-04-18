@@ -16,7 +16,7 @@ module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
 	input [6:0] char_x, char_y,
-	input [64*64-1:0] path_data,
+	input [64*128-1:0] path_data,
 	input wire [6:0] maze_width, maze_height,
 	input wire [6:0] x_coord, y_coord,
 	input wire [6:0] tile_width, tile_height,
