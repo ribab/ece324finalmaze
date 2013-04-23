@@ -42,41 +42,42 @@ module maze_carver
 	
 	//  Key
 	// 
-	//  in = maze path = 2'b11
-	//	 out = maze wall = 2'b00
-	//  frontier = available to move = 2'b10
-	//	 wall = 2'b01
+	//  path = maze path = 2'b11
+	//	out = maze wall = 2'b00
+	//  frontier 2'b01
+	//	 wall = 2'b10
 	
-	
+	function [1:0] maze_data_check;
+		input x, y
 	
 	always @ (posedge clk)
 		if (start == 1 && finish == 0) begin
 // MAKE FRONTIER
 		// change right into frontier
 			// if current position is a path, and is in bounds, and position to right is not a wall or a path
-			if (maze_data [(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] == 2'b00 && curr_x < maze_width && 
-							[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b01 && 
-							[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b11) 
-			
-				maze_data [(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] = 2'b10;
+			if (curr_x < maze_width &&
+				maze_data[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b11 &&
+				maze_data[(curr_x + 1)*2 + (curr_y + 1)*128 + 1] == 1 && maze_data [(curr_x + 1)*2 + (curr_y - 1)*128 == 1 &&
+				maze_data[(curr_x + 2)*2 + (curr_y)*128 + 1] == 0)
+				maze_data [(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] = 2'b01;
 		// change left into frontier
 			if (maze_data [(curr_x - 1)*2 + (curr_y)*128 + 1 : (curr_x - 1)*2 + (curr_y)*128] == 2'b00 && curr_x > 0 && 
 							[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b01 &&
 							[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b11)
 
-				maze_data [(curr_x - 1)*2 + (curr_y)*128 + 1 : (curr_x - 1)*2 + (curr_y)*128] = 2'b10;
+				maze_data [(curr_x - 1)*2 + (curr_y)*128 + 1 : (curr_x - 1)*2 + (curr_y)*128] = 2'b01;
 		// change down into frontier
 			if (maze_data [(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] == 2'b00 && curr_y < maze_height && 
 							[(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] != 2'b01 &&
 							[(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] != 2'b11)
 							
-				maze_data [(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] = 2'b10;
+				maze_data [(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] = 2'b01;
 		// change up into frontier
 			if (maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] == 2'b00 && curr_y > 0 && 
 							[(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] != 2'b01 &&
 							[(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] != 2'b11*/)
 							
-				maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = 2'b10;
+				maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = 2'b01;
 		end
 // MOVE RANDOM DIRECTION 
 		case (rand)
