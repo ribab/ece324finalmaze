@@ -74,7 +74,7 @@ module maze_carver
 		// change up into frontier
 			if (maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] == 2'b00 && curr_y > 0 && 
 							[(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] != 2'b01 &&
-							[(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] != 2'b11)
+							[(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] != 2'b11*/)
 							
 				maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = 2'b10;
 		end
@@ -129,7 +129,18 @@ module maze_carver
 		endcase
 
 		
+	function [1:0] maze_data_check;
+	input clk;
+	input reg [15:0] reg_x;
+	input reg [15:0] reg_y;
+	
+	begin
+	maze_data_check = maze_data [(reg_x)*2 + (reg_y)*128 + 1 : (reg_x)*2 + (reg_y)*128];	
+	
+	end
+	endfunction
 			
 	
 	
 endmodule
+
