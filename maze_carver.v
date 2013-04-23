@@ -47,16 +47,13 @@ module maze_carver
 	//  frontier 2'b01
 	//	 wall = 2'b10
 	
-	function [1:0] maze_data_check;
-		input x, y
-	
 	always @ (posedge clk)
 		if (start == 1 && finish == 0) begin
 // MAKE FRONTIER
 		// change right into frontier
 			// if current position is a path, and is in bounds, and position to right is not a wall or a path
 			if (curr_x < maze_width &&
-				maze_data[(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] != 2'b11 &&
+				maze_data_check(curr_x + 1, curr_y) != 2'b11 &&
 				maze_data[(curr_x + 1)*2 + (curr_y + 1)*128 + 1] == 1 && maze_data [(curr_x + 1)*2 + (curr_y - 1)*128 == 1 &&
 				maze_data[(curr_x + 2)*2 + (curr_y)*128 + 1] == 0)
 				maze_data [(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] = 2'b01;
@@ -131,17 +128,31 @@ module maze_carver
 
 		
 	function [1:0] maze_data_check;
-	input clk;
-	input reg [15:0] reg_x;
-	input reg [15:0] reg_y;
-	
-	begin
-	maze_data_check = maze_data [(reg_x)*2 + (reg_y)*128 + 1 : (reg_x)*2 + (reg_y)*128];	
-	
-	end
+		input clk;
+		input reg [15:0] reg_x;
+		input reg [15:0] reg_y;
+		begin
+		maze_data_check = maze_data [(reg_x)*2 + (reg_y)*128 + 1 : (reg_x)*2 + (reg_y)*128];
+		end
 	endfunction
-			
 	
+	function [1:0] maze_data_check_m;
+		input clk;
+		input reg [15:0] reg_x;
+		input reg [15:0] reg_y;
+		begin
+		maze_data_check = maze_data [(reg_x)*2 + (reg_y)*128 + 1];
+		end
+	endfunction
+	
+	function maze_data_check_l;
+		input clk;
+		input reg [15:0] reg_x;
+		input reg [15:0] reg_y;
+		begin
+		maze_data_check = maze_data [(reg_x)*2 + (reg_y)*128];
+		end
+	endfunction
 	
 endmodule
 
