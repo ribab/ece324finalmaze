@@ -71,6 +71,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="maze_carver.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="maze_carver.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="maze_carver.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="rand_num.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="rand_num.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="rand_num.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -113,6 +116,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Lab8_fpga_top.lso"/>

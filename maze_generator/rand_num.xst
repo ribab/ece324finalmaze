@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/xst"
+elaborate
+-ifn rand_num.prj
+-ifmt mixed

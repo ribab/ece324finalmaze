@@ -1,0 +1,32 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "rand_num.v" in library work
+ERROR:HDLCompilers:26 - "rand_num.v" line 24 unexpected token: '='
+Module <rand_num> compiled
+ERROR:HDLCompilers:26 - "rand_num.v" line 24 expecting 'endmodule', found '{'
+Analysis of file <"rand_num.prj"> failed.
+--> 
+
+Total memory usage is 217252 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
