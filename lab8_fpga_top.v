@@ -109,6 +109,7 @@ module Lab8_fpga_top(
 	);
 	
 	maze_carver MC (
+		.clk(clk),
 		.start(1),
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),

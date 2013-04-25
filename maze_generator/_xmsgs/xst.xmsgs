@@ -5,239 +5,34 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 94 </arg>Connection to input port &apos;<arg fmt="%s" index="2">rd_key_code</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 94 </arg>Connection to input port &apos;<arg fmt="%s" index="2">rd_key_code</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_coord</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 103 </arg>Connection to input port &apos;<arg fmt="%s" index="2">path_data</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_coord</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_coord</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 112 </arg>Connection to input port &apos;<arg fmt="%s" index="2">start</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_coord</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 113 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_dimension</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 113 </arg>Connection to input port &apos;<arg fmt="%s" index="2">start</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 114 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_dimension</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 114 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_dimension</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="Xst" num="852" delta="old" >&quot;<arg fmt="%s" index="1">../lab8_fpga_top.v</arg>&quot; line <arg fmt="%d" index="2">111</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">clk</arg>&apos; of instance &apos;<arg fmt="%s" index="4">MC</arg>&apos; is tied to GND.
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 115 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_dimension</arg>&apos; does not match port size
 </msg>
 
-<msg type="info" file="Xst" num="1432" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
+<msg type="warning" file="HDLCompilers" num="261" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 116 </arg>Connection to output port &apos;<arg fmt="%s" index="2">maze_data</arg>&apos; does not match port size
 </msg>
 
-<msg type="info" file="Xst" num="1432" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
+<msg type="info" file="Xst" num="1432" delta="new" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">start</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">finish</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">0</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">x_dimension</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">y_dimension</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">maze_data</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">1010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101101010101110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010110101010111010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101011010101010101010010101010101010110101010101010100101010101010101101010101010101001010101010101011</arg>.
-</msg>
-
-<msg type="info" file="Xst" num="2117" delta="old" >HDL ADVISOR - Mux Selector &lt;<arg fmt="%s" index="1">state_reg</arg>&gt; of Case statement line <arg fmt="%s" index="2">72</arg> was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
-	- add an &apos;<arg fmt="%s" index="3">INIT</arg>&apos; attribute on signal &lt;<arg fmt="%s" index="4">state_reg</arg>&gt; (optimization is then done without any risk)
-	- use the attribute &apos;<arg fmt="%s" index="5">signal_encoding</arg> <arg fmt="%s" index="6">user</arg>&apos; to avoid onehot optimization
-	- use the attribute &apos;<arg fmt="%s" index="7">safe_implementation</arg> <arg fmt="%s" index="8">yes</arg>&apos; to force XST to perform a safe (but less efficient) optimization
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">w_ptr_succ</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">r_ptr_succ</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">char_color</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00011100</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">char_array</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0110111111110110</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c8</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c7</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c6</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c5</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c4</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c3</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c2</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">c1</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">../maze_renderer_test.v</arg>&quot; line <arg fmt="%d" index="2">45</arg>: The result of a <arg fmt="%d" index="3">10</arg>x<arg fmt="%d" index="4">7</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">10</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-</msg>
-
-<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">../maze_renderer_test.v</arg>&quot; line <arg fmt="%d" index="2">46</arg>: The result of a <arg fmt="%d" index="3">10</arg>x<arg fmt="%d" index="4">7</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">10</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">y_coord</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">x_coord</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">start</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">finish</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">char_y_speed</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">char_y_count</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">char_x_speed</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0001001100010010110100000000</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_W</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00111010</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_UP</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">11101010</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_S</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00110110</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_RIGHT</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">11101000</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_LEFT</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">11010110</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_DOWN</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">11100100</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_D</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">01000110</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">KEY_A</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00111000</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ps2_rx_unit</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ps2_rx</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_3&gt; &lt;rgb_next_4&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_6&gt; &lt;rgb_next_7&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_reg_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_reg_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_reg_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_reg_3&gt; &lt;rgb_reg_4&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_reg_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_reg_6&gt; &lt;rgb_reg_7&gt; </arg>
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">empty_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">full_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">empty_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">full_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">empty_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">full_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">empty_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">full_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">w_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">r_ptr_reg_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo</arg>&gt;.
+<msg type="info" file="Xst" num="1432" delta="new" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
 </msg>
 
 </messages>
-

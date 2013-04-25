@@ -1,4 +1,5 @@
 verilog work "../vga_sync.v"
+verilog work "rand_num.v"
 verilog work "../keyboard_code/ps_2_code.v"
 verilog work "../keyboard_code/fifo.v"
 verilog work "../maze_renderer_test.v"

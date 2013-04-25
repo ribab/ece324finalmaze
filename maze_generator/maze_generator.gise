@@ -22,7 +22,7 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="maze_generator.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Lab8_fpga_top.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Lab8_fpga_top.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Lab8_fpga_top.lso"/>
@@ -110,20 +110,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1366052252" xil_pn:in_ck="-7443852325304616771" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1366052207">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1366914598" xil_pn:in_ck="2050023162950699189" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1366914594">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="Lab8_fpga_top.lso"/>
       <outfile xil_pn:name="Lab8_fpga_top.ngc"/>
       <outfile xil_pn:name="Lab8_fpga_top.ngr"/>
       <outfile xil_pn:name="Lab8_fpga_top.prj"/>
-      <outfile xil_pn:name="Lab8_fpga_top.stx"/>
       <outfile xil_pn:name="Lab8_fpga_top.syr"/>
       <outfile xil_pn:name="Lab8_fpga_top.xst"/>
       <outfile xil_pn:name="Lab8_fpga_top_xst.xrpt"/>
@@ -183,6 +177,8 @@
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Lab8_fpga_top.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="lab8_fpga_top.bgn"/>
