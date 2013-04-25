@@ -107,25 +107,33 @@ module maze_carver
 				2'b00 :	if (curr_x < maze_width - 1 && maze_data_check(curr_x + 1, curr_y) == FRONTIER) begin
 							maze_data [(curr_x + 1)*2 + (curr_y)*128 + 1 : (curr_x + 1)*2 + (curr_y)*128] = PATH;
 							curr_x = curr_x + 1;
-							push (curr_x, curr_y);
+							stack_pos = stack_pos + 1;
+							stack_x [stack_pos - 1] = curr_x;
+							stack_y [stack_pos - 1] = curr_y;
 						end
 				// move left
 				2'b01 :	if (curr_x > 0 && maze_data_check(curr_x - 1, curr_y) == FRONTIER) begin
 							maze_data [(curr_x - 1)*2 + (curr_y)*128 + 1 : (curr_x - 1)*2 + (curr_y)*128] = PATH;
 							curr_x = curr_x - 1;
-							push (curr_x, curr_y);
+							stack_pos = stack_pos + 1;
+							stack_x [stack_pos - 1] = curr_x;
+							stack_y [stack_pos - 1] = curr_y;
 						end
 				// move down
 				2'b10 : if (curr_y < maze_height - 1 && maze_data_check(curr_x, curr_y + 1) == FRONTIER) begin
 							maze_data [(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] = PATH;
 							curr_y = curr_y + 1;
-							push (curr_x, curr_y);
+							stack_pos = stack_pos + 1;
+							stack_x [stack_pos - 1] = curr_x;
+							stack_y [stack_pos - 1] = curr_y;
 						end
 				// move up
 				2'b11 : if (maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] == FRONTIER) begin
 							maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = PATH;
 							curr_y = curr_y - 1;
-							push (curr_x, curr_y);
+							stack_pos = stack_pos + 1;
+							stack_x [stack_pos - 1] = curr_x;
+							stack_y [stack_pos - 1] = curr_y;
 						end
 			endcase
 		
@@ -134,8 +142,11 @@ module maze_carver
 			if ((curr_x == maze_width - 1  || maze_data_check(curr_x + 1, curr_y) == WALL || maze_data_check(curr_x + 1, curr_y) == PATH) &&
 				(curr_x == 0               || maze_data_check(curr_x - 1, curr_y) == WALL || maze_data_check(curr_x - 1, curr_y) == PATH) &&
 				(curr_y == maze_hegiht - 1 || maze_data_check(curr_x, curr_y + 1) == WALL || maze_data_check(curr_x, curr_y + 1) == PATH) &&
-				(curr_y == 0               || maze_data_check(curr_x, curr_y - 1) == WALL || maze_data_check(curr_x, curr_y - 1) == PATH))
-				pop(curr_x, curr_y);
+				(curr_y == 0               || maze_data_check(curr_x, curr_y - 1) == WALL || maze_data_check(curr_x, curr_y - 1) == PATH)) begin
+				stack_pos = stack_pos - 1;
+				x_pos = stack_x [stack_pos];
+				y_pos = stack_y [stack_pos];
+			end
 		
 			// CONTINUE LOOP UNTIL STACK IS EMPTY
 			if (stack_pos == 0)
@@ -143,26 +154,6 @@ module maze_carver
 		end
 		
 	end
-		
-	function push;
-		input [6:0] x_pos;
-		input [6:0] y_pos;
-		begin
-			stack_pos = stack_pos + 1;
-			stack_x [stack_pos - 1] = x_pos;
-			stack_y [stack_pos - 1] = y_pos;
-		end
-	endfunction
-		
-	function pop;
-		output [6:0] x_pos;
-		output [6:0] y_pos;
-		begin
-			stack_pos = stack_pos - 1;
-			x_pos = stack_x [stack_pos];
-			y_pos = stack_y [stack_pos];
-		end
-	endfunction
 	
 	function [1:0] maze_data_check;
 		input clk;
