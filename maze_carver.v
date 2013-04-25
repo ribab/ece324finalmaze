@@ -52,6 +52,11 @@ module maze_carver
 	localparam [1:0] FRONTIER = FRONTIER;
 	localparam [1:0] WALL = WALL;
 	
+	// instantiate rand_num
+	rand_num RN(
+		.clk(clk), .reset(reset), .rand(rand)
+    );
+	
 	always @ (posedge clk) begin
 		if (start == 1 && finish == 0) begin
 // MAKE FRONTIER or wall
@@ -85,7 +90,9 @@ module maze_carver
 				else
 					maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = WALL;
 		end
-		
+	
+
+	
 // MOVE RANDOM DIRECTION 
 		case (rand)
 			// move right
