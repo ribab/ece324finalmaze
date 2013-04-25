@@ -27,6 +27,10 @@ module maze_carver
 	parameter [8:0] maze_width = 128;
 	parameter [8:0] maze_height = 64;
 	
+	reg [6:0] stack_x [64*64-1:0];
+	reg [6:0] stack_y [64*64-1:0];	
+	
+	reg [11:0] stack_pos = 0;
 
 	initial begin
 		for (i = 0; i < 128; i = i + 1)
@@ -83,7 +87,7 @@ module maze_carver
 				else
 					maze_data [(curr_x)*2 + (curr_y + 1)*128 + 1 : (curr_x)*2 + (curr_y + 1)*128] = WALL;
 		// change up into frontier
-			if (curr_y > 0 && maze_data_check(curr_x, curr_y - 1)* != PATH)
+			if (curr_y > 0 && maze_data_check(curr_x, curr_y - 1) != PATH)
 				if (maze_data_check_m(curr_x + 1, curr_y - 1) == 0 && maze_data_check_m(curr_x - 1, curr_y - 1) == 0 &&
 					maze_data_check_m(curr_x, curr_y - 2) == 0)
 					maze_data [(curr_x)*2 + (curr_y - 1)*128 + 1 : (curr_x)*2 + (curr_y - 1)*128] = FRONTIER;
@@ -119,12 +123,33 @@ module maze_carver
 		
 		// PUSH TO STACK IF POS MOVED
 		
+		
 		// IF ALL WALLS OR PATHS BY POS, POP STACK
 
 		// CONTINUE LOOP UNTIL STACK IS EMPTY
 		
 	end
 		
+	function push;
+		input [6:0] x_pos;
+		input [6:0] y_pos;
+		begin
+			stack_pos = stack_pos + 1;
+			stack_x [stack_pos - 1] = x_pos;
+			stack_y [stack_pos - 1] = y_pos;
+		end
+	endfunction
+		
+	function pop;
+		output [6:0] x_pos;
+		output [6:0] y_pos;
+		begin
+			stack_pos = stack_pos - 1;
+			x_pos = stack_x [stack_pos];
+			y_pos = stack_y [stack_pos];
+		end
+	endfunction
+	
 	function [1:0] maze_data_check;
 		input clk;
 		input reg [15:0] reg_x;
