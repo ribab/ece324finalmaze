@@ -115,110 +115,24 @@ Compiling verilog file "../maze_renderer_test.v" in library work
 Module <fifo> compiled
 Compiling verilog file "../maze_carver.v" in library work
 Module <maze_renderer_test> compiled
+ERROR:HDLCompilers:26 - "../maze_carver.v" line 229 unexpected token: '='
+ERROR:HDLCompilers:26 - "../maze_carver.v" line 230 unexpected token: '='
+ERROR:HDLCompilers:26 - "../maze_carver.v" line 231 unexpected token: '='
+ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_x_t2' has not been declared
+ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_y_t128_p1' has not been declared
+ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_x_t2' has not been declared
+ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_y_t128' has not been declared
 Compiling verilog file "../keyboard_code/kb_code.v" in library work
 Module <maze_carver> compiled
 Compiling verilog file "../lab8_fpga_top.v" in library work
 Module <kb_code> compiled
 Module <Lab8_fpga_top> compiled
-No errors in compilation
-Analysis of file <"Lab8_fpga_top.prj"> succeeded.
- 
+Analysis of file <"Lab8_fpga_top.prj"> failed.
+--> 
 
-=========================================================================
-*                     Design Hierarchy Analysis                         *
-=========================================================================
-Analyzing hierarchy for module <Lab8_fpga_top> in library <work>.
+Total memory usage is 232596 kilobytes
 
-Analyzing hierarchy for module <kb_code> in library <work> with parameters.
-	BRK = "11110000"
-	W_SIZE = "00000000000000000000000000000010"
-	get_code = "1"
-	wait_brk = "0"
+Number of errors   :    7 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 
-Analyzing hierarchy for module <maze_renderer_test> in library <work>.
-
-Analyzing hierarchy for module <maze_carver> in library <work> with parameters.
-	FRONTIER = "10"
-	OUT = "00"
-	PATH = "11"
-	WALL = "01"
-	maze_height = "001000000"
-	maze_width = "010000000"
-
-Analyzing hierarchy for module <ps2_rx> in library <work> with parameters.
-	dps = "01"
-	idle = "00"
-	load = "10"
-
-Analyzing hierarchy for module <fifo> in library <work> with parameters.
-	B = "00000000000000000000000000001000"
-	BRK = "11110000"
-	W = "00000000000000000000000000000010"
-
-Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
-	HB = "00000000000000000000000000010000"
-	HD = "00000000000000000000001010000000"
-	HF = "00000000000000000000000000110000"
-	HR = "00000000000000000000000001100000"
-	VB = "00000000000000000000000000100001"
-	VD = "00000000000000000000000111100000"
-	VF = "00000000000000000000000000001010"
-	VR = "00000000000000000000000000000010"
-
-Analyzing hierarchy for module <rand_num> in library <work> with parameters.
-	base = "10100101"
-
-
-=========================================================================
-*                            HDL Analysis                               *
-=========================================================================
-Analyzing top module <Lab8_fpga_top>.
-Module <Lab8_fpga_top> is correct for synthesis.
- 
-Analyzing module <kb_code> in library <work>.
-	BRK = 8'b11110000
-	W_SIZE = 32'sb00000000000000000000000000000010
-	get_code = 1'b1
-	wait_brk = 1'b0
-Module <kb_code> is correct for synthesis.
- 
-Analyzing module <ps2_rx> in library <work>.
-	dps = 2'b01
-	idle = 2'b00
-	load = 2'b10
-Module <ps2_rx> is correct for synthesis.
- 
-Analyzing module <fifo> in library <work>.
-	B = 32'sb00000000000000000000000000001000
-	BRK = 8'b11110000
-	W = 32'sb00000000000000000000000000000010
-Module <fifo> is correct for synthesis.
- 
-Analyzing module <maze_renderer_test> in library <work>.
-INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
-INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
-Module <maze_renderer_test> is correct for synthesis.
- 
-Analyzing module <vga_sync> in library <work>.
-	HB = 32'sb00000000000000000000000000010000
-	HD = 32'sb00000000000000000000001010000000
-	HF = 32'sb00000000000000000000000000110000
-	HR = 32'sb00000000000000000000000001100000
-	VB = 32'sb00000000000000000000000000100001
-	VD = 32'sb00000000000000000000000111100000
-	VF = 32'sb00000000000000000000000000001010
-	VR = 32'sb00000000000000000000000000000010
-Module <vga_sync> is correct for synthesis.
- 
-Analyzing module <maze_carver> in library <work>.
-	FRONTIER = 2'b10
-	OUT = 2'b00
-	PATH = 2'b11
-	WALL = 2'b01
-	maze_height = 9'b001000000
-	maze_width = 9'b010000000
-	Calling function <maze_data_check>.
-	Calling function <maze_data_check>.
-	Calling function <maze_data_check>.
-	Calling function <maze_data_check>.
-	Calling function <maze_data_check>.

@@ -5,34 +5,26 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 94 </arg>Connection to input port &apos;<arg fmt="%s" index="2">rd_key_code</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">../maze_carver.v</arg>&quot; line <arg fmt="%d" index="2">229</arg> <arg fmt="%s" index="3">unexpected token: &apos;=&apos;</arg>
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 103 </arg>Connection to input port &apos;<arg fmt="%s" index="2">path_data</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">../maze_carver.v</arg>&quot; line <arg fmt="%d" index="2">230</arg> <arg fmt="%s" index="3">unexpected token: &apos;=&apos;</arg>
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_coord</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">../maze_carver.v</arg>&quot; line <arg fmt="%d" index="2">231</arg> <arg fmt="%s" index="3">unexpected token: &apos;=&apos;</arg>
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 105 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_coord</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="28" delta="new" ><arg fmt="%s" index="1">&quot;../maze_carver.v&quot; line 237 </arg>&apos;<arg fmt="%s" index="2">reg_x_t2</arg>&apos; has not been declared
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 113 </arg>Connection to input port &apos;<arg fmt="%s" index="2">start</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="28" delta="new" ><arg fmt="%s" index="1">&quot;../maze_carver.v&quot; line 237 </arg>&apos;<arg fmt="%s" index="2">reg_y_t128_p1</arg>&apos; has not been declared
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 114 </arg>Connection to input port &apos;<arg fmt="%s" index="2">x_dimension</arg>&apos; does not match port size
+<msg type="error" file="HDLCompilers" num="28" delta="new" ><arg fmt="%s" index="1">&quot;../maze_carver.v&quot; line 237 </arg>&apos;<arg fmt="%s" index="2">reg_x_t2</arg>&apos; has not been declared
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 115 </arg>Connection to input port &apos;<arg fmt="%s" index="2">y_dimension</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="HDLCompilers" num="261" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 116 </arg>Connection to output port &apos;<arg fmt="%s" index="2">maze_data</arg>&apos; does not match port size
-</msg>
-
-<msg type="info" file="Xst" num="1432" delta="new" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
-</msg>
-
-<msg type="info" file="Xst" num="1432" delta="new" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
+<msg type="error" file="HDLCompilers" num="28" delta="new" ><arg fmt="%s" index="1">&quot;../maze_carver.v&quot; line 237 </arg>&apos;<arg fmt="%s" index="2">reg_y_t128</arg>&apos; has not been declared
 </msg>
 
 </messages>
+

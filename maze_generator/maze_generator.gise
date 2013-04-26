@@ -71,6 +71,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="maze_carver.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="maze_carver.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="maze_carver.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="maze_renderer_test.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="maze_renderer_test.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="maze_renderer_test.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="rand_num.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="rand_num.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="rand_num.xst"/>
@@ -110,7 +113,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1366914598" xil_pn:in_ck="2050023162950699189" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1366914594">
+    <transform xil_pn:end_ts="1366928615" xil_pn:in_ck="2050023162950699189" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1366928611">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name=".lso"/>
