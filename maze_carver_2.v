@@ -105,7 +105,7 @@ module maze_carver_2
 					stack_pos <= stack_pos + 1;
 				end
 				
-				sequence <= 1;
+				sequence <= 1; // go to other sequence
 			end
 		
 			if (finish == 0 && sequence == 1) begin
@@ -114,7 +114,7 @@ module maze_carver_2
 				// TODO: Boundary conditions for these
 				// TODO: maybe scratch this and have it just look 10 times
 				//       in random directions instead
-				if (
+				if ( // if stuck pop off stack
 					// up
 					(	maze_data[curr_x + (curr_y - 2)*16] == 1 ||
 						maze_data[curr_x + 1 + (curr_y - 1)*16] == 1 ||
@@ -135,13 +135,13 @@ module maze_carver_2
 						maze_data[curr_x + 1 + (curr_y + 1)*16] == 1 ||
 						maze_data[curr_x + 1 + (curr_y - 1)*16] == 1
 					)
-				) begin
+				) begin // pop off stack
 					stack_pos <= stack_pos - 1;
 					curr_x <= stack_x[stack_pos - 1];
 					curr_y <= stack_y[stack_pos - 1];
 				end
 				
-				sequence <= 0;
+				sequence <= 0; // go to other sequence
 			end
 			
 			// CONTINUE LOOP UNTIL STACK IS EMPTY
@@ -150,7 +150,7 @@ module maze_carver_2
 			if (finish == 1 && start == 1)
 				finish <= 0;
 			
-			maze_data[curr_x + curr_y*16] <= 1;
+			maze_data[curr_x + curr_y*16] <= 1; // carve
 		
 	end
 	
