@@ -35,7 +35,7 @@ module Lab8_fpga_top(
 	wire start, finish;
 	
 	// registers for testing display
-	reg [6:0] x_dim = 64, y_dim = 64;
+	reg [6:0] x_dim = 16, y_dim = 16;
 	reg [6:0] tile_width = 2, tile_height = 2;
 	reg [6:0] x_coord = 0, y_coord = 0;
 	wire enable_display;
@@ -114,7 +114,7 @@ module Lab8_fpga_top(
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),
 		.maze_data(maze_data),
-		.finish()
+		.finish(finish)
 	);
 
 

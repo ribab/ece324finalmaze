@@ -8,8 +8,12 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">SU/GSR_INT</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">SU/GTS_INT</arg>
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">145</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">SU/GTS_INT,
+MC/Mram_stack_y63/SPO,
+MC/Mram_stack_y62/SPO,
+MC/Mram_stack_y64/SPO,
+MC/Mram_stack_y61/SPO</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
@@ -17,12 +21,6 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
-</msg>
-
-<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">MRT/COND_20_shift0000&lt;3&gt;61</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MRT/COND_20_shift0000&lt;4&gt;111_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
-</msg>
-
-<msg type="warning" file="Pack" num="266" delta="new" >The function generator <arg fmt="%s" index="1">MRT/rgb_next_mux0000&lt;3&gt;_SW1</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">MRT/rgb_next_and0002_SW2_SW3</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
 </messages>

@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> Reading design: Lab8_fpga_top.prj
 
@@ -165,8 +165,7 @@ Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
 	VF = "00000000000000000000000000001010"
 	VR = "00000000000000000000000000000010"
 
-Analyzing hierarchy for module <rand_num> in library <work> with parameters.
-	base = "10100101"
+Analyzing hierarchy for module <rand_num> in library <work>.
 
 
 =========================================================================
@@ -222,7 +221,6 @@ INFO:Xst:1432 - Contents of array <stack_y> may be accessed with a negative inde
 Module <maze_carver_2> is correct for synthesis.
  
 Analyzing module <rand_num> in library <work>.
-	base = 8'b10100101
 Module <rand_num> is correct for synthesis.
  
 
@@ -231,6 +229,7 @@ Module <rand_num> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <maze_data<0>> in unit <maze_carver_2> has a constant value of 1 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <ps2_rx>.
     Related source file is "../keyboard_code/ps_2_code.v".
@@ -263,8 +262,8 @@ WARNING:Xst:646 - Signal <r_ptr_succ> is assigned but never used. This unconnect
     Found 2-bit comparator equal for signal <full_reg$cmp_eq0000> created at line 91.
     Found 1-bit 4-to-1 multiplexer for signal <full_reg$mux0000> created at line 76.
     Found 1-bit register for signal <ignore_next>.
-    Found 2-bit adder for signal <old_r_ptr_succ_14$add0000> created at line 70.
-    Found 2-bit adder for signal <old_w_ptr_succ_15$add0000> created at line 69.
+    Found 2-bit adder for signal <old_r_ptr_succ_13$add0000> created at line 70.
+    Found 2-bit adder for signal <old_w_ptr_succ_14$add0000> created at line 69.
     Found 2-bit register for signal <r_ptr_reg>.
     Found 2-bit register for signal <w_ptr_reg>.
     Summary:
@@ -349,7 +348,7 @@ WARNING:Xst:643 - "../maze_renderer_test.v" line 46: The result of a 10x7-bit mu
     Found 10-bit shifter logical right for signal <centered_tile_x$shift0000>.
     Found 10-bit subtractor for signal <centered_tile_y$addsub0000> created at line 52.
     Found 10-bit shifter logical right for signal <centered_tile_y$shift0000>.
-    Found 32-bit shifter logical right for signal <COND_21$shift0001> created at line 83.
+    Found 32-bit shifter logical right for signal <COND_20$shift0001> created at line 83.
     Found 12-bit adder for signal <maze_border_x$sub0000> created at line 47.
     Found 12-bit adder for signal <maze_border_y$sub0000> created at line 48.
     Found 10x7-bit multiplier for signal <maze_pixel_h$mult0001> created at line 46.
@@ -393,49 +392,32 @@ Synthesizing Unit <maze_carver_2>.
     Related source file is "../maze_carver_2.v".
 WARNING:Xst:647 - Input <x_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <y_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1305 - Output <maze_data> is never assigned. Tied to value 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001.
 WARNING:Xst:1780 - Signal <start_y> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <start_x> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:1780 - Signal <dir_dist> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 256x5-bit dual-port RAM <Mram_stack_x> for signal <stack_x>.
     Found 256x5-bit dual-port RAM <Mram_stack_y> for signal <stack_y>.
-    Found 256x1-bit ROM for signal <$COND_26>.
-    Found 256x1-bit ROM for signal <$COND_29>.
-    Found 256x1-bit ROM for signal <$COND_32>.
-    Found 256x1-bit ROM for signal <$COND_35>.
-    Found 256x1-bit ROM for signal <$COND_38>.
-    Found 256x1-bit ROM for signal <$COND_41>.
-    Found 256x1-bit ROM for signal <$COND_44>.
-    Found 256x1-bit ROM for signal <$COND_47>.
-    Found 256x1-bit ROM for signal <$COND_50>.
-    Found 256x1-bit ROM for signal <$COND_53>.
-    Found 256x1-bit ROM for signal <$COND_56>.
-    Found 256x1-bit ROM for signal <$COND_59>.
-    Found 256x1-bit ROM for signal <$COND_62>.
-    Found 256x1-bit ROM for signal <$COND_65>.
-    Found 256x1-bit ROM for signal <$COND_68>.
-    Found 256x1-bit ROM for signal <$COND_71>.
-    Found 256x1-bit ROM for signal <$COND_74>.
     Found 1-bit register for signal <finish>.
-    Found 6-bit adder for signal <$add0003> created at line 95.
-    Found 8-bit subtractor for signal <$sub0000> created at line 95.
-    Found 7-bit subtractor for signal <$sub0001> created at line 95.
-    Found 6-bit subtractor for signal <$sub0002> created at line 120.
-    Found 6-bit subtractor for signal <$sub0003> created at line 120.
-    Found 7-bit subtractor for signal <$sub0004> created at line 120.
-    Found 7-bit subtractor for signal <$sub0005> created at line 120.
-    Found 6-bit adder carry out for signal <add0000$addsub0000> created at line 95.
-    Found 5-bit adder carry out for signal <add0001$addsub0000> created at line 95.
-    Found 5-bit adder carry out for signal <add0002$addsub0000> created at line 95.
-    Found 5-bit adder carry out for signal <add0004$addsub0000> created at line 120.
-    Found 5-bit adder carry out for signal <add0005$addsub0000> created at line 120.
-    Found 2-bit adder for signal <and0000$addsub0001> created at line 95.
-    Found 2-bit adder carry out for signal <and0000$addsub0002> created at line 95.
-    Found 1-bit adder carry out for signal <and0000$addsub0003> created at line 95.
-    Found 6-bit adder carry out for signal <COND_25$addsub0001> created at line 95.
-    Found 5-bit adder carry out for signal <COND_43$addsub0000> created at line 120.
-    Found 5-bit adder carry out for signal <COND_67$addsub0001> created at line 120.
+    Found 255-bit register for signal <maze_data<255:1>>.
+    Found 6-bit adder for signal <$add0003> created at line 94.
+    Found 8-bit subtractor for signal <$sub0000> created at line 94.
+    Found 7-bit subtractor for signal <$sub0001> created at line 94.
+    Found 6-bit subtractor for signal <$sub0002> created at line 119.
+    Found 6-bit subtractor for signal <$sub0003> created at line 119.
+    Found 7-bit subtractor for signal <$sub0004> created at line 119.
+    Found 7-bit subtractor for signal <$sub0005> created at line 119.
+    Found 6-bit adder carry out for signal <add0000$addsub0000> created at line 94.
+    Found 5-bit adder carry out for signal <add0001$addsub0000> created at line 94.
+    Found 5-bit adder carry out for signal <add0002$addsub0000> created at line 94.
+    Found 5-bit adder carry out for signal <add0004$addsub0000> created at line 119.
+    Found 5-bit adder carry out for signal <add0005$addsub0000> created at line 119.
+    Found 2-bit adder for signal <and0000$addsub0001> created at line 94.
+    Found 2-bit adder carry out for signal <and0000$addsub0002> created at line 94.
+    Found 1-bit adder carry out for signal <and0000$addsub0003> created at line 94.
+    Found 6-bit adder carry out for signal <COND_24$addsub0001> created at line 94.
+    Found 5-bit adder carry out for signal <COND_42$addsub0000> created at line 119.
+    Found 5-bit adder carry out for signal <COND_66$addsub0001> created at line 119.
     Found 5-bit register for signal <curr_x>.
     Found 5-bit adder for signal <curr_x$share0000>.
     Found 5-bit register for signal <curr_y>.
@@ -445,10 +427,10 @@ WARNING:Xst:1780 - Signal <dir_dist> is never used or assigned. This unconnected
     Found 8-bit addsub for signal <stack_pos$mux0000>.
     Summary:
 	inferred   2 RAM(s).
-	inferred  17 ROM(s).
 	inferred   1 Counter(s).
-	inferred  12 D-type flip-flop(s).
-	inferred  35 Adder/Subtractor(s).
+	inferred 267 D-type flip-flop(s).
+	inferred  36 Adder/Subtractor(s).
+	inferred  17 Multiplexer(s).
 Unit <maze_carver_2> synthesized.
 
 
@@ -457,7 +439,7 @@ Synthesizing Unit <Lab8_fpga_top>.
 WARNING:Xst:1780 - Signal <y_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <x_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <finish> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <char_y_speed> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <char_y_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <char_x_speed> is used but never assigned. This sourceless signal will be automatically connected to value 0001001100010010110100000000.
@@ -491,15 +473,14 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  256x5-bit dual-port RAM                               : 2
-# ROMs                                                 : 19
+# ROMs                                                 : 2
  16x1-bit ROM                                          : 2
- 256x1-bit ROM                                         : 17
 # Multipliers                                          : 6
  10x10-bit multiplier                                  : 4
  10x7-bit multiplier                                   : 2
-# Adders/Subtractors                                   : 57
+# Adders/Subtractors                                   : 58
  1-bit adder carry out                                 : 1
- 10-bit adder                                          : 3
+ 10-bit adder                                          : 4
  10-bit subtractor                                     : 2
  11-bit adder                                          : 5
  12-bit adder                                          : 5
@@ -528,8 +509,8 @@ Macro Statistics
  28-bit up counter                                     : 1
  7-bit updown counter                                  : 2
  8-bit up counter                                      : 1
-# Registers                                            : 26
- 1-bit register                                        : 9
+# Registers                                            : 281
+ 1-bit register                                        : 264
  11-bit register                                       : 1
  2-bit register                                        : 3
  3-bit register                                        : 1
@@ -545,7 +526,8 @@ Macro Statistics
  11-bit comparator less                                : 1
  2-bit comparator equal                                : 2
  28-bit comparator less                                : 1
-# Multiplexers                                         : 4
+# Multiplexers                                         : 21
+ 1-bit 256-to-1 multiplexer                            : 17
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 8192-to-1 multiplexer                           : 2
 # Logic shifters                                       : 12
@@ -561,8 +543,518 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <RN> is unconnected in block <MC>.
-   It will be removed from the design.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_4 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_5 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_6 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_7 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_8 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_9 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_10 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_11 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_12 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_13 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_14 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_15 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_16 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_17 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_18 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_19 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_20 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_21 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_22 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_23 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_24 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_25 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_26 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_27 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_28 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_29 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_30 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_31 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_32 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_33 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_34 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_35 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_36 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_37 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_38 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_39 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_40 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_41 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_42 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_43 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_44 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_45 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_46 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_47 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_48 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_49 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_50 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_51 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_52 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_53 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_54 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_55 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_56 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_57 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_58 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_59 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_60 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_61 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_62 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_63 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_64 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_65 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_66 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_67 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_68 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_69 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_70 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_71 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_72 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_73 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_74 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_75 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_76 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_77 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_78 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_79 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_80 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_81 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_82 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_83 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_84 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_85 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_86 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_87 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_88 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_89 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_90 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_91 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_92 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_93 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_94 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_95 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_96 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_97 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_98 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_99 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_100 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_101 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_102 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_103 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_104 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_105 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_106 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_107 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_108 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_109 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_110 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_111 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_112 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_113 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_114 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_115 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_116 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_117 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_118 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_119 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_120 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_121 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_122 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_123 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_124 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_125 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_126 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_127 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_128 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_129 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_130 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_131 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_132 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_133 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_134 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_135 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_136 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_137 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_138 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_139 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_140 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_141 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_142 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_143 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_144 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_145 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_146 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_147 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_148 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_149 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_150 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_151 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_152 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_153 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_154 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_155 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_156 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_157 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_158 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_159 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_160 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_161 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_162 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_163 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_164 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_165 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_166 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_167 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_168 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_169 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_170 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_171 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_172 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_173 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_174 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_175 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_176 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_177 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_178 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_179 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_180 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_181 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_182 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_183 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_184 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_185 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_186 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_187 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_188 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_189 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_190 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_191 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_192 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_193 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_194 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_195 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_196 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_197 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_198 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_199 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_200 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_201 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_202 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_203 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_204 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_205 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_206 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_207 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_208 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_209 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_210 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_211 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_212 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_213 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_214 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_215 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_216 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_217 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_218 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_219 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_220 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_221 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_222 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_223 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_224 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_225 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_226 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_227 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_228 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_229 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_230 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_231 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_232 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_233 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_234 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_235 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_236 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_237 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_238 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_239 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_240 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_241 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_242 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_243 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_244 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_245 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_246 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_247 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_248 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_249 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_250 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_251 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_252 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_253 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_254 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_255 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_3 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch finish hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_2 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_1 hinder the constant cleaning in the block MC.
+   You should achieve better results by setting this init to 1.
 WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx_unit>.
 
 Synthesizing (advanced) Unit <maze_carver_2>.
@@ -607,13 +1099,12 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  256x5-bit dual-port distributed RAM                   : 2
-# ROMs                                                 : 19
+# ROMs                                                 : 2
  16x1-bit ROM                                          : 2
- 256x1-bit ROM                                         : 17
 # Multipliers                                          : 6
  10x10-bit multiplier                                  : 4
  10x7-bit multiplier                                   : 2
-# Adders/Subtractors                                   : 57
+# Adders/Subtractors                                   : 58
  1-bit adder carry out                                 : 1
  10-bit adder                                          : 2
  10-bit subtractor                                     : 2
@@ -629,7 +1120,7 @@ Macro Statistics
  5-bit adder carry out                                 : 6
  6-bit adder carry out                                 : 2
  7-bit subtractor                                      : 2
- 8-bit adder                                           : 13
+ 8-bit adder                                           : 14
  8-bit adder carry in                                  : 1
  8-bit addsub                                          : 1
  8-bit subtractor                                      : 4
@@ -638,8 +1129,8 @@ Macro Statistics
  28-bit up counter                                     : 1
  7-bit updown counter                                  : 2
  8-bit up counter                                      : 1
-# Registers                                            : 110
- Flip-Flops                                            : 110
+# Registers                                            : 365
+ Flip-Flops                                            : 365
 # Comparators                                          : 19
  10-bit comparator equal                               : 4
  10-bit comparator greatequal                          : 4
@@ -648,7 +1139,8 @@ Macro Statistics
  11-bit comparator less                                : 1
  2-bit comparator equal                                : 2
  28-bit comparator less                                : 1
-# Multiplexers                                         : 4
+# Multiplexers                                         : 21
+ 1-bit 256-to-1 multiplexer                            : 17
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 8192-to-1 multiplexer                           : 2
 # Logic shifters                                       : 12
@@ -663,7 +1155,515 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1426 - The value init of the FF/Latch sequence hinder the constant cleaning in the block maze_carver_2.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_253 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_252 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_251 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_250 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_249 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_248 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_247 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_246 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_245 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_244 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_243 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_242 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_241 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_240 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_239 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_238 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_237 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_236 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_235 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_234 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_233 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_232 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_231 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_230 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_229 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_228 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_227 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_226 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_225 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_224 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_223 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_222 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_221 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_220 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_219 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_218 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_217 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_216 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_215 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_214 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_213 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_212 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_211 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_210 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_209 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_208 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_207 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_206 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_205 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_204 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_203 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_202 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_201 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_200 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_199 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_198 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_197 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_196 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_195 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_194 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_193 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_192 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_191 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_190 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_189 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_188 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_187 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_186 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_185 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_184 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_183 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_182 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_181 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_180 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_179 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_178 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_177 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_176 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_175 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_174 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_173 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_172 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_171 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_170 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_169 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_168 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_167 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_166 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_165 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_164 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_163 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_162 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_161 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_160 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_159 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_158 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_157 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_156 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_155 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_154 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_153 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_152 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_151 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_150 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_149 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_148 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_147 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_146 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_145 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_144 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_143 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_142 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_141 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_140 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_139 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_138 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_137 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_136 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_135 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_134 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_133 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_132 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_131 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_130 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_129 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_128 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_127 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_126 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_125 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_124 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_123 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_122 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_121 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_120 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_119 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_118 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_117 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_116 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_115 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_114 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_113 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_112 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_111 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_110 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_109 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_108 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_107 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_106 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_105 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_104 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_103 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_102 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_101 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_100 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_99 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_98 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_97 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_96 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_95 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_94 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_93 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_92 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_91 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_90 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_89 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_88 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_87 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_86 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_85 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_84 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_83 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_82 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_81 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_80 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_79 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_78 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_77 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_76 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_75 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_74 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_73 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_72 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_71 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_70 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_69 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_68 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_67 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_66 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_65 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_64 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_63 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_62 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_61 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_60 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_59 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_58 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_57 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_56 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_55 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_54 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_53 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_52 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_51 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_50 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_49 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_48 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_47 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_46 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_45 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_44 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_43 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_42 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_41 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_40 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_39 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_38 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_37 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_36 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_35 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_34 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_33 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_32 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_31 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_30 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_29 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_28 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_27 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_26 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_25 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_24 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_23 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_22 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_21 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_20 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_19 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_18 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_17 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_16 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_15 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_14 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_13 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_12 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_11 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_10 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_9 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_8 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_7 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_6 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_5 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_4 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_3 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_2 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_1 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_254 hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch maze_data_255 hinder the constant cleaning in the block maze_carver_2.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1426 - The value init of the FF/Latch finish hinder the constant cleaning in the block maze_carver_2.
    You should achieve better results by setting this init to 1.
@@ -673,25 +1673,21 @@ INFO:Xst:2261 - The FF/Latch <rgb_next_5> in Unit <maze_renderer_test> is equiva
 INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_reg_1> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_3> <rgb_reg_4> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_6> <rgb_reg_7> 
-INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_44> <Mrom__COND_74> are equivalent, XST will keep only <Mrom__COND_44>.
-INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_47> <Mrom__COND_56> are equivalent, XST will keep only <Mrom__COND_47>.
-INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_53> <Mrom__COND_62> are equivalent, XST will keep only <Mrom__COND_53>.
-INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_65> <Mrom__COND_71> are equivalent, XST will keep only <Mrom__COND_65>.
 WARNING:Xst:2677 - Node <curr_y_4> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y65> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y66> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y67> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y70> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y68> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y69> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y71> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y69> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y70> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y72> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y73> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y74> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y77> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y75> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y76> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y78> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y76> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y77> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y79> of sequential type is unconnected in block <maze_carver_2>.
 WARNING:Xst:2677 - Node <Mram_stack_y80> of sequential type is unconnected in block <maze_carver_2>.
 
@@ -732,327 +1728,10 @@ Optimizing unit <rand_num> ...
 Optimizing unit <maze_renderer_test> ...
 
 Optimizing unit <maze_carver_2> ...
-WARNING:Xst:2677 - Node <Mram_stack_x3> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x1> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x2> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x4> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x5> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x6> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x7> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x10> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x8> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x9> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x11> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x12> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x13> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x14> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x17> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x15> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x16> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x18> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x19> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x20> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x21> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x24> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x22> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x23> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x25> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x26> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x27> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x28> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x31> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x29> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x30> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x32> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x33> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x34> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x35> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x38> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x36> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x37> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x39> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x40> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x41> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x42> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x45> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x43> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x44> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x46> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x47> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x48> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x49> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x52> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x50> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x51> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x53> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x54> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x55> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x56> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x59> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x57> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x58> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x62> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x60> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x61> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x65> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x63> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x64> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x66> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x67> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x68> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x69> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x72> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x70> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x71> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x73> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x74> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x75> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x76> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x79> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x77> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x78> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x80> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y1> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y2> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y3> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y4> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y7> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y5> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y6> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y8> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y9> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y10> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y11> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y14> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y12> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y13> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y15> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y16> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y17> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y18> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y21> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y19> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y20> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y22> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y23> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y24> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y25> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y28> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y26> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y27> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y29> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y30> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y31> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y32> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y35> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y33> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y34> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y36> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y37> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y38> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y39> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y42> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y40> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y41> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y43> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y44> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y45> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y46> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y49> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y47> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y48> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y50> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y51> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y52> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y53> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y56> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y54> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y55> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y57> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y58> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y59> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y60> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y63> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y61> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y62> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y64> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x3> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x1> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x2> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x4> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x5> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x6> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x7> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x10> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x8> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x9> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x11> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x12> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x13> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x14> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x17> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x15> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x16> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x18> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x19> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x20> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x21> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x24> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x22> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x23> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x25> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x26> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x27> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x28> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x31> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x29> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x30> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x32> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x33> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x34> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x35> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x38> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x36> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x37> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x39> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x40> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x41> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x42> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x45> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x43> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x44> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x46> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x47> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x48> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x49> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x52> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x50> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x51> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x53> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x54> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x55> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x56> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x59> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x57> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x58> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x62> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x60> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x61> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x65> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x63> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x64> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x66> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x67> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x68> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x69> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x72> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x70> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x71> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x73> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x74> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x75> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x76> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x79> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x77> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x78> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_x80> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y1> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y2> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y3> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y4> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y7> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y5> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y6> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y8> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y9> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y10> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y11> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y14> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y12> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y13> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y15> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y16> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y17> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y18> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y21> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y19> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y20> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y22> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y23> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y24> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y25> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y28> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y26> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y27> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y29> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y30> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y31> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y32> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y35> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y33> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y34> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y36> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y37> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y38> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y39> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y42> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y40> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y41> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y43> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y44> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y45> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y46> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y49> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y47> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y48> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y50> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y51> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y52> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y53> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y56> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y54> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y55> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y57> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y58> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y59> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y60> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y63> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y61> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y62> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <Mram_stack_y64> of sequential type is unconnected in block <maze_carver_2>.
-WARNING:Xst:2677 - Node <MC/RN/rand_0> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/rand_1> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_0> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_1> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_2> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_3> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_4> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_5> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_6> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/RN/base_reg_7> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_7> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_6> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_5> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_4> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_3> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_2> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_1> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/stack_pos_0> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/finish> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/sequence> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_y_3> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_y_2> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_y_1> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_y_0> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_x_4> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_x_3> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_x_2> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_x_1> of sequential type is unconnected in block <Lab8_fpga_top>.
-WARNING:Xst:2677 - Node <MC/curr_x_0> of sequential type is unconnected in block <Lab8_fpga_top>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 10.
+Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 44.
 FlipFlop tile_height_0 has been replicated 1 time(s)
 FlipFlop tile_height_1 has been replicated 1 time(s)
 FlipFlop tile_height_2 has been replicated 1 time(s)
@@ -1062,7 +1741,7 @@ FlipFlop tile_width_0 has been replicated 1 time(s)
 FlipFlop tile_width_1 has been replicated 1 time(s)
 FlipFlop tile_width_2 has been replicated 1 time(s)
 FlipFlop tile_width_3 has been replicated 1 time(s)
-FlipFlop tile_width_4 has been replicated 1 time(s)
+FlipFlop tile_width_4 has been replicated 2 time(s)
 FlipFlop tile_width_5 has been replicated 1 time(s)
 FlipFlop tile_width_6 has been replicated 1 time(s)
 
@@ -1072,8 +1751,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 146
- Flip-Flops                                            : 146
+# Registers                                            : 431
+ Flip-Flops                                            : 431
 
 =========================================================================
 
@@ -1102,36 +1781,38 @@ Design Statistics
 # IOs                              : 45
 
 Cell Usage :
-# BELS                             : 1446
+# BELS                             : 6967
 #      GND                         : 1
-#      INV                         : 45
+#      INV                         : 46
 #      LUT1                        : 58
-#      LUT2                        : 203
-#      LUT2_D                      : 3
+#      LUT2                        : 439
+#      LUT2_D                      : 2
 #      LUT2_L                      : 4
-#      LUT3                        : 117
+#      LUT3                        : 2403
 #      LUT3_D                      : 11
-#      LUT3_L                      : 16
-#      LUT4                        : 322
-#      LUT4_D                      : 16
-#      LUT4_L                      : 39
+#      LUT3_L                      : 15
+#      LUT4                        : 881
+#      LUT4_D                      : 15
+#      LUT4_L                      : 38
 #      MULT_AND                    : 8
-#      MUXCY                       : 291
-#      MUXF5                       : 72
-#      MUXF6                       : 2
-#      MUXF7                       : 2
-#      MUXF8                       : 1
+#      MUXCY                       : 305
+#      MUXF5                       : 1382
+#      MUXF6                       : 643
+#      MUXF7                       : 313
+#      MUXF8                       : 152
 #      VCC                         : 1
-#      XORCY                       : 234
-# FlipFlops/Latches                : 146
-#      FD                          : 23
+#      XORCY                       : 250
+# FlipFlops/Latches                : 431
+#      FD                          : 32
 #      FD_1                        : 3
-#      FDE                         : 54
-#      FDR                         : 33
-#      FDRE                        : 28
+#      FDE                         : 328
+#      FDR                         : 34
+#      FDRE                        : 29
 #      FDRS                        : 2
 #      FDS                         : 1
 #      FDSE                        : 2
+# RAMS                             : 144
+#      RAM16X1D                    : 144
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 44
@@ -1148,9 +1829,11 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                      442  out of   4656     9%  
- Number of Slice Flip Flops:            146  out of   9312     1%  
- Number of 4 input LUTs:                834  out of   9312     8%  
+ Number of Slices:                     2007  out of   4656    43%  
+ Number of Slice Flip Flops:            431  out of   9312     4%  
+ Number of 4 input LUTs:               4200  out of   9312    45%  
+    Number used as logic:              3912
+    Number used as RAMs:                288
  Number of IOs:                          45
  Number of bonded IOBs:                  45  out of    232    19%  
  Number of MULT18X18SIOs:                 6  out of     20    30%  
@@ -1177,7 +1860,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 146   |
+clk                                | BUFGP                  | 575   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1188,10 +1871,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 30.652ns (Maximum Frequency: 32.624MHz)
+   Minimum period: 30.913ns (Maximum Frequency: 32.349MHz)
    Minimum input arrival time before clock: 3.321ns
    Maximum output required time after clock: 6.978ns
-   Maximum combinational path delay: 2.560ns
+   Maximum combinational path delay: 2.655ns
 
 Timing Detail:
 --------------
@@ -1199,10 +1882,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 30.652ns (frequency: 32.624MHz)
-  Total number of paths / destination ports: 360557360 / 211
+  Clock period: 30.913ns (frequency: 32.349MHz)
+  Total number of paths / destination ports: 358716392 / 1953
 -------------------------------------------------------------------------
-Delay:               30.652ns (Levels of Logic = 27)
+Delay:               30.913ns (Levels of Logic = 27)
   Source:            tile_width_6_1 (FF)
   Destination:       MRT/rgb_next_5 (FF)
   Source Clock:      clk rising
@@ -1214,40 +1897,40 @@ Delay:               30.652ns (Levels of Logic = 27)
     ----------------------------------------  ------------
      FDE:C->Q              7   0.514   0.754  tile_width_6_1 (tile_width_6_1)
      LUT4_D:I0->O         12   0.612   0.820  MRT/centered_tile_x<5>11 (MRT/N118)
-     LUT4:I3->O            3   0.612   0.451  MRT/tile_pixel_w_shift0000<4>1 (MRT/tile_pixel_w<4>)
-     MULT18X18SIO:A4->P4    3   3.251   0.451  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<4>)
-     INV:I->O              1   0.612   0.000  MRT/maze_border_x_not0000<4>1_INV_0 (MRT/maze_border_x_not0000<4>)
-     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<4> (MRT/Madd_maze_border_x_sub0000_Madd_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<5> (MRT/Madd_maze_border_x_sub0000_Madd_cy<5>)
+     LUT4:I3->O            3   0.612   0.451  MRT/tile_pixel_w_shift0000<5>1 (MRT/tile_pixel_w<5>)
+     MULT18X18SIO:A5->P5    3   3.251   0.451  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<5>)
+     INV:I->O              1   0.612   0.000  MRT/maze_border_x_not0000<5>1_INV_0 (MRT/maze_border_x_not0000<5>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<5> (MRT/Madd_maze_border_x_sub0000_Madd_cy<5>)
      XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_x_sub0000_Madd_xor<6> (MRT/maze_border_x<5>)
      LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_x_addsub0000_lut<5> (MRT/Msub_centered_tile_x_addsub0000_lut<5>)
      MUXCY:S->O            1   0.404   0.000  MRT/Msub_centered_tile_x_addsub0000_cy<5> (MRT/Msub_centered_tile_x_addsub0000_cy<5>)
      XORCY:CI->O           7   0.699   0.632  MRT/Msub_centered_tile_x_addsub0000_xor<6> (MRT/centered_tile_x_addsub0000<6>)
-     LUT3:I2->O            1   0.612   0.000  MRT/centered_tile_x<3>_SW0_G (N255)
-     MUXF5:I1->O           4   0.278   0.568  MRT/centered_tile_x<3>_SW0 (N85)
-     LUT2:I1->O            1   0.612   0.000  MRT/centered_tile_x<3>11_SW1_F (N266)
-     MUXF5:I0->O           1   0.278   0.360  MRT/centered_tile_x<3>11_SW1 (N151)
-     LUT4:I3->O            3   0.612   0.451  MRT/centered_tile_x<3> (MRT/centered_tile_x<3>)
-     MULT18X18SIO:A3->P9    1   4.022   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<9>)
-     LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0001_lut<9> (MRT/Msub__sub0001_lut<9>)
-     MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0001_cy<9> (MRT/Msub__sub0001_cy<9>)
-     XORCY:CI->O           3   0.699   0.481  MRT/Msub__sub0001_xor<10> (MRT/_sub0001<10>)
-     LUT3:I2->O            1   0.612   0.387  MRT/_shift0001<0>161 (MRT/N107)
-     LUT4:I2->O            3   0.612   0.454  MRT/_shift0001<1>147 (MRT/_shift0001<1>147)
-     LUT4:I3->O            1   0.612   0.000  MRT/_shift0001<1>7_G (N263)
+     LUT3:I2->O            1   0.612   0.000  MRT/centered_tile_x<3>_SW0_G (N271)
+     MUXF5:I1->O           4   0.278   0.568  MRT/centered_tile_x<3>_SW0 (N103)
+     LUT2:I1->O            1   0.612   0.000  MRT/centered_tile_x<3>11_SW1_F (N282)
+     MUXF5:I0->O           1   0.278   0.360  MRT/centered_tile_x<3>11_SW1 (N174)
+     LUT4:I3->O           18   0.612   0.908  MRT/centered_tile_x<3> (MRT/centered_tile_x<3>)
+     MULT18X18SIO:A3->P10    1   4.091   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<10>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0001_lut<10> (MRT/Msub__sub0001_lut<10>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0001_cy<10> (MRT/Msub__sub0001_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Msub__sub0001_cy<11> (MRT/Msub__sub0001_cy<11>)
+     XORCY:CI->O           1   0.699   0.387  MRT/Msub__sub0001_xor<12> (MRT/_sub0001<12>)
+     LUT3_D:I2->LO         1   0.612   0.103  MRT/_shift0001<0>12_SW0 (N485)
+     LUT4:I3->O            4   0.612   0.568  MRT/_shift0001<0>12 (MRT/N59)
+     LUT4:I1->O            1   0.612   0.000  MRT/_shift0001<1>7_G (N279)
      MUXF5:I1->O           2   0.278   0.383  MRT/_shift0001<1>7 (MRT/_shift0001<1>7)
-     LUT4:I3->O            1   0.612   0.360  MRT/_shift0001<0>133_SW1 (N163)
+     LUT4:I3->O            1   0.612   0.360  MRT/_shift0001<0>133_SW1 (N189)
      LUT4:I3->O            2   0.612   0.380  MRT/rgb_next_and000210 (MRT/rgb_next_and000210)
-     MUXF5:S->O            1   0.641   0.360  MRT/rgb_next_and000250_SW2 (N127)
+     MUXF5:S->O            1   0.641   0.360  MRT/rgb_next_and000250_SW2 (N145)
      LUT4:I3->O            2   0.612   0.380  MRT/rgb_next_mux0000<6> (MRT/rgb_next_mux0000<6>)
      FDRS:S                    0.795          MRT/rgb_next_5
     ----------------------------------------
-    Total                     30.652ns (21.986ns logic, 8.667ns route)
-                                       (71.7% logic, 28.3% route)
+    Total                     30.913ns (22.055ns logic, 8.859ns route)
+                                       (71.3% logic, 28.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 85 / 85
+  Total number of paths / destination ports: 87 / 87
 -------------------------------------------------------------------------
 Offset:              3.321ns (Levels of Logic = 2)
   Source:            sw<7> (PAD)
@@ -1290,7 +1973,7 @@ Offset:              6.978ns (Levels of Logic = 3)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               2.560ns (Levels of Logic = 1)
+Delay:               2.655ns (Levels of Logic = 1)
   Source:            clk (PAD)
   Destination:       SU:CLK (PAD)
 
@@ -1298,23 +1981,23 @@ Delay:               2.560ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          146   1.457   1.103  clk_BUFGP (clk_BUFGP)
+     BUFGP:I->O          575   1.457   1.199  clk_BUFGP (clk_BUFGP)
     STARTUP_SPARTAN3E:CLK        0.000          SU
     ----------------------------------------
-    Total                      2.560ns (1.457ns logic, 1.103ns route)
-                                       (56.9% logic, 43.1% route)
+    Total                      2.655ns (1.457ns logic, 1.199ns route)
+                                       (54.9% logic, 45.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 179.00 secs
-Total CPU time to Xst completion: 178.79 secs
+Total REAL time to Xst completion: 260.00 secs
+Total CPU time to Xst completion: 260.12 secs
  
 --> 
 
-Total memory usage is 369896 kilobytes
+Total memory usage is 402600 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  408 (   0 filtered)
-Number of infos    :   18 (   0 filtered)
+Number of warnings :  599 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
 

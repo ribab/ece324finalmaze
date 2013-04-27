@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Mon Apr 15 11:57:43 2013
+// Written by: Map P.49d on Sat Apr 27 12:14:19 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -96,15 +96,254 @@ TIMEGRP clk = BEL "y_dim_0" BEL "y_dim_1" BEL "y_dim_2" BEL "y_dim_3" BEL
         "MRT/VGAS/h_count_reg_6" BEL "MRT/VGAS/h_count_reg_7" BEL
         "MRT/VGAS/h_count_reg_8" BEL "MRT/VGAS/h_count_reg_9" BEL
         "MRT/rgb_reg_5" BEL "MRT/rgb_reg_2" BEL "MRT/rgb_reg_0" BEL
-        "MRT/rgb_next_2" BEL "MRT/rgb_next_0" BEL "KB/ps2_rx_unit/f_ps2c_reg"
-        BEL "KB/ps2_rx_unit/state_reg_2" BEL "MRT/VGAS/mod2_reg" BEL
-        "MRT/VGAS/v_sync_reg" BEL "MRT/VGAS/h_sync_reg" BEL "MRT/rgb_next_5"
-        BEL "KB/ps2_rx_unit/state_reg_0" BEL "tile_width_0_1" BEL
-        "tile_width_1_1" BEL "tile_height_1_1" BEL "tile_height_2_1" BEL
-        "tile_width_4_1" BEL "tile_height_0_1" BEL "tile_height_3_1" BEL
-        "tile_width_6_1" BEL "tile_width_5_1" BEL "tile_height_4_1" BEL
-        "tile_height_6_1" BEL "tile_height_5_1" BEL "clk_BUFGP/BUFG.GCLKMUX"
-        BEL "clk_BUFGP/BUFG";
+        "MRT/rgb_next_0" BEL "MC/RN/rand_0" BEL "MC/RN/rand_1" BEL
+        "MC/RN/base_reg_1" BEL "MC/RN/base_reg_2" BEL "MC/RN/base_reg_3" BEL
+        "MC/RN/base_reg_4" BEL "MC/RN/base_reg_5" BEL "MC/RN/base_reg_6" BEL
+        "MC/RN/base_reg_7" BEL "MC/stack_pos_7" BEL "MC/stack_pos_6" BEL
+        "MC/stack_pos_5" BEL "MC/stack_pos_4" BEL "MC/stack_pos_3" BEL
+        "MC/stack_pos_2" BEL "MC/stack_pos_1" BEL "MC/stack_pos_0" BEL
+        "MC/Mram_stack_y63.SLICEM_F" BEL "MC/Mram_stack_y63.SLICEM_G" BEL
+        "MC/Mram_stack_y62.SLICEM_F" BEL "MC/Mram_stack_y62.SLICEM_G" BEL
+        "MC/Mram_stack_y64.SLICEM_F" BEL "MC/Mram_stack_y64.SLICEM_G" BEL
+        "MC/Mram_stack_y61.SLICEM_F" BEL "MC/Mram_stack_y61.SLICEM_G" BEL
+        "MC/Mram_stack_y60.SLICEM_F" BEL "MC/Mram_stack_y60.SLICEM_G" BEL
+        "MC/Mram_stack_y59.SLICEM_F" BEL "MC/Mram_stack_y59.SLICEM_G" BEL
+        "MC/Mram_stack_y58.SLICEM_F" BEL "MC/Mram_stack_y58.SLICEM_G" BEL
+        "MC/Mram_stack_y56.SLICEM_F" BEL "MC/Mram_stack_y56.SLICEM_G" BEL
+        "MC/Mram_stack_y55.SLICEM_F" BEL "MC/Mram_stack_y55.SLICEM_G" BEL
+        "MC/Mram_stack_y57.SLICEM_F" BEL "MC/Mram_stack_y57.SLICEM_G" BEL
+        "MC/Mram_stack_y54.SLICEM_F" BEL "MC/Mram_stack_y54.SLICEM_G" BEL
+        "MC/Mram_stack_y53.SLICEM_F" BEL "MC/Mram_stack_y53.SLICEM_G" BEL
+        "MC/Mram_stack_y52.SLICEM_F" BEL "MC/Mram_stack_y52.SLICEM_G" BEL
+        "MC/Mram_stack_y51.SLICEM_F" BEL "MC/Mram_stack_y51.SLICEM_G" BEL
+        "MC/Mram_stack_y49.SLICEM_F" BEL "MC/Mram_stack_y49.SLICEM_G" BEL
+        "MC/Mram_stack_y48.SLICEM_F" BEL "MC/Mram_stack_y48.SLICEM_G" BEL
+        "MC/Mram_stack_y50.SLICEM_F" BEL "MC/Mram_stack_y50.SLICEM_G" BEL
+        "MC/Mram_stack_y47.SLICEM_F" BEL "MC/Mram_stack_y47.SLICEM_G" BEL
+        "MC/Mram_stack_y46.SLICEM_F" BEL "MC/Mram_stack_y46.SLICEM_G" BEL
+        "MC/Mram_stack_y45.SLICEM_F" BEL "MC/Mram_stack_y45.SLICEM_G" BEL
+        "MC/Mram_stack_y44.SLICEM_F" BEL "MC/Mram_stack_y44.SLICEM_G" BEL
+        "MC/Mram_stack_y42.SLICEM_F" BEL "MC/Mram_stack_y42.SLICEM_G" BEL
+        "MC/Mram_stack_y41.SLICEM_F" BEL "MC/Mram_stack_y41.SLICEM_G" BEL
+        "MC/Mram_stack_y43.SLICEM_F" BEL "MC/Mram_stack_y43.SLICEM_G" BEL
+        "MC/Mram_stack_y40.SLICEM_F" BEL "MC/Mram_stack_y40.SLICEM_G" BEL
+        "MC/Mram_stack_y39.SLICEM_F" BEL "MC/Mram_stack_y39.SLICEM_G" BEL
+        "MC/Mram_stack_y38.SLICEM_F" BEL "MC/Mram_stack_y38.SLICEM_G" BEL
+        "MC/Mram_stack_y37.SLICEM_F" BEL "MC/Mram_stack_y37.SLICEM_G" BEL
+        "MC/Mram_stack_y35.SLICEM_F" BEL "MC/Mram_stack_y35.SLICEM_G" BEL
+        "MC/Mram_stack_y34.SLICEM_F" BEL "MC/Mram_stack_y34.SLICEM_G" BEL
+        "MC/Mram_stack_y36.SLICEM_F" BEL "MC/Mram_stack_y36.SLICEM_G" BEL
+        "MC/Mram_stack_y33.SLICEM_F" BEL "MC/Mram_stack_y33.SLICEM_G" BEL
+        "MC/Mram_stack_y32.SLICEM_F" BEL "MC/Mram_stack_y32.SLICEM_G" BEL
+        "MC/Mram_stack_y31.SLICEM_F" BEL "MC/Mram_stack_y31.SLICEM_G" BEL
+        "MC/Mram_stack_y30.SLICEM_F" BEL "MC/Mram_stack_y30.SLICEM_G" BEL
+        "MC/Mram_stack_y28.SLICEM_F" BEL "MC/Mram_stack_y28.SLICEM_G" BEL
+        "MC/Mram_stack_y27.SLICEM_F" BEL "MC/Mram_stack_y27.SLICEM_G" BEL
+        "MC/Mram_stack_y29.SLICEM_F" BEL "MC/Mram_stack_y29.SLICEM_G" BEL
+        "MC/Mram_stack_y26.SLICEM_F" BEL "MC/Mram_stack_y26.SLICEM_G" BEL
+        "MC/Mram_stack_y25.SLICEM_F" BEL "MC/Mram_stack_y25.SLICEM_G" BEL
+        "MC/Mram_stack_y24.SLICEM_F" BEL "MC/Mram_stack_y24.SLICEM_G" BEL
+        "MC/Mram_stack_y23.SLICEM_F" BEL "MC/Mram_stack_y23.SLICEM_G" BEL
+        "MC/Mram_stack_y21.SLICEM_F" BEL "MC/Mram_stack_y21.SLICEM_G" BEL
+        "MC/Mram_stack_y20.SLICEM_F" BEL "MC/Mram_stack_y20.SLICEM_G" BEL
+        "MC/Mram_stack_y22.SLICEM_F" BEL "MC/Mram_stack_y22.SLICEM_G" BEL
+        "MC/Mram_stack_y19.SLICEM_F" BEL "MC/Mram_stack_y19.SLICEM_G" BEL
+        "MC/Mram_stack_y18.SLICEM_F" BEL "MC/Mram_stack_y18.SLICEM_G" BEL
+        "MC/Mram_stack_y17.SLICEM_F" BEL "MC/Mram_stack_y17.SLICEM_G" BEL
+        "MC/Mram_stack_y16.SLICEM_F" BEL "MC/Mram_stack_y16.SLICEM_G" BEL
+        "MC/Mram_stack_y14.SLICEM_F" BEL "MC/Mram_stack_y14.SLICEM_G" BEL
+        "MC/Mram_stack_y13.SLICEM_F" BEL "MC/Mram_stack_y13.SLICEM_G" BEL
+        "MC/Mram_stack_y15.SLICEM_F" BEL "MC/Mram_stack_y15.SLICEM_G" BEL
+        "MC/Mram_stack_y12.SLICEM_F" BEL "MC/Mram_stack_y12.SLICEM_G" BEL
+        "MC/Mram_stack_y11.SLICEM_F" BEL "MC/Mram_stack_y11.SLICEM_G" BEL
+        "MC/Mram_stack_y10.SLICEM_F" BEL "MC/Mram_stack_y10.SLICEM_G" BEL
+        "MC/Mram_stack_y9.SLICEM_F" BEL "MC/Mram_stack_y9.SLICEM_G" BEL
+        "MC/Mram_stack_y7.SLICEM_F" BEL "MC/Mram_stack_y7.SLICEM_G" BEL
+        "MC/Mram_stack_y6.SLICEM_F" BEL "MC/Mram_stack_y6.SLICEM_G" BEL
+        "MC/Mram_stack_y8.SLICEM_F" BEL "MC/Mram_stack_y8.SLICEM_G" BEL
+        "MC/Mram_stack_y5.SLICEM_F" BEL "MC/Mram_stack_y5.SLICEM_G" BEL
+        "MC/Mram_stack_y4.SLICEM_F" BEL "MC/Mram_stack_y4.SLICEM_G" BEL
+        "MC/Mram_stack_y3.SLICEM_F" BEL "MC/Mram_stack_y3.SLICEM_G" BEL
+        "MC/Mram_stack_y2.SLICEM_F" BEL "MC/Mram_stack_y2.SLICEM_G" BEL
+        "MC/Mram_stack_y1.SLICEM_F" BEL "MC/Mram_stack_y1.SLICEM_G" BEL
+        "MC/Mram_stack_x79.SLICEM_F" BEL "MC/Mram_stack_x79.SLICEM_G" BEL
+        "MC/Mram_stack_x78.SLICEM_F" BEL "MC/Mram_stack_x78.SLICEM_G" BEL
+        "MC/Mram_stack_x80.SLICEM_F" BEL "MC/Mram_stack_x80.SLICEM_G" BEL
+        "MC/Mram_stack_x77.SLICEM_F" BEL "MC/Mram_stack_x77.SLICEM_G" BEL
+        "MC/Mram_stack_x76.SLICEM_F" BEL "MC/Mram_stack_x76.SLICEM_G" BEL
+        "MC/Mram_stack_x75.SLICEM_F" BEL "MC/Mram_stack_x75.SLICEM_G" BEL
+        "MC/Mram_stack_x74.SLICEM_F" BEL "MC/Mram_stack_x74.SLICEM_G" BEL
+        "MC/Mram_stack_x72.SLICEM_F" BEL "MC/Mram_stack_x72.SLICEM_G" BEL
+        "MC/Mram_stack_x71.SLICEM_F" BEL "MC/Mram_stack_x71.SLICEM_G" BEL
+        "MC/Mram_stack_x73.SLICEM_F" BEL "MC/Mram_stack_x73.SLICEM_G" BEL
+        "MC/Mram_stack_x70.SLICEM_F" BEL "MC/Mram_stack_x70.SLICEM_G" BEL
+        "MC/Mram_stack_x69.SLICEM_F" BEL "MC/Mram_stack_x69.SLICEM_G" BEL
+        "MC/Mram_stack_x68.SLICEM_F" BEL "MC/Mram_stack_x68.SLICEM_G" BEL
+        "MC/Mram_stack_x67.SLICEM_F" BEL "MC/Mram_stack_x67.SLICEM_G" BEL
+        "MC/Mram_stack_x66.SLICEM_F" BEL "MC/Mram_stack_x66.SLICEM_G" BEL
+        "MC/Mram_stack_x65.SLICEM_F" BEL "MC/Mram_stack_x65.SLICEM_G" BEL
+        "MC/Mram_stack_x64.SLICEM_F" BEL "MC/Mram_stack_x64.SLICEM_G" BEL
+        "MC/Mram_stack_x63.SLICEM_F" BEL "MC/Mram_stack_x63.SLICEM_G" BEL
+        "MC/Mram_stack_x62.SLICEM_F" BEL "MC/Mram_stack_x62.SLICEM_G" BEL
+        "MC/Mram_stack_x61.SLICEM_F" BEL "MC/Mram_stack_x61.SLICEM_G" BEL
+        "MC/Mram_stack_x60.SLICEM_F" BEL "MC/Mram_stack_x60.SLICEM_G" BEL
+        "MC/Mram_stack_x59.SLICEM_F" BEL "MC/Mram_stack_x59.SLICEM_G" BEL
+        "MC/Mram_stack_x57.SLICEM_F" BEL "MC/Mram_stack_x57.SLICEM_G" BEL
+        "MC/Mram_stack_x56.SLICEM_F" BEL "MC/Mram_stack_x56.SLICEM_G" BEL
+        "MC/Mram_stack_x58.SLICEM_F" BEL "MC/Mram_stack_x58.SLICEM_G" BEL
+        "MC/Mram_stack_x55.SLICEM_F" BEL "MC/Mram_stack_x55.SLICEM_G" BEL
+        "MC/Mram_stack_x54.SLICEM_F" BEL "MC/Mram_stack_x54.SLICEM_G" BEL
+        "MC/Mram_stack_x53.SLICEM_F" BEL "MC/Mram_stack_x53.SLICEM_G" BEL
+        "MC/Mram_stack_x52.SLICEM_F" BEL "MC/Mram_stack_x52.SLICEM_G" BEL
+        "MC/Mram_stack_x50.SLICEM_F" BEL "MC/Mram_stack_x50.SLICEM_G" BEL
+        "MC/Mram_stack_x49.SLICEM_F" BEL "MC/Mram_stack_x49.SLICEM_G" BEL
+        "MC/Mram_stack_x51.SLICEM_F" BEL "MC/Mram_stack_x51.SLICEM_G" BEL
+        "MC/Mram_stack_x48.SLICEM_F" BEL "MC/Mram_stack_x48.SLICEM_G" BEL
+        "MC/Mram_stack_x47.SLICEM_F" BEL "MC/Mram_stack_x47.SLICEM_G" BEL
+        "MC/Mram_stack_x46.SLICEM_F" BEL "MC/Mram_stack_x46.SLICEM_G" BEL
+        "MC/Mram_stack_x45.SLICEM_F" BEL "MC/Mram_stack_x45.SLICEM_G" BEL
+        "MC/Mram_stack_x43.SLICEM_F" BEL "MC/Mram_stack_x43.SLICEM_G" BEL
+        "MC/Mram_stack_x42.SLICEM_F" BEL "MC/Mram_stack_x42.SLICEM_G" BEL
+        "MC/Mram_stack_x44.SLICEM_F" BEL "MC/Mram_stack_x44.SLICEM_G" BEL
+        "MC/Mram_stack_x41.SLICEM_F" BEL "MC/Mram_stack_x41.SLICEM_G" BEL
+        "MC/Mram_stack_x40.SLICEM_F" BEL "MC/Mram_stack_x40.SLICEM_G" BEL
+        "MC/Mram_stack_x39.SLICEM_F" BEL "MC/Mram_stack_x39.SLICEM_G" BEL
+        "MC/Mram_stack_x38.SLICEM_F" BEL "MC/Mram_stack_x38.SLICEM_G" BEL
+        "MC/Mram_stack_x36.SLICEM_F" BEL "MC/Mram_stack_x36.SLICEM_G" BEL
+        "MC/Mram_stack_x35.SLICEM_F" BEL "MC/Mram_stack_x35.SLICEM_G" BEL
+        "MC/Mram_stack_x37.SLICEM_F" BEL "MC/Mram_stack_x37.SLICEM_G" BEL
+        "MC/Mram_stack_x34.SLICEM_F" BEL "MC/Mram_stack_x34.SLICEM_G" BEL
+        "MC/Mram_stack_x33.SLICEM_F" BEL "MC/Mram_stack_x33.SLICEM_G" BEL
+        "MC/Mram_stack_x32.SLICEM_F" BEL "MC/Mram_stack_x32.SLICEM_G" BEL
+        "MC/Mram_stack_x31.SLICEM_F" BEL "MC/Mram_stack_x31.SLICEM_G" BEL
+        "MC/Mram_stack_x29.SLICEM_F" BEL "MC/Mram_stack_x29.SLICEM_G" BEL
+        "MC/Mram_stack_x28.SLICEM_F" BEL "MC/Mram_stack_x28.SLICEM_G" BEL
+        "MC/Mram_stack_x30.SLICEM_F" BEL "MC/Mram_stack_x30.SLICEM_G" BEL
+        "MC/Mram_stack_x27.SLICEM_F" BEL "MC/Mram_stack_x27.SLICEM_G" BEL
+        "MC/Mram_stack_x26.SLICEM_F" BEL "MC/Mram_stack_x26.SLICEM_G" BEL
+        "MC/Mram_stack_x25.SLICEM_F" BEL "MC/Mram_stack_x25.SLICEM_G" BEL
+        "MC/Mram_stack_x24.SLICEM_F" BEL "MC/Mram_stack_x24.SLICEM_G" BEL
+        "MC/Mram_stack_x22.SLICEM_F" BEL "MC/Mram_stack_x22.SLICEM_G" BEL
+        "MC/Mram_stack_x21.SLICEM_F" BEL "MC/Mram_stack_x21.SLICEM_G" BEL
+        "MC/Mram_stack_x23.SLICEM_F" BEL "MC/Mram_stack_x23.SLICEM_G" BEL
+        "MC/Mram_stack_x20.SLICEM_F" BEL "MC/Mram_stack_x20.SLICEM_G" BEL
+        "MC/Mram_stack_x19.SLICEM_F" BEL "MC/Mram_stack_x19.SLICEM_G" BEL
+        "MC/Mram_stack_x18.SLICEM_F" BEL "MC/Mram_stack_x18.SLICEM_G" BEL
+        "MC/Mram_stack_x17.SLICEM_F" BEL "MC/Mram_stack_x17.SLICEM_G" BEL
+        "MC/Mram_stack_x15.SLICEM_F" BEL "MC/Mram_stack_x15.SLICEM_G" BEL
+        "MC/Mram_stack_x14.SLICEM_F" BEL "MC/Mram_stack_x14.SLICEM_G" BEL
+        "MC/Mram_stack_x16.SLICEM_F" BEL "MC/Mram_stack_x16.SLICEM_G" BEL
+        "MC/Mram_stack_x13.SLICEM_F" BEL "MC/Mram_stack_x13.SLICEM_G" BEL
+        "MC/Mram_stack_x12.SLICEM_F" BEL "MC/Mram_stack_x12.SLICEM_G" BEL
+        "MC/Mram_stack_x11.SLICEM_F" BEL "MC/Mram_stack_x11.SLICEM_G" BEL
+        "MC/Mram_stack_x10.SLICEM_F" BEL "MC/Mram_stack_x10.SLICEM_G" BEL
+        "MC/Mram_stack_x9.SLICEM_F" BEL "MC/Mram_stack_x9.SLICEM_G" BEL
+        "MC/Mram_stack_x8.SLICEM_F" BEL "MC/Mram_stack_x8.SLICEM_G" BEL
+        "MC/Mram_stack_x7.SLICEM_F" BEL "MC/Mram_stack_x7.SLICEM_G" BEL
+        "MC/Mram_stack_x6.SLICEM_F" BEL "MC/Mram_stack_x6.SLICEM_G" BEL
+        "MC/Mram_stack_x5.SLICEM_F" BEL "MC/Mram_stack_x5.SLICEM_G" BEL
+        "MC/Mram_stack_x4.SLICEM_F" BEL "MC/Mram_stack_x4.SLICEM_G" BEL
+        "MC/Mram_stack_x3.SLICEM_F" BEL "MC/Mram_stack_x3.SLICEM_G" BEL
+        "MC/Mram_stack_x2.SLICEM_F" BEL "MC/Mram_stack_x2.SLICEM_G" BEL
+        "MC/Mram_stack_x1.SLICEM_F" BEL "MC/Mram_stack_x1.SLICEM_G" BEL
+        "MC/finish" BEL "MC/sequence" BEL "MC/curr_x_4" BEL "MC/curr_x_3" BEL
+        "MC/curr_x_2" BEL "MC/curr_x_1" BEL "MC/curr_x_0" BEL
+        "MC/maze_data_255" BEL "MC/curr_y_3" BEL "MC/curr_y_2" BEL
+        "MC/curr_y_1" BEL "MC/curr_y_0" BEL "MC/maze_data_254" BEL
+        "MC/maze_data_253" BEL "MC/maze_data_251" BEL "MC/maze_data_250" BEL
+        "MC/maze_data_252" BEL "MC/maze_data_249" BEL "MC/maze_data_248" BEL
+        "MC/maze_data_246" BEL "MC/maze_data_245" BEL "MC/maze_data_247" BEL
+        "MC/maze_data_244" BEL "MC/maze_data_243" BEL "MC/maze_data_241" BEL
+        "MC/maze_data_240" BEL "MC/maze_data_242" BEL "MC/maze_data_239" BEL
+        "MC/maze_data_238" BEL "MC/maze_data_236" BEL "MC/maze_data_235" BEL
+        "MC/maze_data_237" BEL "MC/maze_data_234" BEL "MC/maze_data_233" BEL
+        "MC/maze_data_232" BEL "MC/maze_data_231" BEL "MC/maze_data_230" BEL
+        "MC/maze_data_229" BEL "MC/maze_data_227" BEL "MC/maze_data_226" BEL
+        "MC/maze_data_228" BEL "MC/maze_data_225" BEL "MC/maze_data_224" BEL
+        "MC/maze_data_222" BEL "MC/maze_data_221" BEL "MC/maze_data_223" BEL
+        "MC/maze_data_220" BEL "MC/maze_data_219" BEL "MC/maze_data_217" BEL
+        "MC/maze_data_216" BEL "MC/maze_data_218" BEL "MC/maze_data_215" BEL
+        "MC/maze_data_214" BEL "MC/maze_data_212" BEL "MC/maze_data_211" BEL
+        "MC/maze_data_213" BEL "MC/maze_data_210" BEL "MC/maze_data_209" BEL
+        "MC/maze_data_207" BEL "MC/maze_data_206" BEL "MC/maze_data_208" BEL
+        "MC/maze_data_205" BEL "MC/maze_data_204" BEL "MC/maze_data_202" BEL
+        "MC/maze_data_201" BEL "MC/maze_data_203" BEL "MC/maze_data_200" BEL
+        "MC/maze_data_199" BEL "MC/maze_data_197" BEL "MC/maze_data_196" BEL
+        "MC/maze_data_198" BEL "MC/maze_data_195" BEL "MC/maze_data_194" BEL
+        "MC/maze_data_192" BEL "MC/maze_data_191" BEL "MC/maze_data_193" BEL
+        "MC/maze_data_190" BEL "MC/maze_data_189" BEL "MC/maze_data_187" BEL
+        "MC/maze_data_186" BEL "MC/maze_data_188" BEL "MC/maze_data_185" BEL
+        "MC/maze_data_184" BEL "MC/maze_data_182" BEL "MC/maze_data_181" BEL
+        "MC/maze_data_183" BEL "MC/maze_data_180" BEL "MC/maze_data_179" BEL
+        "MC/maze_data_177" BEL "MC/maze_data_176" BEL "MC/maze_data_178" BEL
+        "MC/maze_data_175" BEL "MC/maze_data_174" BEL "MC/maze_data_172" BEL
+        "MC/maze_data_171" BEL "MC/maze_data_173" BEL "MC/maze_data_170" BEL
+        "MC/maze_data_169" BEL "MC/maze_data_167" BEL "MC/maze_data_166" BEL
+        "MC/maze_data_168" BEL "MC/maze_data_165" BEL "MC/maze_data_164" BEL
+        "MC/maze_data_162" BEL "MC/maze_data_161" BEL "MC/maze_data_163" BEL
+        "MC/maze_data_160" BEL "MC/maze_data_159" BEL "MC/maze_data_157" BEL
+        "MC/maze_data_156" BEL "MC/maze_data_158" BEL "MC/maze_data_155" BEL
+        "MC/maze_data_154" BEL "MC/maze_data_153" BEL "MC/maze_data_152" BEL
+        "MC/maze_data_151" BEL "MC/maze_data_150" BEL "MC/maze_data_148" BEL
+        "MC/maze_data_147" BEL "MC/maze_data_149" BEL "MC/maze_data_146" BEL
+        "MC/maze_data_145" BEL "MC/maze_data_143" BEL "MC/maze_data_142" BEL
+        "MC/maze_data_144" BEL "MC/maze_data_141" BEL "MC/maze_data_140" BEL
+        "MC/maze_data_138" BEL "MC/maze_data_137" BEL "MC/maze_data_139" BEL
+        "MC/maze_data_136" BEL "MC/maze_data_135" BEL "MC/maze_data_133" BEL
+        "MC/maze_data_132" BEL "MC/maze_data_134" BEL "MC/maze_data_131" BEL
+        "MC/maze_data_130" BEL "MC/maze_data_128" BEL "MC/maze_data_127" BEL
+        "MC/maze_data_129" BEL "MC/maze_data_126" BEL "MC/maze_data_125" BEL
+        "MC/maze_data_123" BEL "MC/maze_data_122" BEL "MC/maze_data_124" BEL
+        "MC/maze_data_121" BEL "MC/maze_data_120" BEL "MC/maze_data_118" BEL
+        "MC/maze_data_117" BEL "MC/maze_data_119" BEL "MC/maze_data_116" BEL
+        "MC/maze_data_115" BEL "MC/maze_data_113" BEL "MC/maze_data_112" BEL
+        "MC/maze_data_114" BEL "MC/maze_data_111" BEL "MC/maze_data_110" BEL
+        "MC/maze_data_108" BEL "MC/maze_data_107" BEL "MC/maze_data_109" BEL
+        "MC/maze_data_106" BEL "MC/maze_data_105" BEL "MC/maze_data_103" BEL
+        "MC/maze_data_102" BEL "MC/maze_data_104" BEL "MC/maze_data_101" BEL
+        "MC/maze_data_100" BEL "MC/maze_data_98" BEL "MC/maze_data_97" BEL
+        "MC/maze_data_99" BEL "MC/maze_data_96" BEL "MC/maze_data_95" BEL
+        "MC/maze_data_93" BEL "MC/maze_data_92" BEL "MC/maze_data_94" BEL
+        "MC/maze_data_91" BEL "MC/maze_data_90" BEL "MC/maze_data_88" BEL
+        "MC/maze_data_87" BEL "MC/maze_data_89" BEL "MC/maze_data_86" BEL
+        "MC/maze_data_85" BEL "MC/maze_data_83" BEL "MC/maze_data_82" BEL
+        "MC/maze_data_84" BEL "MC/maze_data_81" BEL "MC/maze_data_80" BEL
+        "MC/maze_data_78" BEL "MC/maze_data_77" BEL "MC/maze_data_79" BEL
+        "MC/maze_data_76" BEL "MC/maze_data_75" BEL "MC/maze_data_74" BEL
+        "MC/maze_data_73" BEL "MC/maze_data_72" BEL "MC/maze_data_71" BEL
+        "MC/maze_data_69" BEL "MC/maze_data_68" BEL "MC/maze_data_70" BEL
+        "MC/maze_data_67" BEL "MC/maze_data_66" BEL "MC/maze_data_64" BEL
+        "MC/maze_data_63" BEL "MC/maze_data_65" BEL "MC/maze_data_62" BEL
+        "MC/maze_data_61" BEL "MC/maze_data_59" BEL "MC/maze_data_58" BEL
+        "MC/maze_data_60" BEL "MC/maze_data_57" BEL "MC/maze_data_56" BEL
+        "MC/maze_data_54" BEL "MC/maze_data_53" BEL "MC/maze_data_55" BEL
+        "MC/maze_data_52" BEL "MC/maze_data_51" BEL "MC/maze_data_49" BEL
+        "MC/maze_data_48" BEL "MC/maze_data_50" BEL "MC/maze_data_47" BEL
+        "MC/maze_data_46" BEL "MC/maze_data_44" BEL "MC/maze_data_43" BEL
+        "MC/maze_data_45" BEL "MC/maze_data_42" BEL "MC/maze_data_41" BEL
+        "MC/maze_data_39" BEL "MC/maze_data_38" BEL "MC/maze_data_40" BEL
+        "MC/maze_data_37" BEL "MC/maze_data_36" BEL "MC/maze_data_34" BEL
+        "MC/maze_data_33" BEL "MC/maze_data_35" BEL "MC/maze_data_32" BEL
+        "MC/maze_data_31" BEL "MC/maze_data_29" BEL "MC/maze_data_28" BEL
+        "MC/maze_data_30" BEL "MC/maze_data_27" BEL "MC/maze_data_26" BEL
+        "MC/maze_data_24" BEL "MC/maze_data_23" BEL "MC/maze_data_25" BEL
+        "MC/maze_data_22" BEL "MC/maze_data_21" BEL "MC/maze_data_19" BEL
+        "MC/maze_data_18" BEL "MC/maze_data_20" BEL "MC/maze_data_17" BEL
+        "MC/maze_data_16" BEL "MC/maze_data_14" BEL "MC/maze_data_13" BEL
+        "MC/maze_data_15" BEL "MC/maze_data_12" BEL "MC/maze_data_11" BEL
+        "MC/maze_data_9" BEL "MC/maze_data_8" BEL "MC/maze_data_10" BEL
+        "MC/maze_data_7" BEL "MC/maze_data_6" BEL "MC/maze_data_4" BEL
+        "MC/maze_data_3" BEL "MC/maze_data_5" BEL "MC/maze_data_2" BEL
+        "MC/maze_data_1" BEL "KB/ps2_rx_unit/f_ps2c_reg" BEL
+        "KB/ps2_rx_unit/state_reg_2" BEL "MRT/VGAS/mod2_reg" BEL
+        "MRT/VGAS/v_sync_reg" BEL "MRT/VGAS/h_sync_reg" BEL "MC/RN/base_reg_0"
+        BEL "MRT/rgb_next_5" BEL "MRT/rgb_next_2" BEL
+        "KB/ps2_rx_unit/state_reg_0" BEL "tile_height_4_1" BEL
+        "tile_height_3_1" BEL "tile_width_4_1" BEL "tile_width_5_1" BEL
+        "tile_width_1_1" BEL "tile_width_2_1" BEL "tile_width_3_1" BEL
+        "tile_width_6_1" BEL "tile_height_0_1" BEL "tile_height_1_1" BEL
+        "tile_width_0_1" BEL "tile_height_2_1" BEL "tile_width_4_2" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 SCHEMATIC END;
 

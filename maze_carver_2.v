@@ -45,7 +45,6 @@ module maze_carver_2
 	localparam [1:0] FRONTIER = 2'b10;
 	localparam [1:0] WALL = 2'b01;
 
-
 	initial begin
 		// initialize finish to "not finished"
 		finish = 0;
@@ -60,8 +59,8 @@ module maze_carver_2
 				stack_y [i + 16*j] = 5'b00000;
 			end
 		// initialize starting position to zero
-		start_x = 0;
-		start_y = 0;
+		start_x = 4;
+		start_y = 4;
 		// Carve out starting position
 		//         X     Y          X     Y
 		maze_data [0 + 0*16] = 1;
@@ -143,12 +142,15 @@ module maze_carver_2
 				curr_x <= stack_x[stack_pos - 1];
 				curr_y <= stack_y[stack_pos - 1];
 			end
-		
-			// CONTINUE LOOP UNTIL STACK IS EMPTY
-			if (stack_pos == 0)
-				finish <= 1;
+			
+			maze_data[curr_x + curr_y*16] = 1;
+			
+			sequence <= 0;
 		end
 		
+		// CONTINUE LOOP UNTIL STACK IS EMPTY
+		if (stack_pos == 0)
+			finish <= 1;
 	end
 	
 /*	function maze_data_check;
