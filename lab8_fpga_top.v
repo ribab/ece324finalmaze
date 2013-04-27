@@ -108,9 +108,19 @@ module Lab8_fpga_top(
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);
 	
+	reg slow_clk = 0;
+	reg [25:0] clk_counter = 0;
+	always @(posedge clk) begin
+		if (clk_counter == 5_000_000) begin
+			slow_clk <= ~slow_clk;
+			clk_counter <= 0;
+		end else
+			clk_counter <= clk_counter + 1;
+	end
+	
 	maze_carver_2 MC (
-		.clk(clk),
-		.start(1),
+		.clk(slow_clk),
+		.start(sw[7]),
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),
 		.maze_data(maze_data),
