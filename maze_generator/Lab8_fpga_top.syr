@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total CPU time to Xst completion: 0.42 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total CPU time to Xst completion: 0.42 secs
  
 --> Reading design: Lab8_fpga_top.prj
 
@@ -216,9 +216,9 @@ Analyzing module <maze_carver_2> in library <work>.
 	WALL = 2'b01
 	maze_height = 6'b010000
 	maze_width = 6'b010000
-WARNING:Xst:2320 - "../maze_carver_2.v" line 77: Value for signal curr_x in initial block is not constant. The initialization will be ignored.
-WARNING:Xst:2320 - "../maze_carver_2.v" line 78: Value for signal curr_y in initial block is not constant. The initialization will be ignored.
-WARNING:Xst:1643 - "../maze_carver_2.v" line 70: You are giving the signal stack_pos a default value. stack_pos already had a default value, which will be overridden by this one.
+WARNING:Xst:2320 - "../maze_carver_2.v" line 78: Value for signal curr_x in initial block is not constant. The initialization will be ignored.
+WARNING:Xst:2320 - "../maze_carver_2.v" line 79: Value for signal curr_y in initial block is not constant. The initialization will be ignored.
+WARNING:Xst:1643 - "../maze_carver_2.v" line 71: You are giving the signal stack_pos a default value. stack_pos already had a default value, which will be overridden by this one.
 INFO:Xst:1432 - Contents of array <stack_x> may be accessed with a negative index, causing simulation mismatch.
 INFO:Xst:1432 - Contents of array <stack_y> may be accessed with a negative index, causing simulation mismatch.
 Module <maze_carver_2> is correct for synthesis.
@@ -264,8 +264,8 @@ WARNING:Xst:646 - Signal <r_ptr_succ> is assigned but never used. This unconnect
     Found 2-bit comparator equal for signal <full_reg$cmp_eq0000> created at line 91.
     Found 1-bit 4-to-1 multiplexer for signal <full_reg$mux0000> created at line 76.
     Found 1-bit register for signal <ignore_next>.
-    Found 2-bit adder for signal <old_r_ptr_succ_12$add0000> created at line 70.
-    Found 2-bit adder for signal <old_w_ptr_succ_13$add0000> created at line 69.
+    Found 2-bit adder for signal <old_r_ptr_succ_11$add0000> created at line 70.
+    Found 2-bit adder for signal <old_w_ptr_succ_12$add0000> created at line 69.
     Found 2-bit register for signal <r_ptr_reg>.
     Found 2-bit register for signal <w_ptr_reg>.
     Summary:
@@ -346,7 +346,7 @@ WARNING:Xst:643 - "../maze_renderer_test.v" line 46: The result of a 10x7-bit mu
     Found 10-bit shifter logical right for signal <centered_tile_x$shift0000>.
     Found 10-bit subtractor for signal <centered_tile_y$addsub0000> created at line 52.
     Found 10-bit shifter logical right for signal <centered_tile_y$shift0000>.
-    Found 32-bit shifter logical right for signal <COND_19$shift0001> created at line 83.
+    Found 32-bit shifter logical right for signal <COND_18$shift0001> created at line 83.
     Found 12-bit adder for signal <maze_border_x$sub0000> created at line 47.
     Found 12-bit adder for signal <maze_border_y$sub0000> created at line 48.
     Found 10x7-bit multiplier for signal <maze_pixel_h$mult0001> created at line 46.
@@ -397,15 +397,15 @@ WARNING:Xst:1780 - Signal <dir_dist> is never used or assigned. This unconnected
     Found 256x5-bit dual-port RAM <Mram_stack_y> for signal <stack_y>.
     Found 1-bit register for signal <finish>.
     Found 256-bit register for signal <maze_data>.
-    Found 6-bit adder for signal <$add0002> created at line 90.
-    Found 8-bit subtractor for signal <$sub0000> created at line 90.
-    Found 7-bit subtractor for signal <$sub0001> created at line 90.
-    Found 5-bit adder carry out for signal <add0000$addsub0000> created at line 90.
-    Found 5-bit adder carry out for signal <add0001$addsub0000> created at line 90.
-    Found 5-bit adder carry out for signal <add0003$addsub0000> created at line 115.
-    Found 3-bit adder for signal <and0000$add0000> created at line 90.
-    Found 3-bit adder for signal <and0000$addsub0000> created at line 90.
-    Found 3-bit adder for signal <and0000$addsub0001> created at line 90.
+    Found 6-bit adder for signal <$add0002> created at line 91.
+    Found 8-bit subtractor for signal <$sub0000> created at line 91.
+    Found 7-bit subtractor for signal <$sub0001> created at line 91.
+    Found 5-bit adder carry out for signal <add0000$addsub0000> created at line 91.
+    Found 5-bit adder carry out for signal <add0001$addsub0000> created at line 91.
+    Found 5-bit adder carry out for signal <add0003$addsub0000> created at line 116.
+    Found 3-bit adder for signal <and0000$add0000> created at line 91.
+    Found 3-bit adder for signal <and0000$addsub0000> created at line 91.
+    Found 3-bit adder for signal <and0000$addsub0001> created at line 91.
     Found 5-bit adder for signal <curr_data_pos>.
     Found 5-bit register for signal <curr_x>.
     Found 5-bit adder for signal <curr_x$share0000>.
@@ -428,6 +428,7 @@ Synthesizing Unit <Lab8_fpga_top>.
 WARNING:Xst:1780 - Signal <y_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <x_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <maze_data<4095:256>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <finish> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <char_y_speed> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <char_y_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -476,12 +477,12 @@ Macro Statistics
  12-bit adder                                          : 3
  12-bit subtractor                                     : 2
  14-bit adder                                          : 1
- 17-bit adder                                          : 1
+ 15-bit adder                                          : 1
  2-bit adder                                           : 2
  22-bit subtractor                                     : 4
  3-bit adder                                           : 3
  36-bit adder                                          : 2
- 39-bit adder                                          : 1
+ 37-bit adder                                          : 1
  4-bit subtractor                                      : 1
  5-bit adder                                           : 3
  5-bit adder carry out                                 : 3
@@ -516,11 +517,10 @@ Macro Statistics
  2-bit comparator equal                                : 2
  28-bit comparator less                                : 1
 # Multiplexers                                         : 14
- 1-bit 256-to-1 multiplexer                            : 5
+ 1-bit 256-to-1 multiplexer                            : 7
  1-bit 32-to-1 multiplexer                             : 4
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 49-to-1 multiplexer                             : 1
- 1-bit 8192-to-1 multiplexer                           : 2
 # Logic shifters                                       : 12
  10-bit shifter logical right                          : 4
  32-bit shifter logical left                           : 2
@@ -1100,7 +1100,6 @@ Macro Statistics
  10-bit subtractor                                     : 2
  11-bit adder                                          : 2
  12-bit subtractor                                     : 2
- 13-bit adder                                          : 2
  2-bit adder                                           : 2
  22-bit subtractor                                     : 4
  3-bit adder                                           : 1
@@ -1109,7 +1108,7 @@ Macro Statistics
  4-bit subtractor                                      : 2
  5-bit adder                                           : 3
  5-bit adder carry out                                 : 3
- 8-bit adder                                           : 5
+ 8-bit adder                                           : 7
  8-bit adder carry in                                  : 1
  8-bit addsub                                          : 1
  8-bit subtractor                                      : 4
@@ -1130,11 +1129,10 @@ Macro Statistics
  2-bit comparator equal                                : 2
  28-bit comparator less                                : 1
 # Multiplexers                                         : 14
- 1-bit 256-to-1 multiplexer                            : 5
+ 1-bit 256-to-1 multiplexer                            : 7
  1-bit 32-to-1 multiplexer                             : 4
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 49-to-1 multiplexer                             : 1
- 1-bit 8192-to-1 multiplexer                           : 2
 # Logic shifters                                       : 12
  10-bit shifter logical right                          : 4
  32-bit shifter logical left                           : 2
@@ -1724,16 +1722,12 @@ Optimizing unit <maze_carver_2> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 28.
-FlipFlop tile_height_0 has been replicated 1 time(s)
-FlipFlop tile_height_1 has been replicated 1 time(s)
-FlipFlop tile_height_2 has been replicated 1 time(s)
 FlipFlop tile_height_3 has been replicated 1 time(s)
-FlipFlop tile_height_4 has been replicated 2 time(s)
-FlipFlop tile_width_0 has been replicated 2 time(s)
+FlipFlop tile_height_4 has been replicated 1 time(s)
+FlipFlop tile_width_0 has been replicated 1 time(s)
 FlipFlop tile_width_1 has been replicated 1 time(s)
-FlipFlop tile_width_2 has been replicated 1 time(s)
-FlipFlop tile_width_3 has been replicated 1 time(s)
-FlipFlop tile_width_4 has been replicated 2 time(s)
+FlipFlop tile_width_5 has been replicated 1 time(s)
+FlipFlop tile_width_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1748,8 +1742,8 @@ Unit <Lab8_fpga_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 453
- Flip-Flops                                            : 453
+# Registers                                            : 446
+ Flip-Flops                                            : 446
 # Shift Registers                                      : 4
  11-bit shift register                                 : 1
  15-bit shift register                                 : 1
@@ -1783,31 +1777,30 @@ Design Statistics
 # IOs                              : 45
 
 Cell Usage :
-# BELS                             : 4174
+# BELS                             : 4108
 #      GND                         : 1
 #      INV                         : 47
-#      LUT1                        : 83
-#      LUT2                        : 328
-#      LUT2_D                      : 5
+#      LUT1                        : 82
+#      LUT2                        : 319
+#      LUT2_D                      : 4
 #      LUT2_L                      : 3
-#      LUT3                        : 813
-#      LUT3_D                      : 12
-#      LUT3_L                      : 17
-#      LUT4                        : 1092
-#      LUT4_D                      : 18
-#      LUT4_L                      : 38
-#      MULT_AND                    : 8
-#      MUXCY                       : 337
-#      MUXF5                       : 636
-#      MUXF6                       : 267
+#      LUT3                        : 802
+#      LUT3_D                      : 11
+#      LUT3_L                      : 16
+#      LUT4                        : 1086
+#      LUT4_D                      : 13
+#      LUT4_L                      : 44
+#      MUXCY                       : 325
+#      MUXF5                       : 631
+#      MUXF6                       : 269
 #      MUXF7                       : 131
 #      MUXF8                       : 61
 #      VCC                         : 1
-#      XORCY                       : 276
-# FlipFlops/Latches                : 457
+#      XORCY                       : 262
+# FlipFlops/Latches                : 450
 #      FD                          : 31
 #      FD_1                        : 3
-#      FDE                         : 329
+#      FDE                         : 322
 #      FDR                         : 59
 #      FDRE                        : 30
 #      FDRS                        : 2
@@ -1834,10 +1827,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                     1279  out of   4656    27%  
- Number of Slice Flip Flops:            457  out of   9312     4%  
- Number of 4 input LUTs:               2748  out of   9312    29%  
-    Number used as logic:              2456
+ Number of Slices:                     1264  out of   4656    27%  
+ Number of Slice Flip Flops:            450  out of   9312     4%  
+ Number of 4 input LUTs:               2719  out of   9312    29%  
+    Number used as logic:              2427
     Number used as Shift registers:       4
     Number used as RAMs:                288
  Number of IOs:                          45
@@ -1866,7 +1859,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 174   |
+clk                                | BUFGP                  | 167   |
 slow_clk1                          | BUFG                   | 431   |
 -----------------------------------+------------------------+-------+
 
@@ -1878,10 +1871,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 31.290ns (Maximum Frequency: 31.959MHz)
+   Minimum period: 32.025ns (Maximum Frequency: 31.226MHz)
    Minimum input arrival time before clock: 4.050ns
-   Maximum output required time after clock: 6.978ns
-   Maximum combinational path delay: 2.568ns
+   Maximum output required time after clock: 6.949ns
+   Maximum combinational path delay: 2.566ns
 
 Timing Detail:
 --------------
@@ -1889,37 +1882,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 31.290ns (frequency: 31.959MHz)
-  Total number of paths / destination ports: 746314716 / 265
+  Clock period: 32.025ns (frequency: 31.226MHz)
+  Total number of paths / destination ports: 546652427 / 265
 -------------------------------------------------------------------------
-Delay:               31.290ns (Levels of Logic = 33)
-  Source:            tile_width_5 (FF)
+Delay:               32.025ns (Levels of Logic = 29)
+  Source:            tile_width_4 (FF)
   Destination:       MRT/rgb_next_5 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: tile_width_5 to MRT/rgb_next_5
+  Data Path: tile_width_4 to MRT/rgb_next_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             19   0.514   0.925  tile_width_5 (tile_width_5)
-     LUT4_D:I3->O          5   0.612   0.541  MRT/centered_tile_x<5>11_1 (MRT/centered_tile_x<5>11)
-     LUT4:I3->O            3   0.612   0.451  MRT/tile_pixel_w_shift0000<3>1 (MRT/tile_pixel_w<3>)
-     MULT18X18SIO:A3->P3    3   3.251   0.451  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<3>)
-     INV:I->O              1   0.612   0.000  MRT/maze_border_x_not0000<3>1_INV_0 (MRT/maze_border_x_not0000<3>)
-     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<3> (MRT/Madd_maze_border_x_sub0000_Madd_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<4> (MRT/Madd_maze_border_x_sub0000_Madd_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<5> (MRT/Madd_maze_border_x_sub0000_Madd_cy<5>)
-     XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_x_sub0000_Madd_xor<6> (MRT/maze_border_x<5>)
-     LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_x_addsub0000_lut<5> (MRT/Msub_centered_tile_x_addsub0000_lut<5>)
-     MUXCY:S->O            1   0.404   0.000  MRT/Msub_centered_tile_x_addsub0000_cy<5> (MRT/Msub_centered_tile_x_addsub0000_cy<5>)
-     XORCY:CI->O           7   0.699   0.632  MRT/Msub_centered_tile_x_addsub0000_xor<6> (MRT/centered_tile_x_addsub0000<6>)
-     LUT3:I2->O            1   0.612   0.000  MRT/centered_tile_x<3>_SW0_G (N275)
-     MUXF5:I1->O           4   0.278   0.568  MRT/centered_tile_x<3>_SW0 (N100)
-     LUT2:I1->O            1   0.612   0.000  MRT/centered_tile_x<3>11_SW1_F (N282)
-     MUXF5:I0->O           1   0.278   0.360  MRT/centered_tile_x<3>11_SW1 (N170)
-     LUT4:I3->O           18   0.612   0.908  MRT/centered_tile_x<3> (MRT/centered_tile_x<3>)
-     MULT18X18SIO:A3->P10    1   4.091   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<10>)
+     FDE:C->Q             49   0.514   1.107  tile_width_4 (tile_width_4)
+     LUT4_D:I2->O         17   0.612   0.896  MRT/centered_tile_x<5>11 (MRT/N125)
+     LUT4:I3->O            3   0.612   0.451  MRT/tile_pixel_w_shift0000<1>1 (MRT/tile_pixel_w<1>)
+     MULT18X18SIO:A1->P7    3   3.861   0.603  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<7>)
+     LUT1:I0->O            1   0.612   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<7>_rt (MRT/Madd_maze_border_x_sub0000_Madd_cy<7>_rt)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<7> (MRT/Madd_maze_border_x_sub0000_Madd_cy<7>)
+     XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_x_sub0000_Madd_xor<8> (MRT/maze_border_x<7>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_x_addsub0000_lut<7> (MRT/Msub_centered_tile_x_addsub0000_lut<7>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub_centered_tile_x_addsub0000_cy<7> (MRT/Msub_centered_tile_x_addsub0000_cy<7>)
+     XORCY:CI->O          10   0.699   0.753  MRT/Msub_centered_tile_x_addsub0000_xor<8> (MRT/centered_tile_x_addsub0000<8>)
+     LUT4:I3->O            1   0.612   0.360  MRT/centered_tile_x<0>181 (MRT/centered_tile_x<0>181)
+     LUT4_L:I3->LO         1   0.612   0.103  MRT/centered_tile_x<0>32_SW1 (N215)
+     LUT4:I3->O          130   0.612   1.099  MRT/centered_tile_x<0>55 (MRT/centered_tile_x<0>)
+     MULT18X18SIO:A0->P10    1   4.091   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<10>)
      LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0001_lut<10> (MRT/Msub__sub0001_lut<10>)
      MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0001_cy<10> (MRT/Msub__sub0001_cy<10>)
      MUXCY:CI->O           1   0.052   0.000  MRT/Msub__sub0001_cy<11> (MRT/Msub__sub0001_cy<11>)
@@ -1928,25 +1917,25 @@ Delay:               31.290ns (Levels of Logic = 33)
      MUXCY:CI->O           1   0.052   0.000  MRT/Msub__sub0001_cy<14> (MRT/Msub__sub0001_cy<14>)
      MUXCY:CI->O           1   0.052   0.000  MRT/Msub__sub0001_cy<15> (MRT/Msub__sub0001_cy<15>)
      XORCY:CI->O           2   0.699   0.410  MRT/Msub__sub0001_xor<16> (MRT/_sub0001<16>)
-     LUT3_D:I2->O          1   0.612   0.387  MRT/_shift0001<0>151 (MRT/N101)
-     LUT4:I2->O            1   0.612   0.360  MRT/Madd__COND_14_Madd_lut<3>149 (MRT/Madd__COND_14_Madd_lut<3>149)
-     LUT4:I3->O            1   0.612   0.387  MRT/Madd__COND_14_Madd_lut<3>173 (MRT/Madd__COND_14_Madd_lut<3>173)
-     LUT4:I2->O            1   0.612   0.360  MRT/Madd__COND_14_Madd_lut<3>210 (MRT/Madd__COND_14_Madd_lut<3>210)
-     LUT4:I3->O            3   0.612   0.454  MRT/Madd__COND_14_Madd_lut<3>223 (MRT/Madd__COND_14_Madd_lut<3>)
-     LUT4:I3->O            1   0.612   0.387  MRT/rgb_next_and000250_SW3_G (N297)
-     LUT4:I2->O            1   0.612   0.000  MRT/rgb_next_mux0000<6>_G (N509)
-     MUXF5:I1->O           2   0.278   0.380  MRT/rgb_next_mux0000<6> (MRT/rgb_next_mux0000<6>)
+     LUT3:I2->O            1   0.612   0.387  MRT/_shift0001<1>151 (MRT/_shift0001<1>151)
+     LUT4:I2->O            2   0.612   0.383  MRT/_shift0001<1>132 (MRT/_shift0001<1>132)
+     LUT4:I3->O            2   0.612   0.383  MRT/_shift0001<1>199 (MRT/N2)
+     LUT4_L:I3->LO         1   0.612   0.103  MRT/_shift0001<2>_SW2 (N180)
+     LUT4:I3->O            4   0.612   0.502  MRT/_shift0001<2> (MRT/_shift0001<2>)
+     LUT4:I3->O            1   0.612   0.360  MRT/rgb_next_and000248_SW0 (N145)
+     LUT4_L:I3->LO         1   0.612   0.130  MRT/rgb_next_and000248_SW2 (N271)
+     LUT4:I2->O            2   0.612   0.380  MRT/rgb_next_mux0000<6>1 (MRT/rgb_next_mux0000<6>)
      FDRS:S                    0.795          MRT/rgb_next_5
     ----------------------------------------
-    Total                     31.290ns (22.334ns logic, 8.956ns route)
-                                       (71.4% logic, 28.6% route)
+    Total                     32.025ns (22.619ns logic, 9.405ns route)
+                                       (70.6% logic, 29.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'slow_clk1'
-  Clock period: 17.436ns (frequency: 57.353MHz)
-  Total number of paths / destination ports: 2865885 / 1746
+  Clock period: 17.691ns (frequency: 56.525MHz)
+  Total number of paths / destination ports: 2873429 / 1746
 -------------------------------------------------------------------------
-Delay:               17.436ns (Levels of Logic = 17)
+Delay:               17.691ns (Levels of Logic = 17)
   Source:            MC/curr_x_4 (FF)
   Destination:       MC/stack_pos_7 (FF)
   Source Clock:      slow_clk1 rising
@@ -1957,13 +1946,13 @@ Delay:               17.436ns (Levels of Logic = 17)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDE:C->Q             32   0.514   1.225  MC/curr_x_4 (MC/curr_x_4)
-     LUT2:I0->O            8   0.612   0.795  MC/Madd__COND_62_Madd_lut<4>1 (MC/Madd__COND_62_Madd_lut<4>)
+     LUT2:I0->O           10   0.612   0.902  MC/Madd__COND_61_Madd_lut<4>1 (MC/Madd__COND_61_Madd_lut<4>)
      LUT4:I0->O            7   0.612   0.671  MC/Madd_add0003_addsub0000_cy<4>11 (MC/Madd_add0003_index0000)
-     LUT4:I1->O            1   0.612   0.360  MC/curr_x_and0006164 (MC/curr_x_and0006164)
-     LUT4:I3->O            1   0.612   0.426  MC/curr_x_and0006186_SW0_SW0 (N418)
-     LUT4:I1->O            1   0.612   0.509  MC/curr_x_and0006186_SW0 (N408)
+     LUT4:I1->O            1   0.612   0.509  MC/curr_x_and0006164 (MC/curr_x_and0006164)
+     LUT4:I0->O            1   0.612   0.426  MC/curr_x_and0006186_SW0_SW0 (N415)
+     LUT4:I1->O            1   0.612   0.509  MC/curr_x_and0006186_SW0 (N413)
      LUT4:I0->O            1   0.612   0.360  MC/curr_x_and0006186 (MC/curr_x_and0006186)
-     LUT4:I3->O            1   0.612   0.000  MC/curr_x_and0006603_G (N423)
+     LUT4:I3->O            1   0.612   0.000  MC/curr_x_and0006603_G (N422)
      MUXF5:I1->O           9   0.278   0.700  MC/curr_x_and0006603 (MC/curr_x_and0006603)
      LUT4:I3->O            2   0.612   0.532  MC/Maddsub_stack_pos_mux0000_lut<1>1 (MC/Maddsub_stack_pos_mux0000_lut<1>)
      LUT3:I0->O            4   0.612   0.529  MC/Maddsub_stack_pos_mux0000_cy<1>1 (MC/Maddsub_stack_pos_mux0000_cy<1>)
@@ -1976,12 +1965,12 @@ Delay:               17.436ns (Levels of Logic = 17)
      XORCY:LI->O           1   0.458   0.000  MC/Mcount_stack_pos_xor<7> (MC/Mcount_stack_pos7)
      FDE:D                     0.268          MC/stack_pos_7
     ----------------------------------------
-    Total                     17.436ns (10.030ns logic, 7.406ns route)
-                                       (57.5% logic, 42.5% route)
+    Total                     17.691ns (10.030ns logic, 7.661ns route)
+                                       (56.7% logic, 43.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 87 / 87
+  Total number of paths / destination ports: 73 / 73
 -------------------------------------------------------------------------
 Offset:              3.416ns (Levels of Logic = 2)
   Source:            sw<7> (PAD)
@@ -2024,7 +2013,7 @@ Offset:              4.050ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 82 / 18
 -------------------------------------------------------------------------
-Offset:              6.978ns (Levels of Logic = 3)
+Offset:              6.949ns (Levels of Logic = 3)
   Source:            MRT/VGAS/h_count_reg_7 (FF)
   Destination:       vgaRed<3> (PAD)
   Source Clock:      clk rising
@@ -2033,19 +2022,19 @@ Offset:              6.978ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            15   0.514   1.016  MRT/VGAS/h_count_reg_7 (MRT/VGAS/h_count_reg_7)
+     FDRE:C->Q            13   0.514   0.988  MRT/VGAS/h_count_reg_7 (MRT/VGAS/h_count_reg_7)
      LUT3:I0->O            3   0.612   0.603  MRT/VGAS/video_on8 (MRT/VGAS/video_on8)
      LUT4:I0->O            3   0.612   0.451  MRT/rgb<6>1 (vgaRed_1_OBUF)
      OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
     ----------------------------------------
-    Total                      6.978ns (4.907ns logic, 2.071ns route)
-                                       (70.3% logic, 29.7% route)
+    Total                      6.949ns (4.907ns logic, 2.042ns route)
+                                       (70.6% logic, 29.4% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               2.568ns (Levels of Logic = 1)
+Delay:               2.566ns (Levels of Logic = 1)
   Source:            clk (PAD)
   Destination:       SU:CLK (PAD)
 
@@ -2053,23 +2042,23 @@ Delay:               2.568ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          174   1.457   1.111  clk_BUFGP (clk_BUFGP)
+     BUFGP:I->O          167   1.457   1.109  clk_BUFGP (clk_BUFGP)
     STARTUP_SPARTAN3E:CLK        0.000          SU
     ----------------------------------------
-    Total                      2.568ns (1.457ns logic, 1.111ns route)
-                                       (56.7% logic, 43.3% route)
+    Total                      2.566ns (1.457ns logic, 1.109ns route)
+                                       (56.8% logic, 43.2% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 142.00 secs
-Total CPU time to Xst completion: 141.93 secs
+Total REAL time to Xst completion: 76.00 secs
+Total CPU time to Xst completion: 76.39 secs
  
 --> 
 
-Total memory usage is 389800 kilobytes
+Total memory usage is 357288 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  599 (   0 filtered)
+Number of warnings :  598 (   0 filtered)
 Number of infos    :   14 (   0 filtered)
 

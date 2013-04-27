@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Sat Apr 27 15:09:42 2013
+// Written by: Map P.49d on Sat Apr 27 15:26:01 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -108,11 +108,9 @@ TIMEGRP clk = BEL "tile_width_0" BEL "tile_width_1" BEL "tile_width_2" BEL
         BEL "KB/ps2_rx_unit/state_reg_2" BEL "MRT/VGAS/mod2_reg" BEL
         "MRT/VGAS/v_sync_reg" BEL "MRT/VGAS/h_sync_reg" BEL "MRT/rgb_next_5"
         BEL "MRT/rgb_next_2" BEL "KB/ps2_rx_unit/state_reg_0" BEL
-        "tile_width_4_1" BEL "tile_height_4_1" BEL "tile_width_3_1" BEL
-        "tile_height_3_1" BEL "tile_width_1_1" BEL "tile_width_2_1" BEL
-        "tile_height_0_1" BEL "tile_width_0_1" BEL "tile_height_1_1" BEL
-        "tile_height_2_1" BEL "tile_width_0_2" BEL "tile_width_4_2" BEL
-        "tile_height_4_2" BEL "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+        "tile_height_4_1" BEL "tile_width_6_1" BEL "tile_width_5_1" BEL
+        "tile_height_3_1" BEL "tile_width_1_1" BEL "tile_width_0_1" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 SCHEMATIC END;
 
