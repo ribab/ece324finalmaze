@@ -78,6 +78,8 @@ module maze_carver_2
 			curr_y 	<= start_y;
 	end
 
+	wire [4:0] cur_data_pos = curr_x + curr_y*16;
+
 	always @(posedge clk) begin
 		// ===========================
 		// DO ALGORITHM UNTIL FINISHED
@@ -91,7 +93,7 @@ module maze_carver_2
 					(	{2'b00, maze_data[(curr_x + mov_x + 1) + (curr_y + mov_y)*16]} +
 						{2'b00, maze_data[(curr_x + mov_x - 1) + (curr_y + mov_y)*16]} +
 						{2'b00, maze_data[(curr_x + mov_x) + (curr_y + mov_y + 1)*16]} +
-						{2'b00, maze_data[(curr_x + mov_x) + (curr_y + mov_y - 1)*16]} == 5'b00001
+						{2'b00, maze_data[(curr_x + mov_x) + (curr_y + mov_y - 1)*16]} == 3'b001
 					)
 				) begin
 					curr_x <= curr_x + mov_x; // Update current position
@@ -112,24 +114,24 @@ module maze_carver_2
 				//       in random directions instead
 				if ( // if stuck pop off stack
 					// up
-					(	maze_data[curr_x + (curr_y - 2)*16] == 1 ||
-						maze_data[curr_x + 1 + (curr_y - 1)*16] == 1 ||
-						maze_data[curr_x - 1 + (curr_y - 1)*16] == 1
+					(	maze_data[curr_data_pos - 2*16] == 1 ||
+						maze_data[curr_data_pos + 1 - 16] == 1 ||
+						maze_data[curr_data_pos - 1 - 16] == 1
 					) &&
 					// left
-					(	maze_data[curr_x - 2 + curr_y*16] == 1 ||
-						maze_data[curr_x - 1 + (curr_y + 1)*16] == 1 ||
-						maze_data[curr_x - 1 + (curr_y - 1)*16] == 1
+					(	maze_data[curr_data_pos - 2] == 1 ||
+						maze_data[curr_data_pos - 1 + 16] == 1 ||
+						maze_data[curr_data_pos - 1 - 16] == 1
 					) &&
 					// down
-					(	maze_data[curr_x + (curr_y + 2)*16] == 1 ||
-						maze_data[curr_x - 1 + (curr_y + 1)*16] == 1 ||
-						maze_data[curr_x + 1 + (curr_y + 1)*16] == 1
+					(	maze_data[curr_data_pos + 2*16] == 1 ||
+						maze_data[curr_data_pos - 1 + 16] == 1 ||
+						maze_data[curr_data_pos + 1 + 16] == 1
 					) &&
 					// right
-					(	maze_data[curr_x + 2 + curr_y*16] == 1 ||
-						maze_data[curr_x + 1 + (curr_y + 1)*16] == 1 ||
-						maze_data[curr_x + 1 + (curr_y - 1)*16] == 1
+					(	maze_data[curr_data_pos + 2] == 1 ||
+						maze_data[curr_data_pos + 1 + 16] == 1 ||
+						maze_data[curr_data_pos + 1 - 16] == 1
 					)
 				) begin // pop off stack
 					stack_pos <= stack_pos - 1;

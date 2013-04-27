@@ -113,18 +113,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1367099272" xil_pn:in_ck="3373410041524529892" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1367099075">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1367100264" xil_pn:in_ck="3373410041524529892" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2356071920564141879" xil_pn:start_ts="1367100254">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="Lab8_fpga_top.lso"/>
       <outfile xil_pn:name="Lab8_fpga_top.ngc"/>
       <outfile xil_pn:name="Lab8_fpga_top.ngr"/>
       <outfile xil_pn:name="Lab8_fpga_top.prj"/>
-      <outfile xil_pn:name="Lab8_fpga_top.stx"/>
       <outfile xil_pn:name="Lab8_fpga_top.syr"/>
       <outfile xil_pn:name="Lab8_fpga_top.xst"/>
       <outfile xil_pn:name="Lab8_fpga_top_xst.xrpt"/>
@@ -139,6 +135,7 @@
     <transform xil_pn:end_ts="1367099287" xil_pn:in_ck="-6616766035564691038" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="3914520886776438777" xil_pn:start_ts="1367099272">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Lab8_fpga_top.bld"/>
       <outfile xil_pn:name="Lab8_fpga_top.ngd"/>
       <outfile xil_pn:name="Lab8_fpga_top_ngdbuild.xrpt"/>
@@ -148,6 +145,9 @@
     <transform xil_pn:end_ts="1367099307" xil_pn:in_ck="-6616766035564691037" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-1309755933173654900" xil_pn:start_ts="1367099287">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Lab8_fpga_top.pcf"/>
       <outfile xil_pn:name="Lab8_fpga_top_map.map"/>
       <outfile xil_pn:name="Lab8_fpga_top_map.mrp"/>
@@ -161,6 +161,7 @@
     <transform xil_pn:end_ts="1367099462" xil_pn:in_ck="6434134110448314940" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1367099307">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Lab8_fpga_top.ncd"/>
       <outfile xil_pn:name="Lab8_fpga_top.pad"/>
       <outfile xil_pn:name="Lab8_fpga_top.par"/>
@@ -173,9 +174,10 @@
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1367099532" xil_pn:in_ck="7731014853131585273" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="-7817169320884990698" xil_pn:start_ts="1367099462">
-      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Lab8_fpga_top.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="lab8_fpga_top.bgn"/>
@@ -189,23 +191,27 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1365172978" xil_pn:in_ck="-3999051751433349917" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="5582947192412673156" xil_pn:start_ts="1365172976">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1365172987" xil_pn:in_ck="-3999051751433349917" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="7121392639749839438" xil_pn:start_ts="1365172985">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1367099462" xil_pn:in_ck="-6616766035564691169" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1367099449">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Lab8_fpga_top.twr"/>
       <outfile xil_pn:name="Lab8_fpga_top.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
