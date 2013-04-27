@@ -89,51 +89,32 @@ module maze_carver_2
 				// move up
 				2'b00 : begin
 					mov_x = 5'b00000;
-					if (curr_y > 0 &&
-						maze_data[curr_x + (curr_y + 5'b11111)*16] == 0)
-						mov_y = 5'b11111;
-					else
-						mov_y = 5'b00000;
+					mov_y = 5'b11111;
 				end
 				// move left
 				2'b01 : begin
-					if (curr_x > 0 &&
-						maze_data[(curr_x + 5'b11111) + curr_y*16] == 0)
-						mov_x = 5'b11111;
-					else
-						mov_x = 5'b00000;
+					mov_x = 5'b11111;
 					mov_y = 5'b00000;
 				end
 				// move down
 				2'b10 : begin
 					mov_x = 5'b00000;
-					if (curr_x < maze_height - 1 &&
-						maze_data[curr_x + (curr_y + 5'b00001)*16] == 0)
-						mov_y = 5'b00001;
-					else
-						mov_y = 5'b00000;
+					mov_y = 5'b00001;
 				end
 				// move right
 				2'b11 : begin
-					if (curr_x > 0 &&
-						maze_data[(curr_x + 5'b00001) + curr_y*16)
-						mov_x = 5'b00001;
-					else
-						mov_x = 5'b00000;
+					mov_x = 5'b00001;
 					mov_y = 5'b00000;
 				end
 			endcase
 				
 			if (
 				maze_data[curr_x + mov_x + mov_x + (curr_y + mov_y + mov_y)*16] == 0 &&
-				((	mov_x = 0 &&
-					maze_data[curr_x + 1 + (curr_y + mov_y)*16] == 0 &&
-					maze_data[curr_x - 1 + (curr_y + mov_y)*16] == 0
-				 ) ||
-				 (	mov_y == 0 && 
-					maze_data[curr_x + mov_x + (curr_y + 5'b00001)*16] == 0 &&
-					maze_data[curr_x + mov_x + (curr_y + 5'b11111)*16] == 0
-				))
+				(	5'b00000 + maze_data[(curr_x + mov_x + 1) + (curr_y + mov_y)*16] +
+					5'b00000 + maze_data[(curr_x + mov_x - 1) + (curr_y + mov_y)*16] +
+					5'b00000 + maze_data[(curr_x + mov_x) + (curr_y + mov_y + 1)*16] +
+					5'b00000 + maze_data[(curr_x + mov_x) + (curr_y + mov_y - 1)*16] == 5'b00001
+				)
 			) begin
 				curr_x = curr_x + mov_x;
 				curr_y = curr_y + mov_y;
