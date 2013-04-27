@@ -9,8 +9,6 @@ module maze_carver_2
 	
 	// output reg [63:0] maze_array  [0:64*64-1],
 	
-	
-	
 		output reg finish = 0
 	);
 	
@@ -61,8 +59,7 @@ module maze_carver_2
 	
 	initial begin
 		// initialize finish to "not finished"
-		if (start == 1) begin
-			// initialize starting position to zero
+		// initialize starting position to zero
 			start_x <= 4;
 			start_y <= 4;
 			// initialize maze to wall
@@ -79,7 +76,6 @@ module maze_carver_2
 			// Initialize current carving position
 			curr_x 	<= start_x;
 			curr_y 	<= start_y;
-		end
 	end
 
 	always @(posedge clk) begin
@@ -191,4 +187,3 @@ module maze_carver_2
 //	endfunction
 //	
 endmodule
-
