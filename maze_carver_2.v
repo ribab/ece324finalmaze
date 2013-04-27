@@ -3,8 +3,8 @@ module maze_carver_2
 	(
 		input clk,
 		input start,
-		input wire [2:0] x_dimension,
-		input wire [2:0] y_dimension,
+		input wire [6:0] x_dimension,
+		input wire [6:0] y_dimension,
 		output reg [16*16-1:0] maze_data,
 	
 	// output reg [63:0] maze_array  [0:64*64-1],
@@ -62,6 +62,7 @@ module maze_carver_2
 		// initialize starting position to zero
 			start_x <= 4;
 			start_y <= 4;
+			
 			// initialize maze to wall
 			for (i = 0; i < 16; i = i + 1)
 				for (j = 0; j < 16; j = j + 1)
@@ -78,7 +79,7 @@ module maze_carver_2
 			curr_y 	<= start_y;
 	end
 
-	wire [4:0] cur_data_pos = curr_x + curr_y*16;
+	wire [4:0] curr_data_pos = curr_x + curr_y*16;
 
 	always @(posedge clk) begin
 		// ===========================

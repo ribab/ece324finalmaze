@@ -10,10 +10,10 @@
 
 <msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">145</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">SU/GTS_INT,
-MC/Mram_stack_y63/SPO,
-MC/Mram_stack_y62/SPO,
-MC/Mram_stack_y64/SPO,
-MC/Mram_stack_y61/SPO</arg>
+MC/Mram_stack_x80/SPO,
+MC/Mram_stack_x78/SPO,
+MC/Mram_stack_x77/SPO,
+MC/Mram_stack_x79/SPO</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
