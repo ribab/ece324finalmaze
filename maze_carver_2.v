@@ -52,12 +52,12 @@ module maze_carver_2
 		// initialize maze to wall
 		for (i = 0; i < 16; i = i + 1)
 			for (j = 0; j < 16; j = j + 1)
-				maze_data [i + 16*j] = 0;
+				maze_data [i + 16*j] = 1'b0;
 		// initialize stack to nothing
-		for (i = 0; i < 64; i = i + 1)
-			for (j = 0; j < 64; j = j + 1) begin
-				stack_x [i + 64*j] = 0;
-				stack_y [i + 64*j] = 0;
+		for (i = 0; i < 16; i = i + 1)
+			for (j = 0; j < 16; j = j + 1) begin
+				stack_x [i + 16*j] = 5'b00000;
+				stack_y [i + 16*j] = 5'b00000;
 			end
 		// initialize starting position to zero
 		start_x = 0;
@@ -79,34 +79,18 @@ module maze_carver_2
 		.clk(clk), .reset(reset), .rand(rand)
     );
 	
+	wire [4:0] mov_x = (rand == 2'b01) ? 5'b11111:
+	               (rand == 2'b11) ? 5'b00001:
+	                                 5'b00000;
+	wire [4:0] mov_y = (rand == 2'b00) ? 5'b11111:
+	               (rand == 2'b10) ? 5'b00001:
+	                                 5'b00000;
+	reg sequence = 0;
+	
 	always @ (posedge clk) begin
 	
 		// Do algorithm until finished
-		if (start == 1 && finish == 0) begin
-		
-			// MOVE RANDOM DIRECTION AND PUSH TO STACK
-			case (rand)
-				// move up
-				2'b00 : begin
-					mov_x = 5'b00000;
-					mov_y = 5'b11111;
-				end
-				// move left
-				2'b01 : begin
-					mov_x = 5'b11111;
-					mov_y = 5'b00000;
-				end
-				// move down
-				2'b10 : begin
-					mov_x = 5'b00000;
-					mov_y = 5'b00001;
-				end
-				// move right
-				2'b11 : begin
-					mov_x = 5'b00001;
-					mov_y = 5'b00000;
-				end
-			endcase
+		if (start == 1 && finish == 0 && sequence == 0) begin
 				
 			if (
 				maze_data[curr_x + mov_x + mov_x + (curr_y + mov_y + mov_y)*16] == 0 &&
@@ -116,10 +100,19 @@ module maze_carver_2
 					5'b00000 + maze_data[(curr_x + mov_x) + (curr_y + mov_y - 1)*16] == 5'b00001
 				)
 			) begin
-				curr_x = curr_x + mov_x;
-				curr_y = curr_y + mov_y;
+				curr_x <= curr_x + mov_x;
+				curr_y <= curr_y + mov_y;
+				stack_x[stack_pos] <= curr_x;
+				stack_y[stack_pos] <= curr_y;
+				stack_pos <= stack_pos + 1;
 			end
 			
+			sequence <= 1;
+			
+		end
+	
+		if (start == 1 && finish == 0 && sequence == 1) begin
+		
 			// IF SURROUNDED BY WALLS, POP STACK
 			// TODO: Boundary conditions for these
 			// TODO: maybe scratch this and have it just look 10 times
@@ -146,14 +139,14 @@ module maze_carver_2
 					maze_data[curr_x + 1 + (curr_y - 1)*16] == 1
 				)
 			) begin
-				stack_pos = stack_pos - 1;
-				curr_x = stack_x[stack_pos];
-				curr_y = stack_y[stack_pos];
+				stack_pos <= stack_pos - 1;
+				curr_x <= stack_x[stack_pos - 1];
+				curr_y <= stack_y[stack_pos - 1];
 			end
 		
 			// CONTINUE LOOP UNTIL STACK IS EMPTY
 			if (stack_pos == 0)
-				finish = 1;
+				finish <= 1;
 		end
 		
 	end

@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: Lab8_fpga_top.prj
 
@@ -113,26 +113,1208 @@ Compiling verilog file "../keyboard_code/fifo.v" in library work
 Module <ps2_rx> compiled
 Compiling verilog file "../maze_renderer_test.v" in library work
 Module <fifo> compiled
-Compiling verilog file "../maze_carver.v" in library work
+Compiling verilog file "../maze_carver_2.v" in library work
 Module <maze_renderer_test> compiled
-ERROR:HDLCompilers:26 - "../maze_carver.v" line 229 unexpected token: '='
-ERROR:HDLCompilers:26 - "../maze_carver.v" line 230 unexpected token: '='
-ERROR:HDLCompilers:26 - "../maze_carver.v" line 231 unexpected token: '='
-ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_x_t2' has not been declared
-ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_y_t128_p1' has not been declared
-ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_x_t2' has not been declared
-ERROR:HDLCompilers:28 - "../maze_carver.v" line 237 'reg_y_t128' has not been declared
 Compiling verilog file "../keyboard_code/kb_code.v" in library work
-Module <maze_carver> compiled
+Module <maze_carver_2> compiled
 Compiling verilog file "../lab8_fpga_top.v" in library work
 Module <kb_code> compiled
 Module <Lab8_fpga_top> compiled
-Analysis of file <"Lab8_fpga_top.prj"> failed.
+No errors in compilation
+Analysis of file <"Lab8_fpga_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Lab8_fpga_top> in library <work>.
+
+Analyzing hierarchy for module <kb_code> in library <work> with parameters.
+	BRK = "11110000"
+	W_SIZE = "00000000000000000000000000000010"
+	get_code = "1"
+	wait_brk = "0"
+
+Analyzing hierarchy for module <maze_renderer_test> in library <work>.
+
+Analyzing hierarchy for module <maze_carver_2> in library <work> with parameters.
+	FRONTIER = "10"
+	OUT = "00"
+	PATH = "11"
+	WALL = "01"
+	maze_height = "010000"
+	maze_width = "010000"
+
+Analyzing hierarchy for module <ps2_rx> in library <work> with parameters.
+	dps = "01"
+	idle = "00"
+	load = "10"
+
+Analyzing hierarchy for module <fifo> in library <work> with parameters.
+	B = "00000000000000000000000000001000"
+	BRK = "11110000"
+	W = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
+	HB = "00000000000000000000000000010000"
+	HD = "00000000000000000000001010000000"
+	HF = "00000000000000000000000000110000"
+	HR = "00000000000000000000000001100000"
+	VB = "00000000000000000000000000100001"
+	VD = "00000000000000000000000111100000"
+	VF = "00000000000000000000000000001010"
+	VR = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <rand_num> in library <work> with parameters.
+	base = "10100101"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Lab8_fpga_top>.
+Module <Lab8_fpga_top> is correct for synthesis.
+ 
+Analyzing module <kb_code> in library <work>.
+	BRK = 8'b11110000
+	W_SIZE = 32'sb00000000000000000000000000000010
+	get_code = 1'b1
+	wait_brk = 1'b0
+Module <kb_code> is correct for synthesis.
+ 
+Analyzing module <ps2_rx> in library <work>.
+	dps = 2'b01
+	idle = 2'b00
+	load = 2'b10
+Module <ps2_rx> is correct for synthesis.
+ 
+Analyzing module <fifo> in library <work>.
+	B = 32'sb00000000000000000000000000001000
+	BRK = 8'b11110000
+	W = 32'sb00000000000000000000000000000010
+Module <fifo> is correct for synthesis.
+ 
+Analyzing module <maze_renderer_test> in library <work>.
+INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1432 - Contents of array <char_array> may be accessed with a negative index, causing simulation mismatch.
+Module <maze_renderer_test> is correct for synthesis.
+ 
+Analyzing module <vga_sync> in library <work>.
+	HB = 32'sb00000000000000000000000000010000
+	HD = 32'sb00000000000000000000001010000000
+	HF = 32'sb00000000000000000000000000110000
+	HR = 32'sb00000000000000000000000001100000
+	VB = 32'sb00000000000000000000000000100001
+	VD = 32'sb00000000000000000000000111100000
+	VF = 32'sb00000000000000000000000000001010
+	VR = 32'sb00000000000000000000000000000010
+Module <vga_sync> is correct for synthesis.
+ 
+Analyzing module <maze_carver_2> in library <work>.
+	FRONTIER = 2'b10
+	OUT = 2'b00
+	PATH = 2'b11
+	WALL = 2'b01
+	maze_height = 6'b010000
+	maze_width = 6'b010000
+INFO:Xst:1432 - Contents of array <stack_x> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1432 - Contents of array <stack_y> may be accessed with a negative index, causing simulation mismatch.
+Module <maze_carver_2> is correct for synthesis.
+ 
+Analyzing module <rand_num> in library <work>.
+	base = 8'b10100101
+Module <rand_num> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ps2_rx>.
+    Related source file is "../keyboard_code/ps_2_code.v".
+    Using one-hot encoding for signal <state_reg>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state_reg> of Case statement line 72 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state_reg> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 11-bit register for signal <b_reg>.
+    Found 1-bit register for signal <f_ps2c_reg>.
+    Found 8-bit register for signal <filter_reg>.
+    Found 4-bit register for signal <n_reg>.
+    Found 4-bit subtractor for signal <n_reg$addsub0000> created at line 88.
+    Found 3-bit register for signal <state_reg>.
+    Summary:
+	inferred  27 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ps2_rx> synthesized.
+
+
+Synthesizing Unit <fifo>.
+    Related source file is "../keyboard_code/fifo.v".
+WARNING:Xst:646 - Signal <w_ptr_succ> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r_ptr_succ> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <array_reg>.
+    Found 1-bit register for signal <empty_reg>.
+    Found 2-bit comparator equal for signal <empty_reg$cmp_eq0000> created at line 83.
+    Found 1-bit 4-to-1 multiplexer for signal <empty_reg$mux0000> created at line 76.
+    Found 1-bit register for signal <full_reg>.
+    Found 2-bit comparator equal for signal <full_reg$cmp_eq0000> created at line 91.
+    Found 1-bit 4-to-1 multiplexer for signal <full_reg$mux0000> created at line 76.
+    Found 1-bit register for signal <ignore_next>.
+    Found 2-bit adder for signal <old_r_ptr_succ_14$add0000> created at line 70.
+    Found 2-bit adder for signal <old_w_ptr_succ_15$add0000> created at line 69.
+    Found 2-bit register for signal <r_ptr_reg>.
+    Found 2-bit register for signal <w_ptr_reg>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <fifo> synthesized.
+
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "../vga_sync.v".
+    Found 10-bit up counter for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 95.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 95.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit up counter for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 98.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 98.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <video_on$cmp_lt0000> created at line 102.
+    Found 10-bit comparator less for signal <video_on$cmp_lt0001> created at line 102.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vga_sync> synthesized.
+
+
+Synthesizing Unit <rand_num>.
+    Related source file is "rand_num.v".
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <rand>.
+    Found 1-bit xor2 for signal <ab>.
+    Found 1-bit xor2 for signal <ac>.
+    Found 8-bit register for signal <base_reg>.
+    Found 8-bit adder for signal <base_reg$add0000> created at line 24.
+    Found 1-bit xor2 for signal <dc>.
+    Summary:
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rand_num> synthesized.
+
+
+Synthesizing Unit <kb_code>.
+    Related source file is "../keyboard_code/kb_code.v".
+    Found 1-bit register for signal <state_reg>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <kb_code> synthesized.
+
+
+Synthesizing Unit <maze_renderer_test>.
+    Related source file is "../maze_renderer_test.v".
+WARNING:Xst:653 - Signal <char_color> is used but never assigned. This sourceless signal will be automatically connected to value 00011100.
+WARNING:Xst:653 - Signal <char_array> is used but never assigned. This sourceless signal will be automatically connected to value 0110111111110110.
+WARNING:Xst:1780 - Signal <c8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c7> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c6> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c5> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "../maze_renderer_test.v" line 45: The result of a 10x7-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "../maze_renderer_test.v" line 46: The result of a 10x7-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 16x1-bit ROM for signal <$varindex0000> created at line 67.
+    Found 16x1-bit ROM for signal <$varindex0001> created at line 78.
+    Found 10x10-bit multiplier for signal <$mult0000> created at line 67.
+    Found 10x10-bit multiplier for signal <$mult0001> created at line 67.
+    Found 10x10-bit multiplier for signal <$mult0002> created at line 78.
+    Found 10x10-bit multiplier for signal <$mult0003> created at line 78.
+    Found 12-bit subtractor for signal <$sub0000> created at line 67.
+    Found 22-bit subtractor for signal <$sub0001> created at line 67.
+    Found 12-bit subtractor for signal <$sub0002> created at line 67.
+    Found 22-bit subtractor for signal <$sub0003> created at line 67.
+    Found 22-bit subtractor for signal <$sub0006> created at line 78.
+    Found 22-bit subtractor for signal <$sub0007> created at line 78.
+    Found 32-bit shifter logical right for signal <add0000$shift0000> created at line 83.
+    Found 10-bit subtractor for signal <centered_tile_x$addsub0000> created at line 51.
+    Found 10-bit shifter logical right for signal <centered_tile_x$shift0000>.
+    Found 10-bit subtractor for signal <centered_tile_y$addsub0000> created at line 52.
+    Found 10-bit shifter logical right for signal <centered_tile_y$shift0000>.
+    Found 32-bit shifter logical right for signal <COND_21$shift0001> created at line 83.
+    Found 12-bit adder for signal <maze_border_x$sub0000> created at line 47.
+    Found 12-bit adder for signal <maze_border_y$sub0000> created at line 48.
+    Found 10x7-bit multiplier for signal <maze_pixel_h$mult0001> created at line 46.
+    Found 10x7-bit multiplier for signal <maze_pixel_w$mult0001> created at line 45.
+    Found 8-bit register for signal <rgb_next>.
+    Found 10-bit adder for signal <rgb_next$addsub0000> created at line 62.
+    Found 10-bit adder for signal <rgb_next$addsub0001> created at line 62.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0000> created at line 78.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0001> created at line 78.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0002> created at line 67.
+    Found 10-bit comparator equal for signal <rgb_next$cmp_eq0003> created at line 67.
+    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 62.
+    Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 62.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0000> created at line 61.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0001> created at line 61.
+    Found 10-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 62.
+    Found 10-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 62.
+    Found 8-bit register for signal <rgb_reg>.
+    Found 32-bit shifter logical right for signal <shift0000$shift0000> created at line 67.
+    Found 8-bit subtractor for signal <shift0000$sub0000> created at line 67.
+    Found 32-bit shifter logical right for signal <shift0001$shift0000> created at line 67.
+    Found 8-bit subtractor for signal <shift0001$sub0000> created at line 67.
+    Found 32-bit shifter logical right for signal <shift0002$shift0000> created at line 78.
+    Found 32-bit shifter logical right for signal <shift0003$shift0000> created at line 78.
+    Found 32-bit shifter logical left for signal <tile_pixel_h$shift0001> created at line 44.
+    Found 32-bit shifter logical left for signal <tile_pixel_w$shift0001> created at line 43.
+    Found 10-bit shifter logical right for signal <tile_x$shift0000>.
+    Found 10-bit shifter logical right for signal <tile_y$shift0000>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred  16 D-type flip-flop(s).
+	inferred  18 Adder/Subtractor(s).
+	inferred   6 Multiplier(s).
+	inferred  10 Comparator(s).
+	inferred   2 Multiplexer(s).
+	inferred  12 Combinational logic shifter(s).
+Unit <maze_renderer_test> synthesized.
+
+
+Synthesizing Unit <maze_carver_2>.
+    Related source file is "../maze_carver_2.v".
+WARNING:Xst:647 - Input <x_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <y_dimension> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <maze_data> is never assigned. Tied to value 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001.
+WARNING:Xst:1780 - Signal <start_y> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <start_x> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <dir_dist> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 256x5-bit dual-port RAM <Mram_stack_x> for signal <stack_x>.
+    Found 256x5-bit dual-port RAM <Mram_stack_y> for signal <stack_y>.
+    Found 256x1-bit ROM for signal <$COND_26>.
+    Found 256x1-bit ROM for signal <$COND_29>.
+    Found 256x1-bit ROM for signal <$COND_32>.
+    Found 256x1-bit ROM for signal <$COND_35>.
+    Found 256x1-bit ROM for signal <$COND_38>.
+    Found 256x1-bit ROM for signal <$COND_41>.
+    Found 256x1-bit ROM for signal <$COND_44>.
+    Found 256x1-bit ROM for signal <$COND_47>.
+    Found 256x1-bit ROM for signal <$COND_50>.
+    Found 256x1-bit ROM for signal <$COND_53>.
+    Found 256x1-bit ROM for signal <$COND_56>.
+    Found 256x1-bit ROM for signal <$COND_59>.
+    Found 256x1-bit ROM for signal <$COND_62>.
+    Found 256x1-bit ROM for signal <$COND_65>.
+    Found 256x1-bit ROM for signal <$COND_68>.
+    Found 256x1-bit ROM for signal <$COND_71>.
+    Found 256x1-bit ROM for signal <$COND_74>.
+    Found 1-bit register for signal <finish>.
+    Found 6-bit adder for signal <$add0003> created at line 95.
+    Found 8-bit subtractor for signal <$sub0000> created at line 95.
+    Found 7-bit subtractor for signal <$sub0001> created at line 95.
+    Found 6-bit subtractor for signal <$sub0002> created at line 120.
+    Found 6-bit subtractor for signal <$sub0003> created at line 120.
+    Found 7-bit subtractor for signal <$sub0004> created at line 120.
+    Found 7-bit subtractor for signal <$sub0005> created at line 120.
+    Found 6-bit adder carry out for signal <add0000$addsub0000> created at line 95.
+    Found 5-bit adder carry out for signal <add0001$addsub0000> created at line 95.
+    Found 5-bit adder carry out for signal <add0002$addsub0000> created at line 95.
+    Found 5-bit adder carry out for signal <add0004$addsub0000> created at line 120.
+    Found 5-bit adder carry out for signal <add0005$addsub0000> created at line 120.
+    Found 2-bit adder for signal <and0000$addsub0001> created at line 95.
+    Found 2-bit adder carry out for signal <and0000$addsub0002> created at line 95.
+    Found 1-bit adder carry out for signal <and0000$addsub0003> created at line 95.
+    Found 6-bit adder carry out for signal <COND_25$addsub0001> created at line 95.
+    Found 5-bit adder carry out for signal <COND_43$addsub0000> created at line 120.
+    Found 5-bit adder carry out for signal <COND_67$addsub0001> created at line 120.
+    Found 5-bit register for signal <curr_x>.
+    Found 5-bit adder for signal <curr_x$share0000>.
+    Found 5-bit register for signal <curr_y>.
+    Found 5-bit adder for signal <curr_y$share0000>.
+    Found 1-bit register for signal <sequence>.
+    Found 8-bit up counter for signal <stack_pos>.
+    Found 8-bit addsub for signal <stack_pos$mux0000>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred  17 ROM(s).
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred  35 Adder/Subtractor(s).
+Unit <maze_carver_2> synthesized.
+
+
+Synthesizing Unit <Lab8_fpga_top>.
+    Related source file is "../lab8_fpga_top.v".
+WARNING:Xst:1780 - Signal <y_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <x_coord> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <finish> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <char_y_speed> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <char_y_count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <char_x_speed> is used but never assigned. This sourceless signal will be automatically connected to value 0001001100010010110100000000.
+WARNING:Xst:653 - Signal <KEY_W> is used but never assigned. This sourceless signal will be automatically connected to value 00111010.
+WARNING:Xst:653 - Signal <KEY_UP> is used but never assigned. This sourceless signal will be automatically connected to value 11101010.
+WARNING:Xst:653 - Signal <KEY_S> is used but never assigned. This sourceless signal will be automatically connected to value 00110110.
+WARNING:Xst:653 - Signal <KEY_RIGHT> is used but never assigned. This sourceless signal will be automatically connected to value 11101000.
+WARNING:Xst:653 - Signal <KEY_LEFT> is used but never assigned. This sourceless signal will be automatically connected to value 11010110.
+WARNING:Xst:653 - Signal <KEY_DOWN> is used but never assigned. This sourceless signal will be automatically connected to value 11100100.
+WARNING:Xst:653 - Signal <KEY_D> is used but never assigned. This sourceless signal will be automatically connected to value 01000110.
+WARNING:Xst:653 - Signal <KEY_A> is used but never assigned. This sourceless signal will be automatically connected to value 00111000.
+    Found 7-bit updown counter for signal <char_x>.
+    Found 28-bit up counter for signal <char_x_count>.
+    Found 28-bit comparator less for signal <char_x_count$cmp_lt0000> created at line 62.
+    Found 7-bit updown counter for signal <char_y>.
+    Found 7-bit register for signal <tile_height>.
+    Found 7-bit register for signal <tile_width>.
+    Found 7-bit register for signal <x_dim>.
+    Found 7-bit register for signal <y_dim>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <Lab8_fpga_top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 256x5-bit dual-port RAM                               : 2
+# ROMs                                                 : 19
+ 16x1-bit ROM                                          : 2
+ 256x1-bit ROM                                         : 17
+# Multipliers                                          : 6
+ 10x10-bit multiplier                                  : 4
+ 10x7-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 57
+ 1-bit adder carry out                                 : 1
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 5
+ 12-bit adder                                          : 5
+ 12-bit subtractor                                     : 2
+ 13-bit adder                                          : 3
+ 14-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 2-bit adder                                           : 3
+ 2-bit adder carry out                                 : 1
+ 22-bit subtractor                                     : 4
+ 36-bit adder                                          : 2
+ 39-bit adder                                          : 1
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 5-bit adder carry out                                 : 6
+ 6-bit adder                                           : 1
+ 6-bit adder carry out                                 : 2
+ 6-bit subtractor                                      : 2
+ 7-bit subtractor                                      : 3
+ 8-bit adder                                           : 1
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 3
+ 9-bit subtractor                                      : 1
+# Counters                                             : 6
+ 10-bit up counter                                     : 2
+ 28-bit up counter                                     : 1
+ 7-bit updown counter                                  : 2
+ 8-bit up counter                                      : 1
+# Registers                                            : 26
+ 1-bit register                                        : 9
+ 11-bit register                                       : 1
+ 2-bit register                                        : 3
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 5-bit register                                        : 2
+ 7-bit register                                        : 4
+ 8-bit register                                        : 5
+# Comparators                                          : 19
+ 10-bit comparator equal                               : 4
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 3
+ 10-bit comparator lessequal                           : 4
+ 11-bit comparator less                                : 1
+ 2-bit comparator equal                                : 2
+ 28-bit comparator less                                : 1
+# Multiplexers                                         : 4
+ 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 8192-to-1 multiplexer                           : 2
+# Logic shifters                                       : 12
+ 10-bit shifter logical right                          : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 6
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <RN> is unconnected in block <MC>.
+   It will be removed from the design.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx_unit>.
+
+Synthesizing (advanced) Unit <maze_carver_2>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_stack_x> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 5-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_0>    | high     |
+    |     addrA          | connected to signal <stack_pos>     |          |
+    |     diA            | connected to signal <curr_x>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 5-bit                    |          |
+    |     addrB          | connected to internal node          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_stack_y> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 5-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_1>    | high     |
+    |     addrA          | connected to signal <stack_pos>     |          |
+    |     diA            | connected to signal <curr_y>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 5-bit                    |          |
+    |     addrB          | connected to internal node          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <maze_carver_2> synthesized (advanced).
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 256x5-bit dual-port distributed RAM                   : 2
+# ROMs                                                 : 19
+ 16x1-bit ROM                                          : 2
+ 256x1-bit ROM                                         : 17
+# Multipliers                                          : 6
+ 10x10-bit multiplier                                  : 4
+ 10x7-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 57
+ 1-bit adder carry out                                 : 1
+ 10-bit adder                                          : 2
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 2
+ 12-bit subtractor                                     : 2
+ 13-bit adder                                          : 2
+ 2-bit adder                                           : 3
+ 2-bit adder carry out                                 : 1
+ 22-bit subtractor                                     : 4
+ 4-bit adder                                           : 3
+ 4-bit subtractor                                      : 4
+ 5-bit adder                                           : 2
+ 5-bit adder carry out                                 : 6
+ 6-bit adder carry out                                 : 2
+ 7-bit subtractor                                      : 2
+ 8-bit adder                                           : 13
+ 8-bit adder carry in                                  : 1
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 4
+# Counters                                             : 6
+ 10-bit up counter                                     : 2
+ 28-bit up counter                                     : 1
+ 7-bit updown counter                                  : 2
+ 8-bit up counter                                      : 1
+# Registers                                            : 110
+ Flip-Flops                                            : 110
+# Comparators                                          : 19
+ 10-bit comparator equal                               : 4
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 3
+ 10-bit comparator lessequal                           : 4
+ 11-bit comparator less                                : 1
+ 2-bit comparator equal                                : 2
+ 28-bit comparator less                                : 1
+# Multiplexers                                         : 4
+ 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 8192-to-1 multiplexer                           : 2
+# Logic shifters                                       : 12
+ 10-bit shifter logical right                          : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 6
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch sequence hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch finish hinder the constant cleaning in the block maze_carver_2.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_next_1> 
+INFO:Xst:2261 - The FF/Latch <rgb_next_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_3> <rgb_next_4> 
+INFO:Xst:2261 - The FF/Latch <rgb_next_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_6> <rgb_next_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_reg_1> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_3> <rgb_reg_4> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_6> <rgb_reg_7> 
+INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_44> <Mrom__COND_74> are equivalent, XST will keep only <Mrom__COND_44>.
+INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_47> <Mrom__COND_56> are equivalent, XST will keep only <Mrom__COND_47>.
+INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_53> <Mrom__COND_62> are equivalent, XST will keep only <Mrom__COND_53>.
+INFO:Xst:2146 - In block <maze_carver_2>, ROM <Mrom__COND_65> <Mrom__COND_71> are equivalent, XST will keep only <Mrom__COND_65>.
+WARNING:Xst:2677 - Node <curr_y_4> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y65> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y66> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y67> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y70> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y68> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y69> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y71> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y72> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y73> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y74> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y77> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y75> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y76> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y78> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y79> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y80> of sequential type is unconnected in block <maze_carver_2>.
+
+Optimizing unit <Lab8_fpga_top> ...
+
+Optimizing unit <ps2_rx> ...
+
+Optimizing unit <fifo> ...
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:1710 - FF/Latch <empty_reg> (without init value) has a constant value of 1 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <full_reg> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <w_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <w_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_0> of sequential type is unconnected in block <fifo>.
+WARNING:Xst:2677 - Node <r_ptr_reg_1> of sequential type is unconnected in block <fifo>.
+
+Optimizing unit <vga_sync> ...
+
+Optimizing unit <rand_num> ...
+
+Optimizing unit <maze_renderer_test> ...
+
+Optimizing unit <maze_carver_2> ...
+WARNING:Xst:2677 - Node <Mram_stack_x3> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x1> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x2> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x4> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x5> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x6> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x7> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x10> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x8> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x9> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x11> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x12> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x13> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x14> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x17> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x15> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x16> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x18> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x19> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x20> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x21> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x24> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x22> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x23> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x25> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x26> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x27> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x28> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x31> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x29> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x30> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x32> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x33> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x34> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x35> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x38> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x36> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x37> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x39> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x40> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x41> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x42> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x45> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x43> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x44> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x46> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x47> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x48> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x49> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x52> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x50> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x51> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x53> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x54> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x55> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x56> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x59> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x57> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x58> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x62> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x60> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x61> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x65> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x63> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x64> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x66> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x67> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x68> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x69> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x72> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x70> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x71> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x73> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x74> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x75> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x76> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x79> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x77> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x78> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x80> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y1> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y2> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y3> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y4> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y7> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y5> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y6> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y8> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y9> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y10> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y11> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y14> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y12> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y13> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y15> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y16> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y17> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y18> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y21> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y19> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y20> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y22> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y23> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y24> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y25> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y28> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y26> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y27> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y29> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y30> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y31> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y32> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y35> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y33> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y34> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y36> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y37> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y38> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y39> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y42> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y40> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y41> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y43> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y44> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y45> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y46> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y49> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y47> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y48> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y50> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y51> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y52> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y53> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y56> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y54> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y55> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y57> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y58> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y59> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y60> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y63> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y61> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y62> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y64> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x3> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x1> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x2> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x4> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x5> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x6> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x7> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x10> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x8> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x9> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x11> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x12> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x13> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x14> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x17> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x15> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x16> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x18> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x19> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x20> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x21> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x24> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x22> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x23> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x25> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x26> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x27> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x28> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x31> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x29> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x30> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x32> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x33> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x34> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x35> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x38> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x36> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x37> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x39> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x40> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x41> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x42> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x45> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x43> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x44> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x46> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x47> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x48> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x49> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x52> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x50> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x51> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x53> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x54> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x55> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x56> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x59> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x57> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x58> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x62> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x60> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x61> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x65> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x63> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x64> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x66> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x67> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x68> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x69> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x72> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x70> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x71> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x73> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x74> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x75> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x76> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x79> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x77> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x78> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_x80> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y1> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y2> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y3> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y4> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y7> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y5> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y6> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y8> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y9> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y10> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y11> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y14> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y12> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y13> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y15> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y16> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y17> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y18> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y21> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y19> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y20> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y22> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y23> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y24> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y25> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y28> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y26> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y27> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y29> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y30> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y31> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y32> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y35> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y33> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y34> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y36> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y37> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y38> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y39> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y42> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y40> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y41> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y43> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y44> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y45> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y46> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y49> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y47> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y48> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y50> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y51> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y52> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y53> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y56> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y54> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y55> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y57> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y58> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y59> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y60> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y63> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y61> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y62> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <Mram_stack_y64> of sequential type is unconnected in block <maze_carver_2>.
+WARNING:Xst:2677 - Node <MC/RN/rand_0> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/rand_1> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_0> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_1> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_2> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_3> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_4> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_5> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_6> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/RN/base_reg_7> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_7> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_6> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_5> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_4> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_3> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_2> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_1> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/stack_pos_0> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/finish> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/sequence> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_y_3> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_y_2> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_y_1> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_y_0> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_x_4> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_x_3> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_x_2> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_x_1> of sequential type is unconnected in block <Lab8_fpga_top>.
+WARNING:Xst:2677 - Node <MC/curr_x_0> of sequential type is unconnected in block <Lab8_fpga_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Lab8_fpga_top, actual ratio is 10.
+FlipFlop tile_height_0 has been replicated 1 time(s)
+FlipFlop tile_height_1 has been replicated 1 time(s)
+FlipFlop tile_height_2 has been replicated 1 time(s)
+FlipFlop tile_height_3 has been replicated 1 time(s)
+FlipFlop tile_height_4 has been replicated 1 time(s)
+FlipFlop tile_width_0 has been replicated 1 time(s)
+FlipFlop tile_width_1 has been replicated 1 time(s)
+FlipFlop tile_width_2 has been replicated 1 time(s)
+FlipFlop tile_width_3 has been replicated 1 time(s)
+FlipFlop tile_width_4 has been replicated 1 time(s)
+FlipFlop tile_width_5 has been replicated 1 time(s)
+FlipFlop tile_width_6 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 146
+ Flip-Flops                                            : 146
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Lab8_fpga_top.ngr
+Top Level Output File Name         : Lab8_fpga_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 45
+
+Cell Usage :
+# BELS                             : 1446
+#      GND                         : 1
+#      INV                         : 45
+#      LUT1                        : 58
+#      LUT2                        : 203
+#      LUT2_D                      : 3
+#      LUT2_L                      : 4
+#      LUT3                        : 117
+#      LUT3_D                      : 11
+#      LUT3_L                      : 16
+#      LUT4                        : 322
+#      LUT4_D                      : 16
+#      LUT4_L                      : 39
+#      MULT_AND                    : 8
+#      MUXCY                       : 291
+#      MUXF5                       : 72
+#      MUXF6                       : 2
+#      MUXF7                       : 2
+#      MUXF8                       : 1
+#      VCC                         : 1
+#      XORCY                       : 234
+# FlipFlops/Latches                : 146
+#      FD                          : 23
+#      FD_1                        : 3
+#      FDE                         : 54
+#      FDR                         : 33
+#      FDRE                        : 28
+#      FDRS                        : 2
+#      FDS                         : 1
+#      FDSE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 44
+#      IBUF                        : 14
+#      OBUF                        : 30
+# MULTs                            : 6
+#      MULT18X18SIO                : 6
+# Others                           : 1
+#      STARTUP_SPARTAN3E           : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      442  out of   4656     9%  
+ Number of Slice Flip Flops:            146  out of   9312     1%  
+ Number of 4 input LUTs:                834  out of   9312     8%  
+ Number of IOs:                          45
+ Number of bonded IOBs:                  45  out of    232    19%  
+ Number of MULT18X18SIOs:                 6  out of     20    30%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 146   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 30.652ns (Maximum Frequency: 32.624MHz)
+   Minimum input arrival time before clock: 3.321ns
+   Maximum output required time after clock: 6.978ns
+   Maximum combinational path delay: 2.560ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 30.652ns (frequency: 32.624MHz)
+  Total number of paths / destination ports: 360557360 / 211
+-------------------------------------------------------------------------
+Delay:               30.652ns (Levels of Logic = 27)
+  Source:            tile_width_6_1 (FF)
+  Destination:       MRT/rgb_next_5 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: tile_width_6_1 to MRT/rgb_next_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.514   0.754  tile_width_6_1 (tile_width_6_1)
+     LUT4_D:I0->O         12   0.612   0.820  MRT/centered_tile_x<5>11 (MRT/N118)
+     LUT4:I3->O            3   0.612   0.451  MRT/tile_pixel_w_shift0000<4>1 (MRT/tile_pixel_w<4>)
+     MULT18X18SIO:A4->P4    3   3.251   0.451  MRT/Mmult_maze_pixel_w_mult0001 (MRT/maze_pixel_w<4>)
+     INV:I->O              1   0.612   0.000  MRT/maze_border_x_not0000<4>1_INV_0 (MRT/maze_border_x_not0000<4>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<4> (MRT/Madd_maze_border_x_sub0000_Madd_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  MRT/Madd_maze_border_x_sub0000_Madd_cy<5> (MRT/Madd_maze_border_x_sub0000_Madd_cy<5>)
+     XORCY:CI->O           4   0.699   0.568  MRT/Madd_maze_border_x_sub0000_Madd_xor<6> (MRT/maze_border_x<5>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub_centered_tile_x_addsub0000_lut<5> (MRT/Msub_centered_tile_x_addsub0000_lut<5>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub_centered_tile_x_addsub0000_cy<5> (MRT/Msub_centered_tile_x_addsub0000_cy<5>)
+     XORCY:CI->O           7   0.699   0.632  MRT/Msub_centered_tile_x_addsub0000_xor<6> (MRT/centered_tile_x_addsub0000<6>)
+     LUT3:I2->O            1   0.612   0.000  MRT/centered_tile_x<3>_SW0_G (N255)
+     MUXF5:I1->O           4   0.278   0.568  MRT/centered_tile_x<3>_SW0 (N85)
+     LUT2:I1->O            1   0.612   0.000  MRT/centered_tile_x<3>11_SW1_F (N266)
+     MUXF5:I0->O           1   0.278   0.360  MRT/centered_tile_x<3>11_SW1 (N151)
+     LUT4:I3->O            3   0.612   0.451  MRT/centered_tile_x<3> (MRT/centered_tile_x<3>)
+     MULT18X18SIO:A3->P9    1   4.022   0.426  MRT/Mmult__mult0000 (MRT/_mult0000<9>)
+     LUT2:I1->O            1   0.612   0.000  MRT/Msub__sub0001_lut<9> (MRT/Msub__sub0001_lut<9>)
+     MUXCY:S->O            1   0.404   0.000  MRT/Msub__sub0001_cy<9> (MRT/Msub__sub0001_cy<9>)
+     XORCY:CI->O           3   0.699   0.481  MRT/Msub__sub0001_xor<10> (MRT/_sub0001<10>)
+     LUT3:I2->O            1   0.612   0.387  MRT/_shift0001<0>161 (MRT/N107)
+     LUT4:I2->O            3   0.612   0.454  MRT/_shift0001<1>147 (MRT/_shift0001<1>147)
+     LUT4:I3->O            1   0.612   0.000  MRT/_shift0001<1>7_G (N263)
+     MUXF5:I1->O           2   0.278   0.383  MRT/_shift0001<1>7 (MRT/_shift0001<1>7)
+     LUT4:I3->O            1   0.612   0.360  MRT/_shift0001<0>133_SW1 (N163)
+     LUT4:I3->O            2   0.612   0.380  MRT/rgb_next_and000210 (MRT/rgb_next_and000210)
+     MUXF5:S->O            1   0.641   0.360  MRT/rgb_next_and000250_SW2 (N127)
+     LUT4:I3->O            2   0.612   0.380  MRT/rgb_next_mux0000<6> (MRT/rgb_next_mux0000<6>)
+     FDRS:S                    0.795          MRT/rgb_next_5
+    ----------------------------------------
+    Total                     30.652ns (21.986ns logic, 8.667ns route)
+                                       (71.7% logic, 28.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 85 / 85
+-------------------------------------------------------------------------
+Offset:              3.321ns (Levels of Logic = 2)
+  Source:            sw<7> (PAD)
+  Destination:       MRT/rgb_next_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: sw<7> to MRT/rgb_next_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  sw_7_IBUF (sw_7_IBUF)
+     INV:I->O              3   0.612   0.451  MRT/enable_inv1_INV_0 (MRT/enable_inv)
+     FDR:R                     0.795          MRT/rgb_next_0
+    ----------------------------------------
+    Total                      3.321ns (2.513ns logic, 0.808ns route)
+                                       (75.7% logic, 24.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 82 / 18
+-------------------------------------------------------------------------
+Offset:              6.978ns (Levels of Logic = 3)
+  Source:            MRT/VGAS/h_count_reg_7 (FF)
+  Destination:       vgaRed<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: MRT/VGAS/h_count_reg_7 to vgaRed<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            15   0.514   1.016  MRT/VGAS/h_count_reg_7 (MRT/VGAS/h_count_reg_7)
+     LUT3:I0->O            3   0.612   0.603  MRT/VGAS/video_on8 (MRT/VGAS/video_on8)
+     LUT4:I0->O            3   0.612   0.451  MRT/rgb<6>1 (vgaRed_1_OBUF)
+     OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
+    ----------------------------------------
+    Total                      6.978ns (4.907ns logic, 2.071ns route)
+                                       (70.3% logic, 29.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.560ns (Levels of Logic = 1)
+  Source:            clk (PAD)
+  Destination:       SU:CLK (PAD)
+
+  Data Path: clk to SU:CLK
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     BUFGP:I->O          146   1.457   1.103  clk_BUFGP (clk_BUFGP)
+    STARTUP_SPARTAN3E:CLK        0.000          SU
+    ----------------------------------------
+    Total                      2.560ns (1.457ns logic, 1.103ns route)
+                                       (56.9% logic, 43.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 179.00 secs
+Total CPU time to Xst completion: 178.79 secs
+ 
 --> 
 
-Total memory usage is 232596 kilobytes
+Total memory usage is 369896 kilobytes
 
-Number of errors   :    7 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  408 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
 

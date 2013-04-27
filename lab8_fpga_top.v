@@ -108,7 +108,7 @@ module Lab8_fpga_top(
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
 	);
 	
-	maze_carver MC (
+	maze_carver_2 MC (
 		.clk(clk),
 		.start(1),
 		.x_dimension(x_dim),
