@@ -112,7 +112,7 @@ module Lab8_fpga_top(
 	reg slow_clk = 0;
 	reg [25:0] clk_counter = 0;
 	always @(posedge clk) begin
-		if (clk_counter == 5_000_000) begin
+		if (clk_counter == 2_000_000) begin
 			slow_clk <= ~slow_clk;
 			clk_counter <= 0;
 		end else

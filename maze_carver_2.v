@@ -75,8 +75,8 @@ module maze_carver_2
 			stack_pos <= 0;
 			for (i = 0; i < 16; i = i + 1)
 				for (j = 0; j < 16; j = j + 1) begin
-					stack_x [i + 16*j] <= 5'b00000;
-					stack_y [i + 16*j] <= 5'b00000;
+					stack_x [i + 16*j] <= 4'b0000;
+					stack_y [i + 16*j] <= 4'b0000;
 				end
 			// Initialize current carving position
 			curr_x 	<= start_x;
@@ -190,9 +190,8 @@ module maze_carver_2
 					stack_pos <= stack_pos - 1;
 					curr_x <= stack_x[stack_pos - 1];
 					curr_y <= stack_y[stack_pos - 1];
-				end
-				
-				sequence <= 0; // go to other sequence
+				end else
+					sequence <= 0; // go to other sequence
 			end
 			
 			// CONTINUE LOOP UNTIL STACK IS EMPTY

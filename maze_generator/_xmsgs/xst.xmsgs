@@ -38,10 +38,10 @@
 <msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 127 </arg>Connection to output port &apos;<arg fmt="%s" index="2">maze_data</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="261" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 129 </arg>Connection to output port &apos;<arg fmt="%s" index="2">curr_x</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 129 </arg>Connection to output port &apos;<arg fmt="%s" index="2">curr_x</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="261" delta="new" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 130 </arg>Connection to output port &apos;<arg fmt="%s" index="2">curr_y</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="261" delta="old" ><arg fmt="%s" index="1">&quot;../lab8_fpga_top.v&quot; line 130 </arg>Connection to output port &apos;<arg fmt="%s" index="2">curr_y</arg>&apos; does not match port size
 </msg>
 
 <msg type="info" file="Xst" num="1432" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
@@ -168,10 +168,6 @@
 </msg>
 
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
-</msg>
-
-<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_2</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">MC</arg>.
-You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_3</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">MC</arg>.
@@ -1186,6 +1182,10 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_2</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">MC</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_1</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">MC</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
@@ -1228,10 +1228,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tile_width_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lab8_fpga_top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_253</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">maze_carver_2</arg>.
-You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_252</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">maze_carver_2</arg>.
@@ -2243,6 +2239,10 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_0</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">maze_carver_2</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">maze_data_253</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">maze_carver_2</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
