@@ -9,10 +9,16 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sat Apr 27 23:41:16 2013
+Mapped Date    : Sun Apr 28 14:09:18 2013
 
 Mapping design into LUTs...
 Running directed packing...
+WARNING:Pack:266 - The function generator MC/Mmux__COND_49_162 failed to merge
+   with F5 multiplexer MC/Mmux__COND_27_14_f5_1.  There is a conflict for the
+   GYMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator MC/Mmux__COND_51_162 failed to merge
+   with F5 multiplexer MC/Mmux__COND_29_14_f5_1.  There is a conflict for the
+   GYMUX.  The design will exhibit suboptimal timing.
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
@@ -26,20 +32,18 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    4
 Logic Utilization:
-  Number of Slice Flip Flops:           406 out of   9,312    4%
-  Number of 4 input LUTs:             3,875 out of   9,312   41%
+  Number of Slice Flip Flops:           399 out of   9,312    4%
+  Number of 4 input LUTs:             3,625 out of   9,312   38%
 Logic Distribution:
-  Number of occupied Slices:          2,300 out of   4,656   49%
-    Number of Slices containing only related logic:   2,300 out of   2,300 100%
-    Number of Slices containing unrelated logic:          0 out of   2,300   0%
+  Number of occupied Slices:          2,223 out of   4,656   47%
+    Number of Slices containing only related logic:   2,223 out of   2,223 100%
+    Number of Slices containing unrelated logic:          0 out of   2,223   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       3,931 out of   9,312   42%
-    Number used as logic:             3,615
-    Number used as a route-thru:         56
-    Number used for Dual Port RAMs:     256
-      (Two LUTs used per Dual Port RAM)
+  Total Number of 4 input LUTs:       3,694 out of   9,312   39%
+    Number used as logic:             3,621
+    Number used as a route-thru:         69
     Number used as Shift registers:       4
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -51,11 +55,11 @@ Logic Distribution:
   Number of MULT18X18SIOs:                6 out of      20   30%
   Number of STARTUP_SPARTAN3Es:           1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                4.44
+Average Fanout of Non-Clock Nets:                4.07
 
-Peak Memory Usage:  275 MB
-Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   6 secs 
+Peak Memory Usage:  274 MB
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion:   5 secs 
 
 NOTES:
 
