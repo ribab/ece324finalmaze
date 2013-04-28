@@ -1,9 +1,14 @@
 Release 14.4 - par P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Sat Apr 27 20:45:17 2013
+Sat Apr 27 21:56:45 2013
 
 All signals are completely routed.
 
+WARNING:ParHelpers:361 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   sw<5>_IBUF
+   sw<6>_IBUF
 
 

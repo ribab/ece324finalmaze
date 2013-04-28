@@ -15,11 +15,11 @@
 module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
-	input [4:0] char_x, char_y,
+	input [6:0] char_x, char_y,
 	input [16*16-1:0] path_data,
-	input wire [6:0] maze_width, maze_height,
+	input wire [4:0] maze_width, maze_height,
 	input wire [4:0] x_coord, y_coord,
-	input wire [6:0] tile_width, tile_height,
+	input wire [4:0] tile_width, tile_height,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
@@ -32,24 +32,27 @@ module maze_renderer_test
    reg [7:0] rgb_reg;
 	reg [7:0] rgb_next;
 	// colors are the colors of the rainbow roygbiv
-	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
-				 c4 = 8'b00011100, c5 = 8'b00001111, c6 = 8'b00000001,
-				 c7 = 8'b10000011, c8 = 8'b11000110;
+//	reg [7:0] c1 = 8'b11000100, c2 = 8'b11110000, c3 = 8'b11111100,
+//				 c4 = 8'b00011100, c5 = 8'b00001111, c6 = 8'b00000001,
+//				 c7 = 8'b10000011, c8 = 8'b11000110;
 				 
 	// x and y position wire variables
 	wire [9:0] x_pos, y_pos;
 	//parameter wtime = 5_000_000;
 
+	// pixel parameters
 	wire [9:0] tile_pixel_w = 1 << tile_width;
 	wire [9:0] tile_pixel_h = 1 << tile_height;
 	wire [9:0] maze_pixel_w = tile_pixel_w*maze_width;
 	wire [9:0] maze_pixel_h = tile_pixel_h*maze_height;
 	wire [9:0] maze_border_x = (640 - maze_pixel_w) >> 1;
 	wire [9:0] maze_border_y = (480 - maze_pixel_h) >> 1;
-	wire [9:0] tile_x = x_pos >> tile_width;
-	wire [9:0] tile_y = y_pos >> tile_height;
-	wire [9:0] centered_tile_x = (x_pos - maze_border_x) >> tile_width;
-	wire [9:0] centered_tile_y = (y_pos - maze_border_y) >> tile_height;
+	
+	// tile parameters
+	wire [4:0] tile_x = x_pos >> tile_width;
+	wire [4:0] tile_y = y_pos >> tile_height;
+	wire [4:0] centered_tile_x = (x_pos - maze_border_x) >> tile_width;
+	wire [4:0] centered_tile_y = (y_pos - maze_border_y) >> tile_height;
 	
    // Control the Display
 	always @(posedge clk) begin
@@ -64,6 +67,7 @@ module maze_renderer_test
 					 y_pos >= maze_pixel_h + maze_border_y ||
 					 y_pos < maze_border_y)
 					rgb_next <= 8'b00000000;
+				// character on centered screen
 				else if (char_x == centered_tile_x &&
 							char_y == centered_tile_y &&
 							char_array[  ((x_pos - maze_border_x - centered_tile_x*tile_pixel_w) >> (tile_width - 2)) +
@@ -75,6 +79,7 @@ module maze_renderer_test
 				else
 					rgb_next <= 8'b00000000;
 			else
+				// character on non centered screen
 				if (char_x == tile_x - x_coord &&
 					char_y == tile_y - y_coord &&
 					char_array[  ((x_pos - tile_x*tile_pixel_w) >> (tile_width - 2)) +

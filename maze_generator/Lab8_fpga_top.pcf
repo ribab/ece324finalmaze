@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Sat Apr 27 20:43:27 2013
+// Written by: Map P.49d on Sat Apr 27 21:54:39 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -50,13 +50,11 @@ COMP "vgaBlue<2>" LOCATE = SITE "U5" LEVEL 1;
 COMP "vgaBlue<3>" LOCATE = SITE "U4" LEVEL 1;
 NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 TIMEGRP clk = BEL "x_dim_0" BEL "x_dim_1" BEL "x_dim_2" BEL "x_dim_3" BEL
-        "x_dim_4" BEL "x_dim_5" BEL "x_dim_6" BEL "tile_height_0" BEL
-        "tile_height_1" BEL "tile_height_2" BEL "tile_height_3" BEL
-        "tile_height_4" BEL "tile_height_5" BEL "tile_height_6" BEL "y_dim_0"
-        BEL "y_dim_1" BEL "y_dim_2" BEL "y_dim_3" BEL "y_dim_4" BEL "y_dim_5"
-        BEL "y_dim_6" BEL "tile_width_0" BEL "tile_width_1" BEL "tile_width_2"
-        BEL "tile_width_3" BEL "tile_width_4" BEL "tile_width_5" BEL
-        "tile_width_6" BEL "slow_clk" BEL "clk_counter_0" BEL "clk_counter_1"
+        "x_dim_4" BEL "tile_height_0" BEL "tile_height_1" BEL "tile_height_2"
+        BEL "tile_height_3" BEL "tile_height_4" BEL "y_dim_0" BEL "y_dim_1"
+        BEL "y_dim_2" BEL "y_dim_3" BEL "y_dim_4" BEL "tile_width_0" BEL
+        "tile_width_1" BEL "tile_width_2" BEL "tile_width_3" BEL
+        "tile_width_4" BEL "slow_clk" BEL "clk_counter_0" BEL "clk_counter_1"
         BEL "clk_counter_2" BEL "clk_counter_3" BEL "clk_counter_4" BEL
         "clk_counter_5" BEL "clk_counter_6" BEL "clk_counter_7" BEL
         "clk_counter_8" BEL "clk_counter_9" BEL "clk_counter_10" BEL
@@ -96,11 +94,11 @@ TIMEGRP clk = BEL "x_dim_0" BEL "x_dim_1" BEL "x_dim_2" BEL "x_dim_3" BEL
         "KB/ps2_rx_unit/state_reg_2" BEL "MRT/VGAS/mod2_reg" BEL
         "MRT/VGAS/v_sync_reg" BEL "MRT/VGAS/h_sync_reg" BEL "MRT/rgb_next_5"
         BEL "MRT/rgb_next_2" BEL "KB/ps2_rx_unit/state_reg_0" BEL
-        "tile_width_4_1" BEL "tile_height_4_1" BEL "tile_width_3_1" BEL
-        "tile_height_3_1" BEL "tile_width_2_1" BEL "tile_width_1_1" BEL
-        "tile_height_1_1" BEL "tile_height_2_1" BEL "tile_width_0_1" BEL
-        "tile_height_0_1" BEL "tile_width_4_2" BEL "tile_height_4_2" BEL
-        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+        "tile_height_3_1" BEL "tile_height_2_1" BEL "tile_height_4_1" BEL
+        "tile_width_3_1" BEL "tile_width_1_1" BEL "tile_width_2_1" BEL
+        "tile_height_0_1" BEL "tile_height_1_1" BEL "tile_width_4_1" BEL
+        "tile_height_2_2" BEL "tile_width_0_1" BEL "tile_width_3_2" BEL
+        "tile_width_1_2" BEL "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 SCHEMATIC END;
 

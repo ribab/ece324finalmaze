@@ -9,32 +9,36 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sat Apr 27 20:43:21 2013
+Mapped Date    : Sat Apr 27 21:54:35 2013
 
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
+WARNING:PhysDesignRules:367 - The signal <sw<5>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <sw<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    0
+Number of warnings:    2
 Logic Utilization:
-  Number of Slice Flip Flops:           415 out of   9,312    4%
-  Number of 4 input LUTs:             4,121 out of   9,312   44%
+  Number of Slice Flip Flops:           406 out of   9,312    4%
+  Number of 4 input LUTs:             3,876 out of   9,312   41%
 Logic Distribution:
-  Number of occupied Slices:          2,419 out of   4,656   51%
-    Number of Slices containing only related logic:   2,419 out of   2,419 100%
-    Number of Slices containing unrelated logic:          0 out of   2,419   0%
+  Number of occupied Slices:          2,305 out of   4,656   49%
+    Number of Slices containing only related logic:   2,305 out of   2,305 100%
+    Number of Slices containing unrelated logic:          0 out of   2,305   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       4,176 out of   9,312   44%
-    Number used as logic:             3,797
-    Number used as a route-thru:         55
-    Number used for Dual Port RAMs:     320
+  Total Number of 4 input LUTs:       3,933 out of   9,312   42%
+    Number used as logic:             3,616
+    Number used as a route-thru:         57
+    Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
     Number used as Shift registers:       4
 
@@ -47,11 +51,11 @@ Logic Distribution:
   Number of MULT18X18SIOs:                6 out of      20   30%
   Number of STARTUP_SPARTAN3Es:           1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                4.43
+Average Fanout of Non-Clock Nets:                4.45
 
-Peak Memory Usage:  277 MB
-Total REAL time to MAP completion:  8 secs 
-Total CPU time to MAP completion:   8 secs 
+Peak Memory Usage:  275 MB
+Total REAL time to MAP completion:  6 secs 
+Total CPU time to MAP completion:   6 secs 
 
 NOTES:
 
