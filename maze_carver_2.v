@@ -31,7 +31,7 @@ module maze_carver_2
 	reg [3:0] stack_x [16*16-1:0];
 	reg [3:0] stack_y [16*16-1:0];	
 	
-	reg [7:0] stack_pos;
+	reg [8:0] stack_pos;
     
     
 	// instantiate rand_num
@@ -118,13 +118,13 @@ module maze_carver_2
 				if ( // See if tile in movement direction is closed and if that tile 
 					 // is only connected to one open tile
 					maze_data[new_pos] == 0 &&
-					(	//           tile right of current is open & position not on right edge
+					(	//           tile right of new_pos is open & position not on right edge
 						{2'b00, maze_data[new_x_right_1 + new_y]} +
-						//           tile left of current is open  & position not on left edge
+						//           tile left of new_pos is open  & position not on left edge
 						{2'b00, maze_data[new_x_left_1 + new_y ]} +
-						//           tile up of current is open    & position not on top edge
+						//           tile up of new_pos is open    & position not on top edge
 						{2'b00, maze_data[new_x + new_y_up_1   ]} +
-						//           tile down of current is open  & position not on bottom edge
+						//           tile down of new_pos is open  & position not on bottom edge
 						{2'b00, maze_data[new_x + new_y_down_1 ]}
 						== 3'b001
 					)
@@ -134,7 +134,8 @@ module maze_carver_2
 					stack_x[stack_pos] <= curr_x; // Push old position on stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
-				end else
+				end
+				else
 					sequence <= 1; // check to see if trapped
 					
 			end
@@ -188,7 +189,8 @@ module maze_carver_2
 					stack_pos <= stack_pos - 1;
 					curr_x <= stack_x[stack_pos - 1];
 					curr_y <= stack_y[stack_pos - 1];
-				end else
+				end
+				else
 					sequence <= 0; // go back to carving
 					
 			end
