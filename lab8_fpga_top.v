@@ -39,7 +39,7 @@ module Lab8_fpga_top(
 	reg [6:0] tile_width = 4, tile_height = 4;
 	reg [6:0] x_coord = 0, y_coord = 0;
 	wire enable_display;
-	reg [6:0] char_x = 0, char_y = 0;
+	wire [4:0] char_x, char_y;
 	reg [27:0] char_x_count = 0, char_y_count = 0, 
 	          char_x_speed = 20_000_000, char_y_speed = 20_000_000;
 	reg [7:0] KEY_UP =   8'b11101010, KEY_DOWN =  8'b11100100,
@@ -59,7 +59,7 @@ module Lab8_fpga_top(
 		if (btn[3]) begin
 			tile_height <= sw[6:0];
 		end
-		if (char_x_count < char_x_speed) begin // btn3 controls position of avatar
+/*		if (char_x_count < char_x_speed) begin // btn3 controls position of avatar
 			char_x_count <= char_x_count + 1;
 		end
 		else begin
@@ -73,6 +73,7 @@ module Lab8_fpga_top(
 			if (key_code == KEY_RIGHT || key_code == KEY_D)
 				char_x <= char_x + 1;
 		end
+*/
 	end
 	
 	assign enable_display = sw[7];
@@ -124,7 +125,9 @@ module Lab8_fpga_top(
 		.x_dimension(x_dim),
 		.y_dimension(y_dim),
 		.maze_data(maze_data),
-		.finish(finish)
+		.finish(finish),
+		.curr_x(char_x),
+		.curr_y(char_y)
 	);
 
 

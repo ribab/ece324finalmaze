@@ -9,7 +9,10 @@ module maze_carver_2
 	
 	// output reg [63:0] maze_array  [0:64*64-1],
 	
-		output reg finish = 0
+		output reg finish = 0,
+		
+		output reg [4:0] curr_x,
+		output reg [4:0] curr_y
 	);
 	
 	// declare registers
@@ -19,8 +22,6 @@ module maze_carver_2
 	reg [4:0] start_y;
 	wire [1:0] rand;
 	reg [1:0] dir_dist;
-	reg [4:0] curr_x;
-	reg [4:0] curr_y;
     
 	// declare size of maze
     parameter [5:0] maze_width = 16;
@@ -30,7 +31,7 @@ module maze_carver_2
 	reg [4:0] stack_x [16*16-1:0];
 	reg [4:0] stack_y [16*16-1:0];	
 	
-	reg [7:0] stack_pos = 0;
+	reg [7:0] stack_pos;
     
     
 	// instantiate rand_num
@@ -119,9 +120,13 @@ module maze_carver_2
 				if ( // See if tile in movement direction is closed and if that tile 
 					 // is only connected to one open tile
 					maze_data[new_pos] == 0 &&
-					(	{2'b00, maze_data[new_x_right_1 + new_y]} +
+					(	//           tile right of current is open & position not on right edge
+						{2'b00, maze_data[new_x_right_1 + new_y]} +
+						//           tile left of current is open  & position not on left edge
 						{2'b00, maze_data[new_x_left_1 + new_y ]} +
+						//           tile up of current is open    & position not on top edge
 						{2'b00, maze_data[new_x + new_y_up_1   ]} +
+						//           tile down of current is open  & position not on bottom edge
 						{2'b00, maze_data[new_x + new_y_down_1 ]}
 						== 3'b001
 					)
