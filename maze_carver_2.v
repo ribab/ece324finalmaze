@@ -141,25 +141,37 @@ module maze_carver_2
 					sequence <= 1; // check to see if trapped
 */
 				// if move up
-				if (mov_y == 4'b1111 && !is_wall(currpos_up_1, curr_x, curr_y - 1)) begin
+				if (         mov_y == 4'b1111 &&
+				             !is_wall(currpos_up_1, curr_x, curr_y - 1) &&
+								 maze_data[currpos_up_1] == 0 &&
+				             curr_y != 0) begin
 					curr_y <= new_pos_y; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move left
-				end else if (mov_x == 4'b1111 && !is_wall(currpos_left_1, curr_x - 1, curr_y)) begin
+				end else if (mov_x == 4'b1111 &&
+				             !is_wall(currpos_left_1, curr_x - 1, curr_y) &&
+								 maze_data[currpos_left_1] == 0 &&
+				             curr_x != 0) begin
 					curr_x <= new_pos_x; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move down
-				end else if (mov_y == 4'b0001 && !is_wall(currpos_down_1, curr_x, curr_y + 1)) begin
+				end else if (mov_y == 4'b0001 &&
+				             !is_wall(currpos_down_1, curr_x, curr_y + 1) &&
+								 maze_data[currpos_down_1] == 0 &&
+				             curr_y != 15) begin
 					curr_y <= new_pos_y; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move right
-				end else if (mov_x == 4'b0001 && !is_wall(currpos_right_1, curr_x + 1, curr_y)) begin
+				end else if (mov_x == 4'b0001 &&
+				             !is_wall(currpos_right_1, curr_x + 1, curr_y) &&
+								 maze_data[currpos_right_1] == 0 &&
+				             curr_x != 15) begin
 					curr_x <= new_pos_x; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
@@ -178,19 +190,23 @@ module maze_carver_2
 				if ( // if stuck pop off stack
 					// up
                (	maze_data[currpos_up_1] == 1 ||
-						is_wall(currpos_up_1, curr_x, curr_y - 1)
+						is_wall(currpos_up_1, curr_x, curr_y - 1) ||
+						curr_y == 0
 					) &&
 					// left
 					(	maze_data[currpos_left_1] == 1 ||
-						is_wall(currpos_left_1, curr_x - 1, curr_y)
+						is_wall(currpos_left_1, curr_x - 1, curr_y) ||
+						curr_x == 0
 					) &&
 					// down
 					(	maze_data[currpos_down_1] == 1 ||
-						is_wall(currpos_down_1, curr_x, curr_y + 1)
+						is_wall(currpos_down_1, curr_x, curr_y + 1) ||
+						curr_y == 15
 					) &&
 					// right
 					(	maze_data[currpos_right_1] == 1 ||
-						is_wall(currpos_right_1, curr_x + 1, curr_y)
+						is_wall(currpos_right_1, curr_x + 1, curr_y) ||
+						curr_x == 15
 					)
 				) begin // pop off stack
 					stack_pos <= stack_pos - 1;
