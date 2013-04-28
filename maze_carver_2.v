@@ -18,8 +18,8 @@ module maze_carver_2
 	// declare registers
 	reg [5:0] i;
 	reg [5:0] j;
-	reg [3:0] start_x;
-	reg [3:0] start_y;
+	reg [3:0] start_x = 0;
+	reg [3:0] start_y = 0;
 	wire [1:0] rand;
 	reg [1:0] dir_dist;
     
@@ -64,8 +64,6 @@ module maze_carver_2
 	initial begin
 		// initialize finish to "not finished"
 		// initialize starting position to zero
-			start_x <= 4;
-			start_y <= 4;
 			
 			// initialize maze to wall
 			for (i = 0; i < 16; i = i + 1)
@@ -75,8 +73,8 @@ module maze_carver_2
 			stack_pos <= 0;
 			for (i = 0; i < 16; i = i + 1)
 				for (j = 0; j < 16; j = j + 1) begin
-					stack_x [i + 16*j] <= 4'b0000;
-					stack_y [i + 16*j] <= 4'b0000;
+					stack_x [i + 16*j] <= 5'b00000;
+					stack_y [i + 16*j] <= 5'b00000;
 				end
 			// Initialize current carving position
 			curr_x 	<= start_x;
@@ -136,9 +134,9 @@ module maze_carver_2
 					stack_x[stack_pos] <= curr_x; // Push old position on stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
-				end
-				
-				sequence <= 1; // go to other sequence
+				end else
+					sequence <= 1; // check to see if trapped
+					
 			end
 		
 			if (finish == 0 && sequence == 1) begin
@@ -191,7 +189,8 @@ module maze_carver_2
 					curr_x <= stack_x[stack_pos - 1];
 					curr_y <= stack_y[stack_pos - 1];
 				end else
-					sequence <= 0; // go to other sequence
+					sequence <= 0; // go back to carving
+					
 			end
 			
 			// CONTINUE LOOP UNTIL STACK IS EMPTY

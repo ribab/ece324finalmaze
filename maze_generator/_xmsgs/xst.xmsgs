@@ -50,10 +50,10 @@
 <msg type="info" file="Xst" num="1432" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">char_array</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
 </msg>
 
-<msg type="warning" file="Xst" num="2320" delta="old" >&quot;<arg fmt="%s" index="1">../maze_carver_2.v</arg>&quot; line <arg fmt="%d" index="2">82</arg>: Value for signal <arg fmt="%s" index="3">curr_x</arg> in initial block is not constant. The initialization will be ignored.
+<msg type="warning" file="Xst" num="2320" delta="old" >&quot;<arg fmt="%s" index="1">../maze_carver_2.v</arg>&quot; line <arg fmt="%d" index="2">80</arg>: Value for signal <arg fmt="%s" index="3">curr_x</arg> in initial block is not constant. The initialization will be ignored.
 </msg>
 
-<msg type="warning" file="Xst" num="2320" delta="old" >&quot;<arg fmt="%s" index="1">../maze_carver_2.v</arg>&quot; line <arg fmt="%d" index="2">83</arg>: Value for signal <arg fmt="%s" index="3">curr_y</arg> in initial block is not constant. The initialization will be ignored.
+<msg type="warning" file="Xst" num="2320" delta="old" >&quot;<arg fmt="%s" index="1">../maze_carver_2.v</arg>&quot; line <arg fmt="%d" index="2">81</arg>: Value for signal <arg fmt="%s" index="3">curr_y</arg> in initial block is not constant. The initialization will be ignored.
 </msg>
 
 <msg type="info" file="Xst" num="1432" delta="old" >Contents of array &lt;<arg fmt="%s" index="1">stack_x</arg>&gt; may be accessed with a negative index, causing simulation mismatch.
