@@ -39,12 +39,12 @@ module maze_carver_3
 		.clk(clk), .rand(rand)
     );
 	
-	wire [3:0] mov_x = (rand == 2'b01) ? 5'b11111:
-	               (rand == 2'b11) ? 5'b00001:
-	                                 5'b00000;
-	wire [3:0] mov_y = (rand == 2'b00) ? 5'b11111:
-	               (rand == 2'b10) ? 5'b00001:
-	                                 5'b00000;
+	wire [3:0] mov_x = (rand == 2'b01) ? 4'b1111:
+	               (rand == 2'b11) ? 4'b0001:
+	                                 4'b0000;
+	wire [3:0] mov_y = (rand == 2'b00) ? 5'b1111:
+	               (rand == 2'b10) ? 4'b0001:
+	                                 4'b0000;
 	reg sequence = 0;
     
 
