@@ -6,13 +6,15 @@ April 9, 2013
 
 module maze_move
    (
+	input wire clk,
+	input wire reset,
 	input wire enable,
     input wire [7:0] key_code,
 	input wire [16*16-1 :0] maze_data,
 	input wire [4:0] maze_width, 
 	input wire [4:0] maze_height,
-	input wire [3:0] start_y,
 	input wire [3:0] start_x, 
+	input wire [3:0] start_y,
 	output reg [3:0] curr_x,
 	output reg [3:0] curr_y
    );

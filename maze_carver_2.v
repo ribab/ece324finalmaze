@@ -4,8 +4,8 @@ module maze_carver_2
 		input clk,
 		input [25:0] slow_time,
 		input start,
-		input wire [6:0] x_dimension,
-		input wire [6:0] y_dimension,
+		input wire [4:0] maze_width,
+		input wire [4:0] maze_height,
 		output reg [16*16-1:0] maze_data,
 	
 		output reg finish = 1,
@@ -16,10 +16,6 @@ module maze_carver_2
 		output reg [3:0] finish_x = 0,
 		output reg [3:0] finish_y = 0
 	);
-	
-	// declare size of maze
-   parameter [4:0] maze_width = 16;
-	parameter [4:0] maze_height = 16;
 	
 	// declare registers
 	reg [25:0] slow_clk_counter;
@@ -86,10 +82,13 @@ module maze_carver_2
     wire [7:0] currpos_down_2 = currpos_down_1 + 16;
     wire [7:0] currpos_right_1 = curr_data_pos + 1;
     wire [7:0] currpos_left_1 = curr_data_pos - 1;
+	
+	wire [4:0] x_max = maze_width - 1;
+	wire [4:0] y_max = maze_height - 1;
 	 
 	wire is_wall_up = (	(	maze_data[currpos_up_1] == 0 &&
 										(	(maze_data[currpos_up_1 - 16] == 1 && curr_y - 1 != 0) ||
-											(maze_data[currpos_up_1 + 1] == 1 && curr_x != 15) ||
+											(maze_data[currpos_up_1 + 1] == 1 && curr_x != x_max - 1) ||
 											(maze_data[currpos_up_1 - 1] == 1 && curr_x != 0)
 										)
 								) ||
@@ -97,23 +96,23 @@ module maze_carver_2
 							) ? 1'b1 : 1'b0;
 	wire is_wall_left = (	(	maze_data[currpos_left_1] == 0 &&
 										(	(maze_data[currpos_left_1 - 1] == 1 && curr_x - 1 != 0) ||
-											(maze_data[currpos_left_1 + 16] == 1 && curr_y != 15) ||
+											(maze_data[currpos_left_1 + 16] == 1 && curr_y != y_max) ||
 											(maze_data[currpos_left_1 - 16] == 1 && curr_y != 0)
 										)
 									) ||
 									curr_x == 0
 								) ? 1'b1 : 1'b0;
 	wire is_wall_down = (	(	maze_data[currpos_down_1] == 0 &&
-										(	(maze_data[currpos_down_1 + 16] == 1 && curr_y + 1 != 15) ||
-											(maze_data[currpos_down_1 + 1] == 1 && curr_x != 15) ||
+										(	(maze_data[currpos_down_1 + 16] == 1 && curr_y + 1 != y_max) ||
+											(maze_data[currpos_down_1 + 1] == 1 && curr_x != x_max) ||
 											(maze_data[currpos_down_1 - 1] == 1 && curr_x != 0)
 										)
 									) ||
 									curr_y == 15
 								) ? 1'b1 : 1'b0;
 	wire is_wall_right = (	(	maze_data[currpos_right_1] == 0 &&
-										(	(maze_data[currpos_right_1 + 1] == 1 && curr_x + 1 != 15) ||
-											(maze_data[currpos_right_1 + 16] == 1 && curr_y != 15) ||
+										(	(maze_data[currpos_right_1 + 1] == 1 && curr_x + 1 != x_max) ||
+											(maze_data[currpos_right_1 + 16] == 1 && curr_y != y_max) ||
 											(maze_data[currpos_right_1 - 16] == 1 && curr_y != 0)
 										)
 									) ||

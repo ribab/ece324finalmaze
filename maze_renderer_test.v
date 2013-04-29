@@ -18,7 +18,6 @@ module maze_renderer_test
 	input [6:0] char_x, char_y,
 	input [16*16-1:0] path_data,
 	input wire [4:0] maze_width, maze_height,
-	input wire [4:0] x_coord, y_coord,
 	input wire [4:0] tile_width, tile_height,
 	input wire [4:0] start_x, start_y,
 	input wire [4:0] finish_x, finish_y,
@@ -92,24 +91,6 @@ module maze_renderer_test
 						rgb_next <= 8'b11111111;
 				else
 					rgb_next <= 8'b00000000;
-			else
-				// character on non centered screen
-				if (char_x == tile_x - x_coord &&
-					char_y == tile_y - y_coord &&
-					char_array[  ((x_pos - tile_x*tile_pixel_w) >> (tile_width - 2)) +
-					           4*((y_pos - tile_y*tile_pixel_h) >> (tile_height - 2))] == 1)
-					rgb_next <= char_color;
-				else if (start_x == tile_x - x_coord &&
-				         start_y == tile_y - y_coord)
-					rgb_next <= start_color;
-				else if (finish_x == tile_x - x_coord &&
-				         finish_y == tile_y - y_coord)
-					rgb_next <= finish_color;
-				else if (path_data[   (x_coord + (x_pos >> tile_width)) +
-								  16*(y_coord + (y_pos >> tile_height))] == 1)
-						rgb_next <= 8'b11111111;
-				else
-					rgb_next <= 8'b01000000;
 		else
 			rgb_next <= 8'b00000000;
 	end
@@ -131,99 +112,4 @@ module maze_renderer_test
 		
    assign rgb = (video_on) ? rgb_reg : 8'b0;
 
-/* stretched maze old code
-	// Control rgb output
-	assign rgb_next = path_on(x_pos, y_pos, 0, 0) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 0, 1) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 0, 2) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 0, 3) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 1, 0) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 1, 1) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 1, 2) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 1, 3) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 2, 0) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 2, 1) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 2, 2) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 2, 3) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 3, 0) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 3, 1) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 3, 2) ? 8'b11111111 :
-							path_on(x_pos, y_pos, 3, 3) ? 8'b11111111 :
-							8'b00000000;
-	
-	function path_on;
-		input [9:0] x;
-		input [9:0] y;
-		input [9:0] i;
-		input [9:0] j;
-		begin
-			if (i*DIV_640(maze_width) <= x &&
-				 i*DIV_640(maze_width) + DIV_640(maze_width) > x &&
-				 j*DIV_480(maze_height) <= y &&
-				 j*DIV_480(maze_height) + DIV_480(maze_height) > y &&
-				 path_array[i][j] == 1)
-				path_on = 1;
-			else
-				path_on = 0;
-		end
-	endfunction
-	
-	function [9:0] DIV_640;
-		input [4:0] a;
-		begin
-			case (a)
-				1: DIV_640 = 640;
-				2: DIV_640 = 320;
-				3: DIV_640 = 213;
-				4: DIV_640 = 160;
-				5: DIV_640 = 128;
-				6: DIV_640 = 106;
-				7: DIV_640 = 91;
-				8: DIV_640 = 80;
-				9: DIV_640 = 71;
-				10: DIV_640 = 64;
-				11: DIV_640 = 58;
-				12: DIV_640 = 53;
-				13: DIV_640 = 49;
-				14: DIV_640 = 45;
-				15: DIV_640 = 42;
-				16: DIV_640 = 40;
-				17: DIV_640 = 37;
-				18: DIV_640 = 35;
-				19: DIV_640 = 33;
-				20: DIV_640 = 32;
-				default: DIV_640 = 0;
-			endcase
-		end
-	endfunction
-	
-	function [9:0] DIV_480;
-		input [4:0] a;
-		begin
-			case (a)
-				1: DIV_480 = 480;
-				2: DIV_480 = 240;
-				3: DIV_480 = 160;
-				4: DIV_480 = 120;
-				5: DIV_480 = 96;
-				6: DIV_480 = 80;
-				7: DIV_480 = 68;
-				8: DIV_480 = 60;
-				9: DIV_480 = 53;
-				10: DIV_480 = 48;
-				11: DIV_480 = 43;
-				12: DIV_480 = 40;
-				13: DIV_480 = 36; //36.923
-				14: DIV_480 = 34;
-				15: DIV_480 = 32;
-				16: DIV_480 = 30;
-				17: DIV_480 = 28;
-				18: DIV_480 = 26;
-				19: DIV_480 = 25;
-				20: DIV_480 = 24;
-				default: DIV_480 = 0;
-			endcase
-		end
-	endfunction
-*/
 endmodule
