@@ -1,0 +1,20 @@
+[Inputs]
+clk
+=sw[7:0]=
+=btn[3:0]=
+[Outputs]
+dp
+Vsync
+Hsync
+=Led[7:0]=
+=an[3:0]=
+=sseg[6:0]=
+=vgaRed[3:1]=
+=vgaGreen[3:1]=
+=vgaBlue[3:2]=
+[BiDir]
+ps2d
+ps2c
+[ATTRIBUTES]
+VeriModel Lab8_fpga_top
+

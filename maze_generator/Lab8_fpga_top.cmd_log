@@ -869,3 +869,6 @@ map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o Lab8_fp
 par -w -intstyle ise -ol high -t 1 Lab8_fpga_top_map.ncd Lab8_fpga_top.ncd Lab8_fpga_top.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Lab8_fpga_top.twx Lab8_fpga_top.ncd -o Lab8_fpga_top.twr Lab8_fpga_top.pcf 
 bitgen -intstyle ise -f Lab8_fpga_top.ut Lab8_fpga_top.ncd 
+bitgen -intstyle ise -f Lab8_fpga_top.ut Lab8_fpga_top.ncd 
+vhdtdtfi -lib work C:/Users/John/Documents/GitHub/ece324finalmaze/lab8_fpga_top.v -lang verilog -prj maze_generator -o Lab8_fpga_top.spl -module Lab8_fpga_top -template C:/Xilinx/14.4/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Lab8_fpga_top.spl C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/Lab8_fpga_top.sym 
