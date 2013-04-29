@@ -1,0 +1,233 @@
+//Pong Chu's "FPGA Protyping by Verilog Examples" Listing 14.2 & 14.5
+//First modified by Madison Knowles & Breanne York
+//Modified again by Candice Adsero, Ricky Barella & John Hofman
+//April 2013
+
+module font_test_gen
+   (
+    input wire clk,
+    input wire video_on, //Game_over_on, Game_start_on, Hangman_on, Win_on,
+    input wire [9:0] pixel_x, pixel_y,
+    output reg [7:0] rgb_text
+   );
+
+   // signal declaration
+   wire [10:0] rom_addr;
+   reg [6:0] char_addr, char_addr_o, char_addr_s, char_addr_h, char_addr_a, char_addr_w, char_addr_r;
+   reg [3:0] row_addr;
+   wire [3:0] row_addr_o, row_addr_s, row_addr_h, row_addr_a, row_addr_w, row_addr_r;
+	reg [2:0] bit_addr;
+   wire [2:0] bit_addr_o, bit_addr_s, bit_addr_h, bit_addr_a, bit_addr_w, bit_addr_r;
+	wire [7:0] font_word;
+   wire font_bit, text_bit_on, Game_over_on, Game_start_on, Hangman_on, Apple_on, Win_on, rule_on;
+	wire [7:0] rule_random_addr;
+
+   // body
+   // instantiate font ROM
+   font_rom font_unit
+      (.clk(clk), .addr(rom_addr), .data(font_word));
+   
+	//title
+	assign Hangman_on = (pixel_y[9:7] == 1) && (1 <= pixel_x [9:6]) && (pixel_x [9:6] <= 8);
+	assign row_addr_h = pixel_y [6:3];
+	assign bit_addr_h = pixel_x[5:2];
+	always @*
+		case (pixel_x [8:5])
+			4'h3: char_addr_h = 7'h4D; //M
+			4'h4: char_addr_h = 7'h41; //A
+			4'h5: char_addr_h = 7'h5a; //Z
+			4'h6: char_addr_h = 7'h45; //E
+			4'h7: char_addr_h = 7'h00; //
+			4'h8: char_addr_h = 7'h47; //G
+			4'h9: char_addr_h = 7'h45; //E
+			4'hA: char_addr_h = 7'h4E; //N
+			4'hB: char_addr_h = 7'h45; //E
+			4'hC: char_addr_h = 7'h52; //R
+			4'hD: char_addr_h = 7'h41; //A
+			4'hE: char_addr_h = 7'h54; //T
+			4'hF: char_addr_h = 7'h4F; //O
+			4'h0: char_addr_h = 7'h52; //R
+			default: char_addr_h = 7'h00; //
+		endcase
+		/*	
+		assign rule_on = (pixel_x[9:7] ==2) && (pixel_y[9:6] == 4);
+		assign row_addr_r = pixel_y [4:0];
+		assign bit_addr_r = pixel_x[3:0];
+		//assign rule_rom_addr = {pixel_y[5:4], pixel_x[7:3]};
+		always @*
+			case (pixel_x [8:5])
+				//row 1
+				4'h0: char_addr_r = 7'h49; //I
+				4'h1: char_addr_r = 7'h4e; //N
+				4'h2: char_addr_r = 7'h53; //S
+				4'h3: char_addr_r = 7'h54; //T
+				4'h4: char_addr_r = 7'h52; //R
+				4'h5: char_addr_r = 7'h55; //U
+				4'h6: char_addr_r = 7'h43; //C			
+				4'h7: char_addr_r = 7'h54; //T
+				4'h8: char_addr_r = 7'h49; //I
+				4'h9: char_addr_r = 7'h4f; //O
+				4'hA: char_addr_r = 7'h4e; //N
+				4'hB: char_addr_r = 7'h53; //S
+				4'hC: char_addr_r = 7'h3a; //:
+				4'hD: char_addr_r = 7'h00; //					
+				4'hE: char_addr_r = 7'h00; //	
+				4'hF: char_addr_r = 7'h00; //	
+			
+				//row 2
+				6'h10: char_addr_r = 7'h47; //G
+			   6'h11: char_addr_r = 7'h65; //e
+				6'h12: char_addr_r = 7'h74; //t
+				6'h13: char_addr_r = 7'h00; //
+				6'h14: char_addr_r = 7'h74; //t
+				6'h15: char_addr_r = 7'h6f; //o
+				6'h16: char_addr_r = 7'h00; //			
+				6'h17: char_addr_r = 7'h74; //t
+				6'h18: char_addr_r = 7'h68; //h
+				6'h19: char_addr_r = 7'h65; //e
+				6'h1A: char_addr_r = 7'h00; //
+				6'h1B: char_addr_r = 7'h65; //e
+				6'h1C: char_addr_r = 7'h3a; //x
+				6'h1D: char_addr_r = 7'h78; //i				
+				6'h1E: char_addr_r = 7'h74; //t
+				6'h1F: char_addr_r = 7'h00; //
+				//row 3
+				6'h20: char_addr_r = 7'h6f; //o
+			   6'h21: char_addr_r = 7'h66; //f
+				6'h22: char_addr_r = 7'h00; //
+				6'h23: char_addr_r = 7'h74; //t
+				6'h24: char_addr_r = 7'h68; //h
+				6'h25: char_addr_r = 7'h65; //e
+				6'h26: char_addr_r = 7'h00; //			
+				6'h27: char_addr_r = 7'h6d; //m
+				6'h28: char_addr_r = 7'h61; //a
+				6'h29: char_addr_r = 7'h7a; //z
+				6'h2A: char_addr_r = 7'h65; //e
+				6'h2B: char_addr_r = 7'h00; //
+				6'h2C: char_addr_r = 7'h62; //b
+				6'h2D: char_addr_r = 7'h79; //y				
+				6'h2E: char_addr_r = 7'h00; //
+				6'h2F: char_addr_r = 7'h00; //		
+				//row 4
+				6'h30: char_addr_r = 7'h75; //u
+			   6'h31: char_addr_r = 7'h73; //s
+				6'h32: char_addr_r = 7'h78; //i
+				6'h33: char_addr_r = 7'h6e; //n
+				6'h34: char_addr_r = 7'h67; //g
+				6'h35: char_addr_r = 7'h00; //
+				6'h36: char_addr_r = 7'h74; //t			
+				6'h37: char_addr_r = 7'h68; //h
+				6'h38: char_addr_r = 7'h65; //e
+				6'h39: char_addr_r = 7'h00; //
+				6'h3A: char_addr_r = 7'h61; //a
+				6'h3B: char_addr_r = 7'h72; //r
+				6'h3C: char_addr_r = 7'h72; //r
+				6'h3D: char_addr_r = 7'h6f; //o				
+				6'h3E: char_addr_r = 7'h77; //w
+				6'h3F: char_addr_r = 7'h00; //	
+			default: char_addr_r = 7'h00; //				
+			endcase*/
+		
+	
+	//"press start"
+	assign Game_start_on = (pixel_y[9:5] == 4) && (3 <= pixel_x [9:6]) && (pixel_x [9:6] <= 6);
+	assign row_addr_s = pixel_y [4:1];
+	assign bit_addr_s = pixel_x[3:1];
+	always @*
+		case (pixel_x [7:4])
+			4'h4: char_addr_s = 7'h50; //P
+			4'h5: char_addr_s = 7'h72; //r
+			4'h6: char_addr_s = 7'h65; //e
+			4'h7: char_addr_s = 7'h73; //s
+			4'h8: char_addr_s = 7'h73; //s
+			4'h9: char_addr_s = 7'h00; // 
+			4'ha: char_addr_s = 7'h53; //S
+			4'hb: char_addr_s = 7'h74; //t
+			4'hc: char_addr_s = 7'h61; //a
+			4'hd: char_addr_s = 7'h72; //r
+			default: char_addr_s = 7'h74; //t
+		endcase
+	
+	//Game Over
+	/*assign Game_over_on = (pixel_y[9:6] == 3) && (5 <= pixel_x [9:5]) && (pixel_x [9:5] <= 13);
+	assign row_addr_o = pixel_y [5:2];
+	assign bit_addr_o = pixel_x[4:2];
+	always @*
+		case (pixel_x [8:5])
+			4'h5: char_addr_o = 7'h47; //G
+			4'h6: char_addr_o = 7'h61; //a
+			4'h7: char_addr_o = 7'h6d; //m
+			4'h8: char_addr_o = 7'h65; //e
+			4'h9: char_addr_o = 7'h00; // 
+			4'ha: char_addr_o = 7'h4f; //O
+			4'hb: char_addr_o = 7'h76; //v
+			4'hc: char_addr_o = 7'h65; //e
+			default: char_addr_o = 7'h72; //r
+		endcase*/
+		
+
+
+
+		
+
+	
+	// font ROM interface
+   //assign char_addr = {pixel_y[5:4], pixel_x[7:3]};
+   //assign row_addr = pixel_y[3:0];
+   assign rom_addr = {char_addr, row_addr};
+   //assign bit_addr = pixel_x[2:0];
+   assign font_bit = font_word[~bit_addr];
+   // "on" region limited to top-left corner
+   //assign text_bit_on = (pixel_x[9:8]==0 && pixel_y[9:6]==0); //?
+                        //font_bit : 1'b0;
+								
+   // rgb multiplexing circuit
+   always @*
+      if (~video_on)
+         rgb_text = 8'b11100010; // 
+      else
+         /*
+			if (text_bit_on)
+			 begin
+				bit_addr = pixel_x[2:0];
+				char_addr = {pixel_y[5:4], pixel_x[7:3]};
+				row_addr = pixel_y[3:0];
+				if (font_bit)
+					rgb_text = 3'b010;  // color
+			 end
+         else 
+			*/
+		 if (rule_on)
+			 begin
+				bit_addr = bit_addr_r;
+				char_addr = char_addr_r;
+				row_addr = row_addr_r;
+				if (font_bit)
+					rgb_text = 8'b11111111;  // white
+			 end
+		else if (Win_on)
+			 begin
+				bit_addr = bit_addr_w;
+				char_addr = char_addr_w;
+				row_addr = row_addr_w;
+				if (font_bit)
+					rgb_text = 8'b11111111;  // white
+			 end
+		else if (Hangman_on)
+			 begin
+				bit_addr = bit_addr_h;
+				char_addr = char_addr_h;
+				row_addr = row_addr_h;
+				if (font_bit)
+					rgb_text = 8'b11111111;  // white
+			 end
+			else if (Game_start_on)
+			 begin
+				bit_addr = bit_addr_s;
+				char_addr = char_addr_s;
+				row_addr = row_addr_s;
+				if (font_bit)
+					rgb_text = 8'b00000000;  // white
+			 end
+
+endmodule

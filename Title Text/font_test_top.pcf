@@ -1,0 +1,19 @@
+//! **************************************************************************
+// Written by: Map P.40xd on Mon Apr 29 16:53:44 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "vgaGreen<1>" LOCATE = SITE "N8" LEVEL 1;
+COMP "vgaGreen<2>" LOCATE = SITE "P8" LEVEL 1;
+COMP "vgaGreen<3>" LOCATE = SITE "P6" LEVEL 1;
+COMP "Hsync" LOCATE = SITE "T4" LEVEL 1;
+COMP "Vsync" LOCATE = SITE "U3" LEVEL 1;
+COMP "vgaBlue<2>" LOCATE = SITE "U5" LEVEL 1;
+COMP "vgaBlue<3>" LOCATE = SITE "U4" LEVEL 1;
+COMP "vgaRed<1>" LOCATE = SITE "R9" LEVEL 1;
+COMP "vgaRed<2>" LOCATE = SITE "T8" LEVEL 1;
+COMP "vgaRed<3>" LOCATE = SITE "R8" LEVEL 1;
+SCHEMATIC END;
+

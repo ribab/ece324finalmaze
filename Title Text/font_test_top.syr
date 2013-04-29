@@ -1,0 +1,558 @@
+Release 14.3 - xst P.40xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> Reading design: font_test_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "font_test_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "font_test_top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : font_test_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "list_ch14_01_font_rom.v" in library work
+Compiling verilog file "vga_sync.v" in library work
+Module <font_rom> compiled
+Compiling verilog file "list_ch14_02_font_test_gen.v" in library work
+Module <vga_sync> compiled
+Compiling verilog file "list_ch14_03_font_test_top.v" in library work
+Module <font_test_gen> compiled
+Module <font_test_top> compiled
+No errors in compilation
+Analysis of file <"font_test_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <font_test_top> in library <work>.
+
+Analyzing hierarchy for module <vga_sync> in library <work> with parameters.
+	HB = "00000000000000000000000000010000"
+	HD = "00000000000000000000001010000000"
+	HF = "00000000000000000000000000110000"
+	HR = "00000000000000000000000001100000"
+	VB = "00000000000000000000000000100001"
+	VD = "00000000000000000000000111100000"
+	VF = "00000000000000000000000000001010"
+	VR = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <font_test_gen> in library <work>.
+
+Analyzing hierarchy for module <font_rom> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <font_test_top>.
+Module <font_test_top> is correct for synthesis.
+ 
+Analyzing module <vga_sync> in library <work>.
+	HB = 32'sb00000000000000000000000000010000
+	HD = 32'sb00000000000000000000001010000000
+	HF = 32'sb00000000000000000000000000110000
+	HR = 32'sb00000000000000000000000001100000
+	VB = 32'sb00000000000000000000000000100001
+	VD = 32'sb00000000000000000000000111100000
+	VF = 32'sb00000000000000000000000000001010
+	VR = 32'sb00000000000000000000000000000010
+Module <vga_sync> is correct for synthesis.
+ 
+Analyzing module <font_test_gen> in library <work>.
+Module <font_test_gen> is correct for synthesis.
+ 
+Analyzing module <font_rom> in library <work>.
+Module <font_rom> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "vga_sync.v".
+    Found 10-bit adder for signal <h_count_next$addsub0000> created at line 72.
+    Found 10-bit register for signal <h_count_reg>.
+    Found 10-bit comparator greatequal for signal <h_sync_next$cmp_ge0000> created at line 88.
+    Found 10-bit comparator lessequal for signal <h_sync_next$cmp_le0000> created at line 88.
+    Found 1-bit register for signal <h_sync_reg>.
+    Found 1-bit register for signal <mod2_reg>.
+    Found 10-bit adder for signal <v_count_next$addsub0000> created at line 82.
+    Found 10-bit register for signal <v_count_reg>.
+    Found 10-bit comparator greatequal for signal <v_sync_next$cmp_ge0000> created at line 91.
+    Found 10-bit comparator lessequal for signal <v_sync_next$cmp_le0000> created at line 91.
+    Found 1-bit register for signal <v_sync_reg>.
+    Found 11-bit comparator less for signal <video_on$cmp_lt0000> created at line 95.
+    Found 10-bit comparator less for signal <video_on$cmp_lt0001> created at line 95.
+    Summary:
+	inferred  23 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <vga_sync> synthesized.
+
+
+Synthesizing Unit <font_rom>.
+    Related source file is "list_ch14_01_font_rom.v".
+    Found 2048x8-bit ROM for signal <data>.
+    Found 11-bit register for signal <addr_reg>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  11 D-type flip-flop(s).
+Unit <font_rom> synthesized.
+
+
+Synthesizing Unit <font_test_gen>.
+    Related source file is "list_ch14_02_font_test_gen.v".
+WARNING:Xst:647 - Input <pixel_x<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pixel_y<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <text_bit_on> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rule_random_addr> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <rule_on> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <row_addr_w> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <row_addr_r> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:1780 - Signal <row_addr_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <row_addr_a> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <char_addr_w> is used but never assigned. This sourceless signal will be automatically connected to value 0000000.
+WARNING:Xst:653 - Signal <char_addr_r> is used but never assigned. This sourceless signal will be automatically connected to value 0000000.
+WARNING:Xst:1780 - Signal <char_addr_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <char_addr_a> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <bit_addr_w> is used but never assigned. This sourceless signal will be automatically connected to value 000.
+WARNING:Xst:653 - Signal <bit_addr_r> is used but never assigned. This sourceless signal will be automatically connected to value 000.
+WARNING:Xst:1780 - Signal <bit_addr_o> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <bit_addr_a> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <Win_on> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <Game_over_on> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <Apple_on> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 3-bit latch for signal <bit_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 7-bit latch for signal <char_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <row_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16x7-bit ROM for signal <char_addr_h>.
+    Found 16x7-bit ROM for signal <char_addr_s>.
+WARNING:Xst:737 - Found 8-bit latch for signal <rgb_text>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 4-bit comparator greatequal for signal <Game_start_on$cmp_le0000> created at line 133.
+    Found 4-bit comparator lessequal for signal <Game_start_on$cmp_le0001> created at line 133.
+    Found 4-bit comparator greatequal for signal <Hangman_on$cmp_le0000> created at line 31.
+    Found 4-bit comparator lessequal for signal <Hangman_on$cmp_le0001> created at line 31.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   4 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <font_test_gen> synthesized.
+
+
+Synthesizing Unit <font_test_top>.
+    Related source file is "list_ch14_03_font_test_top.v".
+    Found 8-bit register for signal <rgb_reg>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <font_test_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 16x7-bit ROM                                          : 2
+ 2048x8-bit ROM                                        : 1
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 2
+# Registers                                            : 7
+ 1-bit register                                        : 3
+ 10-bit register                                       : 2
+ 11-bit register                                       : 1
+ 8-bit register                                        : 1
+# Latches                                              : 4
+ 3-bit latch                                           : 1
+ 4-bit latch                                           : 1
+ 7-bit latch                                           : 1
+ 8-bit latch                                           : 1
+# Comparators                                          : 10
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator less                                : 1
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <font_rom>.
+INFO:Xst:3044 - The ROM <Mrom_data> will be implemented as a read-only BLOCK RAM, absorbing the register: <addr_reg>.
+INFO:Xst:3225 - The RAM <Mrom_data> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 8-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <data>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <font_rom> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 2048x8-bit single-port block RAM                      : 1
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 2
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 2
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+# Latches                                              : 4
+ 3-bit latch                                           : 1
+ 4-bit latch                                           : 1
+ 7-bit latch                                           : 1
+ 8-bit latch                                           : 1
+# Comparators                                          : 10
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator less                                : 1
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <7> in Unit <LPM_LATCH_5> is equivalent to the following 3 FFs/Latches, which will be removed : <6> <5> <1> 
+INFO:Xst:2261 - The FF/Latch <4> in Unit <LPM_LATCH_5> is equivalent to the following 3 FFs/Latches, which will be removed : <3> <2> <0> 
+
+Optimizing unit <font_test_top> ...
+
+Optimizing unit <vga_sync> ...
+
+Optimizing unit <font_test_gen> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <font_test_top> is equivalent to the following 3 FFs/Latches, which will be removed : <rgb_reg_2> <rgb_reg_3> <rgb_reg_4> 
+INFO:Xst:2261 - The FF/Latch <rgb_reg_1> in Unit <font_test_top> is equivalent to the following 3 FFs/Latches, which will be removed : <rgb_reg_5> <rgb_reg_6> <rgb_reg_7> 
+Found area constraint ratio of 100 (+ 5) on block font_test_top, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : font_test_top.ngr
+Top Level Output File Name         : font_test_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 165
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 19
+#      LUT2                        : 3
+#      LUT3                        : 13
+#      LUT3_L                      : 1
+#      LUT4                        : 65
+#      LUT4_D                      : 3
+#      MUXCY                       : 18
+#      MUXF5                       : 14
+#      MUXF6                       : 2
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 41
+#      FDC                         : 23
+#      FDE                         : 2
+#      LD                          : 16
+# RAMS                             : 1
+#      RAMB16_S9                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 1
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                       57  out of   4656     1%  
+ Number of Slice Flip Flops:             41  out of   9312     0%  
+ Number of 4 input LUTs:                109  out of   9312     1%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------+----------------------------------+-------+
+Clock Signal                                                     | Clock buffer(FF name)            | Load  |
+-----------------------------------------------------------------+----------------------------------+-------+
+clk                                                              | BUFGP                            | 26    |
+font_gen_unit/rgb_text_not0001(font_gen_unit/rgb_text_not00011:O)| NONE(*)(font_gen_unit/rgb_text_7)| 2     |
+video_on(vsync_unit/video_on34:O)                                | NONE(*)(font_gen_unit/bit_addr_2)| 14    |
+-----------------------------------------------------------------+----------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 23    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.975ns (Maximum Frequency: 167.377MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.182ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.975ns (frequency: 167.377MHz)
+  Total number of paths / destination ports: 579 / 25
+-------------------------------------------------------------------------
+Delay:               5.975ns (Levels of Logic = 4)
+  Source:            vsync_unit/h_count_reg_8 (FF)
+  Destination:       vsync_unit/v_count_reg_8 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: vsync_unit/h_count_reg_8 to vsync_unit/v_count_reg_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             13   0.514   0.839  vsync_unit/h_count_reg_8 (vsync_unit/h_count_reg_8)
+     LUT4:I3->O            2   0.612   0.410  vsync_unit/h_end12 (vsync_unit/h_end12)
+     LUT4:I2->O           11   0.612   0.796  vsync_unit/h_end24 (vsync_unit/h_end)
+     LUT4_D:I3->O          9   0.612   0.700  vsync_unit/v_count_next<0>2 (vsync_unit/N4)
+     LUT4:I3->O            1   0.612   0.000  vsync_unit/v_count_next<8>1 (vsync_unit/v_count_next<8>)
+     FDC:D                     0.268          vsync_unit/v_count_reg_8
+    ----------------------------------------
+    Total                      5.975ns (3.230ns logic, 2.745ns route)
+                                       (54.1% logic, 45.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'video_on'
+  Clock period: 2.877ns (frequency: 347.590MHz)
+  Total number of paths / destination ports: 22 / 14
+-------------------------------------------------------------------------
+Delay:               2.877ns (Levels of Logic = 2)
+  Source:            font_gen_unit/char_addr_6 (LATCH)
+  Destination:       font_gen_unit/char_addr_6 (LATCH)
+  Source Clock:      video_on falling
+  Destination Clock: video_on falling
+
+  Data Path: font_gen_unit/char_addr_6 to font_gen_unit/char_addr_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.588   0.410  font_gen_unit/char_addr_6 (font_gen_unit/char_addr_6)
+     LUT4:I2->O            1   0.612   0.387  font_gen_unit/char_addr_mux0000<6>81 (font_gen_unit/char_addr_mux0000<6>81)
+     LUT3:I2->O            1   0.612   0.000  font_gen_unit/char_addr_mux0000<6>88 (font_gen_unit/char_addr_mux0000<6>)
+     LD:D                      0.268          font_gen_unit/char_addr_6
+    ----------------------------------------
+    Total                      2.877ns (2.080ns logic, 0.797ns route)
+                                       (72.3% logic, 27.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.182ns (Levels of Logic = 1)
+  Source:            rgb_reg_1 (FF)
+  Destination:       vgaRed<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: rgb_reg_1 to vgaRed<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.514   0.499  rgb_reg_1 (rgb_reg_1)
+     OBUF:I->O                 3.169          vgaBlue_3_OBUF (vgaBlue<3>)
+    ----------------------------------------
+    Total                      4.182ns (3.683ns logic, 0.499ns route)
+                                       (88.1% logic, 11.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 22.85 secs
+ 
+--> 
+
+Total memory usage is 278836 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   24 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

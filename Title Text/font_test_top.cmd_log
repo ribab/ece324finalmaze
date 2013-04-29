@@ -1,0 +1,785 @@
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.xst" -ofn "I:/WSU hw/ECE 324/Term Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/screentest/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/screentest/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf Nexys2_VGA.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg320-5 "font_test_top.ngc" font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
