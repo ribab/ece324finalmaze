@@ -20,6 +20,11 @@ module maze_move
    );
 	
 	// TODO: check these
+/*	parameter [7:0] LEFT = 8'b11010110;
+	parameter [7:0] RIGHT = 8'b11101000;
+	parameter [7:0] UP = 8'b11101010;
+	parameter [7:0] DOWN = 8'b11100100;
+*/
 	parameter [7:0] LEFT = 8'b11010110;
 	parameter [7:0] RIGHT = 8'b11101000;
 	parameter [7:0] UP = 8'b11101010;
