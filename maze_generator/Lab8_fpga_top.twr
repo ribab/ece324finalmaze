@@ -37,887 +37,898 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 160040622 paths analyzed, 308 endpoints analyzed, 7 failing endpoints
- 7 timing errors detected. (7 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  29.156ns.
+ 362399919 paths analyzed, 4722 endpoints analyzed, 2130 failing endpoints
+ 2130 timing errors detected. (2130 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  30.814ns.
 --------------------------------------------------------------------------------
 
-Paths for end point MRT/rgb_next_5 (SLICE_X50Y36.BY), 53197032 paths
+Paths for end point MRT/rgb_next_6 (SLICE_X17Y43.BY), 74820602 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -9.156ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_5 (FF)
+Slack (setup path):     -10.814ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      29.152ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.004ns (0.016 - 0.020)
+  Data Path Delay:      30.801ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_5
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
                                                        MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
-                                                       MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
-                                                       MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
-                                                       MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
-                                                       MRT/Msub__sub0001_cy<10>
-                                                       MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.X       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_mux0000<0>2
-    SLICE_X50Y36.BY      net (fanout=1)        0.317   MRT/N168
-    SLICE_X50Y36.CLK     Tsrck                 0.972   MRT/rgb_next<5>
-                                                       MRT/rgb_next_5
-    -------------------------------------------------  ---------------------------
-    Total                                     29.152ns (21.645ns logic, 7.507ns route)
-                                                       (74.2% logic, 25.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     -9.151ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_5 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      29.147ns (Levels of Logic = 19)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.004ns (0.016 - 0.020)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_5
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
-                                                       MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
                                                        MRT/maze_pixel_w<7>_rt
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.Y       Tciny                 0.756   MRT/maze_border_x<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
-    SLICE_X52Y35.F2      net (fanout=4)        0.104   MRT/maze_border_x<8>
-    SLICE_X52Y35.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_lut<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_cy<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_xor<9>
-    SLICE_X46Y38.G3      net (fanout=5)        0.563   MRT/centered_tile_x_addsub0000<9>
-    SLICE_X46Y38.Y       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>124
-    SLICE_X46Y38.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>124/O
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
                                                        MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
                                                        MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
                                                        MRT/Msub__sub0001_cy<10>
                                                        MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.X       Tilo                  0.612   MRT/rgb_next<0>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
                                                        MRT/rgb_next_mux0000<0>2
-    SLICE_X50Y36.BY      net (fanout=1)        0.317   MRT/N168
-    SLICE_X50Y36.CLK     Tsrck                 0.972   MRT/rgb_next<5>
-                                                       MRT/rgb_next_5
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
+                                                       MRT/rgb_next_6
     -------------------------------------------------  ---------------------------
-    Total                                     29.147ns (22.250ns logic, 6.897ns route)
-                                                       (76.3% logic, 23.7% route)
+    Total                                     30.801ns (21.619ns logic, 9.182ns route)
+                                                       (70.2% logic, 29.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -9.146ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
+Slack (setup path):     -10.812ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      30.799ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+                                                       MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+                                                       MRT/maze_pixel_w<7>_rt
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
+                                                       MRT/Mmult__mult0000
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
+                                                       MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
+                                                       MRT/Msub__sub0001_cy<10>
+                                                       MRT/Msub__sub0001_xor<11>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.F4      net (fanout=2)        0.461   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_G
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
+                                                       MRT/rgb_next_mux0000<0>2
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
+                                                       MRT/rgb_next_6
+    -------------------------------------------------  ---------------------------
+    Total                                     30.799ns (21.619ns logic, 9.180ns route)
+                                                       (70.2% logic, 29.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -10.751ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      30.738ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+                                                       MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+                                                       MRT/maze_pixel_w<7>_rt
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
+                                                       MRT/Mmult__mult0000
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
+                                                       MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
+                                                       MRT/Msub__sub0001_cy<10>
+                                                       MRT/Msub__sub0001_xor<11>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X1Y56.F3       net (fanout=2)        0.021   MRT/_shift0001<0>124
+    SLICE_X1Y56.X        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>139_SW1
+    SLICE_X14Y56.F3      net (fanout=1)        0.702   N74
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
+                                                       MRT/rgb_next_mux0000<0>2
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
+                                                       MRT/rgb_next_6
+    -------------------------------------------------  ---------------------------
+    Total                                     30.738ns (21.571ns logic, 9.167ns route)
+                                                       (70.2% logic, 29.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MRT/rgb_next_5 (SLICE_X17Y43.BY), 74820602 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -10.814ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
   Destination:          MRT/rgb_next_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      29.142ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.004ns (0.016 - 0.020)
+  Data Path Delay:      30.801ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_5
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X54Y28.F4      net (fanout=10)       0.342   MRT/N89
-    SLICE_X54Y28.X       Tilo                  0.660   MRT/Sh67
-                                                       MRT/Sh671
-    MULT18X18_X1Y3.A3    net (fanout=3)        0.635   MRT/Sh67
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
                                                        MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
                                                        MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
                                                        MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
                                                        MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
                                                        MRT/Msub__sub0001_cy<10>
                                                        MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.X       Tilo                  0.612   MRT/rgb_next<0>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
                                                        MRT/rgb_next_mux0000<0>2
-    SLICE_X50Y36.BY      net (fanout=1)        0.317   MRT/N168
-    SLICE_X50Y36.CLK     Tsrck                 0.972   MRT/rgb_next<5>
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
                                                        MRT/rgb_next_5
     -------------------------------------------------  ---------------------------
-    Total                                     29.142ns (21.693ns logic, 7.449ns route)
-                                                       (74.4% logic, 25.6% route)
+    Total                                     30.801ns (21.619ns logic, 9.182ns route)
+                                                       (70.2% logic, 29.8% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point MRT/rgb_next_2 (SLICE_X49Y41.G1), 51535556 paths
---------------------------------------------------------------------------------
-Slack (setup path):     -8.413ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_2 (FF)
+Slack (setup path):     -10.812ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      28.411ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.058 - 0.060)
+  Data Path Delay:      30.799ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_2
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
                                                        MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
-                                                       MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
-                                                       MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
-                                                       MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
-                                                       MRT/Msub__sub0001_cy<10>
-                                                       MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X49Y41.G1      net (fanout=2)        0.470   MRT/rgb_next_and0002
-    SLICE_X49Y41.CLK     Tgck                  0.728   MRT/rgb_next<2>
-                                                       MRT/rgb_next_mux0000<3>401
-                                                       MRT/rgb_next_2
-    -------------------------------------------------  ---------------------------
-    Total                                     28.411ns (20.789ns logic, 7.622ns route)
-                                                       (73.2% logic, 26.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     -8.408ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_2 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      28.406ns (Levels of Logic = 19)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.058 - 0.060)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
-                                                       MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
                                                        MRT/maze_pixel_w<7>_rt
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.Y       Tciny                 0.756   MRT/maze_border_x<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
-    SLICE_X52Y35.F2      net (fanout=4)        0.104   MRT/maze_border_x<8>
-    SLICE_X52Y35.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_lut<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_cy<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_xor<9>
-    SLICE_X46Y38.G3      net (fanout=5)        0.563   MRT/centered_tile_x_addsub0000<9>
-    SLICE_X46Y38.Y       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>124
-    SLICE_X46Y38.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>124/O
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
                                                        MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
                                                        MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
                                                        MRT/Msub__sub0001_cy<10>
                                                        MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X49Y41.G1      net (fanout=2)        0.470   MRT/rgb_next_and0002
-    SLICE_X49Y41.CLK     Tgck                  0.728   MRT/rgb_next<2>
-                                                       MRT/rgb_next_mux0000<3>401
-                                                       MRT/rgb_next_2
-    -------------------------------------------------  ---------------------------
-    Total                                     28.406ns (21.394ns logic, 7.012ns route)
-                                                       (75.3% logic, 24.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     -8.403ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_2 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      28.401ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.058 - 0.060)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X54Y28.F4      net (fanout=10)       0.342   MRT/N89
-    SLICE_X54Y28.X       Tilo                  0.660   MRT/Sh67
-                                                       MRT/Sh671
-    MULT18X18_X1Y3.A3    net (fanout=3)        0.635   MRT/Sh67
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
-                                                       MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
-                                                       MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
-                                                       MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
-                                                       MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
-                                                       MRT/Msub__sub0001_cy<10>
-                                                       MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X49Y41.G1      net (fanout=2)        0.470   MRT/rgb_next_and0002
-    SLICE_X49Y41.CLK     Tgck                  0.728   MRT/rgb_next<2>
-                                                       MRT/rgb_next_mux0000<3>401
-                                                       MRT/rgb_next_2
-    -------------------------------------------------  ---------------------------
-    Total                                     28.401ns (20.837ns logic, 7.564ns route)
-                                                       (73.4% logic, 26.6% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point MRT/rgb_next_0 (SLICE_X51Y39.F4), 51535556 paths
---------------------------------------------------------------------------------
-Slack (setup path):     -7.981ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_0 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      27.979ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.018 - 0.020)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
-                                                       MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
-                                                       MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
-                                                       MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
-                                                       MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
-                                                       MRT/Msub__sub0001_cy<10>
-                                                       MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.CLK     Tfck                  0.728   MRT/rgb_next<0>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.F4      net (fanout=2)        0.461   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_G
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
                                                        MRT/rgb_next_mux0000<0>2
-                                                       MRT/rgb_next_0
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
+                                                       MRT/rgb_next_5
     -------------------------------------------------  ---------------------------
-    Total                                     27.979ns (20.789ns logic, 7.190ns route)
-                                                       (74.3% logic, 25.7% route)
+    Total                                     30.799ns (21.619ns logic, 9.180ns route)
+                                                       (70.2% logic, 29.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -7.976ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_0 (FF)
+Slack (setup path):     -10.751ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      27.974ns (Levels of Logic = 19)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.018 - 0.020)
+  Data Path Delay:      30.738ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.013ns (0.020 - 0.033)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_0
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X55Y31.G3      net (fanout=10)       0.432   MRT/N89
-    SLICE_X55Y31.Y       Tilo                  0.612   MRT/Sh66
-                                                       MRT/Sh701
-    MULT18X18_X1Y3.A6    net (fanout=3)        0.603   MRT/Sh70
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
                                                        MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
                                                        MRT/maze_pixel_w<7>_rt
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
-    SLICE_X53Y34.Y       Tciny                 0.756   MRT/maze_border_x<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
                                                        MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
-    SLICE_X52Y35.F2      net (fanout=4)        0.104   MRT/maze_border_x<8>
-    SLICE_X52Y35.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_lut<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_cy<8>
                                                        MRT/Msub_centered_tile_x_addsub0000_xor<9>
-    SLICE_X46Y38.G3      net (fanout=5)        0.563   MRT/centered_tile_x_addsub0000<9>
-    SLICE_X46Y38.Y       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>124
-    SLICE_X46Y38.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>124/O
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
                                                        MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
                                                        MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
                                                        MRT/Msub__sub0001_cy<10>
                                                        MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.CLK     Tfck                  0.728   MRT/rgb_next<0>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X1Y56.F3       net (fanout=2)        0.021   MRT/_shift0001<0>124
+    SLICE_X1Y56.X        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>139_SW1
+    SLICE_X14Y56.F3      net (fanout=1)        0.702   N74
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X14Y50.BX      net (fanout=3)        0.317   MRT/rgb_next_and000410
+    SLICE_X14Y50.X       Tbxx                  0.699   N99
+                                                       MRT/rgb_next_and0004208_SW4
+    SLICE_X15Y43.F3      net (fanout=1)        0.713   N99
+    SLICE_X15Y43.X       Tilo                  0.612   MRT/N63
                                                        MRT/rgb_next_mux0000<0>2
-                                                       MRT/rgb_next_0
+    SLICE_X17Y43.BY      net (fanout=1)        0.384   MRT/N63
+    SLICE_X17Y43.CLK     Tsrck                 0.953   MRT/rgb_next<6>
+                                                       MRT/rgb_next_5
     -------------------------------------------------  ---------------------------
-    Total                                     27.974ns (21.394ns logic, 6.580ns route)
-                                                       (76.5% logic, 23.5% route)
+    Total                                     30.738ns (21.571ns logic, 9.167ns route)
+                                                       (70.2% logic, 29.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -7.971ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tile_width_1_1 (FF)
-  Destination:          MRT/rgb_next_0 (FF)
+
+Paths for end point MRT/rgb_next_2 (SLICE_X15Y44.G1), 13679762 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -9.749ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      27.969ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -0.002ns (0.018 - 0.020)
+  Data Path Delay:      29.743ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.006ns (0.027 - 0.033)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tile_width_1_1 to MRT/rgb_next_0
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X54Y27.YQ      Tcko                  0.567   tile_width_1_1
-                                                       tile_width_1_1
-    SLICE_X52Y28.G4      net (fanout=6)        0.564   tile_width_1_1
-    SLICE_X52Y28.Y       Tilo                  0.660   MRT/Sh71
-                                                       MRT/_shift0001<0>136
-    SLICE_X54Y28.F4      net (fanout=10)       0.342   MRT/N89
-    SLICE_X54Y28.X       Tilo                  0.660   MRT/Sh67
-                                                       MRT/Sh671
-    MULT18X18_X1Y3.A3    net (fanout=3)        0.635   MRT/Sh67
-    MULT18X18_X1Y3.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
                                                        MRT/Mmult_maze_pixel_w_mult0001
-    SLICE_X53Y33.G1      net (fanout=3)        0.893   MRT/maze_pixel_w<7>
-    SLICE_X53Y33.Y       Topgy                 1.070   MRT/maze_border_x<5>
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
                                                        MRT/maze_pixel_w<7>_rt
-                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<7>
-    SLICE_X52Y34.F3      net (fanout=4)        0.309   MRT/maze_border_x<6>
-    SLICE_X52Y34.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_lut<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_cy<6>
-                                                       MRT/Msub_centered_tile_x_addsub0000_xor<7>
-    SLICE_X49Y38.G3      net (fanout=4)        0.539   MRT/centered_tile_x_addsub0000<7>
-    SLICE_X49Y38.Y       Tilo                  0.612   MRT/centered_tile_x_shift0000<0>61
-                                                       MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.F1      net (fanout=3)        0.449   MRT/centered_tile_x_shift0000<0>151
-    SLICE_X46Y38.X       Tilo                  0.660   MRT/N111
-                                                       MRT/centered_tile_x_shift0000<0>153
-    SLICE_X47Y38.G4      net (fanout=2)        0.039   MRT/N111
-    SLICE_X47Y38.Y       Tilo                  0.612   MRT/centered_tile_x<1>
-                                                       MRT/centered_tile_x_shift0000<1>_1
-    MULT18X18_X1Y4.B1    net (fanout=1)        0.782   MRT/centered_tile_x_shift0000<1>
-    MULT18X18_X1Y4.P9    Tmult                 4.022   MRT/Mmult__mult0000
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
                                                        MRT/Mmult__mult0000
-    SLICE_X55Y41.G3      net (fanout=1)        0.544   MRT/_mult0000<9>
-    SLICE_X55Y41.COUT    Topcyg                0.871   MRT/_sub0001<8>
-                                                       MRT/Msub__sub0001_lut<9>
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
                                                        MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.CIN     net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
-    SLICE_X55Y42.Y       Tciny                 0.756   MRT/_sub0001<10>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
                                                        MRT/Msub__sub0001_cy<10>
                                                        MRT/Msub__sub0001_xor<11>
-    SLICE_X54Y44.F4      net (fanout=2)        0.508   MRT/_sub0001<11>
-    SLICE_X54Y44.X       Tif5x                 1.000   MRT/_shift0001<3>19
-                                                       MRT/_shift0001<3>19_G
-                                                       MRT/_shift0001<3>19
-    SLICE_X54Y45.F1      net (fanout=1)        0.103   MRT/_shift0001<3>19
-    SLICE_X54Y45.X       Tilo                  0.660   MRT/N9
-                                                       MRT/_shift0001<3>167
-    SLICE_X52Y43.F4      net (fanout=3)        0.520   MRT/N9
-    SLICE_X52Y43.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>24
-                                                       MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.F1      net (fanout=1)        0.578   MRT/Madd__COND_19_Madd_lut<3>24
-    SLICE_X50Y37.X       Tilo                  0.660   MRT/Madd__COND_19_Madd_lut<3>
-                                                       MRT/Madd__COND_19_Madd_lut<3>123
-    SLICE_X50Y39.F4      net (fanout=2)        0.241   MRT/Madd__COND_19_Madd_lut<3>
-    SLICE_X50Y39.X       Tilo                  0.660   N63
-                                                       MRT/rgb_next_and0002219_SW0
-    SLICE_X51Y39.G3      net (fanout=1)        0.048   N63
-    SLICE_X51Y39.Y       Tilo                  0.612   MRT/rgb_next<0>
-                                                       MRT/rgb_next_and0002219
-    SLICE_X51Y39.F4      net (fanout=2)        0.038   MRT/rgb_next_and0002
-    SLICE_X51Y39.CLK     Tfck                  0.728   MRT/rgb_next<0>
-                                                       MRT/rgb_next_mux0000<0>2
-                                                       MRT/rgb_next_0
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X15Y44.F1      net (fanout=3)        0.586   MRT/rgb_next_and000410
+    SLICE_X15Y44.X       Tilo                  0.612   MRT/rgb_next<2>
+                                                       MRT/rgb_next_and0004208_SW0
+    SLICE_X15Y44.G1      net (fanout=1)        0.694   MRT/rgb_next_and0004208_SW0/O
+    SLICE_X15Y44.CLK     Tgck                  0.728   MRT/rgb_next<2>
+                                                       MRT/rgb_next_mux0000<3>541
+                                                       MRT/rgb_next_2
     -------------------------------------------------  ---------------------------
-    Total                                     27.969ns (20.837ns logic, 7.132ns route)
-                                                       (74.5% logic, 25.5% route)
+    Total                                     29.743ns (20.695ns logic, 9.048ns route)
+                                                       (69.6% logic, 30.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -9.747ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      29.741ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.006ns (0.027 - 0.033)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+                                                       MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+                                                       MRT/maze_pixel_w<7>_rt
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
+                                                       MRT/Mmult__mult0000
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
+                                                       MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
+                                                       MRT/Msub__sub0001_cy<10>
+                                                       MRT/Msub__sub0001_xor<11>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X14Y56.G3      net (fanout=2)        0.718   MRT/_shift0001<0>124
+    SLICE_X14Y56.Y       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>139_SW0
+    SLICE_X14Y56.F4      net (fanout=1)        0.020   MRT/_shift0001<0>139_SW0/O
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.F4      net (fanout=2)        0.461   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_G
+                                                       MRT/rgb_next_and000410
+    SLICE_X15Y44.F1      net (fanout=3)        0.586   MRT/rgb_next_and000410
+    SLICE_X15Y44.X       Tilo                  0.612   MRT/rgb_next<2>
+                                                       MRT/rgb_next_and0004208_SW0
+    SLICE_X15Y44.G1      net (fanout=1)        0.694   MRT/rgb_next_and0004208_SW0/O
+    SLICE_X15Y44.CLK     Tgck                  0.728   MRT/rgb_next<2>
+                                                       MRT/rgb_next_mux0000<3>541
+                                                       MRT/rgb_next_2
+    -------------------------------------------------  ---------------------------
+    Total                                     29.741ns (20.695ns logic, 9.046ns route)
+                                                       (69.6% logic, 30.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -9.686ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tile_height_4 (FF)
+  Destination:          MRT/rgb_next_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      29.680ns (Levels of Logic = 18)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.006ns (0.027 - 0.033)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tile_height_4 to MRT/rgb_next_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y45.YQ      Tcko                  0.567   tile_height<4>
+                                                       tile_height_4
+    SLICE_X13Y43.G3      net (fanout=58)       0.551   tile_height<4>
+    SLICE_X13Y43.Y       Tilo                  0.612   MRT/Sh162
+                                                       MRT/Sh258211
+    SLICE_X12Y39.F1      net (fanout=10)       0.392   MRT/N184
+    SLICE_X12Y39.X       Tilo                  0.660   MRT/Sh166
+                                                       MRT/Sh1661
+    MULT18X18_X0Y5.A6    net (fanout=6)        0.919   MRT/Sh166
+    MULT18X18_X0Y5.P7    Tmult                 3.861   MRT/Mmult_maze_pixel_w_mult0001
+                                                       MRT/Mmult_maze_pixel_w_mult0001
+    SLICE_X13Y48.G4      net (fanout=3)        1.159   MRT/maze_pixel_w<7>
+    SLICE_X13Y48.COUT    Topcyg                0.871   MRT/maze_border_x<5>
+                                                       MRT/maze_pixel_w<7>_rt
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   MRT/Madd_maze_border_x_sub0000_Madd_cy<7>
+    SLICE_X13Y49.Y       Tciny                 0.756   MRT/maze_border_x<7>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_cy<8>
+                                                       MRT/Madd_maze_border_x_sub0000_Madd_xor<9>
+    SLICE_X12Y50.F3      net (fanout=4)        0.274   MRT/maze_border_x<8>
+    SLICE_X12Y50.Y       Topy                  1.506   MRT/centered_tile_x_addsub0000<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_lut<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_cy<8>
+                                                       MRT/Msub_centered_tile_x_addsub0000_xor<9>
+    SLICE_X12Y52.G3      net (fanout=4)        0.326   MRT/centered_tile_x_addsub0000<9>
+    SLICE_X12Y52.Y       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>13
+    SLICE_X12Y52.F4      net (fanout=1)        0.020   MRT/centered_tile_x_shift0000<0>13/O
+    SLICE_X12Y52.X       Tilo                  0.660   MRT/N15
+                                                       MRT/centered_tile_x_shift0000<0>119
+    SLICE_X20Y56.F3      net (fanout=3)        0.756   MRT/N15
+    SLICE_X20Y56.X       Tilo                  0.660   MRT/centered_tile_x<1>
+                                                       MRT/centered_tile_x_shift0000<1>
+    MULT18X18_X0Y6.B1    net (fanout=68)       1.424   MRT/centered_tile_x<1>
+    MULT18X18_X0Y6.P8    Tmult                 3.953   MRT/Mmult__mult0000
+                                                       MRT/Mmult__mult0000
+    SLICE_X3Y56.F1       net (fanout=1)        0.425   MRT/_mult0000<8>
+    SLICE_X3Y56.COUT     Topcyf                1.011   MRT/_sub0001<8>
+                                                       MRT/Msub__sub0001_lut<8>
+                                                       MRT/Msub__sub0001_cy<8>
+                                                       MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.CIN      net (fanout=1)        0.000   MRT/Msub__sub0001_cy<9>
+    SLICE_X3Y57.Y        Tciny                 0.756   MRT/_sub0001<10>
+                                                       MRT/Msub__sub0001_cy<10>
+                                                       MRT/Msub__sub0001_xor<11>
+    SLICE_X1Y56.G4       net (fanout=2)        0.321   MRT/_sub0001<11>
+    SLICE_X1Y56.Y        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>124
+    SLICE_X1Y56.F3       net (fanout=2)        0.021   MRT/_shift0001<0>124
+    SLICE_X1Y56.X        Tilo                  0.612   N74
+                                                       MRT/_shift0001<0>139_SW1
+    SLICE_X14Y56.F3      net (fanout=1)        0.702   N74
+    SLICE_X14Y56.X       Tilo                  0.660   MRT/N111
+                                                       MRT/_shift0001<0>164
+    SLICE_X15Y51.G4      net (fanout=2)        0.463   MRT/N111
+    SLICE_X15Y51.X       Tif5x                 0.890   MRT/rgb_next_and000410
+                                                       MRT/rgb_next_and000410_F
+                                                       MRT/rgb_next_and000410
+    SLICE_X15Y44.F1      net (fanout=3)        0.586   MRT/rgb_next_and000410
+    SLICE_X15Y44.X       Tilo                  0.612   MRT/rgb_next<2>
+                                                       MRT/rgb_next_and0004208_SW0
+    SLICE_X15Y44.G1      net (fanout=1)        0.694   MRT/rgb_next_and0004208_SW0/O
+    SLICE_X15Y44.CLK     Tgck                  0.728   MRT/rgb_next<2>
+                                                       MRT/rgb_next_mux0000<3>541
+                                                       MRT/rgb_next_2
+    -------------------------------------------------  ---------------------------
+    Total                                     29.680ns (20.647ns logic, 9.033ns route)
+                                                       (69.6% logic, 30.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point slow_clk (SLICE_X25Y90.BY), 1 path
+Paths for end point MC/RN/Mshreg_r1_15/SRL16E (SLICE_X44Y23.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.901ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               slow_clk (FF)
-  Destination:          slow_clk (FF)
+Slack (hold path):      0.632ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MC/RN/r1_0 (FF)
+  Destination:          MC/RN/Mshreg_r1_15/SRL16E (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.901ns (Levels of Logic = 0)
+  Data Path Delay:      0.632ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: slow_clk to slow_clk
+  Minimum Data Path: MC/RN/r1_0 to MC/RN/Mshreg_r1_15/SRL16E
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y90.YQ      Tcko                  0.409   slow_clk1
-                                                       slow_clk
-    SLICE_X25Y90.BY      net (fanout=2)        0.375   slow_clk1
-    SLICE_X25Y90.CLK     Tckdi       (-Th)    -0.117   slow_clk1
-                                                       slow_clk
+    SLICE_X44Y23.XQ      Tcko                  0.412   MC/RN/r1<0>
+                                                       MC/RN/r1_0
+    SLICE_X44Y23.BY      net (fanout=1)        0.330   MC/RN/r1<0>
+    SLICE_X44Y23.CLK     Tdh         (-Th)     0.110   MC/RN/r1<0>
+                                                       MC/RN/Mshreg_r1_15/SRL16E
     -------------------------------------------------  ---------------------------
-    Total                                      0.901ns (0.526ns logic, 0.375ns route)
-                                                       (58.4% logic, 41.6% route)
+    Total                                      0.632ns (0.302ns logic, 0.330ns route)
+                                                       (47.8% logic, 52.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point KB/fifo_key_unit/array_reg_0 (SLICE_X66Y30.BY), 1 path
+Paths for end point MC/RN/Mshreg_r2_19/SRL16E (SLICE_X46Y44.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.909ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               KB/ps2_rx_unit/b_reg_1 (FF)
-  Destination:          KB/fifo_key_unit/array_reg_0 (FF)
+Slack (hold path):      0.720ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MC/RN/r2_11 (FF)
+  Destination:          MC/RN/Mshreg_r2_19/SRL16E (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.909ns (Levels of Logic = 0)
+  Data Path Delay:      0.720ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: KB/ps2_rx_unit/b_reg_1 to KB/fifo_key_unit/array_reg_0
+  Minimum Data Path: MC/RN/r2_11 to MC/RN/Mshreg_r2_19/SRL16E
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X67Y30.YQ      Tcko                  0.409   KB/ps2_rx_unit/b_reg<2>
-                                                       KB/ps2_rx_unit/b_reg_1
-    SLICE_X66Y30.BY      net (fanout=3)        0.368   KB/ps2_rx_unit/b_reg<1>
-    SLICE_X66Y30.CLK     Tckdi       (-Th)    -0.132   KB/fifo_key_unit/array_reg<1>
-                                                       KB/fifo_key_unit/array_reg_0
+    SLICE_X46Y45.YQ      Tcko                  0.454   MC/RN/r2<0>
+                                                       MC/RN/r2_11
+    SLICE_X46Y44.BY      net (fanout=2)        0.376   MC/RN/r2<11>
+    SLICE_X46Y44.CLK     Tdh         (-Th)     0.110   MC/RN/r2<20>
+                                                       MC/RN/Mshreg_r2_19/SRL16E
     -------------------------------------------------  ---------------------------
-    Total                                      0.909ns (0.541ns logic, 0.368ns route)
-                                                       (59.5% logic, 40.5% route)
+    Total                                      0.720ns (0.344ns logic, 0.376ns route)
+                                                       (47.8% logic, 52.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point KB/ps2_rx_unit/filter_reg_3 (SLICE_X49Y22.BX), 1 path
+Paths for end point MC/RN/Mshreg_r2_11/SRL16E (SLICE_X46Y45.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.935ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               KB/ps2_rx_unit/filter_reg_4 (FF)
-  Destination:          KB/ps2_rx_unit/filter_reg_3 (FF)
+Slack (hold path):      0.778ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MC/RN/r2_0 (FF)
+  Destination:          MC/RN/Mshreg_r2_11/SRL16E (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.935ns (Levels of Logic = 0)
+  Data Path Delay:      0.778ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: KB/ps2_rx_unit/filter_reg_4 to KB/ps2_rx_unit/filter_reg_3
+  Minimum Data Path: MC/RN/r2_0 to MC/RN/Mshreg_r2_11/SRL16E
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y23.YQ      Tcko                  0.409   KB/ps2_rx_unit/filter_reg<5>
-                                                       KB/ps2_rx_unit/filter_reg_4
-    SLICE_X49Y22.BX      net (fanout=4)        0.446   KB/ps2_rx_unit/filter_reg<4>
-    SLICE_X49Y22.CLK     Tckdi       (-Th)    -0.080   KB/ps2_rx_unit/filter_reg<3>
-                                                       KB/ps2_rx_unit/filter_reg_3
+    SLICE_X46Y45.XQ      Tcko                  0.412   MC/RN/r2<0>
+                                                       MC/RN/r2_0
+    SLICE_X46Y45.BY      net (fanout=1)        0.476   MC/RN/r2<0>
+    SLICE_X46Y45.CLK     Tdh         (-Th)     0.110   MC/RN/r2<0>
+                                                       MC/RN/Mshreg_r2_11/SRL16E
     -------------------------------------------------  ---------------------------
-    Total                                      0.935ns (0.489ns logic, 0.446ns route)
-                                                       (52.3% logic, 47.7% route)
+    Total                                      0.778ns (0.302ns logic, 0.476ns route)
+                                                       (38.8% logic, 61.2% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 18.562ns (period - (min low pulse limit / (low pulse / period)))
+Slack: 18.248ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
-  Low pulse limit: 0.719ns (Tcl)
-  Physical resource: tile_width_1_1/CLK
-  Logical resource: tile_width_1_1/CK
-  Location pin: SLICE_X54Y27.CLK
+  Low pulse limit: 0.876ns (Twpl)
+  Physical resource: MC/RN/r1<22>/CLK
+  Logical resource: MC/RN/Mshreg_r1_21/SRL16E/WS
+  Location pin: SLICE_X44Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 18.562ns (period - (min high pulse limit / (high pulse / period)))
+Slack: 18.248ns (period - (min high pulse limit / (high pulse / period)))
   Period: 20.000ns
   High pulse: 10.000ns
-  High pulse limit: 0.719ns (Tch)
-  Physical resource: tile_width_1_1/CLK
-  Logical resource: tile_width_1_1/CK
-  Location pin: SLICE_X54Y27.CLK
+  High pulse limit: 0.876ns (Twph)
+  Physical resource: MC/RN/r1<22>/CLK
+  Logical resource: MC/RN/Mshreg_r1_21/SRL16E/WS
+  Location pin: SLICE_X44Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 18.562ns (period - (min low pulse limit / (low pulse / period)))
+Slack: 18.248ns (period - min period limit)
   Period: 20.000ns
-  Low pulse: 10.000ns
-  Low pulse limit: 0.719ns (Tcl)
-  Physical resource: tile_width_3_1/CLK
-  Logical resource: tile_width_3_1/CK
-  Location pin: SLICE_X54Y29.CLK
+  Min period limit: 1.752ns (570.776MHz) (Tcp)
+  Physical resource: MC/RN/r1<22>/CLK
+  Logical resource: MC/RN/Mshreg_r1_21/SRL16E/WS
+  Location pin: SLICE_X44Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -934,32 +945,32 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   29.156|         |    2.498|         |
+clk            |   30.814|         |    1.928|         |
 ---------------+---------+---------+---------+---------+
 
 
 Timing summary:
 ---------------
 
-Timing errors: 7  Score: 43271  (Setup/Max: 43271, Hold: 0)
+Timing errors: 2130  Score: 11067964  (Setup/Max: 11067964, Hold: 0)
 
-Constraints cover 160040622 paths, 0 nets, and 2918 connections
+Constraints cover 362399919 paths, 0 nets, and 28864 connections
 
 Design statistics:
-   Minimum period:  29.156ns{1}   (Maximum frequency:  34.298MHz)
+   Minimum period:  30.814ns{1}   (Maximum frequency:  32.453MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Apr 28 17:04:59 2013 
+Analysis completed Sun Apr 28 19:38:08 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 224 MB
+Peak Memory Usage: 256 MB
 
 
 

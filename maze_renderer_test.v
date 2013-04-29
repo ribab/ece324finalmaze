@@ -20,14 +20,21 @@ module maze_renderer_test
 	input wire [4:0] maze_width, maze_height,
 	input wire [4:0] x_coord, y_coord,
 	input wire [4:0] tile_width, tile_height,
+	input wire [4:0] start_x, start_y,
+	input wire [4:0] finish_x, finish_y,
     output wire hsync, vsync,		// horizontal and vertical switch outputs
     output wire [7:0] rgb			// Red, green, blue output
    );
 	
 	wire video_on;
 	
-	reg [7:0] char_color = 8'b000_111_00;
-	reg [15:0] char_array = 16'b0110_1111_1111_0110;
+	reg [7:0] char_color   = 8'b000_000_11;
+	reg [7:0] start_color  = 8'b000_111_00;
+	reg [7:0] finish_color = 8'b111_000_00;
+	reg [15:0] char_array  = { 4'b0110 ,
+	                           4'b1111 ,
+	                           4'b1111 ,
+	                           4'b0110 };
 
    reg [7:0] rgb_reg;
 	reg [7:0] rgb_next;
@@ -56,6 +63,7 @@ module maze_renderer_test
 	
    // Control the Display
 	always @(posedge clk) begin
+	
 		if (enable)
 			/*if (x_pos > char_x*(tile_pixel_w) && x_pos <= (char_x+1)*(tile_pixel_w) && // todo: doesn't show character
 				 y_pos > char_y*(tile_pixel_h) && y_pos <= (char_y+1)*(tile_pixel_h))
@@ -73,6 +81,12 @@ module maze_renderer_test
 							char_array[  ((x_pos - maze_border_x - centered_tile_x*tile_pixel_w) >> (tile_width - 2)) +
 										  4*((y_pos - maze_border_y - centered_tile_y*tile_pixel_h) >> (tile_height - 2))] == 1)
 					rgb_next <= char_color;
+				else if (start_x == centered_tile_x &&
+				         start_y == centered_tile_y)
+					rgb_next <= start_color;
+				else if (finish_x == centered_tile_x &&
+				         finish_y == centered_tile_y)
+					rgb_next <= finish_color;
 				else if (path_data[   centered_tile_x +
 								   16*centered_tile_y ] == 1)
 						rgb_next <= 8'b11111111;
@@ -85,11 +99,17 @@ module maze_renderer_test
 					char_array[  ((x_pos - tile_x*tile_pixel_w) >> (tile_width - 2)) +
 					           4*((y_pos - tile_y*tile_pixel_h) >> (tile_height - 2))] == 1)
 					rgb_next <= char_color;
+				else if (start_x == tile_x - x_coord &&
+				         start_y == tile_y - y_coord)
+					rgb_next <= start_color;
+				else if (finish_x == tile_x - x_coord &&
+				         finish_y == tile_y - y_coord)
+					rgb_next <= finish_color;
 				else if (path_data[   (x_coord + (x_pos >> tile_width)) +
 								  16*(y_coord + (y_pos >> tile_height))] == 1)
-						rgb_next <= 8'b11100000;
+						rgb_next <= 8'b11111111;
 				else
-					rgb_next <= 8'b00000000;
+					rgb_next <= 8'b01000000;
 		else
 			rgb_next <= 8'b00000000;
 	end

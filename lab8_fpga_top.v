@@ -34,12 +34,25 @@ module Lab8_fpga_top(
 	wire [64*64-1:0] maze_data;
 	wire start, finish;
 	
+	wire enable_display;
+	wire [4:0] char_x, char_y;
+	wire [3:0] finish_x, finish_y;
+	wire [3:0] start_x, start_y;
+	
+	assign enable_display = sw[7];
+   
+   // tie off unsed outputs
+	assign an = 4'b0000;
+	assign sseg = 7'b0000000;
+	assign dp = 1'b0;
+	
+// pass switch input on to Led outputs
+	assign Led = key_code;
+	
 	// registers for testing display
 	reg [4:0] x_dim = 16, y_dim = 16;
 	reg [6:0] tile_width = 4, tile_height = 4;
 	reg [4:0] x_coord = 0, y_coord = 0;
-	wire enable_display;
-	wire [4:0] char_x, char_y;
 	reg [27:0] char_x_count = 0, char_y_count = 0, 
 	           char_x_speed = 20_000_000, char_y_speed = 20_000_000;
 	reg [7:0] KEY_UP =   8'b11101010, KEY_DOWN =  8'b11100100,
@@ -47,13 +60,13 @@ module Lab8_fpga_top(
 	reg [7:0] KEY_W =    8'b00111010, KEY_S =     8'b00110110,
 	          KEY_A =    8'b00111000, KEY_D =     8'b01000110;
 	always @(posedge clk) begin
-		if (btn[0]) begin    // btn0 controls # tile for width/height of maze
+		if (btn[2]) begin    // btn0 controls # tile for width/height of maze
 			x_dim <= sw[4:0];
 		end
-		if (btn[1]) begin
+		if (btn[2]) begin
 			y_dim <= sw[4:0];
 		end
-		if (btn[2]) begin // btn1 controls # pixels per tile
+		if (btn[3]) begin // btn1 controls # pixels per tile
 			tile_width <=  sw[6:0]; 
 		end
 		if (btn[3]) begin
@@ -76,18 +89,22 @@ module Lab8_fpga_top(
 */
 	end
 	
-	assign enable_display = sw[7];
-   
-   // tie off unsed outputs
-	assign an = 4'b0000;
-	assign sseg = 7'b0000000;
-	assign dp = 1'b0;
-	
-// pass switch input on to Led outputs
-	assign Led = key_code;
+	maze_carver_2 MC (
+		.clk(clk),
+		.slow_time(2_000_000),
+		.start(btn[0]),
+		.x_dimension(x_dim),
+		.y_dimension(y_dim),
+		.maze_data(maze_data),
+		.finish(finish),
+		.curr_x(char_x),
+		.curr_y(char_y),
+		.finish_x(finish_x),
+		.finish_y(finish_y)
+	);
 
 	//instantiate keyboard
-	kb_code KB(
+/*	kb_code KB(
 		.clk(clk), 
 		.reset(reset),
 		.ps2d(ps2d), 
@@ -96,6 +113,7 @@ module Lab8_fpga_top(
 		.key_code(key_code),
 		.kb_buf_empty()
 	);
+*/
 	
 // instantiate VGA tester
 	maze_renderer_test MRT (
@@ -105,29 +123,10 @@ module Lab8_fpga_top(
 	   .maze_width({2'b00, x_dim}), .maze_height({2'b00, y_dim}),
 		.x_coord(0), .y_coord(0),
 		.tile_width(tile_width), .tile_height(tile_height), // 2^x = width or height in pixels
+		.start_x(start_x), .start_y(start_y),
+		.finish_x(finish_x), .finish_y(finish_y),
 	    .hsync(Hsync), .vsync(Vsync), 
 	    .rgb({vgaRed, vgaGreen, vgaBlue})
-	);
-	
-	reg slow_clk = 0;
-	reg [25:0] clk_counter = 0;
-	always @(posedge clk) begin
-		if (clk_counter == 2_000_000) begin
-			slow_clk <= ~slow_clk;
-			clk_counter <= 0;
-		end else
-			clk_counter <= clk_counter + 1;
-	end
-	
-	maze_carver_2 MC (
-		.clk(slow_clk),
-		.start(sw[7]),
-		.x_dimension(x_dim),
-		.y_dimension(y_dim),
-		.maze_data(maze_data),
-		.finish(finish),
-		.curr_x(char_x),
-		.curr_y(char_y)
 	);
 
 
