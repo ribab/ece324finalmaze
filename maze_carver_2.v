@@ -15,51 +15,35 @@ module maze_carver_2
 		output reg [3:0] curr_y
 	);
 	
+	// declare size of maze
+    parameter [4:0] maze_width = 16;
+	parameter [4:0] maze_height = 16;
+	
 	// declare registers
 	reg [5:0] i;
 	reg [5:0] j;
 	reg [3:0] start_x = 1;
 	reg [3:0] start_y = 1;
-	wire [1:0] rand;
 	reg [1:0] dir_dist;
-    
-	// declare size of maze
-    parameter [4:0] maze_width = 16;
-	parameter [4:0] maze_height = 16;
-
+	reg sequence = 0;
+	
     // make stack to hold memory
 	reg [3:0] stack_x [16*16-1:0];
-	reg [3:0] stack_y [16*16-1:0];	
-	
+	reg [3:0] stack_y [16*16-1:0];
 	reg [8:0] stack_pos;
-    
     
 	// instantiate rand_num
 	// Generate random numbers on the fly
+	wire [1:0] rand;
 	rand_num RN(
 		.clk(clk), .rand(rand)
     );
-	
 	wire [3:0] mov_x = (rand == 2'b01) ? 4'b1111:
 	               (rand == 2'b11) ? 4'b0001:
 	                                 4'b0000;
 	wire [3:0] mov_y = (rand == 2'b00) ? 4'b1111:
 	               (rand == 2'b10) ? 4'b0001:
 	                                 4'b0000;
-	reg sequence = 0;
-    
-
-	//  Key
-	// 
-	//  path = maze path = 2'b11
-	//	out = maze wall = 2'b00
-	//  frontier = 2'b10
-	//	 wall = 2'b01
-	
-	localparam [1:0] PATH = 2'b11;
-	localparam [1:0] OUT = 2'b00;
-	localparam [1:0] FRONTIER = 2'b10;
-	localparam [1:0] WALL = 2'b01;
 	
 	initial begin
 		// initialize finish to "not finished"
@@ -108,6 +92,39 @@ module maze_carver_2
     wire [7:0] currpos_down_2 = currpos_down_1 + 16;
     wire [7:0] currpos_right_1 = curr_data_pos + 1;
     wire [7:0] currpos_left_1 = curr_data_pos - 1;
+	 
+	wire is_wall_up = (	(	maze_data[currpos_up_1] == 0 &&
+										(	(maze_data[currpos_up_1 - 16] == 1 && curr_y - 1 != 0) ||
+											(maze_data[currpos_up_1 + 1] == 1 && curr_x != 15) ||
+											(maze_data[currpos_up_1 - 1] == 1 && curr_x != 0)
+										)
+								) ||
+								curr_y == 0
+							) ? 1'b1 : 1'b0;
+	wire is_wall_left = (	(	maze_data[currpos_left_1] == 0 &&
+										(	(maze_data[currpos_left_1 - 1] == 1 && curr_x - 1 != 0) ||
+											(maze_data[currpos_left_1 + 16] == 1 && curr_y != 15) ||
+											(maze_data[currpos_left_1 - 16] == 1 && curr_y != 0)
+										)
+									) ||
+									curr_x == 0
+								) ? 1'b1 : 1'b0;
+	wire is_wall_down = (	(	maze_data[currpos_down_1] == 0 &&
+										(	(maze_data[currpos_down_1 + 16] == 1 && curr_y + 1 != 15) ||
+											(maze_data[currpos_down_1 + 1] == 1 && curr_x != 15) ||
+											(maze_data[currpos_down_1 - 1] == 1 && curr_x != 0)
+										)
+									) ||
+									curr_y == 15
+								) ? 1'b1 : 1'b0;
+	wire is_wall_right = (	(	maze_data[currpos_right_1] == 0 &&
+										(	(maze_data[currpos_right_1 + 1] == 1 && curr_x + 1 != 15) ||
+											(maze_data[currpos_right_1 + 16] == 1 && curr_y != 15) ||
+											(maze_data[currpos_right_1 - 16] == 1 && curr_y != 0)
+										)
+									) ||
+									curr_x == 15
+								) ? 1'b1 : 1'b0;
 
 	always @(posedge clk) begin
 		// ===========================
@@ -142,41 +159,38 @@ module maze_carver_2
 */
 				// if move up
 				if (         mov_y == 4'b1111 &&
-				             !is_wall(currpos_up_1, curr_x, curr_y - 1) &&
-								 maze_data[currpos_up_1] == 0 &&
-				             curr_y != 0) begin
-					curr_y <= new_pos_y; // update current position
+				             !is_wall_up &&
+							 maze_data[currpos_up_1] == 0) begin
+					curr_y <= curr_y - 1; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move left
 				end else if (mov_x == 4'b1111 &&
-				             !is_wall(currpos_left_1, curr_x - 1, curr_y) &&
-								 maze_data[currpos_left_1] == 0 &&
-				             curr_x != 0) begin
-					curr_x <= new_pos_x; // update current position
+				             !is_wall_left &&
+							 maze_data[currpos_left_1] == 0) begin
+					curr_x <= curr_x - 1; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move down
 				end else if (mov_y == 4'b0001 &&
-				             !is_wall(currpos_down_1, curr_x, curr_y + 1) &&
-								 maze_data[currpos_down_1] == 0 &&
-				             curr_y != 15) begin
-					curr_y <= new_pos_y; // update current position
+				             !is_wall_down &&
+							 maze_data[currpos_down_1] == 0) begin
+					curr_y <= curr_y + 1; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
 				// if move right
 				end else if (mov_x == 4'b0001 &&
-				             !is_wall(currpos_right_1, curr_x + 1, curr_y) &&
-								 maze_data[currpos_right_1] == 0 &&
-				             curr_x != 15) begin
-					curr_x <= new_pos_x; // update current position
+				             !is_wall_right &&
+							 maze_data[currpos_right_1] == 0) begin
+					curr_x <= curr_x + 1; // update current position
 					stack_x[stack_pos] <= curr_x; // push old position to stack
 					stack_y[stack_pos] <= curr_y;
 					stack_pos <= stack_pos + 1;
-				end
+				end else
+					sequence <= 1;
 					
 			end
 		
@@ -189,24 +203,20 @@ module maze_carver_2
 				
 				if ( // if stuck pop off stack
 					// up
-               (	maze_data[currpos_up_1] == 1 ||
-						is_wall(currpos_up_1, curr_x, curr_y - 1) ||
-						curr_y == 0
+					(	maze_data[currpos_up_1] == 1 ||
+						is_wall_up
 					) &&
 					// left
 					(	maze_data[currpos_left_1] == 1 ||
-						is_wall(currpos_left_1, curr_x - 1, curr_y) ||
-						curr_x == 0
+						is_wall_left
 					) &&
 					// down
 					(	maze_data[currpos_down_1] == 1 ||
-						is_wall(currpos_down_1, curr_x, curr_y + 1) ||
-						curr_y == 15
+						is_wall_down
 					) &&
 					// right
 					(	maze_data[currpos_right_1] == 1 ||
-						is_wall(currpos_right_1, curr_x + 1, curr_y) ||
-						curr_x == 15
+						is_wall_right
 					)
 				) begin // pop off stack
 					stack_pos <= stack_pos - 1;
@@ -228,16 +238,18 @@ module maze_carver_2
 		
 	end
 	
-	function is_wall;
+
+	
+/*	function is_wall;
 		input [7:0] dp;
 		input [3:0] x;
 		input [3:0] y;
 		begin
 			if (	maze_data[dp] == 0 &&
-					(	{2'b00, maze_data[dp + 1] & x != 15} +
-						{2'b00, maze_data[dp - 1] & x != 0} +
-						{2'b00, maze_data[dp + 16] & y != 15} +
-						{2'b00, maze_data[dp - 16] & y != 0}
+					(	{2'b00, maze_data[dp + 1]  & (x != 15)} +
+						{2'b00, maze_data[dp - 1]  & (x != 0 )} +
+						{2'b00, maze_data[dp + 16] & (y != 15)} +
+						{2'b00, maze_data[dp - 16] & (y != 0 )}
 						> 3'b001
 					)
 				)
@@ -246,7 +258,8 @@ module maze_carver_2
 				is_wall = 1'b0;
 		end
 	endfunction
-	
+*/
+
 //	always @ (posedge clk) begin
 //	end
 	
