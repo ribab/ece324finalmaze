@@ -1,1 +1,2 @@
+verilog work "rand_num.v"
 verilog work "../maze_carver.v"

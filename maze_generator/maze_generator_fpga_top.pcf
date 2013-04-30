@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Mon Apr 29 22:04:29 2013
+// Written by: Map P.49d on Mon Apr 29 22:48:13 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -873,9 +873,10 @@ TIMEGRP clk = BEL "KB/ps2_rx_unit/state_reg_FSM_FFd2" BEL
         "MRT/VGAS/h_count_reg_7" BEL "MRT/VGAS/h_count_reg_8" BEL
         "MRT/VGAS/h_count_reg_9" BEL "MRT/rgb_reg_5" BEL "MRT/rgb_reg_2" BEL
         "MRT/rgb_reg_0" BEL "MRT/rgb_next_5" BEL "MRT/rgb_next_2" BEL
-        "MRT/rgb_next_0" BEL "MRT/VGAS/mod2_reg" BEL "MRT/VGAS/v_sync_reg" BEL
-        "MRT/VGAS/h_sync_reg" BEL "MS/state_FSM_FFd2" BEL
-        "MC/RN/Mshreg_r1_15/SRL16E" BEL "MC/RN/r1_15" BEL
+        "MRT/VGAS/mod2_reg" BEL "MRT/VGAS/v_sync_reg" BEL
+        "MRT/VGAS/h_sync_reg" BEL "MRT/rgb_next_0" BEL "MS/state_FSM_FFd2" BEL
+        "MC/curr_y_2_1" BEL "MC/curr_x_2_1" BEL "MC/curr_x_3_1" BEL
+        "MC/curr_y_3_1" BEL "MC/RN/Mshreg_r1_15/SRL16E" BEL "MC/RN/r1_15" BEL
         "MC/RN/Mshreg_r2_11/SRL16E" BEL "MC/RN/r2_11" BEL
         "MC/RN/Mshreg_r1_21/SRL16E" BEL "MC/RN/r1_21" BEL
         "MC/RN/Mshreg_r2_19/SRL16E" BEL "MC/RN/r2_19" BEL

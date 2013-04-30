@@ -1,7 +1,7 @@
 Release 14.4 Drc P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Mon Apr 29 22:08:47 2013
+Mon Apr 29 22:52:35 2013
 
 drc -z maze_generator_fpga_top.ncd maze_generator_fpga_top.pcf
 

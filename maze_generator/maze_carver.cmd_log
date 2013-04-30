@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/maze_generator/maze_carver.xst" -ofn "C:/Users/ribab/Documents/GitHub/ece324finalmaze/maze_generator/maze_carver.syr" 
