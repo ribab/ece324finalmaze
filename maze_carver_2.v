@@ -8,7 +8,7 @@ module maze_carver_2
 		input wire [4:0] maze_height,
 		output reg [16*16-1:0] maze_data,
 	
-		output reg finish = 1,
+		output wire finished,
 		
 		output reg [3:0] curr_x = 0,
 		output reg [3:0] curr_y = 0,
@@ -25,12 +25,15 @@ module maze_carver_2
 	reg [3:0] start_y = 0;
 	reg [1:0] dir_dist;
 	reg sequence = 0;
+	reg finish = 1;
 	
     // make stack to hold memory
 	reg [3:0] stack_x [16*16-1:0];
 	reg [3:0] stack_y [16*16-1:0];
 	reg [8:0] stack_pos;
 	reg stack_started = 0;
+	
+	assign finished = finish/* & stack_started*/;
 	
 	reg [8:0] finish_stack_pos = 0;
     

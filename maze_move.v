@@ -25,10 +25,12 @@ module maze_move
 	parameter [7:0] UP = 8'b11101010;
 	parameter [7:0] DOWN = 8'b11100100;
 */
-	parameter [7:0] LEFT = 8'b11010110;
-	parameter [7:0] RIGHT = 8'b11101000;
-	parameter [7:0] UP = 8'b11101010;
-	parameter [7:0] DOWN = 8'b11100100;
+	parameter [6:0] LEFT = 7'b1101011;
+	parameter [6:0] RIGHT = 7'b1110100;
+	parameter [6:0] UP = 7'b1110101;
+	parameter [6:0] DOWN = 7'b1110010;
+	
+	parameter [25:0] slow_time = 10_000_000;
 	
 	reg move_up = 0;
 	reg move_down = 0;
@@ -40,42 +42,42 @@ module maze_move
 	// Left arrow is Left, Up arrow is Up, Right arrow is Right, Down arrow is Down
 	always @(posedge clk) begin
 	   
-	    if(LEFT) begin
+		if(key_code[6:0] == LEFT) begin
 			move_left <= ~move_left;
 		end
-		if(RIGHT) begin
+		if(key_code[6:0] == RIGHT) begin
 			move_right <= ~move_right;
 		end
-		if(UP) begin
+		if(key_code[6:0] == UP) begin
 			move_up <= ~move_up;
 		end
-		if(DOWN) begin
+		if(key_code[6:0] == DOWN) begin
 			move_down <= ~move_down;
 		end
 	   
 		if (slow_count == slow_time) begin 
-			if (move_left) 	begin
-				if(maze_data[(curr_x - 1)+16*(curr_y)] == 1)
+			if (key_code[6:0] == LEFT) 	begin
+				if(maze_data[(curr_x - 1)+16*(curr_y)] == 1 && curr_x != 0)
 					begin
-						curr_x <= (curr_x - 1)+16*(curr_y); //move left
+						curr_x <= curr_x - 1; //move left
 					end
 				end
-			if (move_right)	begin
-				if(maze_data[(curr_x + 1)+16*(curr_y)] == 1 )
+			if (key_code[6:0] == RIGHT)	begin
+				if(maze_data[(curr_x + 1)+16*(curr_y)] == 1 && curr_x != maze_width)
 					begin
-						curr_x <= (curr_x + 1)+16*(curr_y);//move right
+						curr_x <= curr_x + 1;//move right
 					end
 				end
-			if (move_up) begin
-				if(maze_data[(curr_x)+16*(curr_y - 1)] == 1 )
+			if (key_code[6:0] == UP) begin
+				if(maze_data[(curr_x)+16*(curr_y - 1)] == 1 && curr_y != 0)
 					begin
-						curr_y <= (curr_x)+16*(curr_y - 1)];//move up
+						curr_y <= curr_y - 1; //move up
 					end
 				end
-			if (move_down)	begin
-				if(maze_data[(curr_x)+16*(curr_y + 1)] == 1)
+			if (key_code[6:0] == DOWN)	begin
+				if(maze_data[(curr_x)+16*(curr_y + 1)] == 1 && curr_y != maze_height)
 					begin
-						curr_x <= (curr_x)+16*(curr_y + 1);//move down
+						curr_y <= curr_y + 1;//move down
 					end
 				end
 			slow_count <= 0;

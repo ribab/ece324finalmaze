@@ -27,24 +27,24 @@ module maze_generator_fpga_top(
 // PS2 bidirectional ports
 	inout wire ps2d, ps2c
 );
-
-	reg start_carve = 0;
+	
 	wire carve_finished;
-	reg carve_started = 0;
+	wire state_start;
 	wire state_carve;
 	wire state_move;
 
+//	reg start_carve = 0;
+//	reg carve_started = 0;
+
    // signal declarationse
-    wire reset = btn[0];
+    wire reset = 0;
 	wire [7:0] key_code;
 	wire [16*16-1:0] maze_data;
 	
-	wire enable_display;
-	wire [4:0] char_x, char_y;
+	wire [3:0] char_1_x, char_1_y;
+	wire [3:0] carve_x, carve_y;
 	wire [3:0] finish_x, finish_y;
 	wire [3:0] start_x, start_y;
-	
-	assign enable_display = sw[7];
    
    // tie off unsed outputs
 	assign an = 4'b0000;
@@ -59,22 +59,21 @@ module maze_generator_fpga_top(
 	reg [4:0] tile_width = 4, tile_height = 4;
 	reg [25:0] char_x_count = 0, char_y_count = 0, 
 	           char_speed = 20_000_000;
-	reg [7:0] KEY_UP =   8'b11101010, KEY_DOWN =  8'b11100100,
-	          KEY_LEFT = 8'b11010110, KEY_RIGHT = 8'b11101000;
-	reg [7:0] KEY_W =    8'b00111010, KEY_S =     8'b00110110,
-	          KEY_A =    8'b00111000, KEY_D =     8'b01000110;
-	always @(posedge clk) begin
-		if (state_carve == 1 && !start_carve && !carve_started) begin
-			start_carve <= 1;
-			carve_started <= 1;
-		end else
-			start_carve <= 0;
-		if (state_carve == 0)
-			carve_started <= 0;
-	end
+//	reg [7:0] KEY_UP =   8'b11101010, KEY_DOWN =  8'b11100100,
+//	          KEY_LEFT = 8'b11010110, KEY_RIGHT = 8'b11101000;
+//	reg [7:0] KEY_W =    8'b00111010, KEY_S =     8'b00110110,
+//	          KEY_A =    8'b00111000, KEY_D =     8'b01000110;
+//	always @(posedge clk) begin
+//		if (state_carve == 1 && !start_carve)
+//			start_carve <= 1;
+//		else
+//			start_carve <= 0;
+//	end
 	
 	maze_state MS (
 		.clk(clk),
+		.start_btn(btn[0]),
+		.finished_carve(carve_finished),
 		.start(state_start),
 		.carve(state_carve),
 		.move(state_move)
@@ -83,11 +82,11 @@ module maze_generator_fpga_top(
 	maze_carver_2 MC (
 		.clk(clk),
 		.slow_time(2_000_000),
-		.start(start_carve),
+		.start(state_carve & btn[0]),
 		.maze_width(maze_width),
 		.maze_height(maze_height),
 		.maze_data(maze_data),
-		.finish(carve_finished),
+		.finished(carve_finished),
 		.curr_x(carve_x),
 		.curr_y(carve_y),
 		.finish_x(finish_x),
@@ -97,7 +96,7 @@ module maze_generator_fpga_top(
 	//instantiate keyboard
 	kb_code KB(
 		.clk(clk), 
-		.reset(reset),
+		.reset(btn[0]),
 		.ps2d(ps2d), 
 		.ps2c(ps2c), 
 		.rd_key_code(1),
@@ -107,8 +106,9 @@ module maze_generator_fpga_top(
 	
 // instantiate VGA tester
 	maze_renderer_test MRT (
-		.clk(clk), .reset(1'b0), .enable(enable_display),
-		.char_x({2'b00, char_x}), .char_y({2'b00, char_y}),
+		.clk(clk), .reset(1'b0), .enable(state_carve/* | state_move*/),
+		.char_x(state_carve? carve_x : state_move? char_1_x : start_x),
+		.char_y(state_carve? carve_y : state_move? char_1_y : start_y),
 		.path_data(maze_data),
 		.maze_width(maze_width), .maze_height(maze_height),
 		.tile_width(tile_width), .tile_height(tile_height), // 2^x = width or height in pixels
@@ -120,7 +120,7 @@ module maze_generator_fpga_top(
 
 	maze_move char_1 (
 		.clk(clk),
-		.reset(reset),
+		.reset(btn[0]),
 		.enable(state_move),
 		.key_code(key_code),
 		.maze_data(maze_data),
