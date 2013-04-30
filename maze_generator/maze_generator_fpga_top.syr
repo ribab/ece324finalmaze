@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: maze_generator_fpga_top.prj
 
@@ -246,7 +246,6 @@ Module <maze_move> is correct for synthesis.
 Performing bidirectional port resolution...
 INFO:Xst:2679 - Register <i> in unit <maze_carver_2> has a constant value of 010000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <j> in unit <maze_carver_2> has a constant value of 010000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <slow_count> in unit <maze_move> has a constant value of 00000000000000000000000000 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <maze_state>.
     Related source file is "../maze_state.v".
@@ -276,19 +275,28 @@ WARNING:Xst:647 - Input <start_x> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <start_y> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <enable> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Register <curr_y> equivalent to <curr_x> has been removed
     Found 4-bit register for signal <curr_x>.
-    Found 6-bit subtractor for signal <$sub0000> created at line 60.
-    Found 5-bit subtractor for signal <$sub0001> created at line 72.
-    Found 4-bit adder carry out for signal <add0000$addsub0000> created at line 78.
-    Found 4-bit adder carry out for signal <COND_57$addsub0001> created at line 66.
+    Found 4-bit register for signal <curr_y>.
+    Found 6-bit subtractor for signal <$sub0000> created at line 62.
+    Found 7-bit subtractor for signal <$sub0001> created at line 69.
+    Found 5-bit subtractor for signal <$sub0002> created at line 76.
+    Found 7-bit subtractor for signal <$sub0003> created at line 83.
+    Found 4-bit adder carry out for signal <add0000$addsub0000> created at line 83.
+    Found 4-bit adder carry out for signal <COND_57$addsub0001> created at line 69.
+    Found 7-bit comparator not equal for signal <curr_x$cmp_ne0001> created at line 69.
+    Found 4-bit addsub for signal <curr_x$share0000> created at line 59.
+    Found 7-bit comparator not equal for signal <curr_y$cmp_ne0001> created at line 83.
+    Found 4-bit addsub for signal <curr_y$share0000> created at line 59.
     Found 1-bit register for signal <move_down>.
     Found 1-bit register for signal <move_left>.
     Found 1-bit register for signal <move_right>.
     Found 1-bit register for signal <move_up>.
+    Found 26-bit up counter for signal <slow_count>.
     Summary:
-	inferred   8 D-type flip-flop(s).
-	inferred   8 Adder/Subtractor(s).
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
 	inferred   4 Multiplexer(s).
 Unit <maze_move> synthesized.
 
@@ -476,8 +484,8 @@ WARNING:Xst:643 - "../maze_renderer_test.v" line 53: The result of a 10x5-bit mu
     Found 5-bit comparator equal for signal <rgb_next$cmp_eq0005> created at line 86.
     Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0000> created at line 72.
     Found 10-bit comparator greatequal for signal <rgb_next$cmp_ge0001> created at line 72.
-    Found 10-bit comparator greater for signal <rgb_next$cmp_gt0000> created at line 71.
-    Found 10-bit comparator greater for signal <rgb_next$cmp_gt0001> created at line 71.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0000> created at line 71.
+    Found 10-bit comparator lessequal for signal <rgb_next$cmp_le0001> created at line 71.
     Found 10-bit comparator less for signal <rgb_next$cmp_lt0000> created at line 72.
     Found 10-bit comparator less for signal <rgb_next$cmp_lt0001> created at line 72.
     Found 8-bit register for signal <rgb_reg>.
@@ -524,7 +532,7 @@ Macro Statistics
  16x1-bit ROM                                          : 1
 # Multipliers                                          : 4
  10x5-bit multiplier                                   : 4
-# Adders/Subtractors                                   : 40
+# Adders/Subtractors                                   : 44
  10-bit adder                                          : 3
  10-bit subtractor                                     : 2
  12-bit adder                                          : 3
@@ -533,43 +541,42 @@ Macro Statistics
  2-bit adder                                           : 2
  36-bit adder                                          : 1
  4-bit adder carry out                                 : 4
- 4-bit addsub                                          : 2
+ 4-bit addsub                                          : 4
  4-bit subtractor                                      : 1
  5-bit subtractor                                      : 3
  6-bit subtractor                                      : 5
- 7-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 3
  8-bit adder                                           : 3
  8-bit subtractor                                      : 2
  9-bit adder                                           : 3
  9-bit addsub                                          : 1
-# Counters                                             : 3
+# Counters                                             : 4
  10-bit up counter                                     : 2
- 26-bit up counter                                     : 1
-# Registers                                            : 794
+ 26-bit up counter                                     : 2
+# Registers                                            : 795
  1-bit register                                        : 265
  11-bit register                                       : 1
  2-bit register                                        : 2
  21-bit register                                       : 1
  23-bit register                                       : 1
- 4-bit register                                        : 518
+ 4-bit register                                        : 519
  8-bit register                                        : 4
  9-bit register                                        : 2
-# Comparators                                          : 26
+# Comparators                                          : 28
  10-bit comparator greatequal                          : 4
- 10-bit comparator greater                             : 2
  10-bit comparator less                                : 3
- 10-bit comparator lessequal                           : 2
+ 10-bit comparator lessequal                           : 4
  11-bit comparator less                                : 1
  2-bit comparator equal                                : 2
  5-bit comparator equal                                : 4
  5-bit comparator not equal                            : 4
  7-bit comparator equal                                : 2
- 7-bit comparator not equal                            : 1
+ 7-bit comparator not equal                            : 3
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 13
+# Multiplexers                                         : 17
  1-bit 240-to-1 multiplexer                            : 3
  1-bit 255-to-1 multiplexer                            : 3
- 1-bit 256-to-1 multiplexer                            : 5
+ 1-bit 256-to-1 multiplexer                            : 9
  1-bit 4-to-1 multiplexer                              : 2
 # Logic shifters                                       : 6
  10-bit shifter logical right                          : 2
@@ -602,13 +609,7 @@ Optimizing FSM <MS/state/FSM> on signal <state[1:2]> with user encoding.
  01    | 01
  10    | 10
 -------------------
-INFO:Xst:2261 - The FF/Latch <curr_x_0> in Unit <char_1> is equivalent to the following 3 FFs/Latches, which will be removed : <curr_x_1> <curr_x_2> <curr_x_3> 
-WARNING:Xst:1710 - FF/Latch <curr_x_0> (without init value) has a constant value of 0 in block <char_1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx_unit>.
-WARNING:Xst:2677 - Node <FFd1> of sequential type is unconnected in block <FSM>.
-WARNING:Xst:1290 - Hierarchical block <char_1> is unconnected in block <maze_generator_fpga_top>.
-   It will be removed from the design.
-WARNING:Xst:2404 -  FFs/Latches <curr_x<3:0>> (without init value) have a constant value of 0 in block <maze_move>.
 WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
 
 =========================================================================
@@ -620,7 +621,7 @@ Macro Statistics
  16x1-bit ROM                                          : 1
 # Multipliers                                          : 4
  10x5-bit multiplier                                   : 4
-# Adders/Subtractors                                   : 32
+# Adders/Subtractors                                   : 44
  10-bit adder                                          : 2
  10-bit subtractor                                     : 2
  11-bit adder                                          : 2
@@ -628,36 +629,35 @@ Macro Statistics
  17-bit subtractor                                     : 2
  2-bit adder                                           : 2
  4-bit adder                                           : 1
- 4-bit adder carry out                                 : 2
- 4-bit addsub                                          : 2
- 4-bit subtractor                                      : 1
+ 4-bit adder carry out                                 : 4
+ 4-bit addsub                                          : 4
+ 4-bit subtractor                                      : 2
  5-bit subtractor                                      : 2
- 6-bit subtractor                                      : 4
- 7-bit subtractor                                      : 1
- 8-bit adder                                           : 4
+ 6-bit subtractor                                      : 5
+ 7-bit subtractor                                      : 3
+ 8-bit adder                                           : 8
  8-bit subtractor                                      : 2
  9-bit addsub                                          : 1
-# Counters                                             : 3
+# Counters                                             : 4
  10-bit up counter                                     : 2
- 26-bit up counter                                     : 1
-# Registers                                            : 2441
- Flip-Flops                                            : 2441
-# Comparators                                          : 26
+ 26-bit up counter                                     : 2
+# Registers                                            : 2449
+ Flip-Flops                                            : 2449
+# Comparators                                          : 28
  10-bit comparator greatequal                          : 4
- 10-bit comparator greater                             : 2
  10-bit comparator less                                : 3
- 10-bit comparator lessequal                           : 2
+ 10-bit comparator lessequal                           : 4
  11-bit comparator less                                : 1
  2-bit comparator equal                                : 2
  5-bit comparator equal                                : 4
  5-bit comparator not equal                            : 4
  7-bit comparator equal                                : 2
- 7-bit comparator not equal                            : 1
+ 7-bit comparator not equal                            : 3
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 13
+# Multiplexers                                         : 17
  1-bit 240-to-1 multiplexer                            : 3
  1-bit 255-to-1 multiplexer                            : 3
- 1-bit 256-to-1 multiplexer                            : 5
+ 1-bit 256-to-1 multiplexer                            : 9
  1-bit 4-to-1 multiplexer                              : 2
 # Logic shifters                                       : 6
  10-bit shifter logical right                          : 2
@@ -671,15 +671,16 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <rgb_next_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_6> <rgb_next_7> 
-INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_next_1> 
 INFO:Xst:2261 - The FF/Latch <rgb_next_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_3> <rgb_next_4> 
+INFO:Xst:2261 - The FF/Latch <rgb_next_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_next_1> 
+INFO:Xst:2261 - The FF/Latch <rgb_next_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_next_6> <rgb_next_7> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_0> in Unit <maze_renderer_test> is equivalent to the following FF/Latch, which will be removed : <rgb_reg_1> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_2> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_3> <rgb_reg_4> 
 INFO:Xst:2261 - The FF/Latch <rgb_reg_5> in Unit <maze_renderer_test> is equivalent to the following 2 FFs/Latches, which will be removed : <rgb_reg_6> <rgb_reg_7> 
-WARNING:Xst:2677 - Node <MS/state_FSM_FFd1> of sequential type is unconnected in block <maze_generator_fpga_top>.
 
 Optimizing unit <maze_generator_fpga_top> ...
+
+Optimizing unit <maze_move> ...
 
 Optimizing unit <rand_num> ...
 
@@ -719,10 +720,12 @@ Optimizing unit <maze_renderer_test> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block maze_generator_fpga_top, actual ratio is 70.
+Found area constraint ratio of 100 (+ 5) on block maze_generator_fpga_top, actual ratio is 77.
+FlipFlop MC/curr_x_0 has been replicated 1 time(s)
+FlipFlop MC/curr_x_1 has been replicated 1 time(s)
 FlipFlop MC/curr_x_2 has been replicated 1 time(s)
 FlipFlop MC/curr_x_3 has been replicated 1 time(s)
-FlipFlop MC/curr_y_2 has been replicated 1 time(s)
+FlipFlop MC/curr_y_0 has been replicated 1 time(s)
 FlipFlop MC/curr_y_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
@@ -738,8 +741,8 @@ Unit <maze_generator_fpga_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2438
- Flip-Flops                                            : 2438
+# Registers                                            : 2475
+ Flip-Flops                                            : 2475
 # Shift Registers                                      : 4
  11-bit shift register                                 : 1
  15-bit shift register                                 : 1
@@ -773,33 +776,33 @@ Design Statistics
 # IOs                              : 45
 
 Cell Usage :
-# BELS                             : 7294
+# BELS                             : 8453
 #      GND                         : 1
-#      INV                         : 18
-#      LUT1                        : 54
-#      LUT2                        : 264
-#      LUT2_D                      : 16
-#      LUT2_L                      : 16
-#      LUT3                        : 1963
-#      LUT3_D                      : 33
-#      LUT3_L                      : 88
-#      LUT4                        : 2447
-#      LUT4_D                      : 111
-#      LUT4_L                      : 537
-#      MUXCY                       : 177
-#      MUXF5                       : 834
-#      MUXF6                       : 355
-#      MUXF7                       : 173
-#      MUXF8                       : 85
+#      INV                         : 20
+#      LUT1                        : 79
+#      LUT2                        : 258
+#      LUT2_D                      : 27
+#      LUT2_L                      : 27
+#      LUT3                        : 2482
+#      LUT3_D                      : 19
+#      LUT3_L                      : 80
+#      LUT4                        : 2427
+#      LUT4_D                      : 110
+#      LUT4_L                      : 609
+#      MUXCY                       : 209
+#      MUXF5                       : 1116
+#      MUXF6                       : 487
+#      MUXF7                       : 237
+#      MUXF8                       : 117
 #      VCC                         : 1
-#      XORCY                       : 121
-# FlipFlops/Latches                : 2442
+#      XORCY                       : 147
+# FlipFlops/Latches                : 2479
 #      FD                          : 8
 #      FD_1                        : 3
 #      FDC                         : 25
-#      FDE                         : 17
-#      FDR                         : 31
-#      FDRE                        : 2354
+#      FDE                         : 28
+#      FDR                         : 55
+#      FDRE                        : 2356
 #      FDRS                        : 1
 #      FDSE                        : 3
 # Shift Registers                  : 4
@@ -820,10 +823,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                     3273  out of   4656    70%  
- Number of Slice Flip Flops:           2442  out of   9312    26%  
- Number of 4 input LUTs:               5551  out of   9312    59%  
-    Number used as logic:              5547
+ Number of Slices:                     3616  out of   4656    77%  
+ Number of Slice Flip Flops:           2479  out of   9312    26%  
+ Number of 4 input LUTs:               6142  out of   9312    65%  
+    Number used as logic:              6138
     Number used as Shift registers:       4
  Number of IOs:                          45
  Number of bonded IOBs:                  34  out of    232    14%  
@@ -851,7 +854,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 2446  |
+clk                                | BUFGP                  | 2483  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -866,7 +869,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 16.596ns (Maximum Frequency: 60.254MHz)
+   Minimum period: 16.361ns (Maximum Frequency: 61.122MHz)
    Minimum input arrival time before clock: 4.853ns
    Maximum output required time after clock: 6.682ns
    Maximum combinational path delay: 2.655ns
@@ -877,41 +880,41 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 16.596ns (frequency: 60.254MHz)
-  Total number of paths / destination ports: 39885497 / 6947
+  Clock period: 16.361ns (frequency: 61.122MHz)
+  Total number of paths / destination ports: 88419948 / 7022
 -------------------------------------------------------------------------
-Delay:               16.596ns (Levels of Logic = 13)
-  Source:            MC/curr_x_0 (FF)
+Delay:               16.361ns (Levels of Logic = 13)
+  Source:            MC/curr_y_1 (FF)
   Destination:       MC/stack_y_255_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: MC/curr_x_0 to MC/stack_y_255_3
+  Data Path: MC/curr_y_1 to MC/stack_y_255_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q          1651   0.514   1.351  MC/curr_x_0 (MC/curr_x_0)
-     LUT2_D:I0->O         26   0.612   1.074  MC/SFDecomp_212111 (MC/Madd_currpos_right_1_cy<1>)
-     LUT4:I3->O           55   0.612   1.231  MC/Madd_currpos_right_1_xor<7>11 (MC/currpos_right_1<7>)
-     LUT3:I0->O            1   0.612   0.000  MC/is_wall_right_or00013021_F (N1612)
-     MUXF5:I0->O           1   0.278   0.360  MC/is_wall_right_or00013021 (MC/is_wall_right_or00013021)
-     LUT4:I3->O            1   0.612   0.360  MC/is_wall_right_or00013052 (MC/is_wall_right_or00013052)
-     LUT4:I3->O            1   0.612   0.387  MC/is_wall_right_or00013096 (MC/is_wall_right_or00013096)
-     LUT4:I2->O            1   0.612   0.360  MC/is_wall_right_or00014907 (MC/is_wall_right_or00014907)
-     LUT4:I3->O            4   0.612   0.502  MC/is_wall_right_or00014953 (MC/is_wall_right_or00014953)
-     LUT4:I3->O            3   0.612   0.520  MC/is_wall_right_or00014997 (MC/is_wall_right)
-     LUT2:I1->O            1   0.612   0.000  MC/stack_x_0_not0001482_SW01 (MC/stack_x_0_not0001482_SW0)
-     MUXF5:I1->O           1   0.278   0.360  MC/stack_x_0_not0001482_SW0_f5 (N371)
-     LUT4_D:I3->O        255   0.612   1.163  MC/stack_x_0_not0001482 (MC/N186)
+     FDRE:C->Q           534   0.514   1.229  MC/curr_y_1 (MC/curr_y_1)
+     LUT4_D:I2->O         30   0.612   1.075  MC/COND_17_cmp_eq006311 (MC/N219)
+     LUT4_D:I3->O          7   0.612   0.605  MC/COND_17_cmp_eq004911 (MC/N289)
+     LUT4:I3->O            1   0.612   0.360  MC/is_wall_up_or0001312 (MC/is_wall_up_or0001312)
+     LUT4:I3->O            1   0.612   0.387  MC/is_wall_up_or0001324 (MC/is_wall_up_or0001324)
+     LUT3:I2->O            1   0.612   0.360  MC/is_wall_up_or00011252_SW0_SW0_SW0 (N328)
+     LUT4_L:I3->LO         1   0.612   0.103  MC/is_wall_up_or00011252_SW0 (N136)
+     LUT4:I3->O            1   0.612   0.360  MC/is_wall_up_or00011265 (MC/is_wall_up_or00011265)
+     LUT4:I3->O            4   0.612   0.529  MC/is_wall_up_or00012255 (MC/is_wall_up_or00012255)
+     LUT4:I2->O            4   0.612   0.568  MC/stack_x_0_not0001415_1 (MC/stack_x_0_not0001415)
+     LUT2:I1->O            1   0.612   0.000  MC/stack_x_0_not0001442_SW1_G (N1282)
+     MUXF5:I1->O           1   0.278   0.360  MC/stack_x_0_not0001442_SW1 (N499)
+     LUT4_D:I3->O        255   0.612   1.163  MC/stack_x_0_not0001459 (MC/N186)
      LUT3:I2->O            8   0.612   0.643  MC/stack_x_99_not00011 (MC/stack_x_99_not0001)
      FDRE:CE                   0.483          MC/stack_x_99_0
     ----------------------------------------
-    Total                     16.596ns (8.285ns logic, 8.311ns route)
-                                       (49.9% logic, 50.1% route)
+    Total                     16.361ns (8.619ns logic, 7.742ns route)
+                                       (52.7% logic, 47.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2339 / 2339
+  Total number of paths / destination ports: 2342 / 2342
 -------------------------------------------------------------------------
 Offset:              4.853ns (Levels of Logic = 2)
   Source:            btn<0> (PAD)
@@ -922,8 +925,8 @@ Offset:              4.853ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            29   1.106   1.141  btn_0_IBUF (btn_0_IBUF)
-     LUT2:I1->O         2326   0.612   1.198  _and00001 (_and0000)
+     IBUF:I->O            30   1.106   1.141  btn_0_IBUF (btn_0_IBUF)
+     LUT2:I1->O         2328   0.612   1.198  _and00001 (_and0000)
      FDRE:R                    0.795          MC/curr_y_0
     ----------------------------------------
     Total                      4.853ns (2.513ns logic, 2.340ns route)
@@ -934,16 +937,16 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 82 / 18
 -------------------------------------------------------------------------
 Offset:              6.682ns (Levels of Logic = 3)
-  Source:            MRT/VGAS/h_count_reg_9 (FF)
+  Source:            MRT/VGAS/v_count_reg_6 (FF)
   Destination:       vgaRed<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: MRT/VGAS/h_count_reg_9 to vgaRed<3>
+  Data Path: MRT/VGAS/v_count_reg_6 to vgaRed<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             6   0.514   0.721  MRT/VGAS/h_count_reg_9 (MRT/VGAS/h_count_reg_9)
-     LUT3:I0->O            3   0.612   0.603  MRT/VGAS/video_on8 (MRT/VGAS/video_on8)
+     FDRE:C->Q             6   0.514   0.721  MRT/VGAS/v_count_reg_6 (MRT/VGAS/v_count_reg_6)
+     LUT4:I0->O            3   0.612   0.603  MRT/VGAS/video_on21 (MRT/VGAS/video_on21)
      LUT4:I0->O            3   0.612   0.451  MRT/rgb<6>1 (vgaRed_1_OBUF)
      OBUF:I->O                 3.169          vgaRed_3_OBUF (vgaRed<3>)
     ----------------------------------------
@@ -962,7 +965,7 @@ Delay:               2.655ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O         2446   1.457   1.199  clk_BUFGP (clk_BUFGP)
+     BUFGP:I->O         2483   1.457   1.199  clk_BUFGP (clk_BUFGP)
     STARTUP_SPARTAN3E:CLK        0.000          SU
     ----------------------------------------
     Total                      2.655ns (1.457ns logic, 1.199ns route)
@@ -971,14 +974,14 @@ Delay:               2.655ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 118.00 secs
-Total CPU time to Xst completion: 118.24 secs
+Total REAL time to Xst completion: 130.00 secs
+Total CPU time to Xst completion: 129.74 secs
  
 --> 
 
-Total memory usage is 500456 kilobytes
+Total memory usage is 492904 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   78 (   0 filtered)
-Number of infos    :   14 (   0 filtered)
+Number of warnings :   72 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

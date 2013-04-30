@@ -11,9 +11,6 @@
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../maze_generator_fpga_top.v&quot; line 102 </arg>Connection to input port &apos;<arg fmt="%s" index="2">rd_key_code</arg>&apos; does not match port size
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;../maze_generator_fpga_top.v&quot; line 109 </arg>Connection to input port &apos;<arg fmt="%s" index="2">enable</arg>&apos; does not match port size
-</msg>
-
 <msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;../maze_generator_fpga_top.v&quot; line 110 </arg>Connection to input port &apos;<arg fmt="%s" index="2">char_x</arg>&apos; does not match port size
 </msg>
 
@@ -39,9 +36,6 @@
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">j</arg>&gt; in unit &lt;<arg fmt="%s" index="2">maze_carver_2</arg>&gt; has a constant value of <arg fmt="%s" index="3">010000</arg> during circuit operation. The register is replaced by logic.
-</msg>
-
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">slow_count</arg>&gt; in unit &lt;<arg fmt="%s" index="2">maze_move</arg>&gt; has a constant value of <arg fmt="%s" index="3">00000000000000000000000000</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">key_code&lt;7&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -167,35 +161,19 @@
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">curr_x_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;curr_x_1&gt; &lt;curr_x_2&gt; &lt;curr_x_3&gt; </arg>
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">curr_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">char_1</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ps2_rx_unit</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">FFd1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">FSM</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">char_1</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">maze_generator_fpga_top</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">curr_x</arg>&lt;<arg fmt="%d" index="2">3</arg>:<arg fmt="%d" index="3">0</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">maze_move</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">b_reg_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ps2_rx</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_6&gt; &lt;rgb_next_7&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_3&gt; &lt;rgb_next_4&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_3&gt; &lt;rgb_next_4&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_next_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_next_6&gt; &lt;rgb_next_7&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_reg_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_reg_1&gt; </arg>
@@ -205,9 +183,6 @@ It will be removed from the design.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_reg_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">maze_renderer_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_reg_6&gt; &lt;rgb_reg_7&gt; </arg>
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MS/state_FSM_FFd1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">maze_generator_fpga_top</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">empty_reg</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
