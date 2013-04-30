@@ -1,4 +1,6 @@
+verilog work "../Title Text/list_ch14_01_font_rom.v"
 verilog work "../vga_sync.v"
+verilog work "../Title Text/list_ch14_02_font_test_gen.v"
 verilog work "rand_num.v"
 verilog work "../keyboard_code/ps_2_code.v"
 verilog work "../keyboard_code/fifo.v"

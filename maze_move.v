@@ -30,7 +30,7 @@ module maze_move
 	parameter [6:0] UP = 7'b1110101;
 	parameter [6:0] DOWN = 7'b1110010;
 	
-	parameter [25:0] slow_time = 10_000_000;
+	parameter [25:0] slow_time = 5_000_000;
 	
 	reg move_up = 0;
 	reg move_down = 0;
@@ -56,31 +56,39 @@ module maze_move
 		end
 	   
 		if (slow_count == slow_time) begin 
-			if (key_code[6:0] == LEFT) 	begin
-				if(maze_data[(curr_x - 1)+16*(curr_y)] == 1 && curr_x != 0)
+			case(key_code[6:0])
+				LEFT: 
 					begin
-						curr_x <= curr_x - 1; //move left
+						if(maze_data[(curr_x - 1)+16*(curr_y)] == 1 && curr_x != 0)
+							begin
+								curr_x <= curr_x - 1; //move left
+							end
 					end
-				end
-			if (key_code[6:0] == RIGHT)	begin
-				if(maze_data[(curr_x + 1)+16*(curr_y)] == 1 && curr_x != maze_width)
+				RIGHT:
 					begin
-						curr_x <= curr_x + 1;//move right
+						if(maze_data[(curr_x + 1)+16*(curr_y)] == 1 && curr_x != (maze_width - 1))
+							begin
+								curr_x <= curr_x + 1;//move right
+							end
 					end
-				end
-			if (key_code[6:0] == UP) begin
-				if(maze_data[(curr_x)+16*(curr_y - 1)] == 1 && curr_y != 0)
+				UP:
 					begin
-						curr_y <= curr_y - 1; //move up
+						if(maze_data[(curr_x)+16*(curr_y - 1)] == 1 && curr_y != 0)
+							begin
+								curr_y <= curr_y - 1; //move up
+							end
 					end
-				end
-			if (key_code[6:0] == DOWN)	begin
-				if(maze_data[(curr_x)+16*(curr_y + 1)] == 1 && curr_y != maze_height)
+				DOWN:
 					begin
-						curr_y <= curr_y + 1;//move down
+						if(maze_data[(curr_x)+16*(curr_y + 1)] == 1 && curr_y != (maze_height - 1))
+							begin
+								curr_y <= curr_y + 1;//move down
+							end
 					end
-				end
+			endcase
+			
 			slow_count <= 0;
-		end
+		end else
+			slow_count <= slow_count + 1;
 	end
 endmodule

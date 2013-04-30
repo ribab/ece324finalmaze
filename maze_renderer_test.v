@@ -15,6 +15,7 @@
 module maze_renderer_test
    (
     input wire clk, reset, enable,			// input clock and reset
+	input wire start_screen, maze_screen,
 	input [6:0] char_x, char_y,
 	input [16*16-1:0] path_data,
 	input wire [4:0] maze_width, maze_height,
@@ -26,6 +27,8 @@ module maze_renderer_test
    );
 	
 	wire video_on;
+	
+	wire [7:0] start_rgb;
 	
 	reg [7:0] char_color   = 8'b000_000_11;
 	reg [7:0] start_color  = 8'b000_111_00;
@@ -95,6 +98,15 @@ module maze_renderer_test
 			rgb_next <= 8'b00000000;
 	end
 	
+	font_test_gen font_gen_unit(
+		.display(display),
+		.clk(clk),
+		.video_on(start_screen),
+		.pixel_x(x_pos),
+		.pixel_y(y_pos),
+		.rgb_text(start_rgb)
+	);
+	
 	vga_sync VGAS(
 		.clk(clk), 
 		.reset(reset),		// clock and reset inputs
@@ -110,6 +122,7 @@ module maze_renderer_test
 		rgb_reg <= rgb_next;
 	end
 		
-   assign rgb = (video_on) ? rgb_reg : 8'b0;
+   assign rgb = (video_on & start_screen)? start_rgb :
+				(video_on & maze_screen)? rgb_reg : 8'b0;
 
 endmodule

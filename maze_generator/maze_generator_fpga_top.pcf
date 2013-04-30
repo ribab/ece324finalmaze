@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Mon Apr 29 22:48:13 2013
+// Written by: Map P.49d on Tue Apr 30 00:08:59 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -49,7 +49,22 @@ COMP "btn<3>" LOCATE = SITE "H13" LEVEL 1;
 COMP "vgaBlue<2>" LOCATE = SITE "U5" LEVEL 1;
 COMP "vgaBlue<3>" LOCATE = SITE "U4" LEVEL 1;
 NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
-TIMEGRP clk = BEL "KB/ps2_rx_unit/state_reg_FSM_FFd2" BEL
+TIMEGRP clk = BEL "char_1/slow_count_25" BEL "char_1/slow_count_24" BEL
+        "char_1/slow_count_23" BEL "char_1/slow_count_22" BEL
+        "char_1/slow_count_21" BEL "char_1/slow_count_20" BEL
+        "char_1/slow_count_19" BEL "char_1/slow_count_18" BEL
+        "char_1/slow_count_17" BEL "char_1/slow_count_16" BEL
+        "char_1/slow_count_15" BEL "char_1/slow_count_14" BEL
+        "char_1/slow_count_13" BEL "char_1/slow_count_12" BEL
+        "char_1/slow_count_11" BEL "char_1/slow_count_10" BEL
+        "char_1/slow_count_9" BEL "char_1/slow_count_8" BEL
+        "char_1/slow_count_7" BEL "char_1/slow_count_6" BEL
+        "char_1/slow_count_5" BEL "char_1/slow_count_4" BEL
+        "char_1/slow_count_3" BEL "char_1/slow_count_2" BEL
+        "char_1/slow_count_1" BEL "char_1/slow_count_0" BEL "char_1/curr_y_3"
+        BEL "char_1/curr_y_2" BEL "char_1/curr_y_1" BEL "char_1/curr_y_0" BEL
+        "char_1/curr_x_3" BEL "char_1/curr_x_2" BEL "char_1/curr_x_1" BEL
+        "char_1/curr_x_0" BEL "KB/ps2_rx_unit/state_reg_FSM_FFd2" BEL
         "KB/ps2_rx_unit/state_reg_FSM_FFd1" BEL "KB/ps2_rx_unit/b_reg_10" BEL
         "KB/ps2_rx_unit/b_reg_9" BEL "KB/ps2_rx_unit/b_reg_8" BEL
         "KB/ps2_rx_unit/b_reg_7" BEL "KB/ps2_rx_unit/b_reg_6" BEL
@@ -861,24 +876,28 @@ TIMEGRP clk = BEL "KB/ps2_rx_unit/state_reg_FSM_FFd2" BEL
         "MC/maze_data_2" BEL "MC/maze_data_0" BEL "MC/maze_data_1" BEL
         "MC/curr_x_3" BEL "MC/curr_x_2" BEL "MC/curr_x_1" BEL "MC/curr_x_0"
         BEL "MC/curr_y_3" BEL "MC/curr_y_2" BEL "MC/curr_y_1" BEL
-        "MC/curr_y_0" BEL "MRT/VGAS/v_count_reg_0" BEL
-        "MRT/VGAS/v_count_reg_1" BEL "MRT/VGAS/v_count_reg_2" BEL
-        "MRT/VGAS/v_count_reg_3" BEL "MRT/VGAS/v_count_reg_4" BEL
-        "MRT/VGAS/v_count_reg_5" BEL "MRT/VGAS/v_count_reg_6" BEL
-        "MRT/VGAS/v_count_reg_7" BEL "MRT/VGAS/v_count_reg_8" BEL
-        "MRT/VGAS/v_count_reg_9" BEL "MRT/VGAS/h_count_reg_0" BEL
-        "MRT/VGAS/h_count_reg_1" BEL "MRT/VGAS/h_count_reg_2" BEL
-        "MRT/VGAS/h_count_reg_3" BEL "MRT/VGAS/h_count_reg_4" BEL
-        "MRT/VGAS/h_count_reg_5" BEL "MRT/VGAS/h_count_reg_6" BEL
-        "MRT/VGAS/h_count_reg_7" BEL "MRT/VGAS/h_count_reg_8" BEL
-        "MRT/VGAS/h_count_reg_9" BEL "MRT/rgb_reg_5" BEL "MRT/rgb_reg_2" BEL
-        "MRT/rgb_reg_0" BEL "MRT/rgb_next_5" BEL "MRT/rgb_next_2" BEL
-        "MRT/VGAS/mod2_reg" BEL "MRT/VGAS/v_sync_reg" BEL
-        "MRT/VGAS/h_sync_reg" BEL "MRT/rgb_next_0" BEL "MS/state_FSM_FFd2" BEL
-        "MC/curr_y_2_1" BEL "MC/curr_x_2_1" BEL "MC/curr_x_3_1" BEL
-        "MC/curr_y_3_1" BEL "MC/RN/Mshreg_r1_15/SRL16E" BEL "MC/RN/r1_15" BEL
-        "MC/RN/Mshreg_r2_11/SRL16E" BEL "MC/RN/r2_11" BEL
-        "MC/RN/Mshreg_r1_21/SRL16E" BEL "MC/RN/r1_21" BEL
+        "MC/curr_y_0" BEL "MRT/font_gen_unit/font_unit/Mrom_data.A" BEL
+        "MRT/VGAS/v_count_reg_0" BEL "MRT/VGAS/v_count_reg_1" BEL
+        "MRT/VGAS/v_count_reg_2" BEL "MRT/VGAS/v_count_reg_3" BEL
+        "MRT/VGAS/v_count_reg_4" BEL "MRT/VGAS/v_count_reg_5" BEL
+        "MRT/VGAS/v_count_reg_6" BEL "MRT/VGAS/v_count_reg_7" BEL
+        "MRT/VGAS/v_count_reg_8" BEL "MRT/VGAS/v_count_reg_9" BEL
+        "MRT/VGAS/h_count_reg_0" BEL "MRT/VGAS/h_count_reg_1" BEL
+        "MRT/VGAS/h_count_reg_2" BEL "MRT/VGAS/h_count_reg_3" BEL
+        "MRT/VGAS/h_count_reg_4" BEL "MRT/VGAS/h_count_reg_5" BEL
+        "MRT/VGAS/h_count_reg_6" BEL "MRT/VGAS/h_count_reg_7" BEL
+        "MRT/VGAS/h_count_reg_8" BEL "MRT/VGAS/h_count_reg_9" BEL
+        "MRT/rgb_reg_5" BEL "MRT/rgb_reg_2" BEL "MRT/rgb_reg_0" BEL
+        "MRT/rgb_next_5" BEL "MRT/rgb_next_2" BEL "MRT/VGAS/mod2_reg" BEL
+        "MRT/VGAS/v_sync_reg" BEL "MRT/VGAS/h_sync_reg" BEL
+        "MS/state_FSM_FFd1" BEL "MRT/rgb_next_0" BEL "MS/state_FSM_FFd2" BEL
+        "MC/curr_x_3_1" BEL "MC/curr_x_0_1" BEL "MC/curr_x_2_1" BEL
+        "MC/curr_x_1_1" BEL "MC/curr_y_0_1" BEL "MC/curr_y_2_1" BEL
+        "MC/curr_y_3_1" BEL "MC/curr_y_1_1" BEL "MC/curr_x_2_2" BEL
+        "MC/curr_x_3_2" BEL "MC/curr_y_0_2" BEL "MC/curr_y_1_2" BEL
+        "MC/curr_x_0_2" BEL "MC/curr_x_0_3" BEL "MC/RN/Mshreg_r1_15/SRL16E"
+        BEL "MC/RN/r1_15" BEL "MC/RN/Mshreg_r2_11/SRL16E" BEL "MC/RN/r2_11"
+        BEL "MC/RN/Mshreg_r1_21/SRL16E" BEL "MC/RN/r1_21" BEL
         "MC/RN/Mshreg_r2_19/SRL16E" BEL "MC/RN/r2_19" BEL
         "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
