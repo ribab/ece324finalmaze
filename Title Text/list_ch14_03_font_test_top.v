@@ -2,6 +2,7 @@
 module font_test_top
    (
     input wire clk, reset,
+	 input  [7:0] sw,					
 	
       // VGA outputs
     output Vsync, Hsync,
@@ -16,6 +17,7 @@ module font_test_top
    wire video_on, pixel_tick;
    reg [7:0] rgb_reg;
    wire [7:0] rgb_next;//, rgb_apple;
+	wire display = sw[7];
 
    // body
 	
@@ -27,9 +29,9 @@ module font_test_top
        .video_on(video_on), .p_tick(pixel_tick),
        .pixel_x(pixel_x), .pixel_y(pixel_y));
    // font generation circuit
+	
    font_test_gen font_gen_unit
-      (.clk(clk), .video_on(video_on), .pixel_x(pixel_x),
-      .pixel_y(pixel_y), .rgb_text(rgb_next));
+      (.display(display), .clk(clk), .video_on(video_on), .pixel_x(pixel_x), .pixel_y(pixel_y), .rgb_text(rgb_next));
 		 
 	// font apple
 	//font_apple crisp_and_sweet
@@ -41,8 +43,10 @@ module font_test_top
       if (pixel_tick)
          rgb_reg <= rgb_next;
    // output
+
    assign vgaRed = rgb_reg[7:5];
    assign vgaGreen = rgb_reg[4:2];
    assign vgaBlue = rgb_reg[1:0];
+	
 
 endmodule

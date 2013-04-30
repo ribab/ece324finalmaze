@@ -5,6 +5,7 @@
 
 module font_test_gen
    (
+	 input wire display,
     input wire clk,
     input wire video_on, //Game_over_on, Game_start_on, Hangman_on, Win_on,
     input wire [9:0] pixel_x, pixel_y,
@@ -28,27 +29,28 @@ module font_test_gen
       (.clk(clk), .addr(rom_addr), .data(font_word));
    
 	//title
-	assign Hangman_on = (pixel_y[9:7] == 1) && (1 <= pixel_x [9:6]) && (pixel_x [9:6] <= 8);
-	assign row_addr_h = pixel_y [6:3];
-	assign bit_addr_h = pixel_x[5:2];
-	always @*
-		case (pixel_x [8:5])
-			4'h3: char_addr_h = 7'h4D; //M
-			4'h4: char_addr_h = 7'h41; //A
-			4'h5: char_addr_h = 7'h5a; //Z
-			4'h6: char_addr_h = 7'h45; //E
-			4'h7: char_addr_h = 7'h00; //
-			4'h8: char_addr_h = 7'h47; //G
-			4'h9: char_addr_h = 7'h45; //E
-			4'hA: char_addr_h = 7'h4E; //N
-			4'hB: char_addr_h = 7'h45; //E
-			4'hC: char_addr_h = 7'h52; //R
-			4'hD: char_addr_h = 7'h41; //A
-			4'hE: char_addr_h = 7'h54; //T
-			4'hF: char_addr_h = 7'h4F; //O
-			4'h0: char_addr_h = 7'h52; //R
-			default: char_addr_h = 7'h00; //
-		endcase
+		assign Hangman_on = (pixel_y[9:7] == 1) && (1 <= pixel_x [9:6]) && (pixel_x [9:6] <= 8);
+		assign row_addr_h = pixel_y [6:3];
+		assign bit_addr_h = pixel_x[5:2];
+		always @*
+			case (pixel_x [8:5])
+				4'h3: char_addr_h = 7'h4D; //M
+				4'h4: char_addr_h = 7'h41; //A
+				4'h5: char_addr_h = 7'h5a; //Z
+				4'h6: char_addr_h = 7'h45; //E
+				4'h7: char_addr_h = 7'h00; //
+				4'h8: char_addr_h = 7'h47; //G
+				4'h9: char_addr_h = 7'h45; //E
+				4'hA: char_addr_h = 7'h4E; //N
+				4'hB: char_addr_h = 7'h45; //E
+				4'hC: char_addr_h = 7'h52; //R
+				4'hD: char_addr_h = 7'h41; //A
+				4'hE: char_addr_h = 7'h54; //T
+				4'hF: char_addr_h = 7'h4F; //O
+				4'h0: char_addr_h = 7'h52; //R
+				default: char_addr_h = 7'h00; //
+			endcase
+		
 		/*	
 		assign rule_on = (pixel_x[9:7] ==2) && (pixel_y[9:6] == 4);
 		assign row_addr_r = pixel_y [4:0];

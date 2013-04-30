@@ -783,3 +783,9 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys2_VGA.ucf -p xc3s500e-fg3
 map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
 par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
 bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
+xst -intstyle ise -ifn "G:/ECE 324/Term_Project/Title Text/font_test_top.xst" -ofn "G:/ECE 324/Term_Project/Title Text/font_test_top.syr" 
