@@ -106,7 +106,9 @@ module maze_generator_fpga_top(
 	
 // instantiate VGA tester
 	maze_renderer_test MRT (
-		.clk(clk), .reset(1'b0), .enable(state_carve | state_move),
+		.clk(clk), .reset(1'b0), .enable(1),
+		.start_screen(state_start),
+		.maze_screen(state_carve | state_move),
 		.char_x(state_carve? carve_x : state_move? char_1_x : start_x),
 		.char_y(state_carve? carve_y : state_move? char_1_y : start_y),
 		.path_data(maze_data),
