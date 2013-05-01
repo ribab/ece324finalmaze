@@ -4,7 +4,7 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Project Information
 --------------------
 ProjectID=C90EB31B1BB7469CAD1627AF056FE8BD
-ProjectIteration=139
+ProjectIteration=140
 
 WebTalk Summary
 ----------------
@@ -13,4 +13,4 @@ INFO:WebTalk:1 - WebTalk is enabled because you are using a WebPACK license.
 INFO:WebTalk:8 - WebTalk Install setting is ON.
 INFO:WebTalk:6 - WebTalk User setting is ON.
 
-INFO:WebTalk:4 - C:/Users/ribab/Documents/GitHub/ece324finalmaze/maze_generator/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2013-04-30T00:20:51.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.4/ISE_DS/ISE/data/reports/webtalk_introduction.html
+INFO:WebTalk:5 - C:/Users/John/Documents/GitHub/ece324finalmaze/maze_generator/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.4/ISE_DS/ISE/data/reports/webtalk_introduction.html

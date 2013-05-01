@@ -66,3 +66,8 @@ map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o maze_ge
 par -w -intstyle ise -ol high -t 1 maze_generator_fpga_top_map.ncd maze_generator_fpga_top.ncd maze_generator_fpga_top.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml maze_generator_fpga_top.twx maze_generator_fpga_top.ncd -o maze_generator_fpga_top.twr maze_generator_fpga_top.pcf 
 bitgen -intstyle ise -f maze_generator_fpga_top.ut maze_generator_fpga_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/John/Documents/GitHub/ece324finalmaze/Lab8_Nexys2.ucf -p xc3s500e-fg320-5 maze_generator_fpga_top.ngc maze_generator_fpga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o maze_generator_fpga_top_map.ncd maze_generator_fpga_top.ngd maze_generator_fpga_top.pcf 
+par -w -intstyle ise -ol high -t 1 maze_generator_fpga_top_map.ncd maze_generator_fpga_top.ncd maze_generator_fpga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml maze_generator_fpga_top.twx maze_generator_fpga_top.ncd -o maze_generator_fpga_top.twr maze_generator_fpga_top.pcf 
+bitgen -intstyle ise -f maze_generator_fpga_top.ut maze_generator_fpga_top.ncd 

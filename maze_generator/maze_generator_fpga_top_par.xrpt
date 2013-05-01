@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Tue Apr 30 00:09:08 2013">
+  <application stringID="par" timeStamp="Tue Apr 30 07:13:27 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.4\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\\bin\nt64;C:\Xilinx\Vivado\2012.4\bin;C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.4\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.4\ISE_DS\PlanAhead\bin;C:\Xilinx\14.4\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.4\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.4\ISE_DS\common\bin\nt64;C:\Xilinx\14.4\ISE_DS\common\lib\nt64;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\cygwin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\TortoiseGit\bin;C:\Modeltech_pe_edu_10.1d\win32pe_edu"/>
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="C:\Xilinx\14.4\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\\bin\nt64;C:\Xilinx\Vivado_HLS\2012.4\bin;C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.4\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\Vivado\2012.4\bin;C:\Xilinx\14.4\ISE_DS\PlanAhead\bin;C:\Xilinx\14.4\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.4\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.4\ISE_DS\common\bin\nt64;C:\Xilinx\14.4\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Microchip\MPLAB C30\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\Microchip\MPLAB C32 Suite\bin;C:\Program Files (x86)\MATLAB\R2011a Student\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\pcb\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\fet\bin;C:\OrCAD\OrCAD_16.6_Lite\OpenAccess\bin\win32\opt;C:\OrCAD\OrCAD_16.6_Lite\tools\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\Capture;C:\OrCAD\OrCAD_16.6_Lite\tools\PSpice;C:\Modeltech_pe_edu_10.1d\win32pe_edu;C:\Users\John\AppData\Local\Bandizip\7z"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -40,16 +40,16 @@
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
+        <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
+        <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="ribab-PC"/>
+      <item stringID="User_EnvHost" value="Johns-pc"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz"/>
-          <item stringID="speed" value="2294 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz"/>
+          <item stringID="speed" value="2395 MHz"/>
         </row>
       </table>
     </section>
@@ -68,12 +68,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="9 mins 34 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="9 mins 28 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="6 mins 25 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="6 mins 22 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="9 mins 54 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="9 mins 47 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="6 mins 37 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="6 mins 34 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">

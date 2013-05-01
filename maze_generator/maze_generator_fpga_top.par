@@ -1,7 +1,7 @@
 Release 14.4 par P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-RIBAB-PC::  Tue Apr 30 00:09:05 2013
+JOHNS-PC::  Tue Apr 30 07:13:26 2013
 
 par -w -intstyle ise -ol high -t 1 maze_generator_fpga_top_map.ncd
 maze_generator_fpga_top.ncd maze_generator_fpga_top.pcf 
@@ -51,8 +51,8 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 5 secs 
-Finished initial Timing Analysis.  REAL time: 7 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
 WARNING:Par:288 - The signal sw<0>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal sw<1>_IBUF has no load.  PAR will not attempt to route this signal.
@@ -67,27 +67,27 @@ WARNING:Par:288 - The signal btn<2>_IBUF has no load.  PAR will not attempt to r
 WARNING:Par:288 - The signal btn<3>_IBUF has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
-Total REAL time at the beginning of Placer: 7 secs 
-Total CPU  time at the beginning of Placer: 7 secs 
+Total REAL time at the beginning of Placer: 5 secs 
+Total CPU  time at the beginning of Placer: 4 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:6524dcd9) REAL time: 9 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:6524dcd9) REAL time: 7 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:6524dcd9) REAL time: 9 secs 
+Phase 2.7  Design Feasibility Check (Checksum:6524dcd9) REAL time: 7 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:d4c8e7a1) REAL time: 9 secs 
+Phase 3.31  Local Placement Optimization (Checksum:d4c8e7a1) REAL time: 7 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:88cd55e1) REAL time: 11 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:88cd55e1) REAL time: 9 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:88cd55e1) REAL time: 11 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:88cd55e1) REAL time: 9 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:88cd55e1) REAL time: 11 secs 
+Phase 6.36  Local Placement Optimization (Checksum:88cd55e1) REAL time: 9 secs 
 
 Phase 7.8  Global Placement
 .....................
@@ -98,19 +98,19 @@ Phase 7.8  Global Placement
 ................................................................................................................................................................
 ............................................................................................................................
 ......................
-Phase 7.8  Global Placement (Checksum:795f46aa) REAL time: 1 mins 15 secs 
+Phase 7.8  Global Placement (Checksum:795f46aa) REAL time: 49 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:795f46aa) REAL time: 1 mins 16 secs 
+Phase 8.5  Local Placement Optimization (Checksum:795f46aa) REAL time: 49 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:49826850) REAL time: 1 mins 40 secs 
+Phase 9.18  Placement Optimization (Checksum:49826850) REAL time: 1 mins 5 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:49826850) REAL time: 1 mins 41 secs 
+Phase 10.5  Local Placement Optimization (Checksum:49826850) REAL time: 1 mins 6 secs 
 
-Total REAL time to Placer completion: 1 mins 42 secs 
-Total CPU  time to Placer completion: 1 mins 42 secs 
+Total REAL time to Placer completion: 1 mins 6 secs 
+Total CPU  time to Placer completion: 1 mins 4 secs 
 Writing design to file maze_generator_fpga_top.ncd
 
 
@@ -118,36 +118,36 @@ Writing design to file maze_generator_fpga_top.ncd
 Starting Router
 
 
-Phase  1  : 30129 unrouted;      REAL time: 1 mins 50 secs 
+Phase  1  : 30129 unrouted;      REAL time: 1 mins 11 secs 
 
-Phase  2  : 28317 unrouted;      REAL time: 2 mins 2 secs 
+Phase  2  : 28317 unrouted;      REAL time: 1 mins 19 secs 
 
-Phase  3  : 11406 unrouted;      REAL time: 2 mins 8 secs 
+Phase  3  : 11406 unrouted;      REAL time: 1 mins 23 secs 
 
-Phase  4  : 12597 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 32 secs 
+Phase  4  : 12597 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 40 secs 
 
-Phase  5  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 39 secs 
-
-Updating file: maze_generator_fpga_top.ncd with current fully routed design.
-
-Phase  6  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 4 mins 11 secs 
-
-Phase  7  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 4 mins 41 secs 
-
-Phase  8  : 0 unrouted; (Setup:2562, Hold:0, Component Switching Limit:0)     REAL time: 6 mins 17 secs 
+Phase  5  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 27 secs 
 
 Updating file: maze_generator_fpga_top.ncd with current fully routed design.
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 mins 20 secs 
+Phase  6  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 2 mins 48 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 mins 21 secs 
+Phase  7  : 0 unrouted; (Setup:12622, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 6 secs 
 
-Phase 11  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 mins 34 secs 
+Phase  8  : 0 unrouted; (Setup:2562, Hold:0, Component Switching Limit:0)     REAL time: 4 mins 13 secs 
+
+Updating file: maze_generator_fpga_top.ncd with current fully routed design.
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 mins 15 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 mins 16 secs 
+
+Phase 11  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 mins 25 secs 
 WARNING:Route:455 - CLK Net:state_start may have excessive skew because 
       0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 9 mins 34 secs 
-Total CPU time to Router completion: 9 mins 28 secs 
+Total REAL time to Router completion: 6 mins 25 secs 
+Total CPU time to Router completion: 6 mins 22 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -204,10 +204,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 11 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 9 mins 54 secs 
-Total CPU time to PAR completion: 9 mins 47 secs 
+Total REAL time to PAR completion: 6 mins 37 secs 
+Total CPU time to PAR completion: 6 mins 34 secs 
 
-Peak Memory Usage:  397 MB
+Peak Memory Usage:  390 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

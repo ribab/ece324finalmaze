@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\ribab\Documents\GitHub\ece324finalmaze\maze_generator\maze_generator_fpga_top.ncd
-OUTFILE=C:\Users\ribab\Documents\GitHub\ece324finalmaze\maze_generator\maze_generator_fpga_top.bit
+INFILE=C:\Users\John\Documents\GitHub\ece324finalmaze\maze_generator\maze_generator_fpga_top.ncd
+OUTFILE=C:\Users\John\Documents\GitHub\ece324finalmaze\maze_generator\maze_generator_fpga_top.bit
 FAMILY=Spartan3E
 PART=xc3s500e-5fg320
-WORKINGDIR=C:\Users\ribab\Documents\GitHub\ece324finalmaze\maze_generator
+WORKINGDIR=C:\Users\John\Documents\GitHub\ece324finalmaze\maze_generator
 LICENSE=WebPack
-USER_INFO=210730380_0_0_655
+USER_INFO=210722404_0_0_435
